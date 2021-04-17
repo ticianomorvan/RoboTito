@@ -47,4 +47,4 @@ async def on_ready():
 bot.help_command = None
 
 # Token
-bot.run('ODIwODE5ODI0NjY5NDkxMjEw.YE6uCA.Mchw8K7zZJiHiOuAlCzyodQVUrk')
+bot.run(token)
