@@ -4,5 +4,5 @@ RoboTito.jpg
 robotito.log
 RoboTito.xcf
 RoboTito.zip
-cog/__pycache__/**
+cog/__pycache__/
 token.txt
