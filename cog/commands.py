@@ -15,22 +15,6 @@ class Comandos(commands.Cog):
         self.bot = bot
         self.counter = 0
 
-# Gifs commands
-    @commands.command()
-    async def pat(self, ctx, entity: str):
-        if entity == 'cat':
-            embed = discord.Embed(colour=discord.Colour.blue(),
-                                  timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Que lindo gatito!',
-                            value=f'{ctx.author.name} acaricia a un gato.')
-            embed.set_image(url='https://64.media.tumblr.com/'
-                                'f220c0f9c807173584f224b97b324791/'
-                                'tumblr_mnyqvrLGHv1snwoibo1_500.gif')
-            embed.set_footer(text='Cariciómetro de RoboTito')
-            await ctx.send(embed=embed)
-        else:
-            return
-
 # Ping & Pong
     @commands.command()
     async def ping(self, ctx):
