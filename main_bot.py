@@ -5,8 +5,6 @@ import logging
 
 import os
 
-token = ''
-
 # Logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -34,17 +32,21 @@ for filename in os.listdir('./cog'):
         bot.load_extension(f'cog.{filename[:-3]}')
 
 
-# Eventos
 @bot.event
 async def on_ready():
     print('Conectado como {0.user}'.format(bot))
-    await bot.change_presence(status=discord.Status.dnd,
-                              activity=discord.Activity(
-                                     type=discord.ActivityType.watching,
-                                     name='robotito.readme.io'))
+    await bot.change_presence(
+        status=discord.Status.dnd,
+        activity=discord.Activity(
+            type=discord.ActivityType.watching,
+            name='robotito.readme.io'
+        )
+    )
 
 
 bot.help_command = None
 
 # Token
+with open('token.txt') as f:
+    token = f.read()
 bot.run(token)
