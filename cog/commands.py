@@ -44,7 +44,7 @@ class Comandos(commands.Cog):
 
 # Clean & Fastclean
     @commands.command(aliases=['c'])
-    @commands.has_any_role('Admin', 'Mod')
+    @commands.has_guild_permissions(manage_messages=True)
     async def clean(self, ctx, amount=100):
         message = await ctx.send('Preparando limpieza.')
         time.sleep(0.35)
@@ -71,53 +71,97 @@ class Comandos(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command(aliases=['fc'])
-    @commands.has_any_role('Admin', 'Mod')
+    @commands.has_guild_permissions(manage_messages=True)
     async def fastclean(self, ctx, amount=100):
         await ctx.channel.purge(limit=amount, bulk=True)
         await ctx.send(f'Se borraron {amount} mensajes.')
 
     @commands.command(aliases=['8ball'])
-    async def eightball(self, ctx, question: str):
-        answers = ('Si',
-                   'Quizá, quien sabe',
-                   'Definitivamente',
-                   'Definitivamente **no**',
-                   'Absolutamente',
-                   'En el mejor de los casos, si',
-                   'Esperemos que no',
-                   'Recenle a quien sea para que eso no pase',
-                   'No',
-                   'Bajo ningún término')
-        answers_result = random.choice(answers)
-        embed = discord.Embed(colour=discord.Colour.blue(),
-                              timestamp=datetime.datetime.utcnow())
-        embed.add_field(name='La respuesta es:',
-                        value=f'{answers_result}')
-        embed.set_footer(text='Adivinador de RoboTito')
-        await ctx.send(embed=embed)
+    async def eightball(self, ctx, *, args):
+        guild = ctx.guild
+        answers = ('Si.',
+                   'Quizá, quien sabe.',
+                   'Definitivamente.',
+                   'Definitivamente **no**.',
+                   'Absolutamente.',
+                   'En el mejor de los casos, si.',
+                   'Esperemos que no.',
+                   'Recenle a quien sea para que eso no pase.',
+                   'No.',
+                   'Bajo ningún término.',
+                   'De ninguna manera.',
+                   'Probablemente, no.',
+                   'Hay muchas probabilidades de que suceda.',
+                   'No estoy seguro...',
+                   'No sé que responder a eso :(',
+                   'Por mi parte, ojalá.',
+                   'Si lo quieres mucho, sucederá',
+                   'Hay esperanzas, pocas, pero hay.',
+                   '¿Para qué mentirte?',
+                   'No veo por que no.',
+                   'Lo siento, pero no.',
+                   'Quizás, quizás no, no lo sé',
+                   )
+        if args is not None:
+            answers_result = random.choice(answers)
+            embed = discord.Embed(
+                colour=discord.Colour.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            embed.add_field(
+                name='A tu pregunta de...',
+                value=f'*"{args}"*',
+                inline=False,
+            )
+            embed.add_field(
+                name='La respuesta es:',
+                value=f'{answers_result}',
+                inline=False,
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
 
     @commands.command(aliases=['saludar'])
     async def greet(self, ctx, member=None):
+        guild = ctx.guild
         if member is None:
-            embed = discord.Embed(colour=discord.Colour.blue(),
-                                  timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Hola!',
-                            value=f'Te saludo, {ctx.author.name}')
-            embed.set_image(url='https://media1.tenor.com/images/'
-                                '79f33c2f524cbfed4ef6896b39e67663/'
-                                'tenor.gif?itemid=9416181')
-            embed.set_footer(text='Saludo de RoboTito')
+            embed = discord.Embed(
+                colour=discord.Colour.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            embed.add_field(
+                name='¡Hola!',
+                value=f'Te saludo, {ctx.author.name}',
+            )
+            embed.set_image(
+                url='https://media1.tenor.com/images/'
+                    '79f33c2f524cbfed4ef6896b39e67663/tenor.gif'
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
             await ctx.send(embed=embed)
         elif member is not None:
-            embed = discord.Embed(colour=discord.Colour.blue(),
-                                  timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='Alguien está saludándote...',
-                            value=f'{ctx.author.name} te saluda, '
-                                  f'{member}')
-            embed.set_image(url='https://media1.tenor.com/images/'
-                                '056c584d9335fcabf080ca43e583e3c4/'
-                                'tenor.gif?itemid=8994845')
-            embed.set_footer(text='Saludo de RoboTito')
+            embed = discord.Embed(
+                colour=discord.Colour.blue(),
+                timestamp=datetime.datetime.utcnow()
+            )
+            embed.add_field(
+                name='Alguien está saludándote...',
+                value=f'{ctx.author.name} te saluda, {member}'
+            )
+            embed.set_image(
+                url='https://media1.tenor.com/images/'
+                    '056c584d9335fcabf080ca43e583e3c4/tenor.gif'
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
             await ctx.send(embed=embed)
         else:
             pass
@@ -161,24 +205,31 @@ class Comandos(commands.Cog):
                                        'no recibió respuesta."*')
             time.sleep(1)
             await message.edit(content=f'{member} no contestó la llamada.')
-
         else:
             await ctx.send('¿A quién quieres llamar?')
 
-    @commands.command()
-    async def probabilidad(self, ctx, question: str):
-        if question is not None:
+    @commands.command(aliases=['prob'])
+    async def probabilidad(self, ctx, *, args):
+        guild = ctx.guild
+        if args is not None:
             probabilidad = randint(0, 100)
             embed = discord.Embed(
                 colour=discord.Color.blue(),
                 timestamp=datetime.datetime.utcnow()
             )
             embed.add_field(
-                name='La probabilidad de que eso pase es de un:',
-                value=f'**{probabilidad}%**'
+                name='La probabilidad de...',
+                value=f'*"{args}"*',
+                inline=False
+            )
+            embed.add_field(
+                name='Es de un:',
+                value=f'**{probabilidad}%**',
+                inline=False
             )
             embed.set_footer(
-                text='Probabilidad de RoboTito'
+                text=guild,
+                icon_url=guild.icon_url,
             )
             await ctx.send(embed=embed)
 
