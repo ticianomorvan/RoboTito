@@ -25,6 +25,7 @@ nb
 ne
 no
 pl
+pt
 ro
 ru
 sl
