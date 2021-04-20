@@ -24,8 +24,7 @@ intents = discord.Intents.all()
 intents.members = True
 
 bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'],
-                   intents=intents,
-                   help_command=None)
+                   intents=intents)
 
 for filename in os.listdir('./cog'):
     if filename.endswith('.py'):
@@ -42,9 +41,6 @@ async def on_ready():
             name='robotito.readme.io'
         )
     )
-
-
-bot.help_command = None
 
 # Token
 with open('token.txt') as f:
