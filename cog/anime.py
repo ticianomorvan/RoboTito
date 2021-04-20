@@ -182,6 +182,35 @@ class Anime(commands.Cog):
             )
             await ctx.send(embed=embed)
 
+    @commands.command(name='kill')
+    async def matar(self, ctx, member: discord.Member = None):
+        guild = ctx.guild
+        choice = random.choice(gif['kill'])
+
+        if member is not None:
+            embed = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            embed.add_field(
+                name='¡Hubo un asesinato en el servidor!',
+                value=f'{ctx.author.name} asesina a {member.name}',
+                inline=False
+            )
+            embed.set_image(
+                url=choice
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
+
+        else:
+            await ctx.send(
+                'Tocar a la mamá de tito nunca fue una opción '          
+            )
+
 
 def setup(bot):
     bot.add_cog(Anime(bot))
