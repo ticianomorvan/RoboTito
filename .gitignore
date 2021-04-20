@@ -7,3 +7,4 @@ RoboTito.zip
 cog/__pycache__/
 token.txt
 dump
+databases/db_bot.json

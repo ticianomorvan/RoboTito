@@ -5,6 +5,8 @@ import logging
 
 import os
 
+import json
+
 # Logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -43,6 +45,7 @@ async def on_ready():
     )
 
 # Token
-with open('token.txt') as f:
-    token = f.read()
-bot.run(token)
+with open('databases/db_bot.json') as f:
+    token_data = f.read()
+    token = json.loads(token_data)
+bot.run(token['token'])
