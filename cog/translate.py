@@ -61,10 +61,7 @@ class Translate(commands.Cog):
                 check=check1,
             )
             await ctx.send('¡Bien! ahora, ¿a qué idioma quieres traducir?')
-            msg2 = await self.bot.wait_for(
-                'message',
-                check=check1
-            )
+            msg2 = await self.bot.wait_for('message', check=check1)
             translator = Translator(
                 from_lang=msg1.content,
                 to_lang=msg2.content,
