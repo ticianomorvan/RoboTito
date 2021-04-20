@@ -29,7 +29,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Abrazo!',
-                value=f'{ctx.author.name} abraza a {member.name}',
+                value=f'**{ctx.author.name}** abraza a **{member.name}**',
             )
             embed.set_image(
                 url=choice
@@ -58,8 +58,8 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡El amor nace!',
-                value=f'{ctx.author.name} besa a'
-                      f' {member.name} con mucho amor.',
+                value=f'**{ctx.author.name}** besa a'
+                      f' **{member.name}** con mucho amor.',
                 inline=False
             )
             embed.set_image(
@@ -88,7 +88,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Caricias para todos!',
-                value=f'{ctx.author.name} acaricia a {member.name}',
+                value=f'**{ctx.author.name}** acaricia a **{member.name}**',
                 inline=False
             )
             embed.set_image(
@@ -118,8 +118,8 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Golpe rabioso!',
-                value=f'{member.name} recibe una fuerte'
-                      f' paliza de {ctx.author.name}',
+                value=f'**{member.name}** recibe una fuerte'
+                      f' paliza de **{ctx.author.name}**',
                 inline=False
             )
             embed.set_image(
@@ -148,8 +148,8 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='Los tórtolos se acurrucan...',
-                value=f'{ctx.author.name} y '
-                      f'{member.name} se acuestan juntos...',
+                value=f'**{ctx.author.name}** y '
+                      f'**{member.name}** se acuestan juntos...',
                 inline=False,
             )
             embed.set_image(
@@ -170,7 +170,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='Alguien está con sueño...',
-                value=f'{ctx.author.name} se va a dormir.',
+                value=f'**{ctx.author.name}** se va a dormir.',
                 inline=False,
             )
             embed.set_image(
@@ -194,7 +194,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Hubo un asesinato en el servidor!',
-                value=f'{ctx.author.name} asesina a {member.name}',
+                value=f'**{ctx.author.name}** asesina a **{member.name}**',
                 inline=False
             )
             embed.set_image(
@@ -208,7 +208,8 @@ class Anime(commands.Cog):
 
         else:
             await ctx.send(
-                'Tocar a la mamá de tito nunca fue una opción ')
+                'La vida puede ser buena, como para que te mates.'
+            )
 
     @commands.command(name='hi')
     async def saludar(self, ctx, member: discord.Member = None):
@@ -222,7 +223,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Buenas!',
-                value=f'{ctx.author.name} saluda a {member.name}',
+                value=f'**{ctx.author.name}** saluda a **{member.name}**',
                 inline=False
             )
             embed.set_image(
@@ -235,8 +236,23 @@ class Anime(commands.Cog):
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send(
-                f'{ctx.author.name} los está saludando.')
+            embed = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            embed.add_field(
+                name='¡Buenas a todos!',
+                value=f'**{ctx.author.name}** saluda a todo mundo',
+                inline=False
+            )
+            embed.set_image(
+                url=choice
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
 
 
 def setup(bot):

@@ -95,11 +95,8 @@
     ],
 
      "kill": [ 
-<<<<<<< HEAD
-        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif"   
-     ]   
-=======
-        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif",   
+        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif",
+        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif",
         "https://media1.tenor.com/images/9df97f1c83c532cc29ab8d9ec099acf5/tenor.gif",
         "https://media1.tenor.com/images/d87333803d4dd839ac4fd4237e401551/tenor.gif",
         "https://media.tenor.com/images/bbe419e89683598d4c8ac436cd51f323/tenor.gif",
@@ -109,7 +106,6 @@
         "https://media1.tenor.com/images/29cf289e13e42a3e7f4e11e9acb019f3/tenor.gif",
         "https://media1.tenor.com/images/8c7862b6d8da7c1f1505163a4f46fb02/tenor.gif",
         "https://media.tenor.com/images/f8a0b0df6657ee1cf5d0315268f24f6a/tenor.gif"
-
      ],
      
      "hi": [
@@ -125,6 +121,5 @@
         "https://media1.tenor.com/images/c6037313e588e2366aa4a3523b77c695/tenor.gif",
         "https://media1.tenor.com/images/bd0220fc03b4ef9d88cb3843b0ab653d/tenor.gif"
      ]
->>>>>>> bc6ee558c50c04ddfe92413c0c20e12ed6a659fc
 
 }
