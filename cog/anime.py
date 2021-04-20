@@ -208,8 +208,35 @@ class Anime(commands.Cog):
 
         else:
             await ctx.send(
-                'Tocar a la mamá de tito nunca fue una opción '          
+                'Tocar a la mamá de tito nunca fue una opción ')
+
+    @commands.command(name='hi')
+    async def saludar(self, ctx, member: discord.Member = None):
+        guild = ctx.guild
+        choice = random.choice(gif['hi'])
+
+        if member is not None:
+            embed = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
             )
+            embed.add_field(
+                name='¡Buenas!',
+                value=f'{ctx.author.name} saluda a {member.name}',
+                inline=False
+            )
+            embed.set_image(
+                url=choice
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
+
+        else:
+            await ctx.send(
+                f'{ctx.author.name} los está saludando.')
 
 
 def setup(bot):
