@@ -5,6 +5,8 @@ import logging
 
 import os
 
+import json
+
 # Logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -24,8 +26,7 @@ intents = discord.Intents.all()
 intents.members = True
 
 bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'],
-                   intents=intents,
-                   help_command=None)
+                   intents=intents)
 
 for filename in os.listdir('./cog'):
     if filename.endswith('.py'):
@@ -43,10 +44,8 @@ async def on_ready():
         )
     )
 
-
-bot.help_command = None
-
 # Token
-with open('token.txt') as f:
-    token = f.read()
-bot.run(token)
+with open('databases/db_bot.json') as f:
+    token_data = f.read()
+    token = json.loads(token_data)
+bot.run(token['token'])

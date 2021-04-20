@@ -238,42 +238,6 @@ class Information(commands.Cog):
             await ctx.send(embed=embed)
 
     @commands.command()
-    async def help(self, ctx):
-        help_embed = discord.Embed(
-            title='¡Hola! sé que tratar conmigo puede ser un poco complicado, '
-                  'pero vengo a hacerte la vida más fácil.',
-            colour=discord.Colour.blue(),
-            timestamp=datetime.datetime.utcnow()
-        )
-        help_embed.set_thumbnail(
-            url=bot_icon
-        )
-        help_embed.add_field(
-            name='Ayuda general:',
-            value='Para una guía completa sobre RoboTito, visitá la '
-            '[documentación oficial](https://robotito.readme.io)',
-            inline=False
-        )
-        help_embed.add_field(
-            name='Comandos:',
-            value='Para obtener información sobre los comandos, '
-                  'revisá el apartado de [Comandos]'
-                  '(https://robotito.readme.io/reference#comandos-1)',
-            inline=False
-        )
-        help_embed.add_field(
-            name='Errores:',
-            value='Para conocer los códigos de error, revisá el apartado de '
-                  '[Errores]'
-                  '(https://robotito.readme.io/reference#errores-1)',
-            inline=False
-        )
-        help_embed.set_footer(
-            text='Ayuda de RoboTito'
-        )
-        await ctx.send(embed=help_embed)
-
-    @commands.command()
     async def avatar(self, ctx, member: discord.Member = None):
         guild = ctx.guild
         if member is None:

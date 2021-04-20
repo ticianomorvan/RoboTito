@@ -4,7 +4,12 @@ from discord.ext import commands
 import datetime
 
 import random
-# from random import randint
+
+import json
+
+with open('databases/db_gifs.json') as f:
+    data = f.read()
+    gif = json.loads(data)
 
 
 class Anime(commands.Cog):
@@ -15,9 +20,7 @@ class Anime(commands.Cog):
     @commands.command(name='hug')
     async def abrazo(self, ctx, member: discord.Member = None):
         guild = ctx.guild
-        with open('databases/hug_db.txt') as f:
-            line = f.readlines()
-            choice = random.choice(line)
+        choice = random.choice(gif['hug'])
 
         if member is not None:
             embed = discord.Embed(
@@ -46,9 +49,7 @@ class Anime(commands.Cog):
     @commands.command(name='kiss')
     async def beso(self, ctx, member: discord.Member = None):
         guild = ctx.guild
-        with open('databases/kiss_db.txt') as f:
-            line = f.readlines()
-            choice = random.choice(line)
+        choice = random.choice(gif['kiss'])
 
         if member is not None:
             embed = discord.Embed(
@@ -78,9 +79,7 @@ class Anime(commands.Cog):
     @commands.command(name='pat')
     async def caricia(self, ctx, member: discord.Member = None):
         guild = ctx.guild
-        with open('databases/pat_db.txt') as f:
-            line = f.readlines()
-            choice = random.choice(line)
+        choice = random.choice(gif['pat'])
 
         if member is not None:
             embed = discord.Embed(
@@ -110,9 +109,7 @@ class Anime(commands.Cog):
     @commands.command(name='punch')
     async def golpear(self, ctx, member: discord.Member = None):
         guild = ctx.guild
-        with open('databases/punch_db.txt') as f:
-            line = f.readlines()
-            choice = random.choice(line)
+        choice = random.choice(gif['punch'])
 
         if member is not None:
             embed = discord.Embed(
@@ -143,9 +140,7 @@ class Anime(commands.Cog):
     async def dormir(self, ctx, member: discord.Member = None):
         guild = ctx.guild
         if member is not None:
-            with open('databases/sleepw_db.txt') as f:
-                line = f.readlines()
-                choice = random.choice(line)
+            choice = random.choice(gif['sleep'])
 
             embed = discord.Embed(
                 color=discord.Color.blue(),
@@ -167,9 +162,7 @@ class Anime(commands.Cog):
             await ctx.send(embed=embed)
 
         else:
-            with open('databases/sleep_db.txt') as f:
-                line = f.readlines()
-                choice = random.choice(line)
+            choice = random.choice(gif['sleepw'])
 
             embed = discord.Embed(
                 color=discord.Color.blue(),

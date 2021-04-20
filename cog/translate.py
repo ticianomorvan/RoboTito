@@ -5,6 +5,13 @@ from translate import Translator
 
 import datetime
 
+import json
+
+with open('databases/db_iso639-1.json') as f:
+    data = f.read()
+    lang = json.loads(data)
+    languages = lang['languages']
+
 
 class Translate(commands.Cog):
 
@@ -46,9 +53,6 @@ class Translate(commands.Cog):
         else:
             await ctx.send('¿Desde qué idioma quieres traducir?')
 
-            with open('databases/iso639-1.txt') as f:
-                languages = f.read()
-
             def check1(m):
                 return m.content in languages
 
@@ -57,10 +61,7 @@ class Translate(commands.Cog):
                 check=check1,
             )
             await ctx.send('¡Bien! ahora, ¿a qué idioma quieres traducir?')
-            msg2 = await self.bot.wait_for(
-                'message',
-                check=check1
-            )
+            msg2 = await self.bot.wait_for('message', check=check1)
             translator = Translator(
                 from_lang=msg1.content,
                 to_lang=msg2.content,
