@@ -8,13 +8,11 @@ Discord.py-based bot for all who wants to use it.
 
 ## Dependencies
 - [Wikipedia](https://pypi.org/project/wikipedia/)
+- [Translate](https://pypi.org/project/translate/)
 - [Discord.py](https://discordpy.rtfd.io)
 
-## How to run it
+<a href="https://github.com/ATT-Inc/RoboTito/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ATT-Inc/RoboTito" />
+</a>
 
-```
-git clone https://github.com/Ti7oyan/RoboTito/
-python main_bot.py
-```
-
-### Enjoy!
+Made with [contributors-img](https://contrib.rocks).
