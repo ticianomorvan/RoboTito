@@ -5,3 +5,4 @@ cog/__pycache__/
 dump
 .vscode
 databases/db_bot.json
+cog/test.py
