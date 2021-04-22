@@ -304,17 +304,17 @@ class Anime(commands.Cog):
 
         if member is not None:
             embed = discord.Embed(
-                color=discord.Color.red(),
+                color=discord.Color.blue(),
                 timestamp=datetime.datetime.utcnow(),
-                )
+            )
             embed.add_field(
                 name='¡Está llorando!',
                 value=f'**{ctx.author.name}** hizo llorar a **{member.name}**',
                 inline=False
-                )
+            )
             embed.set_image(
                 url=choice
-                )
+            )
             embed.set_footer(
                 text=guild,
                 icon_url=guild.icon_url,
@@ -325,7 +325,7 @@ class Anime(commands.Cog):
             embed = discord.Embed(
                 color=discord.Color.blue(),
                 timestamp=datetime.datetime.utcnow(),
-                )
+            )
             embed.add_field(
                 name='¡Está llorando!',
                 value=f'**{ctx.author.name}** se largó a llorar',
