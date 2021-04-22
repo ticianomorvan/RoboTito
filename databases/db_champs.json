@@ -156,5 +156,27 @@
             "Zoe",
             "Zyra"
             
+    ],
+    "adc": [
+        "Aphelios",
+        "Ashe",
+        "Caitlyn",
+        "Draven",
+        "Ezreal",
+        "Jhin",
+        "Jinx",
+        "Kai'sa",
+        "Kalista",
+        "Lucian",
+        "Miss Fortune",
+        "Samira",
+        "Senna",
+        "Sivir",
+        "Tristana",
+        "Twitch",
+        "Varus",
+        "Vayne",
+        "Xayah",
+        "Yasuo"
     ]
 }
