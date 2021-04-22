@@ -321,7 +321,6 @@ class Anime(commands.Cog):
             )
             await ctx.send(embed=embed)
         else:
-
             embed = discord.Embed(
                 color=discord.Color.blue(),
                 timestamp=datetime.datetime.utcnow(),
