@@ -297,6 +297,49 @@ class Anime(commands.Cog):
             )
             await ctx.send(embed=embed)
 
+    @commands.command(name='cry')
+    async def llorar(self, ctx, member: discord.Member = None):
+        guild = ctx.guild
+        choice = random.choice(gif['cry'])
+
+        if member is not None:
+            embed = discord.Embed(
+                color=discord.Color.red(),
+                timestap=datetime.datetime.utcnow(),
+                )
+
+            embed.add_field(
+                name='¡Está llorando!',
+                value=f'**{ctx.author.name}** hizo llorar a **{member.name}**',
+                inline=False
+            embed.set_image(
+                url=choice
+                )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
+        else:
+
+            embed = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+                )
+            embed.add_field(
+                name='¡Está llorando!',
+                value=f'**{ctx.author.name}** se largó a llorar',
+                inline=False
+            )
+            embed.set_image(
+                url=choice
+            )
+            embed.set_footer(
+                text=guild,
+                icon_url=guild.icon_url,
+            )
+            await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Anime(bot))
