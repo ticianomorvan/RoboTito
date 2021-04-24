@@ -1,0 +1,6 @@
+# These are the obligatory packages
+discord.py
+translate
+wikipedia
+
+# ATT-Inc 2021
