@@ -5,4 +5,4 @@ cog/__pycache__/
 dump
 .vscode
 databases/db_bot.json
-databases/db_champs.json
+cog/welcome.py
