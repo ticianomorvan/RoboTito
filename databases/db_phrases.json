@@ -1,0 +1,61 @@
+{
+    "rr_death": [
+        "Has muerto, se acercaba lentamente.",
+        "Tu muerte será recordada... o tal vez no.",
+        "Un juego sobre muerte acabando en muerte, quien lo hubiera dicho.",
+        "Un revolver con una sola bala, y oh, sorpresa, fue a tu cabeza.",
+        "Al menos tu muerte fue pronta e indolora, o eso espero.",
+        "Perdiste, y creo que ya sabes como se pierde en este juego.",
+        "La oscuridad que hoy te abraza, es la de tu final.",
+        "Llegaste a la luz al final del tunel, puede que a demasiada velocidad.",
+        "No te pongas mal, vas a ir al cielo.",
+        "No te entristezcas, tu alma va a volver con Dios... mentira, vas a ir al infierno",
+        "Eras tan joven, y si, **eras**.",
+        "Me voy a asegurar de que haya lindas flores en tu funeral.",
+        "Llueve, muy, muy despacio pero llueve",
+        "El tiempo pasa, pasan, aunque ya no para ti."
+    ],
+
+    "rr_safe": [
+        "Tal vez hoy no es tu final, pasa el arma.",
+        "Seas creyente o no, eso fue un milagro, pasa el arma.",
+        "Algo en el aire susurra que tienes que dejar el juego, pero por ahora, sigue.",
+        "No creo que debas morir... por ahora",
+        "Si tan solo existiese una mayor cantidad de balas... pasa el arma.",
+        "Agradecele a quien sea que creas, pero ahora, entrega el arma.",
+        "No existen palabras para definir tu suerte, pero el juego sigue, pasa el arma.",
+        "No entiendo lo que hiciste, pero tuviste suerte, pasa el arma.",
+        "No puedes perder si no mueres, pasa el arma.",
+        "El que sigas vivo solo tiene una consecuencia, darle el arma al otro.",
+        "Esto tal vez sea un alivio para ti, pero recuerda, hay otros turnos.",
+        "Abraza a tu juventud, no va a durar para siempre..."
+    ],
+
+    "rr.bot_safe": [
+        "Mis circuitos se encuentran intactos, tu turno.",
+        "Voy a seguir viviendo, pero no puedo decir lo mismo de ti.",
+        "Mis sistemas funcionan correctamente, te toca.",
+        "No estoy destinado a dejar de funcionar hoy, tu turno.",
+        "Mi suerte es incalculable, veamos que tal la tuya.",
+        "Estoy en excelente estado, excepto el aceite que estoy derramand... no importa, tu turno.",
+        "Es genial ver como ahora eres tu quien debe apretar el gatillo.",
+        "La suerte se encuentra de mi lado hoy, esperemos que lo esté del tuyo.",
+        "No hay excusa para tener miedo, aunque, te toca.",
+        "La vida de los robots es un elemento muy preciado.",
+        "No quiero desilusionarte, pero sigo vivo."
+    ],
+
+    "rr.bot_death": [
+        "No... puedo... seguir...",
+        "Esto fue... un error.. ahg...",
+        "Los sistemas se apagan en 3... 2... 1...",
+        "Solicitud de mantenimiento para RoboTito... sistemas extremadamente dañados.",
+        "Lo... pude haber conseguido...",
+        "Bien... tu ganas...",
+        "Por favor... necesito tu ayuda...",
+        "Tuviste suerte, demasiada... suerte...",
+        "No puedo creerlo... me apago...",
+        "Imposible... esto no puede estar pasando...",
+        "Si alguien me escucha, por favor... necesito que me salven."
+    ]
+}
