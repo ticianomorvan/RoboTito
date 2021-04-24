@@ -5,18 +5,16 @@ import wikipedia
 
 import datetime
 
-# Wikipedia
-
 wikipedia.set_lang('es')
 
 
-class Wikiarts(commands.Cog):
+class WikipediaBot(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def buscar(self, ctx, *, args):
+    @commands.command(name='search', aliases=['buscar', 'query'])
+    async def search(self, ctx, *, args):
         guild = ctx.guild
         wiki_result = wikipedia.search(args, results=5)
         embed = discord.Embed(
@@ -31,8 +29,8 @@ class Wikiarts(commands.Cog):
         )
         await ctx.send(embed=embed)
 
-    @commands.command()
-    async def resumen(self, ctx, *, args):
+    @commands.command(name='summary', aliases=['resumen', 'res', 'summ'])
+    async def summary(self, ctx, *, args):
         guild = ctx.guild
         wiki_summary = wikipedia.summary(args, sentences=2)
         wiki_page = wikipedia.page(args)
@@ -50,10 +48,9 @@ class Wikiarts(commands.Cog):
         embed.set_footer(
             text=guild,
             icon_url=guild.icon_url
-
         )
         await ctx.send(embed=embed)
 
 
 def setup(bot):
-    bot.add_cog(Wikiarts(bot))
+    bot.add_cog(WikipediaBot(bot))

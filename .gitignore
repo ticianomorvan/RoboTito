@@ -6,3 +6,4 @@ dump
 .vscode
 databases/db_bot.json
 cog/welcome.py
+docs

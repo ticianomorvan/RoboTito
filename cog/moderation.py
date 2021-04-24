@@ -9,7 +9,7 @@ class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='ban')
+    @commands.command(name='ban', aliases=['ban'])
     @commands.has_guild_permissions(ban_members=True)
     async def banear(self, ctx, member: discord.Member = None, *, reason=None):
         guild = ctx.guild
@@ -98,7 +98,7 @@ class Moderation(commands.Cog):
         else:
             await ctx.send('Debes mencionar a alguien.')
 
-    @commands.command(name='fastban')
+    @commands.command(name='fastban', aliases=['fb'])
     @commands.has_guild_permissions(ban_members=True)
     async def banearapido(self, ctx, member: discord.Member, *, reason=None):
         await ctx.send('¿Es una decisión segura?')
@@ -119,7 +119,7 @@ class Moderation(commands.Cog):
         else:
             await ctx.send('Deberías escribir "si" o "no".')
 
-    @commands.command(name='unban')
+    @commands.command(name='unban', aliases=['ub'])
     @commands.has_guild_permissions(ban_members=True)
     async def desbanear(self, ctx, *, member):
         banned_users = await ctx.guild.bans()
