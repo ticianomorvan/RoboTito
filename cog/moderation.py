@@ -9,7 +9,7 @@ class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='ban', aliases=['ban'])
+    @commands.command(name='ban', aliases=['b'])
     @commands.has_guild_permissions(ban_members=True)
     async def banear(self, ctx, member: discord.Member = None, *, reason=None):
         guild = ctx.guild

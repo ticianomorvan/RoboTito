@@ -7,9 +7,13 @@ import random
 
 import json
 
-with open('databases/db_leagueoflegends.json') as f:
+with open('databases/leagueoflegends/db_champs.json') as f:
     data = f.read()
     lol_ch = json.loads(data)
+
+with open('databases/leagueoflegends/db_dicts.json') as dicts:
+    data2 = dicts.read()
+    lol_dicts = json.loads(data2)
 
 
 class Lol(commands.Cog):
