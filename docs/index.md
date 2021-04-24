@@ -1,5 +1,5 @@
 # RoboTito
-Un bot multifunción basado en discord.py para quien quiera usarlo.
+Un bot multifunción basado en discord.py para quien quiera usarlo
 
 ## ¿Para qué sirve?
 RoboTito está programado para realizar acciones de lo más diversas, desde ayudarte con la moderación de tu servidor, pasando por pequeños minijuegos o mostrarte artículos de Wikipedia.
