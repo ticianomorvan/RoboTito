@@ -285,7 +285,7 @@ class Anime(commands.Cog):
                 )
             embed.add_field(
                 name='¡Sayonara!',
-                value=f'**{ctx.author.name}** saluda a todo mundo',
+                value=f'**{ctx.author.name}** se retira y saluda a todos',
                 inline=False
             )
             embed.set_image(
@@ -308,8 +308,8 @@ class Anime(commands.Cog):
                 timestamp=datetime.datetime.utcnow(),
             )
             embed.add_field(
-                name='¡Está llorando!',
-                value=f'**{ctx.author.name}** hizo llorar a **{member.name}**',
+                name='¡Mira lo que hiciste!',
+                value=f'**{member.name}** hizo llorar a **{ctx.author.name}**',
                 inline=False
             )
             embed.set_image(
@@ -320,6 +320,7 @@ class Anime(commands.Cog):
                 icon_url=guild.icon_url,
             )
             await ctx.send(embed=embed)
+
         else:
             embed = discord.Embed(
                 color=discord.Color.blue(),
@@ -327,7 +328,7 @@ class Anime(commands.Cog):
             )
             embed.add_field(
                 name='¡Está llorando!',
-                value=f'**{ctx.author.name}** se largó a llorar',
+                value=f'**{ctx.author.name}** se comenzó a llorar',
                 inline=False
             )
             embed.set_image(
