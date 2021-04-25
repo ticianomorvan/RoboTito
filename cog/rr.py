@@ -10,16 +10,7 @@ import json
 import datetime
 
 
-with open('databases/db_phrases.json') as d:
-    rrd = d.read()
-    rrdata = json.loads(rrd)
-    rrdeath = random.choice(rrdata['rr_death'])
-    rrsafe = random.choice(rrdata['rr_safe'])
-    rrbdeath = random.choice(rrdata['rr.bot_death'])
-    rrbsafe = random.choice(rrdata['rr.bot_safe'])
-
-
-class RR(commands.Cog):
+class RussianRoulette(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -28,8 +19,19 @@ class RR(commands.Cog):
     async def ruletarusa(self, ctx, member: discord.Member = None):
         guild = ctx.guild
         author = ctx.author.name
-        gif = ('https://images.rapgenius.com/'
-               '46bb57d90e7f3692014a769f2c3007cc.380x220x27.gif')
+
+        with open('databases/db_russianroulette.json', encoding='utf8') as d:
+            rrd = d.read()
+            rrdata = json.loads(rrd)
+            rrdeath = random.choice(rrdata['rr_death'])
+            rrsafe = random.choice(rrdata['rr_safe'])
+            rrbdeath = random.choice(rrdata['rr.bot_death'])
+            rrbsafe = random.choice(rrdata['rr.bot_safe'])
+
+        with open('databases/db_gifs.json') as f:
+            rrg = f.read()
+            rrgifs = json.loads(rrg)
+            random_gif = random.choice(rrgifs['russianroulette'])
 
         if member is not None:
             await ctx.send(f'Desafiaste a {member.name} a jugar a la '
@@ -53,33 +55,33 @@ class RR(commands.Cog):
                 if s.content == 'probar':
                     death = random.randint(0, 3)
                     if death <= 2:
-                        await ctx.send(str(rrsafe))
+                        await ctx.send(rrsafe)
                         time.sleep(1)
                         await ctx.send(f'Tu sigues, {member.name}')
-                        s = await self.bot.wait_for(
+                        s1 = await self.bot.wait_for(
                             'message', check=msg_member, timeout=60.0
                         )
-                        if s.content == 'probar':
-                            death = random.randint(0, 2)
-                            if death <= 1:
-                                await ctx.send(str(rrsafe))
+                        if s1.content == 'probar':
+                            death1 = random.randint(0, 2)
+                            if death1 <= 1:
+                                await ctx.send(rrsafe)
                                 time.sleep(1)
                                 await ctx.send(f'Tu sigues, {author}')
-                                s = await self.bot.wait_for(
+                                s2 = await self.bot.wait_for(
                                     'message', check=msg_author, timeout=60.0
                                 )
-                                if s.content == 'probar':
-                                    death = random.randint(0, 1)
-                                    if death == 0:
-                                        await ctx.send(str(rrsafe))
+                                if s2.content == 'probar':
+                                    death2 = random.randint(0, 1)
+                                    if death2 == 0:
+                                        await ctx.send(rrsafe)
                                         time.sleep(1)
                                         await ctx.send('Te toca, '
                                                        f'{member.name}')
-                                        s = await self.bot.wait_for(
+                                        s3 = await self.bot.wait_for(
                                             'message', check=msg_member,
                                             timeout=60.0
                                         )
-                                        if s.content == 'probar':
+                                        if s3.content == 'probar':
                                             embed = discord.Embed(
                                                 color=discord.Color.blue(),
                                                 timestamp=datetime.datetime.
@@ -87,10 +89,10 @@ class RR(commands.Cog):
                                             )
                                             embed.add_field(
                                                 name=f'Moriste, {member.name}',
-                                                value=str(rrdeath)
+                                                value=rrdeath
                                             )
                                             embed.set_image(
-                                                url=gif
+                                                url=random_gif
                                             )
                                             embed.set_footer(
                                                 text=guild,
@@ -106,10 +108,10 @@ class RR(commands.Cog):
                                         )
                                         embed.add_field(
                                             name=f'Moriste, {author}',
-                                            value=str(rrdeath)
+                                            value=rrdeath
                                         )
                                         embed.set_image(
-                                            url=gif
+                                            url=random_gif
                                         )
                                         embed.set_footer(
                                             text=guild,
@@ -128,10 +130,10 @@ class RR(commands.Cog):
                                 )
                                 embed.add_field(
                                     name=f'Moriste, {member.name}',
-                                    value=str(rrdeath)
+                                    value=rrdeath
                                 )
                                 embed.set_image(
-                                    url=gif
+                                    url=random_gif
                                 )
                                 embed.set_footer(
                                     text=guild,
@@ -148,10 +150,10 @@ class RR(commands.Cog):
                         )
                         embed.add_field(
                             name=f'Moriste, {ctx.author.name}',
-                            value=str(rrdeath)
+                            value=rrdeath
                         )
                         embed.set_image(
-                            url=gif
+                            url=random_gif
                         )
                         embed.set_footer(
                             text=guild,
@@ -168,26 +170,26 @@ class RR(commands.Cog):
             def check(m):
                 return m.author == ctx.author
 
-            s = await self.bot.wait_for(
+            sb = await self.bot.wait_for(
                 'message', check=check, timeout=60.0
             )
-            if s.content == 'probar':
-                death = random.randint(0, 3)
-                if death <= 2:
-                    await ctx.send(str(rrsafe))
+            if sb.content == 'probar':
+                deathb = random.randint(0, 3)
+                if deathb <= 2:
+                    await ctx.send(rrsafe)
                     time.sleep(0.5)
                     await ctx.send('Está bien, me toca.')
-                    death = random.randint(0, 2)
-                    if death <= 1:
+                    deathb2 = random.randint(0, 2)
+                    if deathb2 <= 1:
                         time.sleep(1)
-                        await ctx.send(str(rrbsafe))
-                        s = await self.bot.wait_for(
+                        await ctx.send(rrbsafe)
+                        sb2 = await self.bot.wait_for(
                             'message', check=check, timeout=60.0
                         )
-                        if s.content == 'probar':
-                            death = random.randint(0, 1)
-                            if death == 1:
-                                await ctx.send(str(rrsafe))
+                        if sb2.content == 'probar':
+                            deathb3 = random.randint(0, 1)
+                            if deathb3 == 1:
+                                await ctx.send(rrsafe)
                                 time.sleep(1.5)
                                 await ctx.send('Está bien, me toca.')
                                 time.sleep(1.5)
@@ -197,11 +199,11 @@ class RR(commands.Cog):
                                 )
                                 embed.add_field(
                                     name='Morí.',
-                                    value=str(rrbdeath),
+                                    value=rrbdeath,
                                     inline=False,
                                 )
                                 embed.set_image(
-                                    url=gif
+                                    url=random_gif
                                 )
                                 embed.set_footer(
                                     text=guild,
@@ -216,11 +218,11 @@ class RR(commands.Cog):
                                 )
                                 embed.add_field(
                                     name=f'Moriste, {author}',
-                                    value=str(rrdeath),
+                                    value=rrdeath,
                                     inline=False,
                                 )
                                 embed.set_image(
-                                    url=gif
+                                    url=random_gif
                                 )
                                 embed.set_footer(
                                     text=guild,
@@ -241,7 +243,7 @@ class RR(commands.Cog):
                             inline=False,
                         )
                         embed.set_image(
-                            url=gif
+                            url=random_gif
                         )
                         embed.set_footer(
                             text=guild,
@@ -259,7 +261,7 @@ class RR(commands.Cog):
                         inline=False
                     )
                     embed.set_image(
-                        url=gif
+                        url=random_gif
                     )
                     embed.set_footer(
                         text=guild,
@@ -271,4 +273,4 @@ class RR(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(RR(bot))
+    bot.add_cog(RussianRoulette(bot))

@@ -13,34 +13,6 @@ class Comandos(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
-        self.counter = 0
-
-# Ping & Pong
-    @commands.command()
-    async def ping(self, ctx):
-        self.counter += 1
-        if self.counter >= 0:
-            embed = discord.Embed(title='Pong!',
-                                  colour=discord.Colour.blue())
-            embed.add_field(name='¡Devuelve el rebote!',
-                            value='Cantidad de rebotes '
-                            f'hasta ahora: **{self.counter}**',
-                            inline=True)
-            embed.set_footer(text='RoboTito')
-            await ctx.send(embed=embed)
-        elif self.counter >= 100:
-            embed = discord.Embed(title='Pong furioso!',
-                                  colour=discord.Colour.blue())
-            embed.add_field(name='¡Rebote relámpago!',
-                            value='El partido se complica, la pelota rebotó '
-                            f'hasta ahora: **{self.counter}** veces.',
-                            inline=True)
-            embed.set_footer(text='RoboTito')
-            await ctx.send(embed=embed)
-
-    @commands.command()
-    async def pong(self, ctx):
-        await ctx.send('Eso fue inesperado, tu ganas.')
 
 # Clean & Fastclean
     @commands.command(aliases=['c'])
