@@ -2,5 +2,6 @@
 discord.py
 translate
 wikipedia
+wikipedia-api
 
 # ATT-Inc 2021
