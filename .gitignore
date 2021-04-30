@@ -1,10 +1,14 @@
+# Folders
 photos
 .vscode
-robotito.log
 cog/__pycache__/
-dump
-.vscode
+docs
+
+# Databases
 databases/db_bot.json
 databases/db_ping.json
+databases/db_playlists.json
+
+# Files
+robotito.log
 cog/welcome.py
-docs
