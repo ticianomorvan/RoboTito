@@ -12,67 +12,54 @@ wikipedia.set_lang('es')
 wiki = wikipediaapi.Wikipedia('es')
 
 
-class WikipediaBot(
-    commands.Cog,
-    name='Wikipedia',
-    description='Obtén la información que necesitas de Wikipedia.'
-):
+class WikipediaBot(commands.Cog,
+                   name='Wikipedia',
+                   description='Obtén la información que '
+                               'necesitas de Wikipedia.'):
 
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='search', aliases=['buscar', 'query'])
+    @commands.command(name='search',
+                      aliases=['buscar', 'query'],
+                      description='Realiza una búsqueda en Wikipedia.')
     async def wiki_query(self, ctx, *, args):
         wiki_result = wikipedia.search(args, results=5)
+
         file = discord.File('images/Wikipedia.png')
 
-        embed = discord.Embed(
-            colour=discord.Colour.blue(),
-            timestamp=datetime.datetime.utcnow(),
-        )
-        embed.set_thumbnail(
-            url='attachment://Wikipedia.png',
-        )
-        embed.add_field(
-            name='Estos fueron los resultados de tu búsqueda:',
-            value=wiki_result,
-            inline=False
-        )
-        embed.set_footer(
-            text=ctx.guild,
-            icon_url=ctx.guild.icon_url
-        )
+        embed = discord.Embed(colour=discord.Colour.blue(),
+                              timestamp=datetime.datetime.utcnow())
+        embed.set_thumbnail(url='attachment://Wikipedia.png')
+        embed.add_field(name='Estos fueron los resultados de tu búsqueda:',
+                        value=wiki_result,
+                        inline=False)
+        embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
         await ctx.send(embed=embed, file=file)
 
-    @commands.command(name='summary', aliases=['resumen', 'summ'])
+    @commands.command(name='summary',
+                      aliases=['resumen', 'summ'],
+                      description='Obtén el resumen de algún artículo.')
     async def wiki_summary(self, ctx, *, args):
         wiki_page = wiki.page(args)
         split = wiki_page.summary.split('.')
         sentences = split[0] + '.' + split[1] + '.' + split[2] + '.'
+
         file = discord.File('images/Wikipedia.png')
 
         if wiki_page.exists() is True:
-            embed = discord.Embed(
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.set_thumbnail(
-                url='attachment://Wikipedia.png'
-            )
-            embed.add_field(
-                name=wiki_page.title,
-                value=sentences,
-                inline=False,
-            )
-            embed.add_field(
-                name='Para visitar el artículo original visita:',
-                value=f'[{wiki_page.title} en Wikipedia]'
-                      f'({wiki_page.canonicalurl})'
-            )
-            embed.set_footer(
-                text=ctx.guild,
-                icon_url=ctx.guild.icon_url,
-            )
+            embed = discord.Embed(color=discord.Color.blue(),
+                                  timestamp=datetime.datetime.utcnow())
+            embed.set_thumbnail(url='attachment://Wikipedia.png')
+            embed.add_field(name=wiki_page.title,
+                            value=sentences,
+                            inline=False)
+            embed.add_field(name='Para visitar el artículo original visita:',
+                            value=f'[{wiki_page.title} en Wikipedia]'
+                                  f'({wiki_page.canonicalurl})')
+            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed, file=file)
 
         else:

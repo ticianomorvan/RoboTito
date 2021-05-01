@@ -41,29 +41,23 @@ async def presence_loop():
     pass
 
 menu = DefaultMenu()
-bot.help_command = PrettyHelp(
-    color=discord.Color.blue(),
-    menu=menu,
-    index_title='Comandos de RoboTito',
-    ending_note='Escribe r.help <comando> para más info. '
-                'sobre algún comando.\nTambién puedes escribir '
-                'r.help <categoría> para más info. de esa categoría.'
-)
+bot.help_command = PrettyHelp(color=discord.Color.blue(), menu=menu,
+                              index_title='Comandos de RoboTito',
+                              ending_note='Escribe r.help <comando> para más '
+                              'info. sobre algún comando.\nTambién puedes '
+                              'escribir r.help <categoría> para más info. de '
+                              'esa categoría.')
 
 
 @bot.event
 async def on_ready():
     print('Conectado como {0.user}'.format(bot))
-    await bot.change_presence(
-        status=discord.Status.dnd,
-        activity=discord.Activity(
-            type=discord.ActivityType.watching,
-            name=''
-        )
-    )
+    await bot.change_presence(status=discord.Status.dnd,
+                              activity=discord.Activity(
+                                type=discord.ActivityType.watching, name=''))
 
-# Token
 with open('databases/db_bot.json') as f:
     token_data = f.read()
     token = json.loads(token_data)
+
 bot.run(token['token'])
