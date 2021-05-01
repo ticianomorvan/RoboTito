@@ -7,12 +7,14 @@ import random
 
 import json
 
-with open('databases/db_leagueoflegends.json') as f:
+with open('databases/leagueoflegends/db_champs.json') as f:
     data = f.read()
     lol_ch = json.loads(data)
 
 
-class Lol(commands.Cog):
+class LeagueOfLegends(commands.Cog,
+                      description='Comandos variados sobre '
+                                  'League of Legends.'):
 
     def __init__(self, bot):
         self.bot = bot
@@ -223,4 +225,4 @@ class Lol(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Lol(bot))
+    bot.add_cog(LeagueOfLegends(bot))
