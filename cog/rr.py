@@ -10,7 +10,11 @@ import json
 import datetime
 
 
-class RussianRoulette(commands.Cog):
+class RussianRoulette(
+    commands.Cog,
+    name='Ruleta rusa',
+    description='Solo uno saldrá con vida.'
+):
 
     def __init__(self, bot):
         self.bot = bot

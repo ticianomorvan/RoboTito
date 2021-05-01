@@ -6,7 +6,11 @@ import datetime
 bot_icon = 'https://i.imgur.com/e4aMdPk.jpg'
 
 
-class Information(commands.Cog):
+class Information(
+    commands.Cog,
+    name='Información',
+    description='Obtén información sobre el bot, el servidor o un usuario.',
+):
 
     def __init__(self, bot):
         self.bot = bot

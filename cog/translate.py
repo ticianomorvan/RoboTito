@@ -13,7 +13,11 @@ with open('databases/db_iso639-1.json') as f:
     languages = lang['languages']
 
 
-class Translate(commands.Cog):
+class Translate(
+    commands.Cog,
+    name='Traductor',
+    description='¡Traduce en más de 180 idiomas!'
+):
 
     def __init__(self, bot):
         self.bot = bot

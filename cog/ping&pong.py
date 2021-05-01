@@ -8,7 +8,11 @@ import json
 import random
 
 
-class PingPong(commands.Cog):
+class PingPong(
+    commands.Cog,
+    name='Ping & Pong',
+    description='¡Rebotes infinitos!',
+):
 
     def __init__(self, bot):
         self.bot = bot

@@ -12,7 +12,11 @@ wikipedia.set_lang('es')
 wiki = wikipediaapi.Wikipedia('es')
 
 
-class WikipediaBot(commands.Cog):
+class WikipediaBot(
+    commands.Cog,
+    name='Wikipedia',
+    description='Obtén la información que necesitas de Wikipedia.'
+):
 
     def __init__(self, bot):
         self.bot = bot

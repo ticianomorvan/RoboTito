@@ -1,10 +1,16 @@
 import discord
 from discord.ext import commands
 
+import time
+
 import datetime
 
 
-class Moderation(commands.Cog):
+class Moderation(
+    commands.Cog,
+    name='Moderación',
+    description='Herramientas útiles para moderadores.'
+):
 
     def __init__(self, bot):
         self.bot = bot
@@ -133,6 +139,97 @@ class Moderation(commands.Cog):
                 await ctx.guild.unban(user)
                 await ctx.send(f'{user.name}#{user.discriminator} '
                                'fue desbaneado.')
+
+            else:
+                await ctx.send(
+                    'Ese usuario no se encuentra baneado.'
+                )
+
+    @commands.command(aliases=['c'])
+    @commands.has_guild_permissions(manage_messages=True)
+    async def clean(self, ctx, amount=100):
+        await ctx.send(
+            '¿Estás segur@?'
+        )
+
+        def mod(m):
+            return m.author == ctx.message.author
+
+        confirm = await self.bot.wait_for(
+            'message', check=mod, timeout=60.0
+        )
+        if confirm.content == 'si':
+            try:
+                message = await ctx.send('Preparando limpieza.')
+                time.sleep(0.35)
+                await message.edit(content='Preparando limpieza..')
+                time.sleep(0.35)
+                await message.edit(content='Preparando limpieza...')
+                time.sleep(0.35)
+                await message.edit(content='Ultimando detalles.')
+                time.sleep(0.35)
+                await message.edit(content='Ultimando detalles..')
+                time.sleep(0.35)
+                await message.edit(content='Ultimando detalles...')
+                time.sleep(0.55)
+                await ctx.channel.purge(limit=amount, bulk=True)
+                time.sleep(1.15)
+                embed = discord.Embed(color=discord.Color.blue(),
+                                      timestamp=datetime.datetime.utcnow())
+                embed.add_field(name='¡Limpieza a la orden!',
+                                value=f'Borré {amount} mensajes '
+                                      f'en el canal de {ctx.channel.name}')
+                embed.set_image(url='https://media1.tenor.com/images/'
+                                    '980fefd36ce46e30bb11e8861fa20633/'
+                                    'tenor.gif')
+                embed.set_footer(text='Limpieza de RoboTito')
+                await ctx.send(embed=embed)
+
+            except TimeoutError:
+                await ctx.send(
+                    'Se acabó el tiempo.'
+                )
+
+        elif confirm.content == 'no':
+            await ctx.send(
+                'Te dejo un rato para que lo pienses.'
+            )
+
+        else:
+            await ctx.send(
+                'No recibí ninguna respuesta.'
+            )
+
+    @commands.command(aliases=['fc'])
+    @commands.has_guild_permissions(manage_messages=True)
+    async def fastclean(self, ctx, amount=100):
+        await ctx.send(
+            '¿Estás segur@?'
+        )
+
+        def mod(m):
+            return m.author == ctx.message.author
+
+        confirm = await self.bot.wait_for(
+            'message', check=mod, timeout=60.0
+        )
+        if confirm.content == 'si':
+            try:
+                await ctx.channel.purge(limit=amount, bulk=True)
+                await ctx.send(f'Se borraron {amount} mensajes.')
+
+            except TimeoutError:
+                await ctx.send('Se acabó el tiempo.')
+
+        elif confirm.content == 'no':
+            await ctx.send(
+                'Deberías asegurarte antes de tomar una decisión como esa.'
+            )
+
+        else:
+            await ctx.send(
+                'No recibí ninguna respuesta.'
+            )
 
 
 def setup(bot):

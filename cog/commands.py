@@ -8,74 +8,31 @@ import datetime
 import random
 from random import randint
 
+import json
 
-class Comandos(commands.Cog):
+
+class Comandos(
+    commands.Cog,
+    name='Variedad',
+    description='Comandos que no entran en otra categoría.'
+):
 
     def __init__(self, bot):
         self.bot = bot
 
-# Clean & Fastclean
-    @commands.command(aliases=['c'])
-    @commands.has_guild_permissions(manage_messages=True)
-    async def clean(self, ctx, amount=100):
-        message = await ctx.send('Preparando limpieza.')
-        time.sleep(0.35)
-        await message.edit(content='Preparando limpieza..')
-        time.sleep(0.35)
-        await message.edit(content='Preparando limpieza...')
-        time.sleep(0.35)
-        await message.edit(content='Ultimando detalles.')
-        time.sleep(0.35)
-        await message.edit(content='Ultimando detalles..')
-        time.sleep(0.35)
-        await message.edit(content='Ultimando detalles...')
-        time.sleep(0.55)
-        await ctx.channel.purge(limit=amount, bulk=True)
-        time.sleep(1.15)
-        embed = discord.Embed(color=discord.Color.blue(),
-                              timestamp=datetime.datetime.utcnow())
-        embed.add_field(name='¡Limpieza a la orden!',
-                        value=f'Borré {amount} mensajes '
-                              f'en el canal de {ctx.channel.name}')
-        embed.set_image(url='https://media1.tenor.com/images/'
-                            '980fefd36ce46e30bb11e8861fa20633/tenor.gif')
-        embed.set_footer(text='Limpieza de RoboTito')
-        await ctx.send(embed=embed)
-
-    @commands.command(aliases=['fc'])
-    @commands.has_guild_permissions(manage_messages=True)
-    async def fastclean(self, ctx, amount=100):
-        await ctx.channel.purge(limit=amount, bulk=True)
-        await ctx.send(f'Se borraron {amount} mensajes.')
-
-    @commands.command(aliases=['8ball'])
+    @commands.command(
+        name='8ball',
+        description='¿Qué te responderá la bola ocho?'
+    )
     async def eightball(self, ctx, *, args):
-        guild = ctx.guild
-        answers = ('Si.',
-                   'Quizá, quien sabe.',
-                   'Definitivamente.',
-                   'Definitivamente **no**.',
-                   'Absolutamente.',
-                   'En el mejor de los casos, si.',
-                   'Esperemos que no.',
-                   'Recenle a quien sea para que eso no pase.',
-                   'No.',
-                   'Bajo ningún término.',
-                   'De ninguna manera.',
-                   'Probablemente, no.',
-                   'Hay muchas probabilidades de que suceda.',
-                   'No estoy seguro...',
-                   'No sé que responder a eso :(',
-                   'Por mi parte, ojalá.',
-                   'Si lo quieres mucho, sucederá',
-                   'Hay esperanzas, pocas, pero hay.',
-                   '¿Para qué mentirte?',
-                   'No veo por que no.',
-                   'Lo siento, pero no.',
-                   'Quizás, quizás no, no lo sé',
-                   )
+
+        with open('databases/db_8ball.json', encoding='utf8') as f:
+            data = f.read()
+            eball = json.loads(data)
+            eightball = eball['eightball_responses']
+            eightball_answer = random.choice(eightball)
+
         if args is not None:
-            answers_result = random.choice(answers)
             embed = discord.Embed(
                 colour=discord.Colour.blue(),
                 timestamp=datetime.datetime.utcnow(),
@@ -87,58 +44,16 @@ class Comandos(commands.Cog):
             )
             embed.add_field(
                 name='La respuesta es:',
-                value=f'{answers_result}',
+                value=eightball_answer,
                 inline=False,
             )
             embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url,
             )
             await ctx.send(embed=embed)
 
-    @commands.command(aliases=['saludar'])
-    async def greet(self, ctx, member=None):
-        guild = ctx.guild
-        if member is None:
-            embed = discord.Embed(
-                colour=discord.Colour.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='¡Hola!',
-                value=f'Te saludo, {ctx.author.name}',
-            )
-            embed.set_image(
-                url='https://media1.tenor.com/images/'
-                    '79f33c2f524cbfed4ef6896b39e67663/tenor.gif'
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-        elif member is not None:
-            embed = discord.Embed(
-                colour=discord.Colour.blue(),
-                timestamp=datetime.datetime.utcnow()
-            )
-            embed.add_field(
-                name='Alguien está saludándote...',
-                value=f'{ctx.author.name} te saluda, {member}'
-            )
-            embed.set_image(
-                url='https://media1.tenor.com/images/'
-                    '056c584d9335fcabf080ca43e583e3c4/tenor.gif'
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-        else:
-            pass
-
-    @commands.command(aliases=['llamar'])
+    @commands.command(description='¡Llama a un usuario!')
     async def call(self, ctx, member=None):
         phone_numbers = [
             '0348-5154678',
@@ -180,9 +95,12 @@ class Comandos(commands.Cog):
         else:
             await ctx.send('¿A quién quieres llamar?')
 
-    @commands.command(aliases=['prob'])
-    async def probabilidad(self, ctx, *, args):
-        guild = ctx.guild
+    @commands.command(
+        aliases=['probabilidad', 'prob'],
+        description='Comprueba la probabilidad de que algo suceda.'
+    )
+    async def probability(self, ctx, *, args):
+
         if args is not None:
             probabilidad = randint(0, 100)
             embed = discord.Embed(
@@ -192,16 +110,16 @@ class Comandos(commands.Cog):
             embed.add_field(
                 name='La probabilidad de...',
                 value=f'*"{args}"*',
-                inline=False
+                inline=False,
             )
             embed.add_field(
                 name='Es de un:',
                 value=f'**{probabilidad}%**',
-                inline=False
+                inline=False,
             )
             embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url,
             )
             await ctx.send(embed=embed)
 
