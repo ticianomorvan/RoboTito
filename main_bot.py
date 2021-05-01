@@ -40,7 +40,7 @@ for filename in os.listdir('./cog'):
 async def presence_loop():
     pass
 
-menu = DefaultMenu()
+menu = DefaultMenu(page_left='⬅', page_right='➡', remove='🚫')
 bot.help_command = PrettyHelp(color=discord.Color.blue(), menu=menu,
                               index_title='Comandos de RoboTito',
                               ending_note='Escribe r.help <comando> para más '

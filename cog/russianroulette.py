@@ -10,16 +10,17 @@ import json
 import datetime
 
 
-class RussianRoulette(
-    commands.Cog,
-    name='Ruleta rusa',
-    description='Solo uno saldrá con vida.'
-):
+class RussianRoulette(commands.Cog,
+                      name='Ruleta rusa',
+                      description='Solo uno saldrá con vida.'):
 
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='ruletarusa', aliases=['rr'])
+    @commands.command(name='ruletarusa',
+                      aliases=['rr'],
+                      description='Juega a la ruleta rusa solo o '
+                                  'con alguien más.')
     async def ruletarusa(self, ctx, member: discord.Member = None):
         guild = ctx.guild
         author = ctx.author.name

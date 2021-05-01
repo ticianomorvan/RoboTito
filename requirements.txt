@@ -3,5 +3,6 @@ discord.py
 translate
 wikipedia
 wikipedia-api
+discord-pretty-help
 
 # ATT-Inc 2021

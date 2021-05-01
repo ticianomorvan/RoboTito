@@ -219,7 +219,7 @@ class Anime(commands.Cog,
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
             embed.add_field(name='¡Está llorando!',
-                            value=f'**{ctx.author.name}** se comenzó a llorar',
+                            value=f'**{ctx.author.name}** comenzó a llorar',
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)

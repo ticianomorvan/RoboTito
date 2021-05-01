@@ -12,11 +12,9 @@ with open('databases/leagueoflegends/db_champs.json') as f:
     lol_ch = json.loads(data)
 
 
-class Lol(
-    commands.Cog,
-    name='League of Legends',
-    description='Comandos variados sobre League of Legends.'
-):
+class LeagueOfLegends(commands.Cog,
+                      description='Comandos variados sobre '
+                                  'League of Legends.'):
 
     def __init__(self, bot):
         self.bot = bot
@@ -227,4 +225,4 @@ class Lol(
 
 
 def setup(bot):
-    bot.add_cog(Lol(bot))
+    bot.add_cog(LeagueOfLegends(bot))
