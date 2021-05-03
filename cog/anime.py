@@ -225,6 +225,22 @@ class Anime(commands.Cog,
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
             await ctx.send(embed=embed)
 
+    @commands.command(aliases=['casar'],
+                      description='Te casas o se casan con vos')
+    async def marry(self, ctx, member: discord.Member = None):
+        choice = random.choice(gif['marry'])
+
+        if member is not None:
+            embed = discord.Embed(color=discord.Color.blue(),
+                                  timestamp=datetime.datetime.utcnow())
+            embed.add_field(name='¡Que vivan los novios!',
+                            value=f'**{member.name}** se casó con '
+                                  f'**{ctx.author.name}**',
+                            inline=False)
+            embed.set_image(url=choice)
+            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Anime(bot))
