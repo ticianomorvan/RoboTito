@@ -22,17 +22,27 @@ class Information(commands.Cog,
         gs = self.bot.guilds
         gs_count = len(gs)
 
-        embed = discord.Embed(title='RoboTito',
-                              color=discord.Color.blue(),
+        embed = discord.Embed(color=discord.Color.blue(),
                               timestamp=datetime.datetime.utcnow())
-        embed.set_author(name='Información sobre')
         embed.set_thumbnail(url=bot_icon)
+        embed.add_field(name='RoboTito',
+                        value='Información sobre mi.',
+                        inline=False)
         embed.add_field(name='Actualmente participo en:',
                         value=f'{gs_count} servidores.',
                         inline=False)
         embed.add_field(name='¿Tienes dudas?',
                         value='Consulta mi documentación en'
                               ' [readme.io](https://robotito.readme.io/)',
+                        inline=False)
+        embed.add_field(name='Mi código fuente está en:',
+                        value='[RoboTito, por ATT-Inc]'
+                              '(https://github.com/ATT-Inc/RoboTito)',
+                        inline=False)
+        embed.add_field(name='Para invitarme a un servidor:',
+                        value='Usá este [link](https://discord.com/api/oauth2/'
+                              'authorize?client_id=820819824669491210&permiss'
+                              'ions=8&scope=bot)',
                         inline=False)
         embed.set_footer(text=g, icon_url=g.icon_url)
 
@@ -84,83 +94,33 @@ class Information(commands.Cog,
     @commands.command(name='userinfo',
                       aliases=['usinfo', 'infodelusuario', 'uinfo'],
                       description='Obtén información del usuario.')
-    async def userinformation(self, ctx, member=None):
+    async def userinformation(self, ctx, member: discord.Member = None):
         g = ctx.guild
 
-        if member is not None:
-            u = member
-            u_joindate = str(u.joined_at)[:10]
-            u_createdate = str(u.created_at)[:10]
-
-            if member.nick is not None:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.set_author(name=u.name, icon_url=u.avatar_url)
-                embed.set_thumbnail(url=u.avatar_url)
-                embed.add_field(name='Nombre:',
-                                value=u.name,
-                                inline=False)
-                embed.add_field(name='Apodo:',
-                                value=f'"{u.nick}"',
-                                inline=False)
-                embed.add_field(name='ID:',
-                                value=u.id,
-                                inline=False)
-                embed.add_field(name='Se unió el:',
-                                value=u_joindate,
-                                inline=False)
-                embed.add_field(name='Cuenta creada el:',
-                                value=u_createdate,
-                                inline=False)
-                embed.set_footer(text=g, icon_url=g.icon_url)
-
-                await ctx.send(embed=embed)
-
-            else:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.set_author(name=u.name, icon_url=u.avatar_url)
-                embed.set_thumbnail(url=u.avatar_url)
-                embed.add_field(name='Nombre:',
-                                value=u.name,
-                                inline=False)
-                embed.add_field(name='ID:',
-                                value=u.id,
-                                inline=False)
-                embed.add_field(name='Se unió el:',
-                                value=u_joindate,
-                                inline=False)
-                embed.add_field(name='Cuenta creada el:',
-                                value=u_createdate,
-                                inline=False)
-                embed.set_footer(text=g, icon_url=g.icon_url)
-
-                await ctx.send(embed=embed)
-
-        else:
+        if member is None:
             author = ctx.author
-            author_joindate = str(author.joined_at)[:10]
-            author_createdate = str(author.created_at)[:10]
 
             if author.nick is not None:
                 embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.set_author(name=author.name, icon_url=author.avatar_url)
+                                      timestamp=datetime.datetime.utcnow())
                 embed.set_thumbnail(url=author.avatar_url)
-                embed.add_field(name='Nombre:',
-                                value=author.name,
+                embed.add_field(name=author.name,
+                                value=author.nick,
                                 inline=False)
-                embed.add_field(name='Apodo:',
-                                value=f'"{author.nick}"',
+                embed.add_field(name=author.color,
+                                value='Color',
                                 inline=False)
-                embed.add_field(name='ID:',
-                                value=author.id,
+                embed.add_field(name=author.top_role,
+                                value='Rol más alto',
                                 inline=False)
-                embed.add_field(name='Se unió el:',
-                                value=author_joindate,
+                embed.add_field(name=str(author.created_at)[:10],
+                                value='Su cuenta se creó el día',
                                 inline=False)
-                embed.add_field(name='Cuenta creada el:',
-                                value=author_createdate,
+                embed.add_field(name=str(author.joined_at)[:10],
+                                value='Se unió al servidor el día',
+                                inline=False)
+                embed.add_field(name='No',
+                                value='¿Es un bot?',
                                 inline=False)
                 embed.set_footer(text=g, icon_url=g.icon_url)
 
@@ -168,80 +128,138 @@ class Information(commands.Cog,
 
             else:
                 embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.set_author(name=author.name, icon_url=author.avatar_url)
+                                      timestamp=datetime.datetime.utcnow())
                 embed.set_thumbnail(url=author.avatar_url)
-                embed.add_field(name='Nombre:',
-                                value=author.name,
+                embed.add_field(name=author.name,
+                                value=f'#{author.discriminator}',
                                 inline=False)
-                embed.add_field(name='ID:',
-                                value=author.id,
+                embed.add_field(name=author.color,
+                                value='Color',
                                 inline=False)
-                embed.add_field(name='Se unió el:',
-                                value=author_joindate,
+                embed.add_field(name=author.top_role,
+                                value='Rol más alto',
                                 inline=False)
-                embed.add_field(name='Cuenta creada el:',
-                                value=author_createdate,
+                embed.add_field(name=str(author.created_at)[:10],
+                                value='Su cuenta se creó el día',
+                                inline=False)
+                embed.add_field(name=str(author.joined_at)[:10],
+                                value='Se unió al servidor el día',
+                                inline=False)
+                embed.add_field(name='No',
+                                value='¿Es un bot?',
                                 inline=False)
                 embed.set_footer(text=g, icon_url=g.icon_url)
 
                 await ctx.send(embed=embed)
+
+        if member.bot is True:
+            embed = discord.Embed(color=discord.Color.blue(),
+                                  timestamp=datetime.datetime.utcnow())
+            embed.set_thumbnail(url=member.avatar_url)
+            embed.add_field(name=member.name,
+                            value=member.nick,
+                            inline=False)
+            embed.add_field(name=member.color,
+                            value='Color',
+                            inline=False)
+            embed.add_field(name=member.top_role,
+                            value='Rol más alto',
+                            inline=False)
+            embed.add_field(name=str(member.created_at)[:10],
+                            value='Su cuenta se creó el día',
+                            inline=False)
+            embed.add_field(name=str(member.joined_at)[:10],
+                            value='Se unió al servidor el día',
+                            inline=False)
+            embed.add_field(name='Sí',
+                            value='¿Es un bot?',
+                            inline=False)
+            embed.set_footer(text=g, icon_url=g.icon_url)
+
+            await ctx.send(embed=embed)
+
+        elif member.bot is False:
+
+            if member is not None:
+
+                if member.nick is not None:
+                    embed = discord.Embed(color=discord.Color.blue(),
+                                          timestamp=datetime.datetime.utcnow())
+                    embed.set_thumbnail(url=member.avatar_url)
+                    embed.add_field(name=member.name,
+                                    value=member.nick,
+                                    inline=False)
+                    embed.add_field(name=member.color,
+                                    value='Color',
+                                    inline=False)
+                    embed.add_field(name=member.top_role,
+                                    value='Rol más alto',
+                                    inline=False)
+                    embed.add_field(name=str(member.created_at)[:10],
+                                    value='Su cuenta se creó el día',
+                                    inline=False)
+                    embed.add_field(name=str(member.joined_at)[:10],
+                                    value='Se unió al servidor el día',
+                                    inline=False)
+                    embed.add_field(name='No',
+                                    value='¿Es un bot?',
+                                    inline=False)
+                    embed.set_footer(text=g, icon_url=g.icon_url)
+
+                    await ctx.send(embed=embed)
+
+                else:
+                    embed = discord.Embed(color=discord.Color.blue(),
+                                          timestamp=datetime.datetime.utcnow())
+                    embed.set_thumbnail(url=member.avatar_url)
+                    embed.add_field(name=member.name,
+                                    value=f'#{member.discriminator}',
+                                    inline=False)
+                    embed.add_field(name=member.color,
+                                    value='Color',
+                                    inline=False)
+                    embed.add_field(name=member.top_role,
+                                    value='Rol más alto',
+                                    inline=False)
+                    embed.add_field(name=str(member.created_at)[:10],
+                                    value='Su cuenta se creó el día',
+                                    inline=False)
+                    embed.add_field(name=str(member.joined_at)[:10],
+                                    value='Se unió al servidor el día',
+                                    inline=False)
+                    embed.add_field(name='No',
+                                    value='¿Es un bot?',
+                                    inline=False)
+                    embed.set_footer(text=g, icon_url=g.icon_url)
+
+                    await ctx.send(embed=embed)
 
     @commands.command(name='avatar',
                       aliases=['av', 'useravatar', 'usericon'],
                       description='Recupera la foto de perfil de un usuario.')
-    async def useravatar(self, ctx, member=None):
+    async def useravatar(self, ctx, member: discord.Member = None):
         g = ctx.guild
 
-        if member is not None:
-            u = member
-
-            if u.nick is not None:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.add_field(name='Avatar de:',
-                                value=f'{u.name}, alias {u.nick}',
-                                inline=False)
-                embed.set_image(url=u.avatar_url)
-                embed.set_footer(text=g, icon_url=g.icon_url)
-
-                await ctx.send(embed=embed)
-
-            else:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.add_field(name='Avatar de:',
-                                value=u.name,
-                                inline=False)
-                embed.set_image(url=u.avatar_url)
-                embed.set_footer(text=g, icon_url=g.icon_url)
-
-                await ctx.send(embed=embed)
-
-        else:
+        if member is None:
             author = ctx.author
 
-            if author.nick is not None:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.add_field(name='Avatar de:',
-                                value=f'{author.name}, alias {author.nick}',
-                                inline=False)
-                embed.set_image(url=author.avatar_url)
-                embed.set_footer(text=g, icon_url=g.icon_url)
+            embed = discord.Embed(color=discord.Color.blue(),
+                                  timestamp=datetime.datetime.utcnow())
+            embed.add_field(name=author.name,
+                            value=author.nick)
+            embed.set_image(url=author.avatar_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
-                await ctx.send(embed=embed)
+            await ctx.send(embed=embed)
 
-            else:
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow)
-                embed.add_field(name='Avatar de:',
-                                value=author.name,
-                                inline=False)
-                embed.set_image(url=author.avatar_url)
-                embed.set_footer(text=g, icon_url=g.icon_url)
-
-                await ctx.send(embed=embed)
+        else:
+            embed = discord.Embed(color=discord.Color.blue(),
+                                  timestamp=datetime.datetime.utcnow())
+            embed.add_field(name=member.name,
+                            value=member.nick)
+            embed.set_image(url=member.avatar_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
+            await ctx.send(embed=embed)
 
 
 def setup(bot):
