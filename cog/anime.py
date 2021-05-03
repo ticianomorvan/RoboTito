@@ -1,7 +1,11 @@
+import asyncio
+
 import discord
 from discord.ext import commands
 
 import datetime
+
+import time
 
 import random
 
@@ -21,7 +25,7 @@ class Anime(commands.Cog,
 
     @commands.command(aliases=['abrazo'],
                       description='Abraza a un usuario.')
-    async def hug(self, ctx, member: discord.Member = None):
+    async def hug(self, ctx, member=None):
         choice = random.choice(gif['hug'])
 
         if member is not None:
@@ -32,6 +36,7 @@ class Anime(commands.Cog,
                                   f'**{member.name}**')
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -40,7 +45,7 @@ class Anime(commands.Cog,
 
     @commands.command(aliases=['beso'],
                       description='Besa a un usuario.')
-    async def kiss(self, ctx, member: discord.Member = None):
+    async def kiss(self, ctx, member=None):
         choice = random.choice(gif['kiss'])
 
         if member is not None:
@@ -52,6 +57,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -60,7 +66,7 @@ class Anime(commands.Cog,
 
     @commands.command(aliases=['acariciar'],
                       description='Acaricia a un usuario')
-    async def pat(self, ctx, member: discord.Member = None):
+    async def pat(self, ctx, member=None):
         choice = random.choice(gif['pat'])
 
         if member is not None:
@@ -72,6 +78,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -80,7 +87,7 @@ class Anime(commands.Cog,
 
     @commands.command(aliases=['golpear'],
                       description='Golpea a un usuario.')
-    async def punch(self, ctx, member: discord.Member = None):
+    async def punch(self, ctx, member=None):
         choice = random.choice(gif['punch'])
 
         if member is not None:
@@ -92,6 +99,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -99,7 +107,7 @@ class Anime(commands.Cog,
 
     @commands.command(aliases=['dormir'],
                       description='Dormir sol@ o con alguien.')
-    async def sleep(self, ctx, member: discord.Member = None):
+    async def sleep(self, ctx, member=None):
 
         if member is not None:
             choice = random.choice(gif['sleep'])
@@ -112,6 +120,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -124,11 +133,12 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
     @commands.command(aliases=['matar'],
                       description='Mata a un usuario.')
-    async def kill(self, ctx, member: discord.Member = None):
+    async def kill(self, ctx, member=None):
         choice = random.choice(gif['kill'])
 
         if member is not None:
@@ -140,6 +150,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -148,7 +159,7 @@ class Anime(commands.Cog,
     @commands.command(aliases=['saludar', 'hi'],
                       description='Saluda a todos o a '
                                   'un usuario en específico.')
-    async def greet(self, ctx, member: discord.Member = None):
+    async def greet(self, ctx, member=None):
         choice = random.choice(gif['hi'])
 
         if member is not None:
@@ -160,6 +171,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -170,11 +182,12 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
     @commands.command(aliases=['bye', 'adios'],
                       description='Despide a un usuario o despídete.')
-    async def goodbye(self, ctx, member: discord.Member = None):
+    async def goodbye(self, ctx, member=None):
         choice = random.choice(gif['bye'])
 
         if member is not None:
@@ -186,6 +199,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -197,11 +211,12 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
     @commands.command(aliases=['llorar'],
                       description='Lloras o alguien te hace llorar.')
-    async def cry(self, ctx, member: discord.Member = None):
+    async def cry(self, ctx, member=None):
         choice = random.choice(gif['cry'])
 
         if member is not None:
@@ -213,6 +228,7 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
         else:
@@ -223,23 +239,68 @@ class Anime(commands.Cog,
                             inline=False)
             embed.set_image(url=choice)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
             await ctx.send(embed=embed)
 
-    @commands.command(aliases=['casar'],
-                      description='Te casas o se casan con vos')
-    async def marry(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['marry'])
+# This command uses local files to work. For organization purposes,
+# i don't included them on the files that i push.
+# Anyway, i'm gonna work on another database system.
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Que vivan los novios!',
-                            value=f'**{member.name}** se casó con '
-                                  f'**{ctx.author.name}**',
-                            inline=False)
-            embed.set_image(url=choice)
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
-            await ctx.send(embed=embed)
+    @commands.command(name='propose',
+                      aliases=['proponer', 'casar', 'proposal'],
+                      description='Te casas con un usuario.')
+    async def marry_propose(self, ctx, member: discord.Member = None):
+        choice = random.randint(0, 9)
+        file = discord.File(f'images/gifs/marry/{choice}.gif',
+                            filename='image.gif')
+
+        if member.bot is True:
+            await ctx.send('No puedes casarte con un robot.')
+
+        elif member is None:
+            await ctx.send('No puedes casarte contigo mism@... creo.')
+
+        else:
+            await ctx.send(f'Le propusiste matrimonio a {member.name}, '
+                           '¡tiene 25 segundos para responder!')
+
+            def author(m):
+                return m.author == ctx.message.author
+
+            def couple(m):
+                return m.author == member
+
+            try:
+                answer = await self.bot.wait_for('message',
+                                                 check=couple,
+                                                 timeout=25.0)
+            except asyncio.TimeoutError:
+                await ctx.send(f'{member.name} no respondió, '
+                               'inténtalo después.')
+
+            else:
+                if answer.content == 'si':
+                    await ctx.send('Por el poder que se me ha conferido...')
+                    time.sleep(1.5)
+
+                    embed = discord.Embed(color=discord.Color.blue(),
+                                          timestamp=datetime.datetime.utcnow())
+                    embed.add_field(name='¡Los declaro esposos!',
+                                    value=f'{ctx.author.name} y '
+                                          f'{member.name} se casaron.',
+                                    inline=False)
+                    embed.set_image(url='attachment://image.gif')
+                    embed.set_footer(text=ctx.guild,
+                                     icon_url=ctx.guild.icon_url)
+
+                    await ctx.send(embed=embed, file=file)
+
+                elif answer.content == 'no':
+                    await ctx.send(f'No es el fin del mundo, {member} no es '
+                                   'la única persona en el mundo.')
+
+                else:
+                    await ctx.send('No reconocí esa respuesta.')
 
 
 def setup(bot):
