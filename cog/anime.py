@@ -11,9 +11,12 @@ import random
 
 import json
 
-with open('databases/db_gifs.json') as f:
-    data = f.read()
-    gif = json.loads(data)
+
+def get_gif(database):
+    with open('databases/db_gifs.json') as f:
+        data = f.read()
+        gif = json.loads(data)
+        return random.choice(gif[database])
 
 
 class Anime(commands.Cog,
@@ -26,7 +29,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['abrazo'],
                       description='Abraza a un usuario.')
     async def hug(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['hug'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -34,7 +36,7 @@ class Anime(commands.Cog,
             embed.add_field(name='¡Abrazo!',
                             value=f'**{ctx.author.name}** abraza a '
                                   f'**{member.name}**')
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('hug'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -47,7 +49,6 @@ class Anime(commands.Cog,
                       description='Besa a un usuario.')
     async def kiss(self, ctx, member: discord.Member = None):
         g = ctx.guild
-        choice = random.choice(gif['kiss'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -56,7 +57,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** besa a '
                                   f'**{member.name}** con mucho amor.',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('kiss'))
             embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
@@ -68,7 +69,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['acariciar'],
                       description='Acaricia a un usuario')
     async def pat(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['pat'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -77,7 +77,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** acaricia a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('pat'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -89,7 +89,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['golpear'],
                       description='Golpea a un usuario.')
     async def punch(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['punch'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -98,7 +97,7 @@ class Anime(commands.Cog,
                             value=f'**{member.name}** recibe una fuerte'
                                   f' paliza de **{ctx.author.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('punch'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -111,28 +110,24 @@ class Anime(commands.Cog,
     async def sleep(self, ctx, member: discord.Member = None):
 
         if member is not None:
-            choice = random.choice(gif['sleep'])
-
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
             embed.add_field(name='Los tórtolos se acurrucan...',
                             value=f'**{ctx.author.name}** y '
                                   f'**{member.name}** se acuestan juntos...',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('sleep'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
 
         else:
-            choice = random.choice(gif['sleepw'])
-
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
             embed.add_field(name='Alguien está con sueño...',
                             value=f'**{ctx.author.name}** se va a dormir.',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('sleepw'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -140,7 +135,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['matar'],
                       description='Mata a un usuario.')
     async def kill(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['kill'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -149,7 +143,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** asesina a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('kill'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -161,7 +155,6 @@ class Anime(commands.Cog,
                       description='Saluda a todos o a '
                                   'un usuario en específico.')
     async def greet(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['hi'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -170,7 +163,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** saluda a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('hi'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -181,7 +174,7 @@ class Anime(commands.Cog,
             embed.add_field(name='¡Buenas a todos!',
                             value=f'**{ctx.author.name}** saluda a todo mundo',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('hi'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -189,7 +182,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['bye', 'adios'],
                       description='Despide a un usuario o despídete.')
     async def goodbye(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['bye'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -198,7 +190,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** se despide de '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('bye'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -210,7 +202,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** se retira y '
                                   'saluda a todos',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('bye'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -218,7 +210,6 @@ class Anime(commands.Cog,
     @commands.command(aliases=['llorar'],
                       description='Lloras o alguien te hace llorar.')
     async def cry(self, ctx, member: discord.Member = None):
-        choice = random.choice(gif['cry'])
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
@@ -227,7 +218,7 @@ class Anime(commands.Cog,
                             value=f'**{member.name}** hizo llorar a '
                                   f'**{ctx.author.name}**',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('cry'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -238,7 +229,7 @@ class Anime(commands.Cog,
             embed.add_field(name='¡Está llorando!',
                             value=f'**{ctx.author.name}** comenzó a llorar',
                             inline=False)
-            embed.set_image(url=choice)
+            embed.set_image(url=get_gif('cry'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
