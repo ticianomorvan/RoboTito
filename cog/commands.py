@@ -11,6 +11,13 @@ from random import randint
 import json
 
 
+def get_8ball():
+    with open('databases/db_str.json', encoding='utf8') as f:
+        data = f.read()
+        ball8 = json.loads(data)
+        return random.choice(ball8['ball8'])
+
+
 class Commands(commands.Cog,
                name='Variedad',
                description='Comandos que no entran en otra categoría.'):
@@ -22,12 +29,6 @@ class Commands(commands.Cog,
                       description='¿Qué te responderá la bola ocho?')
     async def eightball(self, ctx, *, args):
 
-        with open('databases/db_8ball.json', encoding='utf8') as f:
-            data = f.read()
-            eball = json.loads(data)
-            eightball = eball['eightball_responses']
-            eightball_answer = random.choice(eightball)
-
         if args is not None:
             embed = discord.Embed(colour=discord.Colour.blue(),
                                   timestamp=datetime.datetime.utcnow())
@@ -35,7 +36,7 @@ class Commands(commands.Cog,
                             value=f'*"{args}"*',
                             inline=False)
             embed.add_field(name='La respuesta es:',
-                            value=eightball_answer,
+                            value=get_8ball(),
                             inline=False)
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 

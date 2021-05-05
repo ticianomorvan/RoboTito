@@ -1,5 +1,5 @@
 {
-    "eightball_responses": [
+    "ball8": [
         "Si.",
         "Quizá, quien sabe.",
         "Definitivamente.",
@@ -22,5 +22,18 @@
         "No veo por que no.",
         "Lo siento, pero no.",
         "Quizás, quizás no, no lo sé"
+    ],
+
+    "hug_upp": [
+        "¡Abrazo!",
+        "¡Abrázale!",
+        "Alguien quiere un abrazo...",
+        "¡Denle un abrazo!",
+        "¡Abrazo de oso!",
+        "Un fuerte abrazo para alegrar el corazón :)",
+        "Ojalá alguien me abrazara así :(",
+        "El afecto físico es hermoso",
+        "No seré el que les diga algo, ¡abrázense!",
+        "Se ven muy lindos, ¿no me dan un abrazo a mi también?"
     ]
 }

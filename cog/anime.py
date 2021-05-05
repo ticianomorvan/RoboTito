@@ -19,6 +19,20 @@ def get_gif(database):
         return random.choice(gif[database])
 
 
+def get_upp(table):
+    with open('databases/db_str.json', encoding='utf8') as f:
+        data = f.read()
+        string = json.loads(data)
+        return random.choice(string[table])
+
+
+def get_msg(table):
+    with open('databases/db_str.json', encoding='utf8') as f:
+        data = f.read()
+        string = json.loads(data)
+        return random.choice(string[table])
+
+
 class Anime(commands.Cog,
             name='Interacción',
             description='Comandos para interactuar usando gifs de anime.'):
@@ -29,15 +43,16 @@ class Anime(commands.Cog,
     @commands.command(aliases=['abrazo'],
                       description='Abraza a un usuario.')
     async def hug(self, ctx, member: discord.Member = None):
+        g = ctx.guild
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Abrazo!',
+            embed.add_field(name=get_upp('hug_upp'),
                             value=f'**{ctx.author.name}** abraza a '
                                   f'**{member.name}**')
             embed.set_image(url=get_gif('hug'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
