@@ -12,25 +12,30 @@ import random
 import json
 
 
-def get_gif(database):
+def gif(database):
     with open('databases/db_gifs.json') as f:
         data = f.read()
         gif = json.loads(data)
         return random.choice(gif[database])
 
 
-def get_upp(table):
+def open_str():
     with open('databases/db_str.json', encoding='utf8') as f:
         data = f.read()
         string = json.loads(data)
-        return random.choice(string[table])
+        return string
 
 
-def get_msg(table):
-    with open('databases/db_str.json', encoding='utf8') as f:
-        data = f.read()
-        string = json.loads(data)
-        return random.choice(string[table])
+string = open_str()
+
+
+def header(table, index_id: int):
+    ListId = random.randint(0, index_id)
+    return string[table][ListId]['header']
+
+
+# def get_msg(table):
+#     return random.choice(string[table])
 
 
 class Anime(commands.Cog,
@@ -48,10 +53,10 @@ class Anime(commands.Cog,
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name=get_upp('hug_upp'),
+            embed.add_field(name=header('hug', 9),
                             value=f'**{ctx.author.name}** abraza a '
                                   f'**{member.name}**')
-            embed.set_image(url=get_gif('hug'))
+            embed.set_image(url=gif('hug'))
             embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
@@ -72,7 +77,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** besa a '
                                   f'**{member.name}** con mucho amor.',
                             inline=False)
-            embed.set_image(url=get_gif('kiss'))
+            embed.set_image(url=gif('kiss'))
             embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
@@ -92,7 +97,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** acaricia a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('pat'))
+            embed.set_image(url=gif('pat'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -112,7 +117,7 @@ class Anime(commands.Cog,
                             value=f'**{member.name}** recibe una fuerte'
                                   f' paliza de **{ctx.author.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('punch'))
+            embed.set_image(url=gif('punch'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -131,7 +136,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** y '
                                   f'**{member.name}** se acuestan juntos...',
                             inline=False)
-            embed.set_image(url=get_gif('sleep'))
+            embed.set_image(url=gif('sleep'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -142,7 +147,7 @@ class Anime(commands.Cog,
             embed.add_field(name='Alguien está con sueño...',
                             value=f'**{ctx.author.name}** se va a dormir.',
                             inline=False)
-            embed.set_image(url=get_gif('sleepw'))
+            embed.set_image(url=gif('sleepw'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -158,7 +163,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** asesina a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('kill'))
+            embed.set_image(url=gif('kill'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -178,7 +183,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** saluda a '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('hi'))
+            embed.set_image(url=gif('hi'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -189,7 +194,7 @@ class Anime(commands.Cog,
             embed.add_field(name='¡Buenas a todos!',
                             value=f'**{ctx.author.name}** saluda a todo mundo',
                             inline=False)
-            embed.set_image(url=get_gif('hi'))
+            embed.set_image(url=gif('hi'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -205,7 +210,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** se despide de '
                                   f'**{member.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('bye'))
+            embed.set_image(url=gif('bye'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -217,7 +222,7 @@ class Anime(commands.Cog,
                             value=f'**{ctx.author.name}** se retira y '
                                   'saluda a todos',
                             inline=False)
-            embed.set_image(url=get_gif('bye'))
+            embed.set_image(url=gif('bye'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -233,7 +238,7 @@ class Anime(commands.Cog,
                             value=f'**{member.name}** hizo llorar a '
                                   f'**{ctx.author.name}**',
                             inline=False)
-            embed.set_image(url=get_gif('cry'))
+            embed.set_image(url=gif('cry'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)
@@ -244,7 +249,7 @@ class Anime(commands.Cog,
             embed.add_field(name='¡Está llorando!',
                             value=f'**{ctx.author.name}** comenzó a llorar',
                             inline=False)
-            embed.set_image(url=get_gif('cry'))
+            embed.set_image(url=gif('cry'))
             embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
 
             await ctx.send(embed=embed)

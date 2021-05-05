@@ -24,16 +24,16 @@
         "Quizás, quizás no, no lo sé"
     ],
 
-    "hug_upp": [
-        "¡Abrazo!",
-        "¡Abrázale!",
-        "Alguien quiere un abrazo...",
-        "¡Denle un abrazo!",
-        "¡Abrazo de oso!",
-        "Un fuerte abrazo para alegrar el corazón :)",
-        "Ojalá alguien me abrazara así :(",
-        "El afecto físico es hermoso",
-        "No seré el que les diga algo, ¡abrázense!",
-        "Se ven muy lindos, ¿no me dan un abrazo a mi también?"
+    "hug": [
+        {"header":"¡Abrazo!"},
+        {"header":"¡Abrázale!"},
+        {"header":"Alguien quiere un abrazo..."},
+        {"header":"¡Denle un abrazo!"},
+        {"header":"¡Abrazo de oso!"},
+        {"header":"Un fuerte abrazo para alegrar el corazón :)"},
+        {"header":"Ojalá alguien me abrazara así :("},
+        {"header":"El afecto físico es hermoso"},
+        {"header":"No seré el que les diga algo, ¡abrázense!"},
+        {"header":"Se ven muy lindos, ¿no me dan un abrazo a mi también?"}
     ]
 }
