@@ -176,11 +176,6 @@ class Error(commands.Cog):
 
             await ctx.send(embed=embed)
 
-        else:
-            await ctx.send('No encontré respuesta a eso, visitá la '
-                           'documentación para más info. '
-                           'https://robotito.readme.io')
-
 
 def setup(bot):
     bot.add_cog(Error(bot))
