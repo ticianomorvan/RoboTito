@@ -24,7 +24,7 @@
         "Quizás, quizás no, no lo sé"
     ],
 
-    "hug": [
+    "header_hug": [
         {"header":"¡Abrazo!"},
         {"header":"¡Abrázale!"},
         {"header":"Alguien quiere un abrazo..."},
@@ -35,5 +35,45 @@
         {"header":"El afecto físico es hermoso"},
         {"header":"No seré el que les diga algo, ¡abrázense!"},
         {"header":"Se ven muy lindos, ¿no me dan un abrazo a mi también?"}
+    ],
+
+    "message_hug": [
+        {"message":" abraza apasionadamente a "},
+        {"message":" le regala un caluroso abrazo a "},
+        {"message":" toma por sorpresa y abraza a "},
+        {"message":" quiere demostrarle cariño a base de abrazos a "},
+        {"message":" le obsequia un amoroso abrazo a "},
+        {"message":" abraza con mucho amor a "},
+        {"message":" le da un abrazo de oso a "},
+        {"message":" aprieta con mucho amor (y fuerza) a "},
+        {"message":" le da un cariñosísimo abrazo a "},
+        {"message":" regala su ternura al abrazar a "}
+    ],
+
+    "header_kiss": [
+        {"header":"Besos por aquí, besos por allá"},
+        {"header":"¿Acaso hay muérdago por acá?"},
+        {"header":"Los besos van, y vienen..."},
+        {"header":"Eso sí que es un beso apasionado"},
+        {"header":"Besos, besos y más besos"},
+        {"header":"¡El amor surge!"},
+        {"header":"Esto ya es mucho amor, hasta para mi"},
+        {"header":"Como están los jóvenes de hoy..."},
+        {"header":"Oigan... ya me puedo ir? ;("},
+        {"header":"¡El verdadero amor nace! (gracias a mi)"}
+    ],
+
+    "message_kiss": [
+        {"message":" besa con mucho amor a "},
+        {"message":" le roba un beso a "},
+        {"message":" toma por sorpresa con un beso a "},
+        {"message":" junta sus labios con los de "},
+        {"message":" se besa con "},
+        {"message":" consigue besar a "},
+        {"message":" besa apasionadamente a "},
+        {"message":" besa locamente a "},
+        {"message":" le da un beso con mucho cariño a "},
+        {"message":" le demuestra sus sentimientos con un beso a "}
     ]
+
 }

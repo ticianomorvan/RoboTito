@@ -30,12 +30,15 @@ string = open_str()
 
 
 def header(table, index_id: int):
-    ListId = random.randint(0, index_id)
-    return string[table][ListId]['header']
+    index = random.randint(0, index_id)
+    a_header = string[table][index]['header']
+    return a_header
 
 
-# def get_msg(table):
-#     return random.choice(string[table])
+def message(table, index_id: int):
+    index = random.randint(0, index_id)
+    a_message = string[table][index]['message']
+    return a_message
 
 
 class Anime(commands.Cog,
@@ -49,13 +52,14 @@ class Anime(commands.Cog,
                       description='Abraza a un usuario.')
     async def hug(self, ctx, member: discord.Member = None):
         g = ctx.guild
+        a = ctx.author
+        msg = message('message_hug', 9)
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name=header('hug', 9),
-                            value=f'**{ctx.author.name}** abraza a '
-                                  f'**{member.name}**')
+            embed.add_field(name=header('header_hug', 9),
+                            value=f'{a.name}{msg}{member.name}')
             embed.set_image(url=gif('hug'))
             embed.set_footer(text=g, icon_url=g.icon_url)
 
@@ -69,13 +73,14 @@ class Anime(commands.Cog,
                       description='Besa a un usuario.')
     async def kiss(self, ctx, member: discord.Member = None):
         g = ctx.guild
+        a = ctx.author
+        msg = message('message_kiss', 9)
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡El amor nace!',
-                            value=f'**{ctx.author.name}** besa a '
-                                  f'**{member.name}** con mucho amor.',
+            embed.add_field(name=header('header_kiss', 9),
+                            value=f'{a.name}{msg}{member.name}',
                             inline=False)
             embed.set_image(url=gif('kiss'))
             embed.set_footer(text=g, icon_url=g.icon_url)
