@@ -29,14 +29,14 @@ def open_str():
 string = open_str()
 
 
-def header(table, index_id: int):
-    index = random.randint(0, index_id)
+def header(table):
+    index = random.randint(0, 9)
     a_header = string[table][index]['header']
     return a_header
 
 
-def message(table, index_id: int):
-    index = random.randint(0, index_id)
+def message(table):
+    index = random.randint(0, 9)
     a_message = string[table][index]['message']
     return a_message
 
@@ -53,12 +53,12 @@ class Anime(commands.Cog,
     async def hug(self, ctx, member: discord.Member = None):
         g = ctx.guild
         a = ctx.author
-        msg = message('message_hug', 9)
+        msg = message('message_hug')
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name=header('header_hug', 9),
+            embed.add_field(name=header('header_hug'),
                             value=f'{a.name}{msg}{member.name}')
             embed.set_image(url=gif('hug'))
             embed.set_footer(text=g, icon_url=g.icon_url)
@@ -74,12 +74,12 @@ class Anime(commands.Cog,
     async def kiss(self, ctx, member: discord.Member = None):
         g = ctx.guild
         a = ctx.author
-        msg = message('message_kiss', 9)
+        msg = message('message_kiss')
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name=header('header_kiss', 9),
+            embed.add_field(name=header('header_kiss'),
                             value=f'{a.name}{msg}{member.name}',
                             inline=False)
             embed.set_image(url=gif('kiss'))
@@ -94,16 +94,18 @@ class Anime(commands.Cog,
     @commands.command(aliases=['acariciar'],
                       description='Acaricia a un usuario')
     async def pat(self, ctx, member: discord.Member = None):
+        g = ctx.guild
+        a = ctx.author
+        msg = message('message_pat')
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Caricias para todos!',
-                            value=f'**{ctx.author.name}** acaricia a '
-                                  f'**{member.name}**',
+            embed.add_field(name=header('header_pat'),
+                            value=f'{a.name}{msg}{member.name}',
                             inline=False)
             embed.set_image(url=gif('pat'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
@@ -114,16 +116,18 @@ class Anime(commands.Cog,
     @commands.command(aliases=['golpear'],
                       description='Golpea a un usuario.')
     async def punch(self, ctx, member: discord.Member = None):
+        g = ctx.guild
+        a = ctx.author
+        msg = message('message_punch')
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Golpe rabioso!',
-                            value=f'**{member.name}** recibe una fuerte'
-                                  f' paliza de **{ctx.author.name}**',
+            embed.add_field(name=header('header_punch'),
+                            value=f'{a.name}{msg}{member.name}',
                             inline=False)
             embed.set_image(url=gif('punch'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
@@ -133,27 +137,30 @@ class Anime(commands.Cog,
     @commands.command(aliases=['dormir'],
                       description='Dormir sol@ o con alguien.')
     async def sleep(self, ctx, member: discord.Member = None):
+        a = ctx.author
+        g = ctx.guild
+        msg = message('message_sleep')
+        msgw = message('message_sleepw')
 
         if member is not None:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='Los tórtolos se acurrucan...',
-                            value=f'**{ctx.author.name}** y '
-                                  f'**{member.name}** se acuestan juntos...',
+            embed.add_field(name=header('header_sleepw'),
+                            value=f'{a.name}{msgw}{member.name}',
                             inline=False)
-            embed.set_image(url=gif('sleep'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_image(url=gif('sleepw'))
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
         else:
             embed = discord.Embed(color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='Alguien está con sueño...',
-                            value=f'**{ctx.author.name}** se va a dormir.',
+            embed.add_field(name=header('header_sleep'),
+                            value=f'{a.name}{msg}',
                             inline=False)
-            embed.set_image(url=gif('sleepw'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_image(url=gif('sleep'))
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
@@ -267,7 +274,7 @@ class Anime(commands.Cog,
                       aliases=['proponer', 'casar', 'proposal'],
                       description='Te casas con un usuario.')
     async def marry_propose(self, ctx, member: discord.Member = None):
-        choice = random.randint(0, 9)
+        choice = random.randint(0)
         file = discord.File(f'images/gifs/marry/{choice}.gif',
                             filename='image.gif')
 
