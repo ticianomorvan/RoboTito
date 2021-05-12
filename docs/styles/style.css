@@ -199,12 +199,12 @@ footer {
     border-radius: 5px;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (max-height: 360px), screen and (max-width: 1080px) {
 
     .navigation__ul {
         height: 4.65em;
     }
-
+    
     .navigation__li {
         margin-top: 0.35em;
         padding: 0.25em;
@@ -212,15 +212,15 @@ footer {
         font-size: 20px;
         background: #4a99ec;
     }
-
+    
     .navigation__li:hover {
         background: #438fe0;
     }
-
+    
     .information {
         width: 90%;
     }
-
+    
     #gallery__hug {
         position: absolute;
         margin-right: 5em;
@@ -243,7 +243,7 @@ footer {
         margin-top: 1.15em;
         z-index: 60;
     }
-
+    
     .end__jumptop {
         margin: auto;
         width: 10em;
@@ -258,7 +258,9 @@ footer {
     }
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-height: 360px), screen and (max-width: 960px) {
+
+/* @media only screen and (max-width: 820px) { */
 
     .navigation__ul {
         display: none;
@@ -317,7 +319,7 @@ footer {
     }
     
     #gallery__hugcode:hover {
-        width: 40em;
+        width: 38em;
         margin-left: 3.5em;
         margin-top: 1.15em;
         z-index: 60;
@@ -385,15 +387,15 @@ footer {
     }
 
     #gallery__hug {
-        width: 30em;
+        width: 24em;
     }
     
     #gallery__hugcode {
-        width: 30em;
+        width: 24em;
     }
 
     .end__jumptop:hover {
-        width: 35%;
+        width: 40%;
     }
 
 }
@@ -409,15 +411,15 @@ footer {
     }
 
     #gallery__hug {
-        width: 30em;
+        width: 22em;
     }
     
     #gallery__hugcode {
-        width: 30em;
+        width: 22em;
     }
 
     #gallery__translate {
-        width: 27.25em;
+        width: 22em;
     }
 
     #gallery__moderation {
@@ -453,19 +455,19 @@ footer {
     }
 
     #gallery__hug {
-        width: 19em;
+        width: 18em;
     }
     
     #gallery__hugcode {
-        width: 19em;
+        width: 18em;
     }
 
     #gallery__translate {
-        width: 19em;
+        width: 17em;
     }
 
     #gallery__moderation {
-        width: 19em;
+        width: 17em;
     }
 
     .end__jumptop:hover {
