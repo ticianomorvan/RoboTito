@@ -378,10 +378,10 @@ footer {
 
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 425px) {
 
     .navigation__li {
-        margin: .35em 1em;
+        margin: .35em .5em;
     }
 
     #gallery__hug {
@@ -398,18 +398,30 @@ footer {
 
 }
 
-@media only screen and (max-width: 515px) {
+@media only screen and (max-width: 375px) {
 
     .navigation__li {
-        margin: .35em .85em;
+        margin: .35em .35em;
+    }
+
+    .navigation__li i {
+        font-size: 28px;
     }
 
     #gallery__hug {
-        width: 29em;
+        width: 30em;
     }
     
     #gallery__hugcode {
-        width: 29em;
+        width: 30em;
+    }
+
+    #gallery__translate {
+        width: 27.25em;
+    }
+
+    #gallery__moderation {
+        width: 21.75em;
     }
 
     .end__jumptop:hover {
@@ -418,63 +430,46 @@ footer {
 
 }
 
-@media only screen and (max-width: 485px) {
+@media only screen and (max-width: 320px) {
+
+    .navigation__responsive {
+        height: 5em;
+    }
 
     .navigation__li {
-        margin: .35em .65em;
+        margin: .20em .15em;
+    }
+
+    .navigation__li i {
+        font-size: 26px;
+    }
+
+    .header {
+        width: 90%;
+    }
+
+    .information {
+        width: 85%;
     }
 
     #gallery__hug {
-        width: 26.85em;
+        width: 19em;
     }
     
     #gallery__hugcode {
-        width: 26.85em;
+        width: 19em;
     }
 
-    .end__jumptop:hover {
-        width: 35%;
+    #gallery__translate {
+        width: 19em;
     }
 
-}
-
-@media only screen and (max-width: 450px) {
-
-    .navigation__li {
-        margin: .35em .60em;
-    }
-
-    #gallery__hug {
-        width: 24.85em;
-    }
-    
-    #gallery__hugcode {
-        width: 24.85em;
-    }
-
-    .end__jumptop:hover {
-        width: 40%;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .navigation__li {
-        margin: .35em .40em;
-    }
-
-    #gallery__hug {
-        width: 22em;
-    }
-    
-    #gallery__hugcode {
-        width: 22em;
+    #gallery__moderation {
+        width: 19em;
     }
 
     .end__jumptop:hover {
         width: 45%;
     }
 
-    #gallery__translate {
-        width: 22em;
-    }
 }
