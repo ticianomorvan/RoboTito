@@ -11,13 +11,21 @@
         <script src="https://kit.fontawesome.com/2ad37bf6e7.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <nav class="navigation" id="navigation">
+        <nav class="nav">
             <ul class="navigation__ul">
-                <a href="index.html"><i class="fas fa-home"></i><li class="navigation__li">Inicio</li></a>
-                <a href="#"><i class="fas fa-book"></i><li class="navigation__li">Características</li></a>
-                <a href="#"><i class="fas fa-users-cog"></i><li class="navigation__li">Contribuir</li></a>
-                <a href="#"><i class="far fa-question-circle"></i><li class="navigation__li">FAQ</li></a>
-                <a href="#"><i class="fas fa-paper-plane"></i><li class="navigation__li">Contacto</li></a>
+                <li class="navigation__li"><i class="fas fa-home"></i><a href="index.html">Inicio</a></li>
+                <li class="navigation__li"><i class="fas fa-book"></i><a href="#">Características</a></li>
+                <li class="navigation__li"><i class="fas fa-users-cog"></i><a href="#">Contribuir</a></li>
+                <li class="navigation__li"><i class="far fa-question-circle"></i><a href="#">FAQ</a></li>
+                <li class="navigation__li"><i class="fas fa-paper-plane"></i><a href="#">Contacto</a></li>
+            </ul>
+            <ul class="navigation__responsive">
+                <div class="navigation__li-container"></div>
+                    <li class="navigation__li"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                    <li class="navigation__li"><a href="#"><i class="fas fa-book"></i></a></li>
+                    <li class="navigation__li"><a href="#"><i class="fas fa-users-cog"></i></a></li>
+                    <li class="navigation__li"><a href="#"><i class="far fa-question-circle"></i></a></li>
+                    <li class="navigation__li"><a href="#"><i class="fas fa-paper-plane"></i></a></li>
             </ul>
         </nav>
         <div class="header">
@@ -50,7 +58,7 @@
             <div class="end">
                 <h2>¡Y mucho más!</h2>
                 <div class="end__jumptop">
-                    <a class="end__button" href="#navigation">¡Volvamos arriba!</a>
+                    <a class="end__button" href="#">¡Volvamos arriba!</a>
                 </div>
             </div>
         </div>
