@@ -297,6 +297,67 @@ class Moderation(commands.Cog,
                 await ctx.send('Deberías asegurarte antes de tomar '
                                'una decisión como esa.')
 
+    @commands.command(name='nick',
+                      aliases=['changenick', 'apodo'],
+                      description='Cambia el apodo de otra persona.')
+    async def nick(self, ctx, member: discord.Member = None):
+
+        def author(m):
+            return m.author == ctx.author
+
+        if ctx.message.author.guild_permissions.manage_nicknames:
+            if member is not None:
+                last_nick = member.nick
+
+                await ctx.send(f'¿Qué apodo le quieres poner a {member.name}?')
+
+                try:
+                    nick = await self.bot.wait_for('message',
+                                                   check=author,
+                                                   timeout=30.0)
+
+                except asyncio.TimeoutError:
+                    await ctx.send('Tiempo expirado.')
+
+                else:
+                    if nick.content is not None:
+                        await member.edit(nick=nick.content)
+                        await ctx.send('¡Apodo cambiado correctamente! '
+                                       f'Ahora el apodo de {member.name} es: '
+                                       f'**{member.nick}**, '
+                                       f'antes *{last_nick}*.')
+                    else:
+                        await ctx.send('Necesito saber que apodo '
+                                       'le quieres poner.')
+
+            else:
+                await ctx.send('No puedo cambiar el apodo de un administrador '
+                               'o moderador, en su lugar, cambia tu apodo a '
+                               'través de la función de Discord.')
+
+        else:
+            if member is not None:
+                await ctx.send('No tienes los permisos para cambiar '
+                               'el apodo de alguien más.')
+
+            else:
+                await ctx.send('¿Qué apodo te quieres poner?')
+
+                try:
+                    nick = await self.bot.wait_for('message',
+                                                   check=author,
+                                                   timeout=30.0)
+
+                except asyncio.TimeoutError:
+                    await ctx.send('Tiempo expirado.')
+
+                else:
+                    if nick.content is not None:
+                        await ctx.author.edit(nick=f'{nick.content}')
+                        await ctx.send('¡Genial! ahora tu apodo es '
+                                       f'**{ctx.author.nick}**, antes '
+                                       f'{last_nick}')
+
 
 def setup(bot):
     bot.add_cog(Moderation(bot))
