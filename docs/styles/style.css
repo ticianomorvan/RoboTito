@@ -199,7 +199,7 @@ footer {
     border-radius: 5px;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 1080px) {
 
     .navigation__ul {
         height: 4.65em;
@@ -339,6 +339,10 @@ footer {
 
 @media only screen and (max-width: 720px) {
 
+    .navigation__li {
+        margin: .35em 0.90em;
+    }
+
     #gallery__hug {
         position: absolute;
         margin-right: 0em;
@@ -417,7 +421,7 @@ footer {
 @media only screen and (max-width: 485px) {
 
     .navigation__li {
-        margin: .35em .75em;
+        margin: .35em .65em;
     }
 
     #gallery__hug {
@@ -450,5 +454,27 @@ footer {
 
     .end__jumptop:hover {
         width: 40%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .navigation__li {
+        margin: .35em .40em;
+    }
+
+    #gallery__hug {
+        width: 22em;
+    }
+    
+    #gallery__hugcode {
+        width: 22em;
+    }
+
+    .end__jumptop:hover {
+        width: 45%;
+    }
+
+    #gallery__translate {
+        width: 22em;
     }
 }
