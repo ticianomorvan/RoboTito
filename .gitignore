@@ -2,7 +2,6 @@
 photos
 .vscode
 cog/__pycache__/
-docs
 images
 
 # Databases
@@ -13,3 +12,5 @@ databases/db_playlists.json
 # Files
 robotito.log
 cog/welcome.py
+docs/_config.yml
+docs/index.md

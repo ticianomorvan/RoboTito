@@ -1,0 +1,182 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navigation__ul {
+    padding-top: 1em;
+    height: 50px;
+    background-color: #50a0f4;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.navigation__ul i {
+    margin: auto;
+    padding-left: 1em;
+}
+
+.navigation__li {
+    padding-left: 0.35em;
+    display: inline-block;
+}
+
+.navigation__ul a {
+    color: rgb(230, 230, 230);
+}
+
+.navigation__ul a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.header {
+    margin: 1.25em auto;
+    text-align: center;
+}
+
+.header p {
+    font-size: 20px;
+}
+
+.header img {
+    width: 10em;
+    border-radius: 25px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0.5em;
+    transition: width 1s;
+}
+
+.header img:hover {
+    width: 12.5em;
+}
+
+.information {
+    margin: auto;
+    text-align: center;
+    width: 38em;
+    margin-bottom: 2.5em;
+}
+
+.gallery {
+    margin: auto;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 28px;
+    margin-bottom: 0.8em;
+}
+
+.gallery h3 {
+    font-size: 20px;
+    margin-bottom: 1.25em;
+}
+
+.gallery img {
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #50a0f4;
+}
+
+#gallery__hug {
+    position: absolute;
+    margin-right: 10em;
+    z-index: 40;
+}
+
+#gallery__hugcode {
+    position: relative;
+    margin-top: 1.5em;
+    margin-left: 15em;
+    margin-bottom: 3em;
+    z-index: 20;
+    opacity: 0.2;
+    transition: z-index .05s, width 1.25s, all 1.15s;
+}
+
+#gallery__hugcode:hover {
+    width: 42.5em;
+    margin-left: 11.75em;
+    margin-top: 1.15em;
+    z-index: 60;
+    opacity: 1;
+}
+
+#gallery__translate {
+    margin-bottom: 1em;
+}
+
+#gallery__fulltranslate {
+    margin-bottom: 3em;
+}
+
+#gallery__moderation {
+    margin-bottom: 2.5em;
+}
+
+.end__jumptop {
+    margin: auto;
+    width: 10em;
+    padding: 0.5em;
+    background:#50a0f4;
+    border-radius: 10px;
+    transition: width 1s;
+}
+
+.end__jumptop:hover {
+    width: 14%;
+}
+
+.end__jumptop a {
+    color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+
+.end__jumptop a:hover {
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5em;
+    height: 6em;
+    background: #50a0f4;
+}
+
+.footer__ul {
+    padding-top: 1em;
+}
+
+.footer__attinc {
+    text-align: center;
+    padding-bottom: .65em;
+    color: white;
+}
+
+.footer__attinca {
+    color: white;
+    padding: 0.35em;
+    text-decoration: none;
+    background: #438fe0;
+    border-radius: 5px;
+    transition: all 0.35s;
+}
+
+.footer__attinca:hover {
+    padding: 0.38em;
+    font-size: 16px;
+    background: #2b7bd1;
+}
+
+.footer__github {
+    padding: 0.15em;
+    color: white;
+    font-size: 30px;
+    background: #50a0f4;
+    transition: all .35s;
+}
+
+.footer__github:hover {
+    font-size: 35px;
+    background: #438fe0;
+    border-radius: 5px;
+}
