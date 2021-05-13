@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands, tasks
+from discord.ext import commands
 
 from pretty_help import DefaultMenu, PrettyHelp
 
@@ -12,14 +12,11 @@ import json
 # Logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(
-    filename='robotito.log',
-    encoding='utf-8',
-    mode='w',
-)
-handler.setFormatter(logging.Formatter(
-    '%(asctime)s:%(levelname)s:%(name)s: %(message)s')
-)
+handler = logging.FileHandler(filename='robotito.log',
+                              encoding='utf-8',
+                              mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:'
+                                       '%(name)s: %(message)s'))
 logger.addHandler(handler)
 
 # Inicio
@@ -35,11 +32,6 @@ for filename in os.listdir('./cog'):
     if filename.endswith('.py'):
         bot.load_extension(f'cog.{filename[:-3]}')
 
-
-@tasks.loop(minutes=5)
-async def presence_loop():
-    pass
-
 menu = DefaultMenu(page_left='⬅', page_right='➡', remove='🚫')
 bot.help_command = PrettyHelp(color=discord.Color.blue(), menu=menu,
                               index_title='Comandos de RoboTito',
@@ -54,7 +46,9 @@ async def on_ready():
     print('Conectado como {0.user}'.format(bot))
     await bot.change_presence(status=discord.Status.dnd,
                               activity=discord.Activity(
-                                type=discord.ActivityType.watching, name=''))
+                                type=discord.ActivityType.watching,
+                                name='r.help | r.docs | r.info'))
+
 
 with open('databases/db_bot.json') as f:
     token_data = f.read()

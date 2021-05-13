@@ -24,7 +24,7 @@
         "Quizás, quizás no, no lo sé"
     ],
 
-    "hug": [
+    "header_hug": [
         {"header":"¡Abrazo!"},
         {"header":"¡Abrázale!"},
         {"header":"Alguien quiere un abrazo..."},
@@ -35,5 +35,148 @@
         {"header":"El afecto físico es hermoso"},
         {"header":"No seré el que les diga algo, ¡abrázense!"},
         {"header":"Se ven muy lindos, ¿no me dan un abrazo a mi también?"}
+    ],
+
+    "message_hug": [
+        {"message":" abraza apasionadamente a "},
+        {"message":" le regala un caluroso abrazo a "},
+        {"message":" toma por sorpresa y abraza a "},
+        {"message":" quiere demostrarle cariño a base de abrazos a "},
+        {"message":" le obsequia un amoroso abrazo a "},
+        {"message":" abraza con mucho amor a "},
+        {"message":" le da un abrazo de oso a "},
+        {"message":" aprieta con mucho amor (y fuerza) a "},
+        {"message":" le da un cariñosísimo abrazo a "},
+        {"message":" regala su ternura al abrazar a "}
+    ],
+
+    "header_kiss": [
+        {"header":"Besos por aquí, besos por allá"},
+        {"header":"¿Acaso hay muérdago por acá?"},
+        {"header":"Los besos van, y vienen..."},
+        {"header":"Eso sí que es un beso apasionado"},
+        {"header":"Besos, besos y más besos"},
+        {"header":"¡El amor surge!"},
+        {"header":"Esto ya es mucho amor, hasta para mi"},
+        {"header":"Como están los jóvenes de hoy..."},
+        {"header":"Oigan... ya me puedo ir? ;("},
+        {"header":"¡El verdadero amor nace! (gracias a mi)"}
+    ],
+
+    "message_kiss": [
+        {"message":" besa con mucho amor a "},
+        {"message":" le roba un beso a "},
+        {"message":" toma por sorpresa con un beso a "},
+        {"message":" junta sus labios con los de "},
+        {"message":" se besa con "},
+        {"message":" consigue besar a "},
+        {"message":" besa apasionadamente a "},
+        {"message":" besa locamente a "},
+        {"message":" le da un beso con mucho cariño a "},
+        {"message":" le demuestra sus sentimientos con un beso a "}
+    ],
+    
+    "header_pat": [
+        {"header":"Cariñitos, cariñitos"},
+        {"header":"Caricias y más caricias"},
+        {"header":"Las caricias se dan una vez más"},
+        {"header":"Ojalá una robot me hiciera caricias :("},
+        {"header":"Los cariñitos no dejan de llegar"},
+        {"header":"No puedo dejar de pensar que yo también quiero cariñitos ;("},
+        {"header":"Esas son muchas caricias, quizá demasiadas"},
+        {"header":"Ustedes sigan acariciándose, yo... iré a llorar"},
+        {"header":"Ni dos animales se acariciarían tanto como ustedes"},
+        {"header":"¿Ustedes se acarician por algo o solo por gusto?"}
+    ],
+
+    "message_pat": [
+        {"message":" acaricia con sumo cuidado a "},
+        {"message":" le hace cariñitos a "},
+        {"message":" acaricia con ternura a "},
+        {"message":" acaricia tiernamente a "},
+        {"message":" acaricia suavemente a "},
+        {"message":" transmite su cariño a "},
+        {"message":" le hace cálidos cariños a "},
+        {"message":" le regala suaves cariños a "},
+        {"message":" le da tiernas caricias a "},
+        {"message":" acaricia con mucho amor a "}
+    ],
+
+    "header_punch": [
+        {"header":"¡Lo hizo m$#&!a!"},
+        {"header":"¡Basta de violencia!"},
+        {"header":"¡Dejen de golpearse!"},
+        {"header":"Yo no voy a ver como se matan"},
+        {"header":"Eso va a requerir un doctor"},
+        {"header":"La violencia atrae más violencia"},
+        {"header":"¿Estamos en una pelea de boxeo?"},
+        {"header":"Hasta a mi me dolió eso"},
+        {"header":"Yo me metería, pero prefiero seguir viviendo"},
+        {"header":"No entiendo que ganan con todo esto"}
+    ],
+
+    "message_punch": [
+        {"message":" golpeó a "},
+        {"message":" destrozó de un golpe a "},
+        {"message":" le voló la cara a "},
+        {"message":" cacheteó a "},
+        {"message":" golpeó fuertemente a "},
+        {"message":" le dio un tremendo golpe a "},
+        {"message":" golpeó salvajemente a "},
+        {"message":" destrozó brutalmente a "},
+        {"message":" le giró la cabeza a "},
+        {"message":" le dio un golpe rotundo a"}
+    ],
+
+    "header_sleep": [
+        {"header":"Alguien tiene sueño..."},
+        {"header":"Hasta a mi me da sueño"},
+        {"header":"Alguien debería dormirse más temprano"},
+        {"header":"No puedo verte con esa cara, ve a dormir"},
+        {"header":"¿Se te apaga el tele?"},
+        {"header":"¿Te estás durmiendo o solo te aburro?"},
+        {"header":"Al menos, si vas a poner esa cara, ve a dormir"},
+        {"header":"Esos bostezos si se pueden ver"},
+        {"header":"No entiendo como puedes tener tanto sueño"},
+        {"header":"La verdad, esa no es tu mejor cara"}
+    ],
+
+    "header_sleepw": [
+        {"header":"Ay, estos jóvenes de hoy tan cariñosos..."},
+        {"header":"Pueden, al menos, ¿no hacerlo frente a nosotros?"},
+        {"header":"Los tórtolos se acurrucan..."},
+        {"header":"¿La parejita ya se va a dormir?"},
+        {"header":"¿Se contagian el sueño ustedes?"},
+        {"header":"Los tontitos se acuestan juntos..."},
+        {"header":"Los enamorados se van a acostar parece ser"},
+        {"header":"No traigan más vidas al mundo, ¿sí"},
+        {"header":"La cama es un lugar para dormir, ¿entendieron?"},
+        {"header":"Espero que solo duerman"}
+    ],
+
+    "message_sleep": [
+        {"message":" se va a dormir."},
+        {"message":" tiene tanto sueño que se retira."},
+        {"message":" no logra despertarse y se duerme."},
+        {"message":" pierde contra el sueño y se duerme."},
+        {"message":" tiene mucho sueño."},
+        {"message":" necesita una buena siesta."},
+        {"message":" debería irse a dormir."},
+        {"message":" va a tener una gran cita... con la cama."},
+        {"message":" procede a dormir por un largo rato."},
+        {"message":" no puede seguir en pié y se acuesta a dormir."}
+    ],
+
+    "message_sleepw": [
+        {"message":" se acuesta a dormir con "},
+        {"message":" se recuesta con "},
+        {"message":" se acurruca con "},
+        {"message":" va a la cama con "},
+        {"message":" se recuesta junto a "},
+        {"message":" se duerme con "},
+        {"message":" se acuesta junto a "},
+        {"message":" duerme junto a "},
+        {"message":" duerme plácidamente con "},
+        {"message":" logra dormirse con "}
     ]
 }
