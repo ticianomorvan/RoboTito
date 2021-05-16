@@ -3,6 +3,7 @@ photos
 .vscode
 cog/__pycache__/
 images
+docs/raw_files
 
 # Databases
 databases/db_bot.json
