@@ -50,6 +50,17 @@ async def on_ready():
                                 name='r.help | r.docs | r.info'))
 
 
+@bot.event
+async def on_message(message):
+    channel = message.channel
+    if message.content in ['hola robotito', 'Hola robotito',
+                           'Hola Robotito', 'Hola RoboTito']:
+        await channel.send(f'Hola {message.author.mention}!')
+
+    else:
+        pass
+
+
 with open('databases/db_bot.json') as f:
     token_data = f.read()
     token = json.loads(token_data)
