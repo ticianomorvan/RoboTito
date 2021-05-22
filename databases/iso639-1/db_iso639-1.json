@@ -1,4 +1,112 @@
 {
+    "afrikaans": [
+        "afrikaans",
+        "Afrikaans",
+        "africano",
+        "Africano"
+    ],
+
+    "arabic": [
+        "arabic",
+        "Arabic",
+        "árabe",
+        "Árabe",
+        "arabe",
+        "Arabe"
+    ],
+
+    "belarusian": [
+        "belarusian",
+        "Belarusian",
+        "bielorruso",
+        "Bielorruso"
+    ],
+
+    "bulgarian": [
+        "bulgarian",
+        "Bulgarian",
+        "búlgaro",
+        "Búlgaro",
+        "bulgaro",
+        "Bulgaro"
+    ],
+
+    "bosnian": [
+        "bosnian",
+        "Bosnian",
+        "bosnio",
+        "Bosnian"
+    ],
+
+    "catalan": [
+        "catalan",
+        "Catalan",
+        "valencian",
+        "Valencian",
+        "catalán",
+        "Catalán",
+        "catalan",
+        "Catalan",
+        "valenciano",
+        "Valenciano"
+    ],
+
+    "czech": [
+        "czech",
+        "Czech",
+        "checo",
+        "Checo"
+    ],
+
+    "welsh": [
+        "welsh",
+        "Welsh",
+        "galés",
+        "Galés",
+        "gales",
+        "Gales"
+    ],
+
+    "danish": [
+        "danish",
+        "Danish",
+        "danés",
+        "Danés",
+        "danes",
+        "Danes"
+    ],
+
+    "german": [
+        "german",
+        "German",
+        "alemán",
+        "Alemán",
+        "aleman",
+        "Aleman"
+    ],
+
+    "greek": [
+        "greek",
+        "Greek",
+        "modern greek",
+        "modern Greek",
+        "Modern greek",
+        "Modern Greek",
+        "griego",
+        "Griego",
+        "griego moderno",
+        "griego Moderno",
+        "Griego moderno",
+        "Griego Moderno"
+    ],
+
+    "english": [
+        "english",
+        "English",
+        "inglés",
+        "Inglés"
+    ],
+
     "languages": [
         {"codename":"aa", "alias_en":"afar", "alias_es":"afar"},
         {"codename":"ab", "alias_en":"abkhazian", "alias_es":"abjasio"},
