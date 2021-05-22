@@ -9,11 +9,12 @@ import datetime
 
 import json
 
+# Remaking in progress
 
-with open('databases/db_iso639-1.json') as f:
+with open('databases/db_ttlocales.json', encoding='utf-8') as f:
     data = f.read()
     lang = json.loads(data)
-    languages = lang['languages']
+    locales = lang['languages']
 
 
 class Translate(commands.Cog,
@@ -51,7 +52,7 @@ class Translate(commands.Cog,
             await ctx.send('¿Desde qué idioma quieres traducir?')
 
             def check(m):
-                return m.content in languages
+                return m.content in locales
 
             def author(m):
                 return m.author == ctx.message.author
