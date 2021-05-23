@@ -1,9 +1,55 @@
 {
+    "afar": [
+        "afar",
+        "Afar"
+    ],
+
+    "abkhazian": [
+        "abkhazian",
+        "Abkhazian",
+        "abjasio",
+        "Abjasio",
+        "abjasiano",
+        "Abjasiano"
+    ],
+
+    "avestan": [
+        "avestan",
+        "Avestan",
+        "avéstico",
+        "Avéstico"
+    ],
+
     "afrikaans": [
         "afrikaans",
         "Afrikaans",
         "africano",
         "Africano"
+    ],
+
+    "akan": [
+        "akan",
+        "Akan",
+        "akano",
+        "Akano"
+    ],
+
+    "amharic": [
+        "amharic",
+        "Amharic",
+        "amhárico",
+        "Amhárico",
+        "amharico",
+        "Amharico"
+    ],
+
+    "aragonese": [
+        "aragonese",
+        "Aragonese",
+        "aragonés",
+        "Aragonés",
+        "aragones",
+        "Aragones"
     ],
 
     "arabic": [
@@ -13,6 +59,47 @@
         "Árabe",
         "arabe",
         "Arabe"
+    ],
+
+    "assamese": [
+        "assamese",
+        "Assamese",
+        "asamés",
+        "Asamés",
+        "asames",
+        "Asames"
+    ],
+
+    "avaric": [
+        "avaric",
+        "Avaric",
+        "avar",
+        "Avar",
+        "ávaro",
+        "Ávaro"
+    ],
+
+    "aymara": [
+        "aymara",
+        "Aymara",
+        "aimara",
+        "Aimara"
+    ],
+
+    "azerbaijani": [
+        "azerbaijani",
+        "Azerbaijani",
+        "azerí",
+        "Azerí",
+        "azerbaijano",
+        "Azerbaijano"
+    ],
+
+    "bashkir": [
+        "bashkir",
+        "Bashkir",
+        "baskir",
+        "Baskir"
     ],
 
     "belarusian": [
@@ -29,6 +116,48 @@
         "Búlgaro",
         "bulgaro",
         "Bulgaro"
+    ],
+
+    "bihari": [
+        "bihari",
+        "Bihari",
+        "bhoyapurí",
+        "Bhoyapurí",
+        "bhoyapuri",
+        "Bhoyapuri"
+    ],
+
+    "bislama": [
+        "bislama",
+        "Bislama"
+    ],
+
+    "bambara": [
+        "bambara",
+        "Bambara"
+    ],
+
+    "bengali": [
+        "bengali",
+        "Bengali",
+        "bengali",
+        "Bengalí"
+    ],
+
+    "tibetan": [
+        "tibetan",
+        "Tibetan",
+        "tibetano",
+        "Tibetano"
+    ],
+
+    "breton": [
+        "breton",
+        "Breton",
+        "bretón",
+        "Bretón",
+        "breton",
+        "Breton"
     ],
 
     "bosnian": [
@@ -51,11 +180,82 @@
         "Valenciano"
     ],
 
+    "chechen": [
+        "chechen",
+        "Chechen",
+        "checheno",
+        "Checheno"
+    ],
+    
+    "chamorro": [
+        "chamorro",
+        "Chamorro"
+    ],
+
+    "corsican": [
+        "corsican",
+        "Corsican",
+        "corso",
+        "Corso"
+    ],
+
+    "cree": [
+        "cree",
+        "Cree"
+    ],
+
     "czech": [
         "czech",
         "Czech",
         "checo",
         "Checo"
+    ],
+
+    "churchslavic": [
+        "church slavic",
+        "Church slavic",
+        "Church Slavic",
+        "church Slavic",
+        "old slavonic",
+        "Old slavonic",
+        "Old Slavonic",
+        "old Slavonic",
+        "church slavonic",
+        "Church slavonic",
+        "Church Slavonic",
+        "church Slavonic",
+        "old bulgarian",
+        "Old bulgarian",
+        "Old Bulgarian",
+        "old Bulgarian",
+        "old church slavonic",
+        "Old church slavonic",
+        "Old Church slavonic",
+        "Old Church Slavonic",
+        "old Church Slavonic",
+        "old church Slavonic",
+        "Old church Slavonic",
+        "eslavo eclesiático antiguo",
+        "Eslavo eclesiático antiguo",
+        "Eslavo Eclesiático antiguo",
+        "Eslavo Eclesiático Antiguo",
+        "eslavo Eclesiático Antiguo",
+        "eslavo eclesiático Antiguo",
+        "Eslavo eclesiático Antiguo",
+        "eslavo eclesiatico antiguo",
+        "Eslavo eclesiatico antiguo",
+        "Eslavo Eclesiatico antiguo",
+        "Eslavo Eclesiatico Antiguo",
+        "eslavo Eclesiatico Antiguo",
+        "eslavo eclesiatico Antiguo",
+        "Eslavo eclesiatico Antiguo"
+    ],
+
+    "chuvash": [
+        "chuvash",
+        "Chuvash",
+        "chuvasio",
+        "Chuvasio"
     ],
 
     "welsh": [
@@ -85,6 +285,31 @@
         "Aleman"
     ],
 
+    "divehi": [
+        "divehi",
+        "Divehi",
+        "dhivehi",
+        "Dhivehi",
+        "maldivian",
+        "Maldivian",
+        "maldivo",
+        "Maldivo"
+    ],
+
+    "dzongkha": [
+        "dzongkha",
+        "Dzongkha"
+    ],
+
+    "ewe": [
+        "ewe",
+        "Ewe",
+        "ewé",
+        "Ewé",
+        "ewe",
+        "Ewe"
+    ],
+
     "greek": [
         "greek",
         "Greek",
@@ -104,193 +329,1186 @@
         "english",
         "English",
         "inglés",
-        "Inglés"
+        "Inglés",
+        "ingles",
+        "Ingles"
     ],
 
-    "languages": [
-        {"codename":"aa", "alias_en":"afar", "alias_es":"afar"},
-        {"codename":"ab", "alias_en":"abkhazian", "alias_es":"abjasio"},
-        {"codename":"ae", "alias_en":"avestan", "alias_es":"avéstico"},
-        {"codename":"af", "alias_en":"afrikaans", "alias_es":"afrikáans"},
-        {"codename":"ak", "alias_en":"akan", "alias_es":"akano"},
-        {"codename":"am", "alias_en":"amharic", "alias_es":"amhárico"},
-        {"codename":"an", "alias_en":"aragonese", "alias_es":"aragonés"},
-        {"codename":"ar", "alias_en":"arabic", "alias_es":"árabe"},
-        {"codename":"as", "alias_en":"assamese", "alias_es":"asamés"},
-        {"codename":"av", "alias_en":"avaric", "alias_es":"avar"},
-        {"codename":"ay", "alias_en":"aymara", "alias_es":"aimara"},
-        {"codename":"az", "alias_en":"azerbaijani", "alias_es":"azerí"},
-        {"codename":"ba", "alias_en":"bashkir", "alias_es":"baskir"},
-        {"codename":"be", "alias_en":"belarusian", "alias_es":"bielorruso"},
-        {"codename":"bg", "alias_en":"bulgarian", "alias_es":"búlgaro"},
-        {"codename":"bh", "alias_en":"bihari", "alias_es":"bhoyapurí"},
-        {"codename":"bi", "alias_en":"bislama", "alias_es":"bislama"},
-        {"codename":"bm", "alias_en":"bambara", "alias_es":"bambara"},
-        {"codename":"bn", "alias_en":"bengali", "alias_es":"bengalí"},
-        {"codename":"bo", "alias_en":"tibetan", "alias_es":"tibetano"},
-        {"codename":"br", "alias_en":"breton", "alias_es":"bretón"},
-        {"codename":"bs", "alias_en":"bosnian", "alias_es":"bosnio"},
-        {"codename":"ca", "alias_en":"catalan", "alias_es":"catalán"},
-        {"codename":"ce", "alias_en":"chechen", "alias_es":"checheno"},
-        {"codename":"ch", "alias_en":"chamorro", "alias_es":"chamorro"},
-        {"codename":"co", "alias_en":"corsican", "alias_es":"corso"},
-        {"codename":"cr", "alias_en":"cree", "alias_es":"cree"},
-        {"codename":"cs", "alias_en":"czech", "alias_es":"checo"},
-        {"codename":"cu", "alias_en":"church slavic", "alias_es":"eslavo eclesiático antiguo"},
-        {"codename":"cv", "alias_en":"chuvash", "alias_es":"chuvasio"},
-        {"codename":"cy", "alias_en":"welsh", "alias_es":"galés"},
-        {"codename":"da", "alias_en":"danish", "alias_es":"danés"},
-        {"codename":"de", "alias_en":"german", "alias_es":"alemán"},
-        {"codename":"dv", "alias_en":"divehi", "alias_es":"maldivo"},
-        {"codename":"dz", "alias_en":"dzongkha", "alias_es":"dzongkha"},
-        {"codename":"ee", "alias_en":"ewe", "alias_es":"ewé"},
-        {"codename":"el", "alias_en":"greek", "alias_es":"griego"},
-        {"codename":"en", "alias_en":"english", "alias_es":"inglés"},
-        {"codename":"eo", "alias_en":"esperanto", "alias_es":"esperanto"},
-        {"codename":"es", "alias_en":"spanish", "alias_es":"español"},
-        {"codename":"et", "alias_en":"estonian", "alias_es":"estonio"},
-        {"codename":"eu", "alias_en":"basque", "alias_es":"euskera"},
-        {"codename":"fa", "alias_en":"persian", "alias_es":"persa"},
-        {"codename":"ff", "alias_en":"fulah", "alias_es":"fula"},
-        {"codename":"fi", "alias_en":"finnish", "alias_es":"finlandés"},
-        {"codename":"fj", "alias_en":"fijian", "alias_es":"fiyiano"},
-        {"codename":"fo", "alias_en":"faroese", "alias_es":"feroés"},
-        {"codename":"fr", "alias_en":"french", "alias_es":"francés"},
-        {"codename":"fy", "alias_en":"western frisian", "alias_es":"frisón"},
-        {"codename":"ga", "alias_en":"irish", "alias_es":"irlandés"},
-        {"codename":"gd", "alias_en":"gaelic", "alias_es":"gáelico escocés"},
-        {"codename":"gl", "alias_en":"galician", "alias_es":"gallego"},
-        {"codename":"gn", "alias_en":"guarani", "alias_es":"guaraní"},
-        {"codename":"gu", "alias_en":"gujarati", "alias_es":"guyaratí"},
-        {"codename":"gv", "alias_en":"manx", "alias_es":"manés"},
-        {"codename":"ha", "alias_en":"hausa", "alias_es":"hausa"},
-        {"codename":"he", "alias_en":"hebrew", "alias_es":"hébreo"},
-        {"codename":"hi", "alias_en":"hindi", "alias_es":"hindú"},
-        {"codename":"ho", "alias_en":"hiri motu", "alias_es":"hiri motu"},
-        {"codename":"hr", "alias_en":"croatian", "alias_es":"croata"},
-        {"codename":"ht", "alias_en":"haitian", "alias_es":"haitiano"},
-        {"codename":"hu", "alias_en":"hungarian", "alias_es":"húngaro"},
-        {"codename":"hy", "alias_en":"armenian", "alias_es":"armenio"},
-        {"codename":"hz", "alias_en":"herero", "alias_es":"herero"},
-        {"codename":"ia", "alias_en":"interlingua", "alias_es":"interlingua"},
-        {"codename":"id", "alias_en":"indonesian", "alias_es":"indonesio"},
-        {"codename":"ie", "alias_en":"interlingue", "alias_es":"occidental"},
-        {"codename":"ig", "alias_en":"igbo", "alias_es":"igbo"},
-        {"codename":"ii", "alias_en":"sichuan yi", "alias_es":"yi de sichuán"},
-        {"codename":"ik", "alias_en":"inupiaq", "alias_es":"iñupiac"},
-        {"codename":"io", "alias_en":"ido", "alias_es":"ido"},
-        {"codename":"is", "alias_en":"icelandic", "alias_es":"islandés"},
-        {"codename":"it", "alias_en":"italian", "alias_es":"italiano"},
-        {"codename":"iu", "alias_en":"inuktitut", "alias_es":"inuktitut"},
-        {"codename":"ja", "alias_en":"japanese", "alias_es":"japonés"},
-        {"codename":"jv", "alias_en":"javanese", "alias_es":"javanés"},
-        {"codename":"ka", "alias_en":"georgian", "alias_es":"georgiano"},
-        {"codename":"kg", "alias_en":"kongo", "alias_es":"kongo"},
-        {"codename":"ki", "alias_en":"kikuyu", "alias_es":"kikuyu"},
-        {"codename":"kj", "alias_en":"kuanyama", "alias_es":"kuanyama"},
-        {"codename":"kk", "alias_en":"kazakh", "alias_es":"kazajo"},
-        {"codename":"kl", "alias_en":"greenlandic", "alias_es":"groenlandés"},
-        {"codename":"km", "alias_en":"central khmer", "alias_es":"camboyano"},
-        {"codename":"kn", "alias_en":"kannada", "alias_es":"canarés"},
-        {"codename":"ko", "alias_en":"korean", "alias_es":"coreano"},
-        {"codename":"kr", "alias_en":"kanuri", "alias_es":"kanuri"},
-        {"codename":"ks", "alias_en":"kashmiri", "alias_es":"cachemiro"},
-        {"codename":"ku", "alias_en":"kurdish", "alias_es":"kurdo"},
-        {"codename":"kv", "alias_en":"komi", "alias_es":"komi"},
-        {"codename":"kw", "alias_en":"cornish", "alias_es":"córnico"},
-        {"codename":"ky", "alias_en":"kirghiz", "alias_es":"kirguís"},
-        {"codename":"la", "alias_en":"latin", "alias_es":"latín"},
-        {"codename":"lb", "alias_en":"luxembourgish", "alias_es":"luxemburgués"},
-        {"codename":"lg", "alias_en":"ganda", "alias_es":"luganda"},
-        {"codename":"li", "alias_en":"limburgan", "alias_es":""},
-        {"codename":"ln", "alias_en":"lingala", "alias_es":"lingala"},
-        {"codename":"lo", "alias_en":"lao", "alias_es":"lao"},
-        {"codename":"lt", "alias_en":"lithuanian", "alias_es":"lituano"},
-        {"codename":"lu", "alias_en":"luba-katanga", "alias_es":"luba-katanga"},
-        {"codename":"lv", "alias_en":"latvian", "alias_es":"letón"},
-        {"codename":"mg", "alias_en":"malagasy", "alias_es":"malgache"},
-        {"codename":"mh", "alias_en":"marshallese", "alias_es":"marshalés"},
-        {"codename":"mi", "alias_en":"maori", "alias_es":"maorí"},
-        {"codename":"mk", "alias_en":"macedonian", "alias_es":"macedonio"},
-        {"codename":"ml", "alias_en":"malayalam", "alias_es":"malayalam"},
-        {"codename":"mn", "alias_en":"mongolian", "alias_es":"mongol"},
-        {"codename":"mr", "alias_en":"marathi", "alias_es":"maratí"},
-        {"codename":"ms", "alias_en":"malay", "alias_es":"malayo"},
-        {"codename":"mt", "alias_en":"maltese", "alias_es":"maltés"},
-        {"codename":"my", "alias_en":"burmese", "alias_es":"birmano"},
-        {"codename":"na", "alias_en":"nauru", "alias_es":"nauruano"},
-        {"codename":"nb", "alias_en":"norwegian bokmal", "alias_es":"noruego bokmal"},
-        {"codename":"nd", "alias_en":"north ndebele", "alias_es":"ndebele del norte"},
-        {"codename":"ne", "alias_en":"nepali", "alias_es":"nepalí"},
-        {"codename":"ng", "alias_en":"ndonga", "alias_es":"ndonga"},
-        {"codename":"nl", "alias_en":"dutch", "alias_es":"holandés"},
-        {"codename":"nn", "alias_en":"norwegian nynorsk", "alias_es":"nynorsk"},
-        {"codename":"no", "alias_en":"norwegian", "alias_es":"noruego"},
-        {"codename":"nr", "alias_en":"south ndebele", "alias_es":"ndebele del sur"},
-        {"codename":"nv", "alias_en":"navajo", "alias_es":"navajo"},
-        {"codename":"ny", "alias_en":"chichewa", "alias_es":"chichewa"},
-        {"codename":"oc", "alias_en":"occitan", "alias_es":"occitano"},
-        {"codename":"oj", "alias_en":"ojibwa", "alias_es":"ojibwa"},
-        {"codename":"om", "alias_en":"oromo", "alias_es":"oromo"},
-        {"codename":"or", "alias_en":"oriya", "alias_es":"oriya"},
-        {"codename":"os", "alias_en":"ossetian", "alias_es":"osético"},
-        {"codename":"pa", "alias_en":"punjabi", "alias_es":"panyabí"},
-        {"codename":"pi", "alias_en":"pali", "alias_es":"pali"},
-        {"codename":"pl", "alias_en":"polish", "alias_es":"polaco"},
-        {"codename":"ps", "alias_en":"pashto", "alias_es":"pastú"},
-        {"codename":"pt", "alias_en":"portuguese", "alias_es":"portugués"},
-        {"codename":"qu", "alias_en":"quechua", "alias_es":"quechua"},
-        {"codename":"rm", "alias_en":"romansh", "alias_es":"romanche"},
-        {"codename":"rn", "alias_en":"rundi", "alias_es":"kirundi"},
-        {"codename":"ro", "alias_en":"romanian", "alias_es":"rumano"},
-        {"codename":"ru", "alias_en":"russian", "alias_es":"ruso"},
-        {"codename":"rw", "alias_en":"kinyarwanda", "alias_es":"ruandés"},
-        {"codename":"sa", "alias_en":"sanskrit", "alias_es":"sánscrito"},
-        {"codename":"sc", "alias_en":"sardinian", "alias_es":"dardo"},
-        {"codename":"sd", "alias_en":"sindhi", "alias_es":"sindhi"},
-        {"codename":"se", "alias_en":"northern sami", "alias_es":"sami septentrional"},
-        {"codename":"sg", "alias_en":"sango", "alias_es":"sango"},
-        {"codename":"si", "alias_en":"sinhala", "alias_es":"cingalés"},
-        {"codename":"sk", "alias_en":"slovak", "alias_es":"eslovaco"},
-        {"codename":"sl", "alias_en":"slovenian", "alias_es":"esloveno"},
-        {"codename":"sm", "alias_en":"samoan", "alias_es":"samoano"},
-        {"codename":"sn", "alias_en":"shona", "alias_es":"shona"},
-        {"codename":"so", "alias_en":"somali", "alias_es":"somalí"},
-        {"codename":"sq", "alias_en":"albanian", "alias_es":"albanés"},
-        {"codename":"sr", "alias_en":"serbian", "alias_es":"serbio"},
-        {"codename":"ss", "alias_en":"swati", "alias_es":"suazi"},
-        {"codename":"st", "alias_en":"southern sotho", "alias_es":"sesotho"},
-        {"codename":"su", "alias_en":"sundanese", "alias_es":"sundanés"},
-        {"codename":"sv", "alias_en":"swedish", "alias_es":"sueco"},
-        {"codename":"sw", "alias_en":"swahili", "alias_es":"suajili"},
-        {"codename":"ta", "alias_en":"tamil", "alias_es":"tamil"},
-        {"codename":"te", "alias_en":"telugu", "alias_es":"télugu"},
-        {"codename":"tg", "alias_en":"tayik", "alias_es":"tayiko"},
-        {"codename":"th", "alias_en":"thai", "alias_es":"tailandés"},
-        {"codename":"ti", "alias_en":"tigrinya", "alias_es":"tigriña"},
-        {"codename":"tk", "alias_en":"turkmen", "alias_es":"turcomano"},
-        {"codename":"tl", "alias_en":"tagalog", "alias_es":"tagalo"},
-        {"codename":"tn", "alias_en":"tswana", "alias_es":"setsuana"},
-        {"codename":"to", "alias_en":"tonga", "alias_es":"tongano"},
-        {"codename":"tr", "alias_en":"turkish", "alias_es":"turco"},
-        {"codename":"ts", "alias_en":"tsonga", "alias_es":"tsonga"},
-        {"codename":"tt", "alias_en":"tatar", "alias_es":"tártaro"},
-        {"codename":"tw", "alias_en":"twi", "alias_es":"twi"},
-        {"codename":"ty", "alias_en":"tahitian", "alias_es":"tahitiano"},
-        {"codename":"ug", "alias_en":"uighur", "alias_es":"uigur"},
-        {"codename":"uk", "alias_en":"ukrainian", "alias_es":"ucraniano"},
-        {"codename":"ur", "alias_en":"urdu", "alias_es":"urdu"},
-        {"codename":"uz", "alias_en":"uzbek", "alias_es":"uzbeko"},
-        {"codename":"ve", "alias_en":"venda", "alias_es":"venda"},
-        {"codename":"vi", "alias_en":"vietnamese", "alias_es":"vietnamita"},
-        {"codename":"vo", "alias_en":"volapuk", "alias_es":"volapuk"},
-        {"codename":"wa", "alias_en":"walloon", "alias_es":"valón"},
-        {"codename":"wo", "alias_en":"wolof", "alias_es":"wolof"},
-        {"codename":"xh", "alias_en":"xhosa", "alias_es":"xhosa"},
-        {"codename":"yi", "alias_en":"yiddish", "alias_es":"yidish"},
-        {"codename":"yo", "alias_en":"yoruba", "alias_es":"yoruba"},
-        {"codename":"za", "alias_en":"zhuang", "alias_es":"chuan"},
-        {"codename":"zh", "alias_en":"chinese", "alias_es":"chino"},
-        {"codename":"zu", "alias_en":"zulu", "alias_es":"zulú"}
+    "esperanto": [
+        "esperanto",
+        "Esperanto"
+    ],
+
+    "spanish": [
+        "spanish",
+        "Spanish",
+        "castillian",
+        "Castillian",
+        "español",
+        "Español",
+        "castellano",
+        "Castellano"
+    ],
+
+    "estonian": [
+        "estonian",
+        "Estonian",
+        "estonio",
+        "Estonio"
+    ],
+
+    "basque": [
+        "basque",
+        "Basque",
+        "euskera",
+        "Euskera",
+        "vasco",
+        "Vasco"
+    ],
+
+    "persian": [
+        "persian",
+        "Persian",
+        "persa",
+        "Persa"
+    ],
+
+    "fulah": [
+        "fulah",
+        "Fulah",
+        "fula",
+        "Fula"
+    ],
+
+    "finnish": [
+        "finnish",
+        "Finnish",
+        "finés",
+        "Finés",
+        "finlandés",
+        "Finlandés",
+        "fines",
+        "Fines",
+        "finlandes",
+        "Finlandes"
+    ],
+
+    "fijian": [
+        "fijian",
+        "Fijian",
+        "fiyiano",
+        "Fiyiano",
+        "fiyi",
+        "Fiyi"
+    ],
+
+    "faroese": [
+        "faroese",
+        "Faroese",
+        "feroés",
+        "Feroés",
+        "feroes",
+        "Feroes"
+    ],
+
+    "french": [
+        "french",
+        "French",
+        "francés",
+        "Francés",
+        "frances",
+        "Frances"
+    ],
+
+    "westernfrisian": [
+        "western frisian",
+        "Western frisian",
+        "Western Frisian",
+        "western Frisian",
+        "frisón",
+        "Frisón",
+        "frison",
+        "Frison",
+        "frisio",
+        "Frisio"
+    ],
+
+    "irish": [
+        "irish",
+        "Irish",
+        "irlandés",
+        "Irlandés",
+        "irlandes",
+        "Irlandes",
+        "gaélico",
+        "Gaélico",
+        "gaelico",
+        "Gaelico"
+    ],
+
+    "gaelic": [
+        "gaelic",
+        "Gaelic",
+        "scottish gaelic",
+        "Scottish gaelic",
+        "Scottish Gaelic",
+        "scottish Gaelic",
+        "gaélico escocés",
+        "Gaélico escocés",
+        "Gaélico Escocés",
+        "gaélico Escocés",
+        "gaelico escoces",
+        "Gaelico escoces",
+        "Gaelico Escoces",
+        "gaelico Escoces"
+    ],
+
+    "galician": [
+        "galician",
+        "Galician",
+        "gallego",
+        "Gallego"
+    ],
+
+    "guarani": [
+        "guarani",
+        "Guarani",
+        "guaraní",
+        "Guaraní"
+    ],
+
+    "gujarati": [
+        "gujarati",
+        "Gujarati",
+        "gujaratí",
+        "Gujaratí",
+        "guyaratí",
+        "Guyaratí",
+        "guyarati",
+        "Guyarati"
+    ],
+
+    "manx": [
+        "manx",
+        "Manx",
+        "manés",
+        "Manés",
+        "manes",
+        "Manes",
+        "gaélico manés",
+        "Gaélico manés",
+        "Gaélico Manés",
+        "gaélico Manés",
+        "gaelico manes",
+        "Gaelico manes",
+        "Gaelico Manes",
+        "gaelico Manes"
+    ],
+
+    "hausa": [
+        "hausa",
+        "Hausa"
+    ],
+
+    "hebrew": [
+        "hebrew",
+        "Hebrew",
+        "hebreo",
+        "Hebreo"
+    ],
+
+    "hindi": [
+        "hindi",
+        "Hindi",
+        "hindú",
+        "Hindú",
+        "hindu",
+        "Hindu"
+    ],
+
+    "hirimotu": [
+        "hiri motu",
+        "Hiri motu",
+        "Hiri Motu",
+        "hiri Motu"
+    ],
+
+    "croatian": [
+        "croatian",
+        "Croatian",
+        "croata",
+        "Croata"
+    ],
+
+    "haitian": [
+        "haitian",
+        "Haitian",
+        "haitian creole",
+        "Haitian creole",
+        "Haitian Creole",
+        "haitian Creole",
+        "haitiano",
+        "Haitiano"
+    ],
+
+    "hungarian": [
+        "hungarian",
+        "Hungarian",
+        "húngaro",
+        "Húngaro",
+        "hungaro",
+        "Hungaro"
+    ],
+
+    "armenian": [
+        "armenian",
+        "Armenian",
+        "armenio",
+        "Armenio"
+    ],
+
+    "herero": [
+        "herero",
+        "Herero"
+    ],
+
+    "interlingua": [
+        "interlingua",
+        "Interlingua"
+    ],
+
+    "indonesian": [
+        "indonesian",
+        "Indonesian",
+        "indonesio",
+        "Indonesio"
+    ],
+
+    "interlingue": [
+        "interlingue",
+        "Interlingue",
+        "occidental",
+        "Occidental"
+    ],
+
+    "igbo": [
+        "igbo",
+        "Igbo"
+    ],
+
+    "sichuanyi": [
+        "sichuan yi",
+        "Sichuan yi",
+        "Sichuan Yi",
+        "sichuan Yi",
+        "nuosu",
+        "Nuosu",
+        "yi de sichuán",
+        "Yi de sichuán",
+        "Yi de Sichuán",
+        "yi de Sichuán",
+        "yi de sichuan",
+        "Yi de sichuan",
+        "Yi de Sichuan",
+        "yi de Sichuan"
+    ],
+
+    "inupiaq": [
+        "inupiaq",
+        "Inupiaq",
+        "iñupiaq",
+        "Iñupiaq"
+    ],
+
+    "ido": [
+        "ido",
+        "Ido"
+    ],
+
+    "icelandic": [
+        "icelandic",
+        "Icelandic",
+        "islandés",
+        "Islandés",
+        "islandes",
+        "Islandes"
+    ],
+
+    "italian": [
+        "italian",
+        "Italian",
+        "italiano",
+        "Italiano"
+    ],
+
+    "inuktitut": [
+        "inuktitut",
+        "Inuktitut",
+        "inuit",
+        "Inuit"
+    ],
+
+    "japanese": [
+        "japanese",
+        "Japanese",
+        "japonés",
+        "Japonés",
+        "japones",
+        "Japones"
+    ],
+
+    "javanese": [
+        "javanese",
+        "Javanese",
+        "javanés",
+        "Javanés",
+        "javanes",
+        "Javanes"
+    ],
+
+    "georgian": [
+        "georgian",
+        "Georgian",
+        "georgiano",
+        "Georgiano"
+    ],
+
+    "kongo": [
+        "kongo",
+        "Kongo",
+        "kikongo",
+        "Kikongo"
+    ],
+
+    "kikuyu": [
+        "kikuyu",
+        "Kikuyu",
+        "gikuyu",
+        "Gikuyu"
+    ],
+
+    "kuanyama": [
+        "kuanyama",
+        "Kuanyama",
+        "kwanyama",
+        "Kwanyama"
+    ],
+
+    "kazakh": [
+        "kazakh",
+        "Kazakh",
+        "kazajo",
+        "Kazajo",
+        "kazajio",
+        "Kazajio"
+    ],
+
+    "greenlandic": [
+        "kalaallisut",
+        "Kalaallisut",
+        "greenlandic",
+        "Greenlandic",
+        "groenlandés",
+        "Groenlandés",
+        "groenlandes",
+        "Groenlandes"
+    ],
+
+    "centralkhmer": [
+        "central khmer",
+        "Central khmer",
+        "Central Khmer",
+        "central Khmer",
+        "camboyano",
+        "Camboyano",
+        "jemer",
+        "Jemer"
+    ],
+
+    "kannada": [
+        "kannada",
+        "Kannada",
+        "canarés",
+        "Canarés",
+        "canares",
+        "Canares"
+    ],
+
+    "korean": [
+        "korean",
+        "Korean",
+        "coreano",
+        "Coreano"
+    ],
+
+    "kanuri": [
+        "kanuri",
+        "Kanuri"
+    ],
+
+    "kashmiri": [
+        "kashmiri",
+        "Kashmiri",
+        "cachemiro",
+        "Cachemiro",
+        "cachemir",
+        "Cachemir"
+    ],
+
+    "kurdish": [
+        "kurdish",
+        "Kurdish",
+        "kurdo",
+        "Kurdo"
+    ],
+
+    "komi": [
+        "komi",
+        "Komi"
+    ],
+
+    "cornish": [
+        "cornish",
+        "Cornish",
+        "córnico",
+        "Córnico",
+        "cornico",
+        "Cornico"
+    ],
+
+    "kirghiz": [
+        "kirghiz",
+        "Kirghiz",
+        "kyrgyz",
+        "Kyrgyz",
+        "kirguís",
+        "Kirguís",
+        "kirguis",
+        "Kirguis"
+    ],
+
+    "latin": [
+        "latin",
+        "Latin",
+        "latín",
+        "Latín"
+    ],
+
+    "luxembourgish": [
+        "luxembourgish",
+        "Luxembourgish",
+        "letzeburgesch",
+        "Letzeburgesch",
+        "luxemburgués",
+        "Luxemburgués",
+        "luxemburgues",
+        "Luxemburgues"
+    ],
+
+    "ganda": [
+        "ganda",
+        "Ganda",
+        "luganda",
+        "Luganda"
+    ],
+
+    "limburgan": [
+        "limburgan",
+        "Limburgan",
+        "limburger",
+        "Limburger",
+        "limburgish",
+        "Limburgish",
+        "limburgués",
+        "Limburgués",
+        "limburgues",
+        "Limburgues"
+    ],
+
+    "lingala": [
+        "lingala",
+        "Lingala"
+    ],
+
+    "lao": [
+        "lao",
+        "Lao"
+    ],
+
+    "lithuanian": [
+        "lithuanian",
+        "Lithuanian",
+        "lituano",
+        "Lituano"
+    ],
+
+    "lubakatanga": [
+        "luba-katanga",
+        "Luba-katanga",
+        "Luba-Katanga",
+        "luba-Katanga",
+        "chiluba",
+        "Chiluba"
+    ],
+
+    "latvian": [
+        "latvian",
+        "Latvian",
+        "letón",
+        "Letón",
+        "leton",
+        "Leton"
+    ],
+
+    "malagasy": [
+        "malagasy",
+        "Malagasy",
+        "malgache",
+        "Malgache"
+    ],
+
+    "marshallese": [
+        "marshallese",
+        "Marshallese",
+        "marshalés",
+        "Marshalés",
+        "marshales",
+        "Marshales"
+    ],
+
+    "maori": [
+        "maori",
+        "Maori",
+        "māori",
+        "Māori",
+        "maorí",
+        "Maorí",
+        "maori",
+        "Maori"
+    ],
+
+    "macedonian": [
+        "macedonian",
+        "Macedonian",
+        "macedonio",
+        "Macedonio"
+    ],
+
+    "malayalam": [
+        "malayalam",
+        "Malayalam"
+    ],
+
+    "mongolian": [
+        "mongolian",
+        "Mongolian",
+        "mongol",
+        "Mongol"
+    ],
+
+    "marathi": [
+        "marathi",
+        "Marathi",
+        "maratí",
+        "Maratí",
+        "marati",
+        "Marati"
+    ],
+
+    "malay": [
+        "malay",
+        "Malay",
+        "malayo",
+        "Ma;ayo"
+    ],
+
+    "maltese": [
+        "maltese",
+        "Maltese",
+        "maltés",
+        "Maltés",
+        "maltes",
+        "Maltes"
+    ],
+
+    "burmese": [
+        "burmese",
+        "Burmese",
+        "birmano",
+        "Birmano"
+    ],
+
+    "nauru": [
+        "nauru",
+        "Nauru",
+        "nauruano",
+        "Nauruano"
+    ],
+
+    "norwegianbokmal": [
+        "norwegian bokmal",
+        "Norwegian bokmal",
+        "Norwegian Bokmal",
+        "norwegian Bokmal",
+        "norwegian bokmål",
+        "Norwegian bokmål",
+        "Norwegian Bokmål",
+        "norwegian Bokmål",
+        "noruego bokmal",
+        "Noruego bokmal",
+        "Noruego Bokmal",
+        "noruego Bokmal",
+        "noruego bokmål",
+        "Noruego bokmål",
+        "Noruego Bokmål",
+        "noruego Bokmål"
+    ],
+
+    "northndebele": [
+        "north ndebele",
+        "North ndebele",
+        "North Ndebele",
+        "north Ndebele",
+        "ndebele del norte",
+        "Ndebele del norte",
+        "Ndebele del Norte",
+        "ndebele del Norte"
+    ],
+
+    "nepali": [
+        "nepali",
+        "Nepali",
+        "nepalí",
+        "Nepalí"
+    ],
+
+    "ndonga": [
+        "ndonga",
+        "Ndonga"
+    ],
+
+    "dutch": [
+        "dutch",
+        "Dutch",
+        "flemish",
+        "Flemish",
+        "neerlandés",
+        "Neerlandés",
+        "neerlandes",
+        "Neerlandes",
+        "holandés",
+        "Holandés",
+        "holandes",
+        "Holandes"
+    ],
+
+    "norwegiannynorsk": [
+        "norwegian nynorsk",
+        "Norwegian nynorsk",
+        "Norwegian Nynorsk",
+        "norwegian Nynorsk",
+        "nynorsk",
+        "Nynorsk"
+    ],
+
+    "norwegian": [
+        "norwegian",
+        "Norwegian",
+        "noruego",
+        "Noruego"
+    ],
+
+    "southndebele": [
+        "south ndebele",
+        "South ndebele",
+        "South Ndebele",
+        "south Ndebele",
+        "ndebele del sur",
+        "Ndebele del sur",
+        "Ndebele del Sur",
+        "ndebele del Sur"
+    ],
+
+    "navajo": [
+        "navajo",
+        "Navajo",
+        "navaho",
+        "Navaho"
+    ],
+
+    "chichewa": [
+        "chichewa",
+        "Chichewa",
+        "chewa",
+        "Chewa",
+        "nyanja",
+        "Nyanja"
+    ],
+
+    "occitan": [
+        "occitan",
+        "Occitan",
+        "occitano",
+        "Occitano"
+    ],
+
+    "ojibwa": [
+        "ojibwa",
+        "Ojibwa"
+    ],
+
+    "oromo": [
+        "oromo",
+        "Oromo"
+    ],
+
+    "oriya": [
+        "oriya",
+        "Oriya"
+    ],
+
+    "ossetian": [
+        "ossetian",
+        "Ossetian",
+        "ossetic",
+        "Ossetic",
+        "osético",
+        "Osético",
+        "osetico",
+        "Osetico",
+        "osetio",
+        "Osetio",
+        "oseta",
+        "Oseta"
+    ],
+
+    "punjabi": [
+        "punjabi",
+        "Punjabi",
+        "panjabi",
+        "Panjabi",
+        "panyabí",
+        "Panyabí",
+        "panyabi",
+        "Panyabi",
+        "penyabi",
+        "Penyabi"
+    ],
+
+    "pali": [
+        "pali",
+        "Pali"
+    ],
+
+    "polish": [
+        "polish",
+        "Polish",
+        "polaco",
+        "Polaco"
+    ],
+
+    "pashto": [
+        "pashto",
+        "Pashto",
+        "pushto",
+        "Pushto",
+        "pastú",
+        "Pastú",
+        "pastu",
+        "Pastu",
+        "pastún",
+        "Pastún",
+        "pastun",
+        "Pastun"
+    ],
+
+    "portuguese": [
+        "portuguese",
+        "Portuguese",
+        "portugués",
+        "Portugués",
+        "portugues",
+        "Portugues"
+    ],
+
+    "quechua": [
+        "quechua",
+        "Quechua"
+    ],
+
+    "romansh": [
+        "romansh",
+        "Romansh",
+        "romanche",
+        "Romanche"
+    ],
+
+    "rundi": [
+        "rundi",
+        "Rundi",
+        "kirundi",
+        "Kirundi"
+    ],
+
+    "romanian": [
+        "romanian",
+        "Romanian",
+        "moldavian",
+        "Moldavian",
+        "moldovan",
+        "Moldovan",
+        "rumano",
+        "Rumano"
+    ],
+
+    "russian": [
+        "russian",
+        "Russian",
+        "ruso",
+        "Ruso"
+    ],
+
+    "kinyarwanda": [
+        "kinyarwanda",
+        "Kinyarwanda",
+        "ruandés",
+        "Ruandés",
+        "kiñaruanda",
+        "Kiñaruanda"
+    ],
+
+    "sanskrit": [
+        "sanskrit",
+        "Sanskrit",
+        "sánscrito",
+        "Sánscrito",
+        "sanscrito",
+        "Sanscrito"
+    ],
+
+    "sardinian": [
+        "sardinian",
+        "Sardinian",
+        "sardo",
+        "Sardo"
+    ],
+
+    "sindhi": [
+        "sindhi",
+        "Sindhi"
+    ],
+
+    "northernsami": [
+        "northern sami",
+        "Northern sami",
+        "Northern Sami",
+        "northern Sami",
+        "sami septentrional",
+        "Sami septentrional",
+        "Sami Septentrional",
+        "sami Septentrional"
+    ],
+
+    "sango": [
+        "sango",
+        "Sango"
+    ],
+
+    "sinhala": [
+        "sinhala",
+        "Sinhala",
+        "sinhalese",
+        "Sinhalese",
+        "cingalés",
+        "Cingalés",
+        "cingales",
+        "Cingales"
+    ],
+
+    "slovak": [
+        "slovak",
+        "Slovak",
+        "eslovaco",
+        "Eslovaco"
+    ],
+
+    "slovenian": [
+        "slovenian",
+        "Slovenian",
+        "esloveno",
+        "Esloveno"
+    ],
+
+    "samoan": [
+        "samoan",
+        "Samoan",
+        "samoano",
+        "Samoano"
+    ],
+
+    "shona": [
+        "shona",
+        "Shona"
+    ],
+
+    "somali": [
+        "somali",
+        "Somali",
+        "somalí",
+        "Somalí"
+    ],
+
+    "albanian": [
+        "albanian",
+        "Albanian",
+        "albanés",
+        "Albanés",
+        "albanes",
+        "Albanes"
+    ],
+
+    "serbian": [
+        "serbian",
+        "Serbian",
+        "serbio",
+        "Serbio"
+    ],
+
+    "swati": [
+        "swati",
+        "Swati",
+        "suazi",
+        "Suazi"
+    ],
+
+    "southernsotho": [
+        "southern soto",
+        "Southern soto",
+        "Southern Soto",
+        "southern Soto",
+        "sesotho",
+        "Sesotho"
+    ],
+
+    "sundanese": [
+        "sundanese",
+        "Sundanese",
+        "sundanés",
+        "Sundanés",
+        "sondanés",
+        "Sondanés"
+    ],
+
+    "swedish": [
+        "swedish",
+        "Swedish",
+        "sueco",
+        "Sueco"
+    ],
+
+    "swahili": [
+        "swahili",
+        "Swahili",
+        "suajili",
+        "Suajili"
+    ],
+
+    "tamil": [
+        "tamil",
+        "Tamil"
+    ],
+
+    "telugu": [
+        "telugu",
+        "Telugu",
+        "télugu",
+        "Télugu"
+    ],
+
+    "tajik": [
+        "tajik",
+        "Tajik",
+        "tayiko",
+        "Tayiko"
+    ],
+
+    "thai": [
+        "thai",
+        "Thai",
+        "tailandés",
+        "Tailandés",
+        "tailandes",
+        "Tailandes"
+    ],
+
+    "tigrinya": [
+        "tigrinya",
+        "Tigrinya",
+        "tigriña",
+        "Tigriña"
+    ],
+
+    "turkmen": [
+        "turkmen",
+        "Turkmen",
+        "turcomano",
+        "Turcomano"
+    ],
+
+    "tagalog": [
+        "tagalog",
+        "Tagalog",
+        "tagalo",
+        "Tagalo"
+    ],
+
+    "tswana": [
+        "tswana",
+        "Tswana",
+        "setsuana",
+        "Setsuana"
+    ],
+
+    "tonga": [
+        "tonga",
+        "Tonga",
+        "tongano",
+        "Tongano"
+    ],
+
+    "turkish": [
+        "turkish",
+        "Turkish",
+        "turco",
+        "Turco"
+    ],
+
+    "tsonga": [
+        "tsonga",
+        "Tsonga"
+    ],
+
+    "tatar": [
+        "tatar",
+        "Tatar",
+        "tártaro",
+        "Tártaro",
+        "tartaro",
+        "Tartaro"
+    ],
+
+    "twi": [
+        "twi",
+        "Twi"
+    ],
+
+    "tahitian": [
+        "tahitian",
+        "Tahitian",
+        "tahitiano",
+        "Tahitiano"
+    ],
+
+    "uighur": [
+        "uighur",
+        "Uighur",
+        "uyghur",
+        "Uyghur",
+        "uigur",
+        "Uigur"
+    ],
+
+    "ukrainian": [
+        "ukrainian",
+        "Ukrainian",
+        "ucraniano",
+        "Ucraniano"
+    ],
+
+    "urdu": [
+        "urdu",
+        "Urdu"
+    ],
+
+    "uzbek": [
+        "uzbek",
+        "Uzbek",
+        "uzbeko",
+        "Uzbeko"
+    ],
+
+    "venda": [
+        "venda",
+        "Venda"
+    ],
+
+    "vietnamese": [
+        "vietnamese",
+        "Vietnamese",
+        "vietnamita",
+        "Vietnamita"
+    ],
+
+    "volapuk": [
+        "volapuk",
+        "Volapuk",
+        "volapük",
+        "Volapük"
+    ],
+
+    "walloon": [
+        "walloon",
+        "Walloon",
+        "valón",
+        "Valón",
+        "valon",
+        "Valon"
+    ],
+
+    "wolof": [
+        "wolof",
+        "Wolof"
+    ],
+
+    "xhosa": [
+        "xhosa",
+        "Xhosa"
+    ],
+
+    "yiddish": [
+        "yiddish",
+        "Yiddish",
+        "yidish",
+        "Yidish",
+        "yidis",
+        "Yidis"
+    ],
+
+    "yoruba": [
+        "yoruba",
+        "Yoruba"
+    ],
+
+    "zhuang": [
+        "zhuang",
+        "Zhuang",
+        "chuang",
+        "Chuang",
+        "chuan",
+        "Chuan"
+    ],
+
+    "chinese": [
+        "chinese",
+        "Chinese",
+        "chino",
+        "Chino"
+    ],
+
+    "zulu": [
+        "zulu",
+        "Zulu",
+        "zulú",
+        "Zulú"
     ]
 }
