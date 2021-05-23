@@ -3,9 +3,20 @@ import asyncio
 import discord
 from discord.ext import commands
 
-import time
-
 import datetime
+
+
+async def sleep(seconds):
+    time = float(seconds)
+    await asyncio.sleep(time)
+
+color = discord.Color.blue()
+
+timestamp = datetime.datetime.utcnow()
+
+answersYes = ['si', 'Si', 'SI', 'yes', 'Yes', 'YES', 'por supuesto', 'lo es']
+
+answersNo = ['no', 'No', 'NO', 'no lo es', 'la verdad no']
 
 
 class Moderation(commands.Cog,
@@ -16,20 +27,95 @@ class Moderation(commands.Cog,
         self.bot = bot
 
     @commands.command(aliases=['b'], description='Expulsión completa.')
-    @commands.has_guild_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member = None):
+        a = ctx.author
+        g = ctx.guild
 
         def author(m):
-            return ctx.author == m.author
+            return m.author == a
 
-        if member is None:
-            await ctx.send('Por favor, menciona a quien quieres expulsar.')
+        if a.guild_permissions.ban_members is True:
 
-        elif member.bot is True:
-            await ctx.send('No deberías usar este comando para expulsar bots.')
+            if member is None:
+                await ctx.send('Por favor, menciona a'
+                               ' quien quieres expulsar.')
+
+            elif member.bot is True:
+                await ctx.send('No deberías usar este comando'
+                               ' para expulsar bots.')
+
+            else:
+                await ctx.send('¿Estás segur@?')
+
+                try:
+                    secure = await self.bot.wait_for('message',
+                                                     check=author,
+                                                     timeout=30.0)
+
+                except asyncio.TimeoutError:
+                    await ctx.send('El tiempo terminó')
+
+                else:
+                    if secure.content in answersYes:
+
+                        await ctx.send('¿Por qué motivo?')
+
+                        try:
+                            msg = await self.bot.wait_for('message',
+                                                          check=author,
+                                                          timeout=30.0)
+
+                        except asyncio.TimeoutError:
+                            await ctx.send('Debiste apurarte, por favor, '
+                                           'vuelve a introducir el comando.')
+
+                        else:
+                            if not msg.content:
+                                await ctx.send('Por favor, dime la razón para'
+                                               ' expulsar al usuario.')
+
+                            else:
+                                await member.ban(reason=msg.content)
+                                embed = discord.Embed(title='Tribunal '
+                                                            'de justicia',
+                                                      description='Se expulsa'
+                                                                  ' a:',
+                                                      color=color,
+                                                      timestamp=timestamp)
+                                embed.set_thumbnail(url=g.icon_url)
+                                embed.add_field(name=f'{member}',
+                                                value='Por: '
+                                                      f'**"{msg.content}"**',
+                                                inline=False)
+                                embed.add_field(name='Orden tomada por:',
+                                                value=a.name,
+                                                inline=False)
+                                embed.set_footer(text=a.name,
+                                                 icon_url=g.icon_url)
+
+                                await ctx.send(embed=embed)
+
+                    elif secure.content in answersNo:
+                        await ctx.send('Piensa más una decisión como esa.')
+
+                    else:
+                        await ctx.send('No entendí tu respuesta,'
+                                       ' escribe cosas como "si" o "no".')
 
         else:
-            await ctx.send('¿Por qué motivo?')
+            await ctx.send('Debería reportarte por eso,'
+                           ' pero no lo intentes de nuevo.')
+
+    @commands.command(aliases=['fb'], description='Expulsión rápida.')
+    async def fastban(self, ctx, member: discord.Member, *, reason=None):
+        a = ctx.author
+
+        if a.guild_permissions.ban_members is True:
+
+            def author(m):
+                return m.author == a
+
+            await ctx.send('¿Es una decisión segura?')
 
             try:
                 msg = await self.bot.wait_for('message',
@@ -37,121 +123,18 @@ class Moderation(commands.Cog,
                                               timeout=30.0)
 
             except asyncio.TimeoutError:
-                await ctx.send('Debiste apurarte, por favor, '
-                               'vuelve a introducir el comando.')
+                await ctx.send('Terminó el tiempo.')
 
             else:
-                if not msg.content:
-                    await ctx.send('Por favor, dime la razón para expulsar'
-                                   ' al usuario.')
+                if msg.content == 'si':
+                    await member.ban(reason=reason)
+                    await ctx.send(f'{member} fue baneado por {reason}.')
+
+                elif msg.content == 'no':
+                    await ctx.send('Mejor piensa bien una decisión como esa.')
 
                 else:
-                    await ctx.send('Bien, ¿deberían borrarse sus mensajes?')
-
-                    try:
-                        msg2 = await self.bot.wait_for('message',
-                                                       check=author,
-                                                       timeout=30.0)
-
-                    except asyncio.TimeoutError:
-                        await ctx.send('El tiempo se acabó, vuelve a '
-                                       'introducir el comando.')
-
-                    if not msg2.content:
-                        await ctx.send('Debo saber si precisas borrar '
-                                       'sus mensajes o no.')
-
-                    else:
-                        if msg2.content in ['no', 'No', 'NO']:
-                            await member.ban(reason=msg.content)
-                            embed = discord.Embed(
-                                title='Tribunal de justicia',
-                                description='Se expulsa a:',
-                                color=discord.Color.blue(),
-                                timestamp=datetime.datetime.utcnow())
-                            embed.set_thumbnail(url=ctx.guild.icon_url)
-                            embed.add_field(name=f'{member}',
-                                            value=f'Por: **"{msg.content}"**',
-                                            inline=False)
-                            embed.add_field(name='Orden tomada por:',
-                                            value=ctx.author.name,
-                                            inline=False)
-                            embed.set_footer(text=ctx.guild,
-                                             icon_url=ctx.guild.icon_url)
-
-                            await ctx.send(embed=embed)
-
-                        elif msg2.content == 'si':
-                            await ctx.send('¿Los mensajes de cuántos días?'
-                                           '(máximo 7)')
-
-                            try:
-                                msg3 = await self.bot.wait_for('message',
-                                                               check=author,
-                                                               timeout=30.0)
-
-                            except asyncio.TimeoutError:
-                                await ctx.send('Se acabó el tiempo.')
-
-                            if not msg3.content:
-                                await ctx.send('Necesito saber cuantos días '
-                                               'de mensajes debo borrar.')
-
-                            else:
-                                if msg3.content <= 7:
-                                    await member.ban(
-                                        reason=msg.content,
-                                        delete_message_days=msg3.content)
-                                    embed = discord.Embed(
-                                        title='Tribunal de justicia',
-                                        description='Se expulsa a:',
-                                        color=discord.Color.blue(),
-                                        timestamp=datetime.datetime.utcnow())
-                                    embed.set_thumbnail(url=ctx.guild.icon_url)
-                                    embed.add_field(
-                                        name=f'{member}',
-                                        value=f'Por *"{msg.content}"*, '
-                                              'borrándose sus mensajes hasta '
-                                              f'{msg3.content} atrás.',
-                                        inline=False)
-                                    embed.add_field(name='Orden tomada por:',
-                                                    value=ctx.author.name,
-                                                    inline=False)
-                                    embed.set_footer(
-                                        text=ctx.guild,
-                                        icon_url=ctx.guild.icon_url)
-                                    await ctx.send(embed=embed)
-
-                                else:
-                                    await ctx.send('No puedo borrar mensajes '
-                                                   'más allá de los 7 días.')
-
-    @commands.command(aliases=['fb'], description='Expulsión rápida.')
-    @commands.has_guild_permissions(ban_members=True)
-    async def fastban(self, ctx, member: discord.Member, *, reason=None):
-        await ctx.send('¿Es una decisión segura?')
-
-        def check(m):
-            return ctx.author == m.author
-
-        try:
-            msg = await self.bot.wait_for('message',
-                                          check=check,
-                                          timeout=30.0)
-
-        except asyncio.TimeoutError:
-            await ctx.send('Terminó el tiempo.')
-
-        else:
-            if msg.content == 'si':
-                await member.ban(reason=reason)
-                await ctx.send(f'{member} fue baneado por {reason}.')
-
-            elif msg.content == 'no':
-                await ctx.send('Mejor piensa bien una decisión como esa.')
-
-            else:
-                await ctx.send('Deberías escribir "si" o "no".')
+                    await ctx.send('Deberías escribir "si" o "no".')
 
     @commands.command(aliases=['ub'],
                       description='Revocar la expulsión a un usuario.')
@@ -224,88 +207,108 @@ class Moderation(commands.Cog,
                            'RoboTito#1684')
 
     @commands.command(aliases=['c'])
-    @commands.has_guild_permissions(manage_messages=True)
     async def clean(self, ctx, amount=100):
-        await ctx.send('¿Estás segur@?')
+        g = ctx.guild
+        a = ctx.author
 
-        def mod(m):
-            return m.author == ctx.message.author
+        if a.guild_permissions.manage_messages is True:
 
-        try:
-            confirm = await self.bot.wait_for('message',
-                                              check=mod,
-                                              timeout=30.0)
+            await ctx.send('¿Estás segur@?')
 
-        except asyncio.TimeoutError:
-            await ctx.send('El tiempo se acabó.')
+            def author(m):
+                return m.author == ctx.message.author
 
-        else:
-            if confirm.content == 'si':
-                message = await ctx.send('Preparando limpieza.')
-                time.sleep(0.35)
-                await message.edit(content='Preparando limpieza..')
-                time.sleep(0.35)
-                await message.edit(content='Preparando limpieza...')
-                time.sleep(0.35)
-                await message.edit(content='Ultimando detalles.')
-                time.sleep(0.35)
-                await message.edit(content='Ultimando detalles..')
-                time.sleep(0.35)
-                await message.edit(content='Ultimando detalles...')
-                time.sleep(0.55)
-                await ctx.channel.purge(limit=amount, bulk=True)
-                time.sleep(1.15)
-                embed = discord.Embed(color=discord.Color.blue(),
-                                      timestamp=datetime.datetime.utcnow())
-                embed.add_field(name='¡Limpieza a la orden!',
-                                value=f'Borré {amount} mensajes '
-                                      f'en el canal de {ctx.channel.name}')
-                embed.set_image(url='https://media1.tenor.com/images/'
-                                    '980fefd36ce46e30bb11e8861fa20633/'
-                                    'tenor.gif')
-                embed.set_footer(text='Limpieza de RoboTito')
-                await ctx.send(embed=embed)
+            try:
+                confirm = await self.bot.wait_for('message',
+                                                  check=author,
+                                                  timeout=30.0)
 
-            elif confirm.content == 'no':
-                await ctx.send('Te dejo un rato para que lo pienses.')
+            except asyncio.TimeoutError:
+                await ctx.send('El tiempo se acabó.')
 
             else:
-                await ctx.send('Deberías decir algo como "si" o "no".')
 
-    @commands.command(aliases=['fc'])
-    @commands.has_guild_permissions(manage_messages=True)
+                if confirm.content in ['si', 'Si', 'SI', 'yes', 'Yes', 'YES']:
+
+                    # Editing the bot message
+
+                    message = await ctx.send('Preparando limpieza.')
+                    await sleep(0.5)
+                    await message.edit(content='Preparando limpieza..')
+                    await sleep(0.5)
+                    await message.edit(content='Preparando limpieza...')
+                    await sleep(0.5)
+                    await message.edit(content='Ultimando detalles.')
+                    await sleep(0.5)
+                    await message.edit(content='Ultimando detalles..')
+                    await sleep(0.5)
+                    await message.edit(content='Ultimando detalles...')
+                    await sleep(1)
+                    await ctx.channel.purge(limit=amount, bulk=True)
+                    await sleep(1.25)
+
+                    embed = discord.Embed(color=discord.Color.blue(),
+                                          timestamp=datetime.datetime.utcnow())
+                    embed.add_field(name='¡Limpieza a la orden!',
+                                    value=f'Borré {amount} mensajes '
+                                          f'en el canal de {ctx.channel.name}')
+                    embed.set_image(url='https://media1.tenor.com/images/'
+                                        '980fefd36ce46e30bb11e8861fa20633/'
+                                        'tenor.gif')
+                    embed.set_footer(text=a.name, icon_url=g.icon_url)
+
+                    await ctx.send(embed=embed)
+
+                elif confirm.content in ['no', 'No', 'NO']:
+                    await ctx.send('Te dejo un rato para que lo pienses.')
+
+                else:
+                    await ctx.send('Deberías decir algo como "si" o "no".')
+        else:
+            await ctx.send('No tenés los permisos necesarios para hacer esto.')
+
+    @commands.command(aliases=['fc'], description='Borrá mensajes rápidamente')
     async def fastclean(self, ctx, amount=100):
-        await ctx.send('¿Estás segur@?')
+        a = ctx.author
 
-        def mod(m):
-            return m.author == ctx.message.author
+        if a.guild_permissions.manage_messages is True:
 
-        try:
-            confirm = await self.bot.wait_for('message',
-                                              check=mod,
-                                              timeout=30.0)
+            await ctx.send('¿Estás segur@?')
 
-        except asyncio.TimeoutError:
-            await ctx.send('Se acabó el tiempo.')
+            def author(m):
+                return m.author == ctx.message.author
+
+            try:
+                confirm = await self.bot.wait_for('message',
+                                                  check=author,
+                                                  timeout=30.0)
+
+            except asyncio.TimeoutError:
+                await ctx.send('Se acabó el tiempo.')
+
+            else:
+                if confirm.content in ['si', 'Si', 'SI', 'yes', 'Yes', 'YES']:
+                    await ctx.channel.purge(limit=amount, bulk=True)
+                    await ctx.send(f'{amount} mensajes fueron borrados'
+                                   f' por {a.name}')
+
+                elif confirm.content in ['no', 'No', 'NO']:
+                    await ctx.send('Deberías asegurarte antes de tomar '
+                                   'una decisión como esa.')
 
         else:
-            if confirm.content == 'si':
-                await ctx.channel.purge(limit=amount, bulk=True)
-                await ctx.send(f'Se borraron {amount} mensajes.')
-
-            elif confirm.content == 'no':
-                await ctx.send('Deberías asegurarte antes de tomar '
-                               'una decisión como esa.')
+            await ctx.send('No tenés los permisos para hacer eso.')
 
     @commands.command(name='nick',
                       aliases=['changenick', 'apodo'],
                       description='Cambia el apodo de otra persona.')
     async def nick(self, ctx, member: discord.Member = None):
+        a = ctx.author
 
         def author(m):
-            return m.author == ctx.author
+            return m.author == a
 
-        if ctx.message.author.guild_permissions.manage_nicknames:
+        if a.guild_permissions.manage_nicknames is True:
             if member is not None:
                 last_nick = member.nick
 
@@ -331,9 +334,10 @@ class Moderation(commands.Cog,
                                        'le quieres poner.')
 
             else:
-                await ctx.send('No puedo cambiar el apodo de un administrador '
-                               'o moderador, en su lugar, cambia tu apodo a '
-                               'través de la función de Discord.')
+                await ctx.send('Lo siento, no puedo cambiar el apodo de un'
+                               ' administrador o moderador, en su lugar,'
+                               ' cambia tu apodo a través de la función'
+                               ' de Discord.')
 
         else:
             if member is not None:
@@ -341,6 +345,8 @@ class Moderation(commands.Cog,
                                'el apodo de alguien más.')
 
             else:
+                last_nick = ctx.author.nick
+
                 await ctx.send('¿Qué apodo te quieres poner?')
 
                 try:
