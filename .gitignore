@@ -9,6 +9,7 @@ docs/raw_files
 databases/db_bot.json
 databases/db_ping.json
 databases/db_playlists.json
+databases/iso639-1/db_iso639-1.json
 
 # Files
 robotito.log

@@ -10,7 +10,7 @@ import datetime
 import json
 
 
-with open('databases/iso639-1/db_iso639-1.json', encoding='utf-8') as f:
+with open('databases/iso639-1/db_iso639-C.json', encoding='utf-8') as f:
     data = f.read()
     lang = json.loads(data)
 
