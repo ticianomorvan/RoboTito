@@ -584,7 +584,7 @@ class Translate(commands.Cog,
             embed = discord.Embed(title='Ayuda sobre las traducciones',
                                   color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
-            embed.set_thumbnail(url='attachment://Translate.png')
+            embed.set_thumbnail(url='attachment://image.png')
             embed.add_field(name='El módulo de traducción funciona'
                                  ' del siguiente modo:',
                             value='En las dos primeras instancias deberás'
@@ -611,7 +611,7 @@ class Translate(commands.Cog,
         else:
             await ctx.send('Te doy la bienvenida al módulo traductor de'
                            ' RoboTito, para comenzar, escribe el idioma desde'
-                           ' el que quieres traducir.\nPara más información,'
+                           ' el que quieres traducir. Para más información,'
                            ' escribe **r.tte help**.')
 
             def author(m):
@@ -685,15 +685,6 @@ class Translate(commands.Cog,
                                                  icon_url=ctx.guild.icon_url)
 
                                 await ctx.send(embed=embed, file=file)
-
-    @commands.command(name='fulltranslate',
-                      aliases=['ftr', 'ftte'],
-                      description='Traduce con una sola línea.')
-    async def translate_full(self, ctx, fromlang, tolang, *, args):
-        translator = Translator(from_lang=fromlang, to_lang=tolang)
-        translation = translator.translate(args)
-        await ctx.send(f'**{translation}** ({fromlang}'
-                       f' -> {str.upper(tolang)})')
 
 
 def setup(bot):
