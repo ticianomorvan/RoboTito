@@ -581,6 +581,16 @@ class Translate(commands.Cog,
                                   color=discord.Color.blue(),
                                   timestamp=datetime.datetime.utcnow())
             embed.set_thumbnail(url='attachment://Translate.png')
+            embed.add_field(name='El módulo de traducción funciona'
+                                 ' del siguiente modo:',
+                            value='En las dos primeras instancias deberás'
+                                  ' especificar desde que y a que idioma'
+                                  ' quieres traducir, dichos idiomas pueden'
+                                  ' ser escritos de diversas formas (por'
+                                  ' ej: Español, español, spanish, etc.).'
+                                  ' Luego escribirás lo que quieras traducir'
+                                  ' y ¡listo! tu traducción será mostrada.',
+                            inline=False)
             embed.add_field(name='Idiomas soportados',
                             value='[Lista completa de idiomas soportados]'
                                   '(https://es.wikipedia.org/wiki/ISO_639-1)',
@@ -595,7 +605,10 @@ class Translate(commands.Cog,
             await ctx.send(embed=embed, file=file)
 
         else:
-            await ctx.send('¿Desde qué idioma quieres traducir?')
+            await ctx.send('Te doy la bienvenida al módulo traductor de'
+                           ' RoboTito, para comenzar, escribe el idioma desde'
+                           ' el que quieres traducir.\nPara más información,'
+                           ' escribe **r.tte help**.')
 
             def author(m):
                 return m.author == ctx.message.author
@@ -645,9 +658,6 @@ class Translate(commands.Cog,
 
                             except asyncio.TimeoutError:
                                 await ctx.send('Solicitud expirada.')
-
-                            except not msg3.content:
-                                await ctx.send('No escribiste nada.')
 
                             else:
                                 translation = translator.translate(
