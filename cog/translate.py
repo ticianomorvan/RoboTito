@@ -15,6 +15,10 @@ with open('databases/iso639-1/db_iso639-C.json', encoding='utf-8') as f:
     lang = json.loads(data)
 
 
+# Here i declare all the langcodes available on the ISO 639-1, for an 100%
+# support of the standard.
+
+
 def language(message):
     if message in lang['afar']:
         langcode = 'aa'
