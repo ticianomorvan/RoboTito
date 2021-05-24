@@ -178,5 +178,31 @@
         {"message":" duerme junto a "},
         {"message":" duerme plácidamente con "},
         {"message":" logra dormirse con "}
+    ],
+
+    "header_kill": [
+        {"header": "¡Asesinato en el servidor!"},
+        {"header": "¡Asesino suelto!"},
+        {"header": "No tendrás perdón de nadie, asesino"},
+        {"header": "La justicia te encontrará, algún día"},
+        {"header": "Eso fue, grotesco"},
+        {"header": "No pensaba que fueras así"},
+        {"header": "La crueldad que veo en tus ojos es incomprendible"},
+        {"header": "No entiendo porqué lo hiciste"},
+        {"header": "Te llevaste una vida, una inocente"},
+        {"header": "No esperaba nada de ti, ¿pero esto?, eres repugnante"}
+    ],
+
+    "message_kill": [
+        {"message": " asesinó a "},
+        {"message": " mató a "},
+        {"message": " sorprendió a todos asesinando a "},
+        {"message": " no tuvo piedad y mató a "},
+        {"message": " convirtió en víctima a "},
+        {"message": " cometió un delito gravísimo al matar a "},
+        {"message": " cometió asesinato contra "},
+        {"message": " desató su furia asesinando a "},
+        {"message": " logró terminar con la vida de "},
+        {"message": " terminó con la vida de "}
     ]
 }

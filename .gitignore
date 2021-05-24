@@ -16,3 +16,4 @@ robotito.log
 cog/welcome.py
 docs/_config.yml
 docs/index.md
+cog/test.py

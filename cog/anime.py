@@ -5,8 +5,6 @@ from discord.ext import commands
 
 import datetime
 
-import time
-
 import random
 
 import json
@@ -41,6 +39,11 @@ def message(table):
     return a_message
 
 
+color = discord.Color.blue()
+
+time = datetime.datetime.utcnow()
+
+
 class Anime(commands.Cog,
             name='Interacción',
             description='Comandos para interactuar usando gifs de anime.'):
@@ -55,9 +58,17 @@ class Anime(commands.Cog,
         a = ctx.author
         msg = message('message_hug')
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+        if member == a:
+            await ctx.send('Bueno, si puedes abrazarte a ti mismo,'
+                           ' pero... preferiría que lo hagas con alguien más.')
+
+        elif member.bot is True:
+            await ctx.send('No sé que tan sano sea abrazar a'
+                           ' programas informáticos.')
+
+        elif member is not None:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_hug'),
                             value=f'{a.name}{msg}{member.name}')
             embed.set_image(url=gif('hug'))
@@ -66,8 +77,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send(f'Oye, {ctx.author.mention}, yo te abrazaría '
-                           '¿sabes?, pero soy un robot.')
+            await ctx.send('Me gustaría que abraces a alguien.')
 
     @commands.command(aliases=['beso'],
                       description='Besa a un usuario.')
@@ -76,9 +86,16 @@ class Anime(commands.Cog,
         a = ctx.author
         msg = message('message_kiss')
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+        if member == a:
+            await ctx.send('Deberías buscar a alguien más para besar.')
+
+        elif member.bot is True:
+            await ctx.send('Fuera de lo lógico, no creo que sea físicamente'
+                           ' posible que beses a un software.')
+
+        elif member is not None:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_kiss'),
                             value=f'{a.name}{msg}{member.name}',
                             inline=False)
@@ -88,8 +105,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send('No creo que puedas besarte a ti mism@, '
-                           'a menos que...')
+            await ctx.send('Menciona a quien quieras besar.')
 
     @commands.command(aliases=['acariciar'],
                       description='Acaricia a un usuario')
@@ -98,9 +114,16 @@ class Anime(commands.Cog,
         a = ctx.author
         msg = message('message_pat')
 
+        if member == a:
+            await ctx.send('Es lindo que tengas afecto propio, pero sería'
+                           ' lindo que acaricies a alguien más.')
+
+        elif member.bot is True:
+            await ctx.send('Podrías... ¿acariciar la computadora?, no lo sé.')
+
         if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_pat'),
                             value=f'{a.name}{msg}{member.name}',
                             inline=False)
@@ -110,8 +133,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send('Creo que el amor propio es una parte importante '
-                           'que tener en cuenta.')
+            await ctx.send('Menciona a quien quieras abrazar.')
 
     @commands.command(aliases=['golpear'],
                       description='Golpea a un usuario.')
@@ -120,9 +142,16 @@ class Anime(commands.Cog,
         a = ctx.author
         msg = message('message_punch')
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+        if member == a:
+            await ctx.send('No deberías golpearte, no es sano.')
+
+        elif member.bot is True:
+            await ctx.send('Todos los programas tienen errores,'
+                           ' no les tengas bronca.')
+
+        elif member is not None:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_punch'),
                             value=f'{a.name}{msg}{member.name}',
                             inline=False)
@@ -132,7 +161,8 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send('No es demasiado sano que te golpees a ti mismo.')
+            await ctx.send('Menciona a quien quieras golpear...'
+                           ' aunque no sea muy lindo.')
 
     @commands.command(aliases=['dormir'],
                       description='Dormir sol@ o con alguien.')
@@ -142,9 +172,17 @@ class Anime(commands.Cog,
         msg = message('message_sleep')
         msgw = message('message_sleepw')
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+        if member == a:
+            await ctx.send('No hagas tus propios clones, en cualquier caso,'
+                           ' acuéstate con alguien más.')
+
+        elif member.bot is True:
+            await ctx.send('Podrías acostarte con la computadora,'
+                           ' aunque no creo que sea muy normal')
+
+        elif member is not None:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_sleepw'),
                             value=f'{a.name}{msgw}{member.name}',
                             inline=False)
@@ -154,8 +192,8 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name=header('header_sleep'),
                             value=f'{a.name}{msg}',
                             inline=False)
@@ -167,21 +205,31 @@ class Anime(commands.Cog,
     @commands.command(aliases=['matar'],
                       description='Mata a un usuario.')
     async def kill(self, ctx, member: discord.Member = None):
+        a = ctx.author
+        g = ctx.guild
+        msg = message('message_kill')
 
-        if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
-            embed.add_field(name='¡Hubo un asesinato en el servidor!',
-                            value=f'**{ctx.author.name}** asesina a '
-                                  f'**{member.name}**',
+        if member is a:
+            await ctx.send('No deberías hacerlo, seguramente mucha '
+                           'gente te quiere :<')
+
+        elif member.bot is True:
+            await ctx.send('Creo que hay mejores formas de apagar un bot.')
+
+        elif member is not None:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
+            embed.add_field(name=header('header_kill'),
+                            value=f'{a.name}{msg}{member.name}',
                             inline=False)
             embed.set_image(url=gif('kill'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
 
         else:
-            await ctx.send('La vida puede ser buena, como para que te mates.')
+            await ctx.send('Menciona a alguien, aunque ya estás en '
+                           'la lista negra.')
 
     @commands.command(aliases=['saludar', 'hi'],
                       description='Saluda a todos o a '
@@ -189,8 +237,8 @@ class Anime(commands.Cog,
     async def greet(self, ctx, member: discord.Member = None):
 
         if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Buenas!',
                             value=f'**{ctx.author.name}** saluda a '
                                   f'**{member.name}**',
@@ -201,8 +249,8 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Buenas a todos!',
                             value=f'**{ctx.author.name}** saluda a todo mundo',
                             inline=False)
@@ -216,8 +264,8 @@ class Anime(commands.Cog,
     async def goodbye(self, ctx, member: discord.Member = None):
 
         if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Adiós!',
                             value=f'**{ctx.author.name}** se despide de '
                                   f'**{member.name}**',
@@ -228,8 +276,8 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Sayonara!',
                             value=f'**{ctx.author.name}** se retira y '
                                   'saluda a todos',
@@ -244,8 +292,8 @@ class Anime(commands.Cog,
     async def cry(self, ctx, member: discord.Member = None):
 
         if member is not None:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Mira lo que hiciste!',
                             value=f'**{member.name}** hizo llorar a '
                                   f'**{ctx.author.name}**',
@@ -256,8 +304,8 @@ class Anime(commands.Cog,
             await ctx.send(embed=embed)
 
         else:
-            embed = discord.Embed(color=discord.Color.blue(),
-                                  timestamp=datetime.datetime.utcnow())
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
             embed.add_field(name='¡Está llorando!',
                             value=f'**{ctx.author.name}** comenzó a llorar',
                             inline=False)
@@ -307,8 +355,8 @@ class Anime(commands.Cog,
                     await ctx.send('Por el poder que se me ha conferido...')
                     time.sleep(1.5)
 
-                    embed = discord.Embed(color=discord.Color.blue(),
-                                          timestamp=datetime.datetime.utcnow())
+                    embed = discord.Embed(color=color,
+                                          timestamp=time)
                     embed.add_field(name='¡Los declaro esposos!',
                                     value=f'{ctx.author.name} y '
                                           f'{member.name} se casaron.',
