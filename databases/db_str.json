@@ -204,5 +204,57 @@
         {"message": " desató su furia asesinando a "},
         {"message": " logró terminar con la vida de "},
         {"message": " terminó con la vida de "}
+    ],
+
+    "header_greet": [
+        {"header":"¡Saludos, saludos!"},
+        {"header":"Alguien quiere llamar la atención..."},
+        {"header":"¡Saludos para todos!"},
+        {"header":"Saludos, saluditos, saludines"},
+        {"header":"¡Hola a todos!"},
+        {"header":"¡Sean todos saludados!"},
+        {"header":"Todos recibirán su saludo"},
+        {"header":"Reciban cariñosamente un cariñoso saludo"},
+        {"header":"Alguien los está saludando..."},
+        {"header":"¡Una persona muy especial del servidor los saluda!"}
+    ],
+
+    "header_greets": [
+        {"header":"Alguien te saluda..."},
+        {"header":"Creo que alguien quiere llamar tu atención"},
+        {"header":"Que agradable saludo, ojalá a mi me saludaran"},
+        {"header":"Un cálido saludo de un cálido espíritu"},
+        {"header":"¿Sabían que saludar es una forma básica de comunicación?"},
+        {"header":"La suerte que tienes... alguien te está saludando"},
+        {"header":"¿Te gustan los saludos? a mi me gustarían, si tan solo alguien me diera uno"},
+        {"header":"Oye, *pss pss* te están saludando"},
+        {"header":"Creo que ese saludo es para ti"},
+        {"header":"Oye, esa persona te está saludando"}
+    ],
+
+    "message_greet": [
+        {"message":" saluda a todos."},
+        {"message":" quiere darles un saludo a todos."},
+        {"message":" no puede esperar para saludarlos a todos."},
+        {"message":" quiere saludarlos a todos."},
+        {"message":" está saludándolos a todos."},
+        {"message":" quiere darle un saludo a cada uno de los miembros del servidor."},
+        {"message":" quiere saludar a cada uno de ustedes."},
+        {"message":" saluda cariñosamente a todos."},
+        {"message":" saluda energéticamente a todo mundo."},
+        {"message":" les da a todos un gran saludo."}
+    ],
+
+    "message_greets": [
+        {"message":" saluda a "},
+        {"message":" le manda un saludo a "},
+        {"message":" quiere darle un saludo a "},
+        {"message":" manda un saludo para "},
+        {"message":" busca saludar a "},
+        {"message":" quiere saludar a "},
+        {"message":" le da un cálido saludo a "},
+        {"message":" saluda cariñosamente a "},
+        {"message":" saluda cálidamente a "},
+        {"message":" le manda un tierno saludo a "}
     ]
 }
