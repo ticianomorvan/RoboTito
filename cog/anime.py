@@ -172,32 +172,32 @@ class Anime(commands.Cog,
         msg = message('message_sleep')
         msgw = message('message_sleepw')
 
-        if member == a:
-            await ctx.send('No hagas tus propios clones, en cualquier caso,'
-                           ' acuéstate con alguien más.')
-
-        elif member.bot is True:
-            await ctx.send('Podrías acostarte con la computadora,'
-                           ' aunque no creo que sea muy normal')
-
-        elif member is not None:
-            embed = discord.Embed(color=color,
-                                  timestamp=time)
-            embed.add_field(name=header('header_sleepw'),
-                            value=f'{a.name}{msgw}{member.name}',
-                            inline=False)
-            embed.set_image(url=gif('sleepw'))
-            embed.set_footer(text=g, icon_url=g.icon_url)
-
-            await ctx.send(embed=embed)
-
-        else:
+        if member is None:
             embed = discord.Embed(color=color,
                                   timestamp=time)
             embed.add_field(name=header('header_sleep'),
                             value=f'{a.name}{msg}',
                             inline=False)
             embed.set_image(url=gif('sleep'))
+            embed.set_footer(text=g, icon_url=g.icon_url)
+
+            await ctx.send(embed=embed)
+
+        elif member == a:
+            await ctx.send('No hagas tus propios clones, en cualquier caso,'
+                           ' acuéstate con alguien más.')
+
+        elif member.bot is True:
+            await ctx.send('Podrías acostarte con la computadora,'
+                           ' aunque no creo que sea muy normal.')
+
+        else:
+            embed = discord.Embed(color=color,
+                                  timestamp=time)
+            embed.add_field(name=header('header_sleepw'),
+                            value=f'{a.name}{msgw}{member.name}',
+                            inline=False)
+            embed.set_image(url=gif('sleepw'))
             embed.set_footer(text=g, icon_url=g.icon_url)
 
             await ctx.send(embed=embed)
@@ -227,7 +227,7 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=embed)
 
-        else:
+        elif member is None:
             await ctx.send('Menciona a alguien, aunque ya estás en '
                            'la lista negra.')
 

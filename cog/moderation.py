@@ -216,7 +216,7 @@ class Moderation(commands.Cog,
             await ctx.send('¿Estás segur@?')
 
             def author(m):
-                return m.author == ctx.message.author
+                return m.author == a
 
             try:
                 confirm = await self.bot.wait_for('message',
@@ -227,7 +227,6 @@ class Moderation(commands.Cog,
                 await ctx.send('El tiempo se acabó.')
 
             else:
-
                 if confirm.content in ['si', 'Si', 'SI', 'yes', 'Yes', 'YES']:
 
                     # Editing the bot message
