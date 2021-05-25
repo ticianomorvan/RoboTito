@@ -1,11 +1,12 @@
-<img src="https://i.imgur.com/6ocVOuW.jpg" style="width: 200px; margin: auto;">
+<p align="center"><img src="https://i.imgur.com/6ocVOuW.jpg" width="200px" height="200px"></p>
 
-<h1 style="text-align: center;">RoboTito</h1>
-<p>RoboTito is a Discord bot powered by the API wrapper <a href="https://discordpy.rtfd.io" target="_blank">Discord.py</a></p>
-
-![MostUsedLanguage](https://img.shields.io/github/languages/top/ATT-Inc/RoboTito)
-![Contributors](https://img.shields.io/github/contributors/ATT-Inc/RoboTito)
-![BranchChecksState](https://img.shields.io/github/checks-status/ATT-Inc/RoboTito/development)
+<h1 align="center">RoboTito</h1>
+<p align="center">
+  RoboTito is a Discord bot powered by the API wrapper <a href="https://discordpy.rtfd.io" target="_blank">Discord.py</a><br><br>
+  <img src="https://img.shields.io/github/languages/top/ATT-Inc/RoboTito">
+  <img src="https://img.shields.io/github/contributors/ATT-Inc/RoboTito">
+  <img src="https://img.shields.io/github/checks-status/ATT-Inc/RoboTito/development">
+</p>
 
 ## 🌎 Visit our website!
 [RoboTito's Website](https://att-inc.github.io/RoboTito)
@@ -46,21 +47,29 @@ We are not watching for direct contributors, but, if you want to do it, you can.
 - Have fun! we are working together on this.
 
 ### Clone the repo
-`git clone --branch development --depth 1 https://github.com/ATT-Inc/RoboTito`
+~~~
+git clone --branch development --depth 1 https://github.com/ATT-Inc/RoboTito
+~~~
 
 ### Create your own branch
-`git branch "your_user_name"`
-`git checkout "your_branch-name"`
+~~~
+git branch "your_user_name"`
+git checkout "your_branch-name"`
+~~~
 
 ### Coding...
 After you start coding, you have to install the dependencies.  
 Just open a terminal in RoboTito's folder and type:
-`pip install -r requirements.txt`
+~~~
+pip install -r requirements.txt
+~~~
 And that's it.
 
 ### Push your changes
-`git commit -m "the_things_you_do"`
-`git push origin`
+~~~
+git commit -m "the_things_you_do"
+git push origin
+~~~
 
 ### Great! now is our time to review your changes, thanks for contributing!
 
