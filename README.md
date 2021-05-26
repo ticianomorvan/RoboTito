@@ -58,7 +58,7 @@ git checkout "your_branch-name"
 ~~~
 
 ### Coding...
-After you start coding, you have to install the dependencies.  
+Before you start coding, you have to install the dependencies.  
 Just open a terminal in RoboTito's folder and type:
 ~~~
 pip install -r requirements.txt
