@@ -25,13 +25,13 @@ We speak spanish, so we made the website based on that.
 - **Information** about the server, user, etc.
 - **And so more!**
 
-## 👋 How to invite it
+## 👋 How to invite RoboTito
 You can invite the original RoboTito to your server with this [link](https://discord.com/oauth2/authorize?client_id=820819824669491210&permissions=8&scope=bot)
 
 ### 📃 NOTE: 
 As we said above, we speak spanish principally, so we write RoboTito's code in spanish.
 
-## 🗺 Not an spanish speaker?
+## 🗺 Not a spanish speaker?
 We managed to write RoboTito in a way that you can take the code and change the language easily. The only (we hope) thing you have to do is to rewrite the sentences, in the code or in the databases, in the language you want to work with the bot.
 
 **For example**: if you want to change the sentences that appears in the gifs commands, you have to change the sentences that are saved on "databases/db_str.json" with the ones that you like.
@@ -53,8 +53,8 @@ git clone --branch development --depth 1 https://github.com/ATT-Inc/RoboTito
 
 ### Create your own branch
 ~~~
-git branch "your_user_name"`
-git checkout "your_branch-name"`
+git branch "your_user_name"
+git checkout "your_branch-name"
 ~~~
 
 ### Coding...
