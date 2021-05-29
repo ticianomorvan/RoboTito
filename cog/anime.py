@@ -3,6 +3,8 @@ import asyncio
 import discord
 from discord.ext import commands
 
+from discord.member import Member
+
 import datetime
 
 import random
@@ -28,20 +30,31 @@ string = open_str()
 
 
 def header(table):
-    index = random.randint(0, 9)
-    a_header = string[table][index]['header']
-    return a_header
+    header = string[table]
+    return random.choice(header)
 
 
-def message(table):
-    index = random.randint(0, 9)
-    a_message = string[table][index]['message']
-    return a_message
+def sentence(author, msg, member=None):
+    if member is None:
+        message = random.choice(string[msg])
+        result = author + message
+        return result
+    else:
+        message = random.choice(string[msg])
+        result = author + message + member
+        return result
+
+
+def sameUser(activity):
+    message = 'Trata de ' + activity + ' alguien más.'
+    return message
 
 
 color = discord.Color.blue()
 
 time = datetime.datetime.utcnow()
+
+noUser = 'Menciona a alguien más.'
 
 
 class Anime(commands.Cog,
@@ -51,359 +64,286 @@ class Anime(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['abrazo'],
-                      description='Abraza a un usuario.')
-    async def hug(self, ctx, member: discord.Member = None):
-        g = ctx.guild
+    @commands.command(aliases=['abrazo'])
+    async def hug(self, ctx, member: Member = None):
         a = ctx.author
-        msg = message('message_hug')
 
         if member is None:
-            await ctx.send('Me gustaría que abraces a alguien.')
+            await ctx.send(noUser)
+
+        elif member == a:
+            await ctx.send(sameUser('abrazar a'))
 
         else:
-            if member == a:
-                await ctx.send('Bueno, si puedes abrazarte a ti mismo,'
-                               ' pero... preferiría que lo'
-                               ' hagas con alguien más.')
-
-            elif member == self.bot.user:
-                await ctx.send('Nadie... nadie... me había querido'
-                               ' abrazar nunca :(')
-
-            elif member.bot is True:
-                await ctx.send('No sé que tan sano sea abrazar a'
-                               ' programas informáticos.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_hug'),
-                    value=f'**{a.name}**{msg}**{member.name}**'
-                )
-                embed.set_image(url=gif('hug'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['beso'],
-                      description='Besa a un usuario.')
-    async def kiss(self, ctx, member: discord.Member = None):
-        g = ctx.guild
-        a = ctx.author
-        msg = message('message_kiss')
-
-        if member is None:
-            await ctx.send('Menciona a quien quieras besar.')
-
-        else:
-            if member == a:
-                await ctx.send('Deberías buscar a alguien más para besar.')
-
-            elif member == self.bot.user:
-                await ctx.send('Yo... yo... :flushed: ')
-
-            elif member.bot is True:
-                await ctx.send('Fuera de lo lógico, no creo que sea'
-                               ' físicamente posible que beses a un software.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_kiss'),
-                    value=f'**{a.name}**{msg}**{member.name}**'
-                )
-                embed.set_image(url=gif('kiss'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['acariciar'],
-                      description='Acaricia a un usuario')
-    async def pat(self, ctx, member: discord.Member = None):
-        g = ctx.guild
-        a = ctx.author
-        msg = message('message_pat')
-
-        if member is None:
-            await ctx.send('Menciona a quien quieras abrazar.')
-
-        else:
-            if member == a:
-                await ctx.send('Es lindo que tengas afecto propio, pero sería'
-                               ' lindo que acaricies a alguien más.')
-
-            elif member == self.bot.user:
-                await ctx.send('No... no estaría mal un'
-                               ' poco de cariño para mi...')
-
-            elif member.bot is True:
-                await ctx.send('Podrías... ¿acariciar'
-                               ' la computadora?, no lo sé.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_pat'),
-                    value=f'**{a.name}**{msg}**{member.name}**'
-                )
-                embed.set_image(url=gif('pat'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['golpear'],
-                      description='Golpea a un usuario.')
-    async def punch(self, ctx, member: discord.Member = None):
-        g = ctx.guild
-        a = ctx.author
-        msg = message('message_punch')
-
-        if member is None:
-            await ctx.send('Menciona a quien quieras golpear...'
-                           ' aunque no sea muy lindo.')
-
-        else:
-            if member == a:
-                await ctx.send('No deberías golpearte, no es sano.')
-
-            elif member == self.bot.user:
-                await ctx.send('¿Qué te hice yo como para que me golpees?')
-
-            elif member.bot is True:
-                await ctx.send('Todos los programas tienen errores,'
-                               ' no les tengas bronca.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_punch'),
-                    value=f'**{a.name}**{msg}**{member.name}**'
-                )
-                embed.set_image(url=gif('punch'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['dormir'],
-                      description='Dormir sol@ o con alguien.')
-    async def sleep(self, ctx, member: discord.Member = None):
-        a = ctx.author
-        g = ctx.guild
-        msg = message('message_sleep')
-        msgw = message('message_sleepw')
-
-        if member is None:
-            embed = discord.Embed(
+            e = discord.Embed(
                 color=color,
                 timestamp=time
             )
-            embed.add_field(
-                name=header('header_sleep'),
-                value=f'**{a.name}**{msg}'
+            e.add_field(
+                name=header('h_hug'),
+                value=sentence(a.name, 'm_hug', member.name),
             )
-            embed.set_image(url=gif('sleep'))
-            embed.set_footer(text=g, icon_url=g.icon_url)
+            e.set_image(
+                url=gif('hug')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
 
-            await ctx.send(embed=embed)
+            await ctx.send(embed=e)
 
-        else:
-            if member == a:
-                await ctx.send('No hagas tus propios clones, en'
-                               ' cualquier caso, acuéstate con alguien más.')
-
-            elif member == self.bot.user:
-                await ctx.send('No... no podemos... lo siento :(')
-
-            elif member.bot is True:
-                await ctx.send('Podrías acostarte con la computadora,'
-                               ' aunque no creo que sea muy normal.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_sleepw'),
-                    value=f'**{a.name}**{msgw}**{member.name}**'
-                )
-                embed.set_image(url=gif('sleepw'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['matar'],
-                      description='Mata a un usuario.')
-    async def kill(self, ctx, member: discord.Member = None):
+    @commands.command(aliases=['beso'])
+    async def kiss(self, ctx, member: Member = None):
         a = ctx.author
-        g = ctx.guild
-        msg = message('message_kill')
 
         if member is None:
-            await ctx.send('Menciona a alguien, aunque ya estás en '
-                           'la lista negra.')
+            await ctx.send(noUser)
+
+        elif member == a:
+            await ctx.send(sameUser('besar a'))
 
         else:
-            if member == a:
-                await ctx.send('No deberías hacerlo, seguramente mucha '
-                               'gente te quiere :<')
-
-            elif member == self.bot.user:
-                await ctx.send('¡Por favor! tengo hijos, espos... bueno,'
-                               ' en realidad no tengo mucho...'
-                               ' ¡pero no me mates!')
-
-            elif member.bot is True:
-                await ctx.send('Creo que hay mejores formas de apagar un bot.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_kill'),
-                    value=f'**{a.name}**{msg}**{member.name}**'
-                )
-                embed.set_image(url=gif('kill'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
-
-                await ctx.send(embed=embed)
-
-    @commands.command(aliases=['saludar', 'hi'],
-                      description='Saluda a todos o a '
-                                  'un usuario en específico.')
-    async def greet(self, ctx, member: discord.Member = None):
-        a = ctx.author
-        g = ctx.guild
-        msg = message('message_greet')
-        msgs = message('message_greets')
-
-        if member is None:
-            embed = discord.Embed(
+            e = discord.Embed(
                 color=color,
                 timestamp=time
             )
-            embed.add_field(
-                name=header('header_greet'),
-                value=f'**{a.name}**{msg}'
+            e.add_field(
+                name=header('h_kiss'),
+                value=sentence(a.name, 'm_kiss', member.name),
             )
-            embed.set_image(url=gif('hi'))
-            embed.set_footer(
-                text=g,
-                icon_url=g.icon_url
+            e.set_image(
+                url=gif('kiss')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
             )
 
-            await ctx.send(embed=embed)
+            await ctx.send(embed=e)
+
+    @commands.command(aliases=['acariciar'])
+    async def pat(self, ctx, member: Member = None):
+        a = ctx.author
+
+        if member is None:
+            await ctx.send(noUser)
+
+        elif member == a:
+            await ctx.send(sameUser('acariciar a'))
 
         else:
-            if member == a:
-                await ctx.send('Podrías estar padeciendo algún'
-                               ' trastorno mental, o simplemente'
-                               ' tener mucho (demasiado) amor propio.')
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_pat'),
+                value=sentence(a.name, 'm_pat', member.name),
+            )
+            e.set_image(
+                url=gif('pat')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
 
-            elif member == self.bot.user:
-                await ctx.send(f'Gracias, **{a.name}**, aprecio tu saludo :)')
+            await ctx.send(embed=e)
 
-            elif member.bot is True:
-                await ctx.send(f'**{member.name}** no puede hablar contigo'
-                               ' porque es un robot pero te dice gracias :D')
+    @commands.command(aliases=['golpear'])
+    async def punch(self, ctx, member: Member = None):
+        a = ctx.author
 
-            elif member is not None:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(
-                    name=header('header_greets'),
-                    value=f'**{a.name}**{msgs}**{member.name}**'
-                )
-                embed.set_image(url=gif('hi'))
-                embed.set_footer(
-                    text=g,
-                    icon_url=g.icon_url
-                )
+        if member is None:
+            await ctx.send(noUser)
 
-                await ctx.send(embed=embed)
+        elif member == a:
+            await ctx.send(sameUser('golpear a'))
+
+        else:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_punch'),
+                value=sentence(a.name, 'm_punch', member.name),
+            )
+            e.set_image(
+                url=gif('punch')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
+
+    @commands.command(aliases=['dormir'])
+    async def sleep(self, ctx, member: Member = None):
+        a = ctx.author
+
+        if member is None:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_sleep'),
+                value=sentence(a.name, 'm_sleep'),
+            )
+            e.set_image(
+                url=gif('sleep')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
+
+        elif member == a:
+            await ctx.send(sameUser('acostarte con'))
+
+        else:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_sleepw'),
+                value=sentence(a.name, 'm_sleepw', member.name),
+            )
+            e.set_image(
+                url=gif('sleepw')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
+
+    @commands.command(aliases=['matar'])
+    async def kill(self, ctx, member: Member = None):
+        a = ctx.author
+
+        if member is None:
+            await ctx.send(noUser)
+
+        elif member == a:
+            await ctx.send(sameUser('matar a'))
+
+        else:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_kill'),
+                value=sentence(a.name, 'm_kill', member.name),
+            )
+            e.set_image(
+                url=gif('kill')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
+
+    @commands.command(aliases=['saludar', 'hi'])
+    async def greet(self, ctx, member: Member = None):
+        a = ctx.author
+
+        if member is None:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_greet'),
+                value=sentence(a.name, 'm_greet'),
+            )
+            e.set_image(
+                url=gif('hi')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
+
+        elif member == a:
+            await ctx.send(sameUser('saludar a'))
+
+        else:
+            e = discord.Embed(
+                color=color,
+                timestamp=time
+            )
+            e.add_field(
+                name=header('h_greets'),
+                value=sentence(a.name, 'm_greets', member.name),
+            )
+            e.set_image(
+                url=gif('hi')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
+            )
+
+            await ctx.send(embed=e)
 
     @commands.command(aliases=['bye', 'adios'],
                       description='Despide a un usuario o despídete.')
     async def goodbye(self, ctx, member: discord.Member = None):
         a = ctx.author
-        g = ctx.guild
 
         if member is None:
-            embed = discord.Embed(
+            e = discord.Embed(
                 color=color,
                 timestamp=time
             )
-            embed.add_field(name='¡Sayonara!',
-                            value=f'**{ctx.author.name}** se retira y '
-                                  'saluda a todos',
-                            inline=False)
-            embed.set_image(url=gif('bye'))
-            embed.set_footer(
-                text=g,
-                icon_url=g.icon_url
+            e.add_field(
+                name=header('h_goodbye'),
+                value=sentence(a.name, 'm_goodbye', member.name),
+            )
+            e.set_image(
+                url=gif('bye')
+            )
+            e.set_footer(
+                text=ctx.guild,
+                icon_url=ctx.guild.icon_url
             )
 
-            await ctx.send(embed=embed)
+            await ctx.send(embed=e)
 
-        else:
-            if member == a:
-                await ctx.send('No creo que tengas que auto-despedirte.')
+        elif member == a:
+            await ctx.send(sameUser('despedir a'))
 
-            elif member == self.bot.user:
-                await ctx.send(f'¡Adiós {a.name}')
-
-            elif member.bot is True:
-                await ctx.send(f'No creo que {member.name} te salude, digo,'
-                               ' es un robot.')
-
-            else:
-                embed = discord.Embed(
-                    color=color,
-                    timestamp=time
-                )
-                embed.add_field(name='¡Adiós!',
-                                value=f'**{ctx.author.name}** se despide de '
-                                      f'**{member.name}**',
-                                inline=False)
-                embed.set_image(url=gif('bye'))
-                embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
-
-                await ctx.send(embed=embed)
+#        else:
+#            e = discord.Embed(
+#                color=color,
+#                timestamp=time
+#            )
+#            e.add_field(
+#                name=header('h_kill'),
+#                value=sentence(a.name, 'm_kill', member.name),
+#            )
+#            e.set_image(
+#                url=gif('kill')
+#            )
+#            e.set_footer(
+#                text=ctx.guild,
+#                icon_url=ctx.guild.icon_url
+#            )
+#
+#            await ctx.send(embed=e)
 
     @commands.command(aliases=['llorar'],
                       description='Lloras o alguien te hace llorar.')

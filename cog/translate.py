@@ -7,12 +7,13 @@ import datetime
 
 import json
 
+
 def languageTranslate(language):
     with open('databases/iso639-1/db_languages.json', encoding='utf-8') as f:
         data = f.read()
-        l = json.loads(data)
-        if language in l:
-            codename = l[language]['codename']
+        lang = json.loads(data)
+        if language in lang:
+            codename = lang[language]['codename']
             return codename
         else:
             pass

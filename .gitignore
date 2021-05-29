@@ -13,7 +13,3 @@ databases/iso639-1/db_iso639-1.json
 
 # Files
 robotito.log
-cog/welcome.py
-docs/_config.yml
-docs/index.md
-cog/dump

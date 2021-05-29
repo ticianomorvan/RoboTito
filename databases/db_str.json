@@ -24,257 +24,257 @@
         "Quizás, quizás no, no lo sé"
     ],
 
-    "header_hug": [
-        {"header":"¡Abrazo!"},
-        {"header":"¡Abrázale!"},
-        {"header":"Alguien quiere un abrazo..."},
-        {"header":"¡Denle un abrazo!"},
-        {"header":"¡Abrazo de oso!"},
-        {"header":"Un fuerte abrazo para alegrar el corazón :)"},
-        {"header":"Ojalá alguien me abrazara así :("},
-        {"header":"El afecto físico es hermoso"},
-        {"header":"No seré el que les diga algo, ¡abrázense!"},
-        {"header":"Se ven muy lindos, ¿no me dan un abrazo a mi también?"}
+    "h_hug": [
+        "¡Abrazo!",
+        "¡Abrázale!",
+        "Alguien quiere un abrazo...",
+        "¡Denle un abrazo!",
+        "¡Abrazo de oso!",
+        "Un fuerte abrazo para alegrar el corazón :)",
+        "Ojalá alguien me abrazara así :(",
+        "El afecto físico es hermoso",
+        "No seré el que les diga algo, ¡abrázense!",
+        "Se ven muy lindos, ¿no me dan un abrazo a mi también?"
     ],
 
-    "message_hug": [
-        {"message":" abraza apasionadamente a "},
-        {"message":" le regala un caluroso abrazo a "},
-        {"message":" toma por sorpresa y abraza a "},
-        {"message":" quiere demostrarle cariño a base de abrazos a "},
-        {"message":" le obsequia un amoroso abrazo a "},
-        {"message":" abraza con mucho amor a "},
-        {"message":" le da un abrazo de oso a "},
-        {"message":" aprieta con mucho amor (y fuerza) a "},
-        {"message":" le da un cariñosísimo abrazo a "},
-        {"message":" regala su ternura al abrazar a "}
+    "m_hug": [
+        " abraza apasionadamente a ",
+        " le regala un caluroso abrazo a ",
+        " toma por sorpresa y abraza a ",
+        " quiere demostrarle cariño a base de abrazos a ",
+        " le obsequia un amoroso abrazo a ",
+        " abraza con mucho amor a ",
+        " le da un abrazo de oso a ",
+        " aprieta con mucho amor (y fuerza) a ",
+        " le da un cariñosísimo abrazo a ",
+        " regala su ternura al abrazar a "
     ],
 
-    "header_kiss": [
-        {"header":"Besos por aquí, besos por allá"},
-        {"header":"¿Acaso hay muérdago por acá?"},
-        {"header":"Los besos van, y vienen..."},
-        {"header":"Eso sí que es un beso apasionado"},
-        {"header":"Besos, besos y más besos"},
-        {"header":"¡El amor surge!"},
-        {"header":"Esto ya es mucho amor, hasta para mi"},
-        {"header":"Como están los jóvenes de hoy..."},
-        {"header":"Oigan... ya me puedo ir? ;("},
-        {"header":"¡El verdadero amor nace! (gracias a mi)"}
+    "h_kiss": [
+        "Besos por aquí, besos por allá",
+        "¿Acaso hay muérdago por acá?",
+        "Los besos van, y vienen...",
+        "Eso sí que es un beso apasionado",
+        "Besos, besos y más besos",
+        "¡El amor surge!",
+        "Esto ya es mucho amor, hasta para mi",
+        "Como están los jóvenes de hoy...",
+        "Oigan... ya me puedo ir? ;(",
+        "¡El verdadero amor nace! (gracias a mi)"
     ],
 
-    "message_kiss": [
-        {"message":" besa con mucho amor a "},
-        {"message":" le roba un beso a "},
-        {"message":" toma por sorpresa con un beso a "},
-        {"message":" junta sus labios con los de "},
-        {"message":" se besa con "},
-        {"message":" consigue besar a "},
-        {"message":" besa apasionadamente a "},
-        {"message":" besa locamente a "},
-        {"message":" le da un beso con mucho cariño a "},
-        {"message":" le demuestra sus sentimientos con un beso a "}
+    "m_kiss": [
+        " besa con mucho amor a ",
+        " le roba un beso a ",
+        " toma por sorpresa con un beso a ",
+        " junta sus labios con los de ",
+        " se besa con ",
+        " consigue besar a ",
+        " besa apasionadamente a ",
+        " besa locamente a ",
+        " le da un beso con mucho cariño a ",
+        " le demuestra sus sentimientos con un beso a "
     ],
     
-    "header_pat": [
-        {"header":"Cariñitos, cariñitos"},
-        {"header":"Caricias y más caricias"},
-        {"header":"Las caricias se dan una vez más"},
-        {"header":"Ojalá una robot me hiciera caricias :("},
-        {"header":"Los cariñitos no dejan de llegar"},
-        {"header":"No puedo dejar de pensar que yo también quiero cariñitos ;("},
-        {"header":"Esas son muchas caricias, quizá demasiadas"},
-        {"header":"Ustedes sigan acariciándose, yo... iré a llorar"},
-        {"header":"Ni dos animales se acariciarían tanto como ustedes"},
-        {"header":"¿Ustedes se acarician por algo o solo por gusto?"}
+    "h_pat": [
+        "Cariñitos, cariñitos",
+        "Caricias y más caricias",
+        "Las caricias se dan una vez más",
+        "Ojalá una robot me hiciera caricias :(",
+        "Los cariñitos no dejan de llegar",
+        "No puedo dejar de pensar que yo también quiero cariñitos ;(",
+        "Esas son muchas caricias, quizá demasiadas",
+        "Ustedes sigan acariciándose, yo... iré a llorar",
+        "Ni dos animales se acariciarían tanto como ustedes",
+        "¿Ustedes se acarician por algo o solo por gusto?"
     ],
 
-    "message_pat": [
-        {"message":" acaricia con sumo cuidado a "},
-        {"message":" le hace cariñitos a "},
-        {"message":" acaricia con ternura a "},
-        {"message":" acaricia tiernamente a "},
-        {"message":" acaricia suavemente a "},
-        {"message":" transmite su cariño a "},
-        {"message":" le hace cálidos cariños a "},
-        {"message":" le regala suaves cariños a "},
-        {"message":" le da tiernas caricias a "},
-        {"message":" acaricia con mucho amor a "}
+    "m_pat": [
+        " acaricia con sumo cuidado a ",
+        " le hace cariñitos a ",
+        " acaricia con ternura a ",
+        " acaricia tiernamente a ",
+        " acaricia suavemente a ",
+        " transmite su cariño a ",
+        " le hace cálidos cariños a ",
+        " le regala suaves cariños a ",
+        " le da tiernas caricias a ",
+        " acaricia con mucho amor a "
     ],
 
-    "header_punch": [
-        {"header":"¡Lo hizo m$#&!a!"},
-        {"header":"¡Basta de violencia!"},
-        {"header":"¡Dejen de golpearse!"},
-        {"header":"Yo no voy a ver como se matan"},
-        {"header":"Eso va a requerir un doctor"},
-        {"header":"La violencia atrae más violencia"},
-        {"header":"¿Estamos en una pelea de boxeo?"},
-        {"header":"Hasta a mi me dolió eso"},
-        {"header":"Yo me metería, pero prefiero seguir viviendo"},
-        {"header":"No entiendo que ganan con todo esto"}
+    "h_punch": [
+        "¡Lo hizo m$#&!a!",
+        "¡Basta de violencia!",
+        "¡Dejen de golpearse!",
+        "Yo no voy a ver como se matan",
+        "Eso va a requerir un doctor",
+        "La violencia atrae más violencia",
+        "¿Estamos en una pelea de boxeo?",
+        "Hasta a mi me dolió eso",
+        "Yo me metería, pero prefiero seguir viviendo",
+        "No entiendo que ganan con todo esto"
     ],
 
-    "message_punch": [
-        {"message":" golpeó a "},
-        {"message":" destrozó de un golpe a "},
-        {"message":" le voló la cara a "},
-        {"message":" cacheteó a "},
-        {"message":" golpeó fuertemente a "},
-        {"message":" le dio un tremendo golpe a "},
-        {"message":" golpeó salvajemente a "},
-        {"message":" destrozó brutalmente a "},
-        {"message":" le giró la cabeza a "},
-        {"message":" le dio un golpe rotundo a"}
+    "m_punch": [
+        " golpeó a ",
+        " destrozó de un golpe a ",
+        " le voló la cara a ",
+        " cacheteó a ",
+        " golpeó fuertemente a ",
+        " le dio un tremendo golpe a ",
+        " golpeó salvajemente a ",
+        " destrozó brutalmente a ",
+        " le giró la cabeza a ",
+        " le dio un golpe rotundo a"
     ],
 
-    "header_sleep": [
-        {"header":"Alguien tiene sueño..."},
-        {"header":"Hasta a mi me da sueño"},
-        {"header":"Alguien debería dormirse más temprano"},
-        {"header":"No puedo verte con esa cara, ve a dormir"},
-        {"header":"¿Se te apaga el tele?"},
-        {"header":"¿Te estás durmiendo o solo te aburro?"},
-        {"header":"Al menos, si vas a poner esa cara, ve a dormir"},
-        {"header":"Esos bostezos si se pueden ver"},
-        {"header":"No entiendo como puedes tener tanto sueño"},
-        {"header":"La verdad, esa no es tu mejor cara"}
+    "h_sleep": [
+        "Alguien tiene sueño...",
+        "Hasta a mi me da sueño",
+        "Alguien debería dormirse más temprano",
+        "No puedo verte con esa cara, ve a dormir",
+        "¿Se te apaga el tele?",
+        "¿Te estás durmiendo o solo te aburro?",
+        "Al menos, si vas a poner esa cara, ve a dormir",
+        "Esos bostezos si se pueden ver",
+        "No entiendo como puedes tener tanto sueño",
+        "La verdad, esa no es tu mejor cara"
     ],
 
-    "header_sleepw": [
-        {"header":"Ay, estos jóvenes de hoy tan cariñosos..."},
-        {"header":"Pueden, al menos, ¿no hacerlo frente a nosotros?"},
-        {"header":"Los tórtolos se acurrucan..."},
-        {"header":"¿La parejita ya se va a dormir?"},
-        {"header":"¿Se contagian el sueño ustedes?"},
-        {"header":"Los tontitos se acuestan juntos..."},
-        {"header":"Los enamorados se van a acostar parece ser"},
-        {"header":"No traigan más vidas al mundo, ¿sí"},
-        {"header":"La cama es un lugar para dormir, ¿entendieron?"},
-        {"header":"Espero que solo duerman"}
+    "h_sleepw": [
+        "Ay, estos jóvenes de hoy tan cariñosos...",
+        "Pueden, al menos, ¿no hacerlo frente a nosotros?",
+        "Los tórtolos se acurrucan...",
+        "¿La parejita ya se va a dormir?",
+        "¿Se contagian el sueño ustedes?",
+        "Los tontitos se acuestan juntos...",
+        "Los enamorados se van a acostar parece ser",
+        "No traigan más vidas al mundo, ¿sí",
+        "La cama es un lugar para dormir, ¿entendieron?",
+        "Espero que solo duerman"
     ],
 
-    "message_sleep": [
-        {"message":" se va a dormir."},
-        {"message":" tiene tanto sueño que se retira."},
-        {"message":" no logra despertarse y se duerme."},
-        {"message":" pierde contra el sueño y se duerme."},
-        {"message":" tiene mucho sueño."},
-        {"message":" necesita una buena siesta."},
-        {"message":" debería irse a dormir."},
-        {"message":" va a tener una gran cita... con la cama."},
-        {"message":" procede a dormir por un largo rato."},
-        {"message":" no puede seguir en pié y se acuesta a dormir."}
+    "m_sleep": [
+        " se va a dormir.",
+        " tiene tanto sueño que se retira.",
+        " no logra despertarse y se duerme.",
+        " pierde contra el sueño y se duerme.",
+        " tiene mucho sueño.",
+        " necesita una buena siesta.",
+        " debería irse a dormir.",
+        " va a tener una gran cita... con la cama.",
+        " procede a dormir por un largo rato.",
+        " no puede seguir en pié y se acuesta a dormir."
     ],
 
-    "message_sleepw": [
-        {"message":" se acuesta a dormir con "},
-        {"message":" se recuesta con "},
-        {"message":" se acurruca con "},
-        {"message":" va a la cama con "},
-        {"message":" se recuesta junto a "},
-        {"message":" se duerme con "},
-        {"message":" se acuesta junto a "},
-        {"message":" duerme junto a "},
-        {"message":" duerme plácidamente con "},
-        {"message":" logra dormirse con "}
+    "m_sleepw": [
+        " se acuesta a dormir con ",
+        " se recuesta con ",
+        " se acurruca con ",
+        " va a la cama con ",
+        " se recuesta junto a ",
+        " se duerme con ",
+        " se acuesta junto a ",
+        " duerme junto a ",
+        " duerme plácidamente con ",
+        " logra dormirse con "
     ],
 
-    "header_kill": [
-        {"header": "¡Asesinato en el servidor!"},
-        {"header": "¡Asesino suelto!"},
-        {"header": "No tendrás perdón de nadie, asesino"},
-        {"header": "La justicia te encontrará, algún día"},
-        {"header": "Eso fue, grotesco"},
-        {"header": "No pensaba que fueras así"},
-        {"header": "La crueldad que veo en tus ojos es incomprendible"},
-        {"header": "No entiendo porqué lo hiciste"},
-        {"header": "Te llevaste una vida, una inocente"},
-        {"header": "No esperaba nada de ti, ¿pero esto?, eres repugnante"}
+    "h_kill": [
+         "¡Asesinato en el servidor!",
+         "¡Asesino suelto!",
+         "No tendrás perdón de nadie, asesino",
+         "La justicia te encontrará, algún día",
+         "Eso fue, grotesco",
+         "No pensaba que fueras así",
+         "La crueldad que veo en tus ojos es incomprendible",
+         "No entiendo porqué lo hiciste",
+         "Te llevaste una vida, una inocente",
+         "No esperaba nada de ti, ¿pero esto?, eres repugnante"
     ],
 
-    "message_kill": [
-        {"message": " asesinó a "},
-        {"message": " mató a "},
-        {"message": " sorprendió a todos asesinando a "},
-        {"message": " no tuvo piedad y mató a "},
-        {"message": " convirtió en víctima a "},
-        {"message": " cometió un delito gravísimo al matar a "},
-        {"message": " cometió asesinato contra "},
-        {"message": " desató su furia asesinando a "},
-        {"message": " logró terminar con la vida de "},
-        {"message": " terminó con la vida de "}
+    "m_kill": [
+         " asesinó a ",
+         " mató a ",
+         " sorprendió a todos asesinando a ",
+         " no tuvo piedad y mató a ",
+         " convirtió en víctima a ",
+         " cometió un delito gravísimo al matar a ",
+         " cometió asesinato contra ",
+         " desató su furia asesinando a ",
+         " logró terminar con la vida de ",
+         " terminó con la vida de "
     ],
 
-    "header_greet": [
-        {"header":"¡Saludos, saludos!"},
-        {"header":"Alguien quiere llamar la atención..."},
-        {"header":"¡Saludos para todos!"},
-        {"header":"Saludos, saluditos, saludines"},
-        {"header":"¡Hola a todos!"},
-        {"header":"¡Sean todos saludados!"},
-        {"header":"Todos recibirán su saludo"},
-        {"header":"Reciban cariñosamente un cariñoso saludo"},
-        {"header":"Alguien los está saludando..."},
-        {"header":"¡Una persona muy especial del servidor los saluda!"}
+    "h_greet": [
+        "¡Saludos, saludos!",
+        "Alguien quiere llamar la atención...",
+        "¡Saludos para todos!",
+        "Saludos, saluditos, saludines",
+        "¡Hola a todos!",
+        "¡Sean todos saludados!",
+        "Todos recibirán su saludo",
+        "Reciban cariñosamente un cariñoso saludo",
+        "Alguien los está saludando...",
+        "¡Una persona muy especial del servidor los saluda!"
     ],
 
-    "header_greets": [
-        {"header":"Alguien te saluda..."},
-        {"header":"Creo que alguien quiere llamar tu atención"},
-        {"header":"Que agradable saludo, ojalá a mi me saludaran"},
-        {"header":"Un cálido saludo de un cálido espíritu"},
-        {"header":"¿Sabían que saludar es una forma básica de comunicación?"},
-        {"header":"La suerte que tienes... alguien te está saludando"},
-        {"header":"¿Te gustan los saludos? a mi me gustarían, si tan solo alguien me diera uno"},
-        {"header":"Oye, *pss pss* te están saludando"},
-        {"header":"Creo que ese saludo es para ti"},
-        {"header":"Oye, esa persona te está saludando"}
+    "h_greets": [
+        "Alguien te saluda...",
+        "Creo que alguien quiere llamar tu atención",
+        "Que agradable saludo, ojalá a mi me saludaran",
+        "Un cálido saludo de un cálido espíritu",
+        "¿Sabían que saludar es una forma básica de comunicación?",
+        "La suerte que tienes... alguien te está saludando",
+        "¿Te gustan los saludos? a mi me gustarían, si tan solo alguien me diera uno",
+        "Oye, *pss pss* te están saludando",
+        "Creo que ese saludo es para ti",
+        "Oye, esa persona te está saludando"
     ],
 
-    "message_greet": [
-        {"message":" saluda a todos."},
-        {"message":" quiere darles un saludo a todos."},
-        {"message":" no puede esperar para saludarlos a todos."},
-        {"message":" quiere saludarlos a todos."},
-        {"message":" está saludándolos a todos."},
-        {"message":" quiere darle un saludo a cada uno de los miembros del servidor."},
-        {"message":" quiere saludar a cada uno de ustedes."},
-        {"message":" saluda cariñosamente a todos."},
-        {"message":" saluda energéticamente a todo mundo."},
-        {"message":" les da a todos un gran saludo."}
+    "m_greet": [
+        " saluda a todos.",
+        " quiere darles un saludo a todos.",
+        " no puede esperar para saludarlos a todos.",
+        " quiere saludarlos a todos.",
+        " está saludándolos a todos.",
+        " quiere darle un saludo a cada uno de los miembros del servidor.",
+        " quiere saludar a cada uno de ustedes.",
+        " saluda cariñosamente a todos.",
+        " saluda energéticamente a todo mundo.",
+        " les da a todos un gran saludo."
     ],
 
-    "message_greets": [
-        {"message":" saluda a "},
-        {"message":" le manda un saludo a "},
-        {"message":" quiere darle un saludo a "},
-        {"message":" manda un saludo para "},
-        {"message":" busca saludar a "},
-        {"message":" quiere saludar a "},
-        {"message":" le da un cálido saludo a "},
-        {"message":" saluda cariñosamente a "},
-        {"message":" saluda cálidamente a "},
-        {"message":" le manda un tierno saludo a "}
+    "m_greets": [
+        " saluda a ",
+        " le manda un saludo a ",
+        " quiere darle un saludo a ",
+        " manda un saludo para ",
+        " busca saludar a ",
+        " quiere saludar a ",
+        " le da un cálido saludo a ",
+        " saluda cariñosamente a ",
+        " saluda cálidamente a ",
+        " le manda un tierno saludo a "
     ],
 
-    "header_goodbye": [
-        {"header":"¡Adiós!"},
-        {"header":"¡Nos vemos!"},
-        {"header":"¡Nos vemos luego!"},
-        {"header":"¡Despídanse!"},
-        {"header":"¡Nos veremos más tarde!"},
-        {"header":"Ojalá verte pronto otra vez"},
-        {"header":"Alguien no quería irse..."},
-        {"header":"¡Nos veremos después!"},
-        {"header":"Esperamos verte pronto por aquí..."},
-        {"header":"Espero que nos reencontremos pronto"}
+    "h_goodbye": [
+        "¡Adiós!",
+        "¡Nos vemos!",
+        "¡Nos vemos luego!",
+        "¡Despídanse!",
+        "¡Nos veremos más tarde!",
+        "Ojalá verte pronto otra vez",
+        "Alguien no quería irse...",
+        "¡Nos veremos después!",
+        "Esperamos verte pronto por aquí...",
+        "Espero que nos reencontremos pronto"
     ],
 
-    "message_goodbye": [
-        {"message":" se despide"},
-        {"message":" se va y se despide de todos"},
-        {"message":" se retira y saluda a todos"},
-        {"message":" está por irse, pero quiere saludar a todos"}
+    "m_goodbye": [
+        " se despide",
+        " se va y se despide de todos",
+        " se retira y saluda a todos",
+        " está por irse, pero quiere saludar a todos"
     ]
 }
