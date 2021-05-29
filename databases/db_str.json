@@ -256,5 +256,25 @@
         {"message":" saluda cariñosamente a "},
         {"message":" saluda cálidamente a "},
         {"message":" le manda un tierno saludo a "}
+    ],
+
+    "header_goodbye": [
+        {"header":"¡Adiós!"},
+        {"header":"¡Nos vemos!"},
+        {"header":"¡Nos vemos luego!"},
+        {"header":"¡Despídanse!"},
+        {"header":"¡Nos veremos más tarde!"},
+        {"header":"Ojalá verte pronto otra vez"},
+        {"header":"Alguien no quería irse..."},
+        {"header":"¡Nos veremos después!"},
+        {"header":"Esperamos verte pronto por aquí..."},
+        {"header":"Espero que nos reencontremos pronto"}
+    ],
+
+    "message_goodbye": [
+        {"message":" se despide"},
+        {"message":" se va y se despide de todos"},
+        {"message":" se retira y saluda a todos"},
+        {"message":" está por irse, pero quiere saludar a todos"}
     ]
 }

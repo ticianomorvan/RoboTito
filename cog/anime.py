@@ -360,30 +360,50 @@ class Anime(commands.Cog,
     @commands.command(aliases=['bye', 'adios'],
                       description='Despide a un usuario o despídete.')
     async def goodbye(self, ctx, member: discord.Member = None):
+        a = ctx.author
+        g = ctx.guild
 
-        if member is not None:
-            embed = discord.Embed(color=color,
-                                  timestamp=time)
-            embed.add_field(name='¡Adiós!',
-                            value=f'**{ctx.author.name}** se despide de '
-                                  f'**{member.name}**',
-                            inline=False)
-            embed.set_image(url=gif('bye'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
-
-            await ctx.send(embed=embed)
-
-        else:
-            embed = discord.Embed(color=color,
-                                  timestamp=time)
+        if member is None:
+            embed = discord.Embed(
+                color=color,
+                timestamp=time
+            )
             embed.add_field(name='¡Sayonara!',
                             value=f'**{ctx.author.name}** se retira y '
                                   'saluda a todos',
                             inline=False)
             embed.set_image(url=gif('bye'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+            embed.set_footer(
+                text=g,
+                icon_url=g.icon_url
+            )
 
             await ctx.send(embed=embed)
+
+        else:
+            if member == a:
+                await ctx.send('No creo que tengas que auto-despedirte.')
+
+            elif member == self.bot.user:
+                await ctx.send(f'¡Adiós {a.name}')
+
+            elif member.bot is True:
+                await ctx.send(f'No creo que {member.name} te salude, digo,'
+                               ' es un robot.')
+
+            else:
+                embed = discord.Embed(
+                    color=color,
+                    timestamp=time
+                )
+                embed.add_field(name='¡Adiós!',
+                                value=f'**{ctx.author.name}** se despide de '
+                                      f'**{member.name}**',
+                                inline=False)
+                embed.set_image(url=gif('bye'))
+                embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
+
+                await ctx.send(embed=embed)
 
     @commands.command(aliases=['llorar'],
                       description='Lloras o alguien te hace llorar.')
