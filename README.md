@@ -4,8 +4,12 @@
 <p align="center">
   RoboTito is a Discord bot powered by the API wrapper <a href="https://discordpy.rtfd.io" target="_blank">Discord.py</a><br><br>
   <img src="https://img.shields.io/github/languages/top/ATT-Inc/RoboTito">
-  <img src="https://img.shields.io/github/contributors/ATT-Inc/RoboTito">
+  <img src="https://img.shields.io/github/contributors/ATT-Inc/RoboTito?color=blue">
+  <img src="https://img.shields.io/github/license/ATT-Inc/RoboTito?color=blue">
+  <img src="https://img.shields.io/maintenance/yes/2021?color=blue">
   <img src="https://img.shields.io/github/checks-status/ATT-Inc/RoboTito/development">
+  <img src="https://scrutinizer-ci.com/g/ATT-Inc/RoboTito/badges/build.png?b=development">
+  <img src="https://scrutinizer-ci.com/g/ATT-Inc/RoboTito/badges/quality-score.png?b=development">
 </p>
 
 ## 🌎 Visit our website!
