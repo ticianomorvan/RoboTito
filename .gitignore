@@ -1,7 +1,7 @@
 # Folders
 photos
 .vscode
-cog/__pycache__/
+**/__pycache__/
 images
 docs/raw_files
 

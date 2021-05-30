@@ -1,5 +1,3 @@
-import asyncio
-
 import discord
 from discord.ext import commands
 
@@ -7,48 +5,9 @@ from discord.member import Member
 
 import datetime
 
-import random
+import cog.functions.functions as functions
 
-import json
-
-
-def gif(database):
-    with open('databases/db_gifs.json') as f:
-        data = f.read()
-        gif = json.loads(data)
-        return random.choice(gif[database])
-
-
-def open_str():
-    with open('databases/db_str.json', encoding='utf8') as f:
-        data = f.read()
-        string = json.loads(data)
-        return string
-
-
-string = open_str()
-
-
-def header(table):
-    header = string[table]
-    return random.choice(header)
-
-
-def sentence(author, msg, member=None):
-    if member is None:
-        message = random.choice(string[msg])
-        result = author + message
-        return result
-    else:
-        message = random.choice(string[msg])
-        result = author + message + member
-        return result
-
-
-def sameUser(activity):
-    message = 'Trata de ' + activity + ' alguien más.'
-    return message
-
+function = functions.Functions
 
 color = discord.Color.blue()
 
@@ -72,7 +31,7 @@ class Anime(commands.Cog,
             await ctx.send(noUser)
 
         elif member == a:
-            await ctx.send(sameUser('abrazar a'))
+            await ctx.send(function.sameUser('abrazar a'))
 
         else:
             e = discord.Embed(
@@ -80,11 +39,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_hug'),
-                value=sentence(a.name, 'm_hug', member.name),
+                name=function.header('h_hug'),
+                value=function.sentence(a.name, 'm_hug', member.name),
             )
             e.set_image(
-                url=gif('hug')
+                url=function.gif('hug')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -101,7 +60,7 @@ class Anime(commands.Cog,
             await ctx.send(noUser)
 
         elif member == a:
-            await ctx.send(sameUser('besar a'))
+            await ctx.send(function.sameUser('besar a'))
 
         else:
             e = discord.Embed(
@@ -109,11 +68,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_kiss'),
-                value=sentence(a.name, 'm_kiss', member.name),
+                name=function.header('h_kiss'),
+                value=function.sentence(a.name, 'm_kiss', member.name),
             )
             e.set_image(
-                url=gif('kiss')
+                url=function.gif('kiss')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -130,7 +89,7 @@ class Anime(commands.Cog,
             await ctx.send(noUser)
 
         elif member == a:
-            await ctx.send(sameUser('acariciar a'))
+            await ctx.send(function.sameUser('acariciar a'))
 
         else:
             e = discord.Embed(
@@ -138,11 +97,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_pat'),
-                value=sentence(a.name, 'm_pat', member.name),
+                name=function.header('h_pat'),
+                value=function.sentence(a.name, 'm_pat', member.name),
             )
             e.set_image(
-                url=gif('pat')
+                url=function.gif('pat')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -159,7 +118,7 @@ class Anime(commands.Cog,
             await ctx.send(noUser)
 
         elif member == a:
-            await ctx.send(sameUser('golpear a'))
+            await ctx.send(function.sameUser('golpear a'))
 
         else:
             e = discord.Embed(
@@ -167,11 +126,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_punch'),
-                value=sentence(a.name, 'm_punch', member.name),
+                name=function.header('h_punch'),
+                value=function.sentence(a.name, 'm_punch', member.name),
             )
             e.set_image(
-                url=gif('punch')
+                url=function.gif('punch')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -190,11 +149,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_sleep'),
-                value=sentence(a.name, 'm_sleep'),
+                name=function.header('h_sleep'),
+                value=function.sentence(a.name, 'm_sleep'),
             )
             e.set_image(
-                url=gif('sleep')
+                url=function.gif('sleep')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -204,7 +163,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=e)
 
         elif member == a:
-            await ctx.send(sameUser('acostarte con'))
+            await ctx.send(function.function.sameUser('acostarte con'))
 
         else:
             e = discord.Embed(
@@ -212,11 +171,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_sleepw'),
-                value=sentence(a.name, 'm_sleepw', member.name),
+                name=function.header('h_sleepw'),
+                value=function.sentence(a.name, 'm_sleepw', member.name),
             )
             e.set_image(
-                url=gif('sleepw')
+                url=function.gif('sleepw')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -233,7 +192,7 @@ class Anime(commands.Cog,
             await ctx.send(noUser)
 
         elif member == a:
-            await ctx.send(sameUser('matar a'))
+            await ctx.send(function.sameUser('matar a'))
 
         else:
             e = discord.Embed(
@@ -241,11 +200,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_kill'),
-                value=sentence(a.name, 'm_kill', member.name),
+                name=function.header('h_kill'),
+                value=function.sentence(a.name, 'm_kill', member.name),
             )
             e.set_image(
-                url=gif('kill')
+                url=function.gif('kill')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -264,11 +223,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_greet'),
-                value=sentence(a.name, 'm_greet'),
+                name=function.header('h_greet'),
+                value=function.sentence(a.name, 'm_greet'),
             )
             e.set_image(
-                url=gif('hi')
+                url=function.gif('hi')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -278,7 +237,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=e)
 
         elif member == a:
-            await ctx.send(sameUser('saludar a'))
+            await ctx.send(function.sameUser('saludar a'))
 
         else:
             e = discord.Embed(
@@ -286,11 +245,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_greets'),
-                value=sentence(a.name, 'm_greets', member.name),
+                name=function.header('h_greets'),
+                value=function.sentence(a.name, 'm_greets', member.name),
             )
             e.set_image(
-                url=gif('hi')
+                url=function.gif('hi')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -310,11 +269,11 @@ class Anime(commands.Cog,
                 timestamp=time
             )
             e.add_field(
-                name=header('h_goodbye'),
-                value=sentence(a.name, 'm_goodbye', member.name),
+                name=function.header('h_goodbye'),
+                value=function.sentence(a.name, 'm_goodbye', member.name),
             )
             e.set_image(
-                url=gif('bye')
+                url=function.gif('bye')
             )
             e.set_footer(
                 text=ctx.guild,
@@ -324,7 +283,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=e)
 
         elif member == a:
-            await ctx.send(sameUser('despedir a'))
+            await ctx.send(function.sameUser('despedir a'))
 
 #        else:
 #            e = discord.Embed(
@@ -332,7 +291,7 @@ class Anime(commands.Cog,
 #                timestamp=time
 #            )
 #            e.add_field(
-#                name=header('h_kill'),
+#                name=function.header('h_kill'),
 #                value=sentence(a.name, 'm_kill', member.name),
 #            )
 #            e.set_image(
@@ -344,99 +303,6 @@ class Anime(commands.Cog,
 #            )
 #
 #            await ctx.send(embed=e)
-
-    @commands.command(aliases=['llorar'],
-                      description='Lloras o alguien te hace llorar.')
-    async def cry(self, ctx, member: discord.Member = None):
-
-        if member is not None:
-            embed = discord.Embed(color=color,
-                                  timestamp=time)
-            embed.add_field(name='¡Mira lo que hiciste!',
-                            value=f'**{member.name}** hizo llorar a '
-                                  f'**{ctx.author.name}**',
-                            inline=False)
-            embed.set_image(url=gif('cry'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
-
-            await ctx.send(embed=embed)
-
-        else:
-            embed = discord.Embed(color=color,
-                                  timestamp=time)
-            embed.add_field(name='¡Está llorando!',
-                            value=f'**{ctx.author.name}** comenzó a llorar',
-                            inline=False)
-            embed.set_image(url=gif('cry'))
-            embed.set_footer(text=ctx.guild, icon_url=ctx.guild.icon_url)
-
-            await ctx.send(embed=embed)
-
-# This command uses local files to work. For organization purposes,
-# i don't included them on the files that i push.
-# Anyway, i'm gonna work on another database system.
-
-    @commands.command(name='propose',
-                      aliases=['proponer', 'casar', 'proposal'],
-                      description='Te casas con un usuario.')
-    async def marry_propose(self, ctx, member: discord.Member = None):
-        choice = random.randint(0)
-        file = discord.File(f'images/gifs/marry/{choice}.gif',
-                            filename='image.gif')
-
-        if member.bot is True:
-            await ctx.send('No puedes casarte con un robot.')
-
-        elif member is None:
-            await ctx.send('No puedes casarte contigo mism@... creo.')
-
-        else:
-            await ctx.send(f'Le propusiste matrimonio a {member.name}, '
-                           '¡tiene 25 segundos para responder!')
-
-            def author(m):
-                return m.author == ctx.message.author
-
-            def couple(m):
-                return m.author == member
-
-            try:
-                answer = await self.bot.wait_for('message',
-                                                 check=couple,
-                                                 timeout=25.0)
-            except asyncio.TimeoutError:
-                await ctx.send(f'{member.name} no respondió, '
-                               'inténtalo después.')
-
-            else:
-                if answer.content == 'si':
-                    await ctx.send('Por el poder que se me ha conferido...')
-                    time.sleep(1.5)
-
-                    embed = discord.Embed(
-                        color=color,
-                        timestamp=time
-                    )
-                    embed.add_field(
-                        name='¡Los declaro esposos!',
-                        value=f'{ctx.author.name} y '
-                              f'{member.name} se casaron.',
-                        inline=False
-                    )
-                    embed.set_image(url='attachment://image.gif')
-                    embed.set_footer(
-                        text=ctx.guild,
-                        icon_url=ctx.guild.icon_url
-                    )
-
-                    await ctx.send(embed=embed, file=file)
-
-                elif answer.content == 'no':
-                    await ctx.send(f'No es el fin del mundo, {member} no es '
-                                   'la única persona en el mundo.')
-
-                else:
-                    await ctx.send('No reconocí esa respuesta.')
 
 
 def setup(bot):
