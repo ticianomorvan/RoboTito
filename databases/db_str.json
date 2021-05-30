@@ -24,6 +24,80 @@
         "Quizás, quizás no, no lo sé"
     ],
 
+    "penis": [
+        "kilómetros",
+        "hectómetros",
+        "decámetros",
+        "metros",
+        "decímetros",
+        "centímetros",
+        "milímetros"
+    ],
+
+    "penis_one": [
+        "kilómetro",
+        "hectómetro",
+        "decámetro",
+        "metro",
+        "decímetro",
+        "centímetro",
+        "milímetro"
+    ],
+
+    "love_low": [
+        "Creo que deberían pensar en conocer otras personas.",
+        "No creo que esto vaya hacia ningún lado.",
+        "Deberían pensar en tomar caminos distintos.",
+        "Esto no le está haciendo bien a ninguno de los dos, por favor, no sigan.",
+        "Esto no está yendo a ningún lado, por favor, paren.",
+        "No quiero ser el que se los diga, pero esto tiene que terminar.",
+        "No entiendo porqué siguen juntos, esto no tiene futuro.",
+        "Espero realmente que conozcan otras personas, porque lo de ustedes no tiene futuro.",
+        "Están muy lejos de estar bien, por favor, déjenlo.",
+        "No tienen que obligarse a seguir juntos, no tiene sentido.",
+        "Esto que están haciendo es forzar algo estúpidamente, basta.",
+        "No tiene sentido que sigan forzando esto, no es correcto.",
+        "Deberían tomar cada uno un camino distinto, juntos no les va nada bien.",
+        "No veo el motivo para que ustedes sigan juntos, les irá mejor separados.",
+        "Por favor, basta, no está funcionando."
+    ],
+
+    "love_medium": [
+        "No están en un momento excelente, pero todo puede mejorar.",
+        "Traten de encontrar maneras para mejorar su relación.",
+        "Confío en que podrán mejorar su relación.",
+        "La verdad es que podrían ser una buena pareja, solo les falta una mejor comunicación.",
+        "No hago milagros, pero ustedes pueden tener un gran futuro por delante.",
+        "No veo por que no podrían ser una gran pareja, solo héchenle ganas.",
+        "Van muy bien, solo tienen que mejorar ciertas cosas, ¡ustedes pueden!",
+        "Espero que logren solucionar sus problemas, pero van muy bien.",
+        "Les veo un gran futuro, ¡sigan así!",
+        "No son la mejor pareja, pero se esfuerzan por serlo, lo están haciendo bien.",
+        "Tienen una relación buena pero no es lo mejor, busquen formas de mejorar sus problemas.",
+        "Veo que tienen un par de problemas, soluciónenlos y mejorarán.",
+        "Espero que logren ser una gran pareja, tienen un lindo futuro.",
+        "Van por buen camino, solo les falta mejorar en ciertos aspectos, ¡sigan así!",
+        "Confío en que serán una gran pareja, solo tienen que solucionar ciertas cosas."
+    ],
+
+    "love_high": [
+        "Ustedes están muy enamorados, se nota.",
+        "El amor entre ustedes es algo que mucha gente solo sueña, me alegro por ustedes.",
+        "Tienen lo necesario para durar mucho tiempo, ¡los felicito!",
+        "Realmente me pone muy contento verlos juntos, son una gran pareja.",
+        "Su amor es tan grande como el de pocos, ¡los envidio!",
+        "Son una excelente pareja, no desperdicien eso.",
+        "El tiempo que ustedes pasen juntos será el mejor, espero que duren mucho tiempo.",
+        "Hace mucho tiempo que no veía una pareja como la de ustedes, simplemente maravilloso.",
+        "Si tuviera emociones, les diría que los amo, pero por ahora solo digamos que me agrada su pareja.",
+        "No veo por qué ustedes no podrían... ¿casarse?, si lo hacen, inviten.",
+        "Si no son la pareja del servidor, están muy cerca.",
+        "Verlos juntos es simplemente un desborde de felicidad.",
+        "Son la mejor pareja que he visto en años informáticos, si es que eso existe.",
+        "Los envidio, el amor que ustedes tienen es simplemente fantástico.",
+        "Me pone muy feliz su pareja, son el uno para el otro."
+    ],
+
     "h_hug": [
         "¡Abrazo!",
         "¡Abrázale!",
