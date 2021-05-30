@@ -1,55 +1,16 @@
-# import asyncio
-
 import discord
 from discord.ext import commands
 
 from discord.member import Member
 
-import datetime
-
 import random
 
-import json
+import datetime
+
+import cog.functions.functions as functions
 
 
-with open('databases/db_str.json', encoding='utf8') as f:
-    data = f.read()
-    database = json.loads(data)
-
-
-def get8Ball():
-    return random.choice(database['ball8'])
-
-
-def getPenis(number: int):
-    if number > 1:
-        return random.choice(database['penis'])
-    elif number == 1:
-        return random.choice(database['penis'])
-    else:
-        pass
-
-
-def getLove(number: int):
-    if number <= 45:
-        return random.choice(database['love_low'])
-    elif number >= 46 and number <= 75:
-        return random.choice(database['love_medium'])
-    else:
-        return random.choice(database['love_high'])
-
-
-def getLoveGif(number: int):
-    with open('databases/db_gifs.json', encoding='utf-8') as f:
-        gifData = f.read()
-        gifDatabase = json.loads(gifData)
-        if number >= 65:
-            gif = random.choice(gifDatabase['love_high'])
-            return gif
-        else:
-            gif = random.choice(gifDatabase['love_low'])
-            return gif
-
+function = functions.Functions
 
 color = discord.Color.blue()
 
@@ -71,7 +32,7 @@ class Commands(commands.Cog,
                 timestamp=time
             )
             embed.add_field(
-                name=f'**{get8Ball()}**',
+                name=f'**{function.get8Ball()}**',
                 value=f'*"{args}"*'
             )
             embed.set_footer(
@@ -123,7 +84,7 @@ class Commands(commands.Cog,
             )
             embed.add_field(
                 name=f'El miembro reproductor de {member.name} mide:',
-                value=f'**{penisSize}** {getPenis(penisSize)}.',
+                value=f'**{penisSize}** {function.getPenis(penisSize)}.',
                 inline=False
             )
             embed.set_footer(
@@ -140,7 +101,7 @@ class Commands(commands.Cog,
             )
             embed.add_field(
                 name='Tu miembro reproductor mide:',
-                value=f'**{penisSize}** {getPenis(penisSize)}.',
+                value=f'**{penisSize}** {function.getPenis(penisSize)}.',
                 inline=False
             )
             embed.set_footer(
@@ -161,10 +122,11 @@ class Commands(commands.Cog,
             )
             e.add_field(
                 name=f'El amor entre {member.name} y tu es del...',
-                value=f'**{loveProbability}%**, {getLove(loveProbability)}'
+                value=f'**{loveProbability}%**,'
+                      f' {function.getLove(loveProbability)}'
             )
             e.set_image(
-                url=getLoveGif(loveProbability)
+                url=function.getLoveGif(loveProbability)
             ),
             e.set_footer(
                 text=ctx.author.name,

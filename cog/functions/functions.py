@@ -19,11 +19,13 @@ class Functions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def gif(database):
-        with open('databases/db_gifs.json') as f:
+    # Functions used in cog/anime.py
+
+    def gif(string):
+        with open('strings/db_gifs.json') as f:
             data = f.read()
             gif = json.loads(data)
-            return random.choice(gif[database])
+            return random.choice(gif[string])
 
     def header(table):
         header = string[table]
@@ -42,6 +44,38 @@ class Functions(commands.Cog):
     def sameUser(activity):
         message = 'Trata de ' + activity + ' alguien más.'
         return message
+
+    # Functions used in cog/commands.py
+
+    def get8Ball():
+        return random.choice(string['ball8'])
+
+    def getPenis(number: int):
+        if number > 1:
+            return random.choice(string['penis'])
+        elif number == 1:
+            return random.choice(string['penis'])
+        else:
+            pass
+
+    def getLove(number: int):
+        if number <= 45:
+            return random.choice(string['love_low'])
+        elif number >= 46 and number <= 75:
+            return random.choice(string['love_medium'])
+        else:
+            return random.choice(string['love_high'])
+
+    def getLoveGif(number: int):
+        with open('strings/db_gifs.json', encoding='utf-8') as f:
+            gifData = f.read()
+            gifstring = json.loads(gifData)
+            if number >= 65:
+                gif = random.choice(gifstring['love_high'])
+                return gif
+            else:
+                gif = random.choice(gifstring['love_low'])
+                return gif
 
 
 def setup(bot):

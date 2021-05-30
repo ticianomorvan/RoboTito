@@ -7,6 +7,7 @@ import datetime
 
 import cog.functions.functions as functions
 
+
 function = functions.Functions
 
 color = discord.Color.blue()
@@ -284,25 +285,6 @@ class Anime(commands.Cog,
 
         elif member == a:
             await ctx.send(function.sameUser('despedir a'))
-
-#        else:
-#            e = discord.Embed(
-#                color=color,
-#                timestamp=time
-#            )
-#            e.add_field(
-#                name=function.header('h_kill'),
-#                value=sentence(a.name, 'm_kill', member.name),
-#            )
-#            e.set_image(
-#                url=gif('kill')
-#            )
-#            e.set_footer(
-#                text=ctx.guild,
-#                icon_url=ctx.guild.icon_url
-#            )
-#
-#            await ctx.send(embed=e)
 
 
 def setup(bot):
