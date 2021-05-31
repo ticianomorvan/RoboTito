@@ -24,159 +24,311 @@
         "Quizás, quizás no, no lo sé"
     ],
 
-    "header_hug": [
-        {"header":"¡Abrazo!"},
-        {"header":"¡Abrázale!"},
-        {"header":"Alguien quiere un abrazo..."},
-        {"header":"¡Denle un abrazo!"},
-        {"header":"¡Abrazo de oso!"},
-        {"header":"Un fuerte abrazo para alegrar el corazón :)"},
-        {"header":"Ojalá alguien me abrazara así :("},
-        {"header":"El afecto físico es hermoso"},
-        {"header":"No seré el que les diga algo, ¡abrázense!"},
-        {"header":"Se ven muy lindos, ¿no me dan un abrazo a mi también?"}
+    "penis": [
+        "kilómetros",
+        "hectómetros",
+        "decámetros",
+        "metros",
+        "decímetros",
+        "centímetros",
+        "milímetros"
     ],
 
-    "message_hug": [
-        {"message":" abraza apasionadamente a "},
-        {"message":" le regala un caluroso abrazo a "},
-        {"message":" toma por sorpresa y abraza a "},
-        {"message":" quiere demostrarle cariño a base de abrazos a "},
-        {"message":" le obsequia un amoroso abrazo a "},
-        {"message":" abraza con mucho amor a "},
-        {"message":" le da un abrazo de oso a "},
-        {"message":" aprieta con mucho amor (y fuerza) a "},
-        {"message":" le da un cariñosísimo abrazo a "},
-        {"message":" regala su ternura al abrazar a "}
+    "penis_one": [
+        "kilómetro",
+        "hectómetro",
+        "decámetro",
+        "metro",
+        "decímetro",
+        "centímetro",
+        "milímetro"
     ],
 
-    "header_kiss": [
-        {"header":"Besos por aquí, besos por allá"},
-        {"header":"¿Acaso hay muérdago por acá?"},
-        {"header":"Los besos van, y vienen..."},
-        {"header":"Eso sí que es un beso apasionado"},
-        {"header":"Besos, besos y más besos"},
-        {"header":"¡El amor surge!"},
-        {"header":"Esto ya es mucho amor, hasta para mi"},
-        {"header":"Como están los jóvenes de hoy..."},
-        {"header":"Oigan... ya me puedo ir? ;("},
-        {"header":"¡El verdadero amor nace! (gracias a mi)"}
+    "love_low": [
+        "Creo que deberían pensar en conocer otras personas.",
+        "No creo que esto vaya hacia ningún lado.",
+        "Deberían pensar en tomar caminos distintos.",
+        "Esto no le está haciendo bien a ninguno de los dos, por favor, no sigan.",
+        "Esto no está yendo a ningún lado, por favor, paren.",
+        "No quiero ser el que se los diga, pero esto tiene que terminar.",
+        "No entiendo porqué siguen juntos, esto no tiene futuro.",
+        "Espero realmente que conozcan otras personas, porque lo de ustedes no tiene futuro.",
+        "Están muy lejos de estar bien, por favor, déjenlo.",
+        "No tienen que obligarse a seguir juntos, no tiene sentido.",
+        "Esto que están haciendo es forzar algo estúpidamente, basta.",
+        "No tiene sentido que sigan forzando esto, no es correcto.",
+        "Deberían tomar cada uno un camino distinto, juntos no les va nada bien.",
+        "No veo el motivo para que ustedes sigan juntos, les irá mejor separados.",
+        "Por favor, basta, no está funcionando."
     ],
 
-    "message_kiss": [
-        {"message":" besa con mucho amor a "},
-        {"message":" le roba un beso a "},
-        {"message":" toma por sorpresa con un beso a "},
-        {"message":" junta sus labios con los de "},
-        {"message":" se besa con "},
-        {"message":" consigue besar a "},
-        {"message":" besa apasionadamente a "},
-        {"message":" besa locamente a "},
-        {"message":" le da un beso con mucho cariño a "},
-        {"message":" le demuestra sus sentimientos con un beso a "}
+    "love_medium": [
+        "No están en un momento excelente, pero todo puede mejorar.",
+        "Traten de encontrar maneras para mejorar su relación.",
+        "Confío en que podrán mejorar su relación.",
+        "La verdad es que podrían ser una buena pareja, solo les falta una mejor comunicación.",
+        "No hago milagros, pero ustedes pueden tener un gran futuro por delante.",
+        "No veo por que no podrían ser una gran pareja, solo héchenle ganas.",
+        "Van muy bien, solo tienen que mejorar ciertas cosas, ¡ustedes pueden!",
+        "Espero que logren solucionar sus problemas, pero van muy bien.",
+        "Les veo un gran futuro, ¡sigan así!",
+        "No son la mejor pareja, pero se esfuerzan por serlo, lo están haciendo bien.",
+        "Tienen una relación buena pero no es lo mejor, busquen formas de mejorar sus problemas.",
+        "Veo que tienen un par de problemas, soluciónenlos y mejorarán.",
+        "Espero que logren ser una gran pareja, tienen un lindo futuro.",
+        "Van por buen camino, solo les falta mejorar en ciertos aspectos, ¡sigan así!",
+        "Confío en que serán una gran pareja, solo tienen que solucionar ciertas cosas."
+    ],
+
+    "love_high": [
+        "Ustedes están muy enamorados, se nota.",
+        "El amor entre ustedes es algo que mucha gente solo sueña, me alegro por ustedes.",
+        "Tienen lo necesario para durar mucho tiempo, ¡los felicito!",
+        "Realmente me pone muy contento verlos juntos, son una gran pareja.",
+        "Su amor es tan grande como el de pocos, ¡los envidio!",
+        "Son una excelente pareja, no desperdicien eso.",
+        "El tiempo que ustedes pasen juntos será el mejor, espero que duren mucho tiempo.",
+        "Hace mucho tiempo que no veía una pareja como la de ustedes, simplemente maravilloso.",
+        "Si tuviera emociones, les diría que los amo, pero por ahora solo digamos que me agrada su pareja.",
+        "No veo por qué ustedes no podrían... ¿casarse?, si lo hacen, inviten.",
+        "Si no son la pareja del servidor, están muy cerca.",
+        "Verlos juntos es simplemente un desborde de felicidad.",
+        "Son la mejor pareja que he visto en años informáticos, si es que eso existe.",
+        "Los envidio, el amor que ustedes tienen es simplemente fantástico.",
+        "Me pone muy feliz su pareja, son el uno para el otro."
+    ],
+
+    "h_hug": [
+        "¡Abrazo!",
+        "¡Abrázale!",
+        "Alguien quiere un abrazo...",
+        "¡Denle un abrazo!",
+        "¡Abrazo de oso!",
+        "Un fuerte abrazo para alegrar el corazón :)",
+        "Ojalá alguien me abrazara así :(",
+        "El afecto físico es hermoso",
+        "No seré el que les diga algo, ¡abrázense!",
+        "Se ven muy lindos, ¿no me dan un abrazo a mi también?"
+    ],
+
+    "m_hug": [
+        " abraza apasionadamente a ",
+        " le regala un caluroso abrazo a ",
+        " toma por sorpresa y abraza a ",
+        " quiere demostrarle cariño a base de abrazos a ",
+        " le obsequia un amoroso abrazo a ",
+        " abraza con mucho amor a ",
+        " le da un abrazo de oso a ",
+        " aprieta con mucho amor (y fuerza) a ",
+        " le da un cariñosísimo abrazo a ",
+        " regala su ternura al abrazar a "
+    ],
+
+    "h_kiss": [
+        "Besos por aquí, besos por allá",
+        "¿Acaso hay muérdago por acá?",
+        "Los besos van, y vienen...",
+        "Eso sí que es un beso apasionado",
+        "Besos, besos y más besos",
+        "¡El amor surge!",
+        "Esto ya es mucho amor, hasta para mi",
+        "Como están los jóvenes de hoy...",
+        "Oigan... ya me puedo ir? ;(",
+        "¡El verdadero amor nace! (gracias a mi)"
+    ],
+
+    "m_kiss": [
+        " besa con mucho amor a ",
+        " le roba un beso a ",
+        " toma por sorpresa con un beso a ",
+        " junta sus labios con los de ",
+        " se besa con ",
+        " consigue besar a ",
+        " besa apasionadamente a ",
+        " besa locamente a ",
+        " le da un beso con mucho cariño a ",
+        " le demuestra sus sentimientos con un beso a "
     ],
     
-    "header_pat": [
-        {"header":"Cariñitos, cariñitos"},
-        {"header":"Caricias y más caricias"},
-        {"header":"Las caricias se dan una vez más"},
-        {"header":"Ojalá una robot me hiciera caricias :("},
-        {"header":"Los cariñitos no dejan de llegar"},
-        {"header":"No puedo dejar de pensar que yo también quiero cariñitos ;("},
-        {"header":"Esas son muchas caricias, quizá demasiadas"},
-        {"header":"Ustedes sigan acariciándose, yo... iré a llorar"},
-        {"header":"Ni dos animales se acariciarían tanto como ustedes"},
-        {"header":"¿Ustedes se acarician por algo o solo por gusto?"}
+    "h_pat": [
+        "Cariñitos, cariñitos",
+        "Caricias y más caricias",
+        "Las caricias se dan una vez más",
+        "Ojalá una robot me hiciera caricias :(",
+        "Los cariñitos no dejan de llegar",
+        "No puedo dejar de pensar que yo también quiero cariñitos ;(",
+        "Esas son muchas caricias, quizá demasiadas",
+        "Ustedes sigan acariciándose, yo... iré a llorar",
+        "Ni dos animales se acariciarían tanto como ustedes",
+        "¿Ustedes se acarician por algo o solo por gusto?"
     ],
 
-    "message_pat": [
-        {"message":" acaricia con sumo cuidado a "},
-        {"message":" le hace cariñitos a "},
-        {"message":" acaricia con ternura a "},
-        {"message":" acaricia tiernamente a "},
-        {"message":" acaricia suavemente a "},
-        {"message":" transmite su cariño a "},
-        {"message":" le hace cálidos cariños a "},
-        {"message":" le regala suaves cariños a "},
-        {"message":" le da tiernas caricias a "},
-        {"message":" acaricia con mucho amor a "}
+    "m_pat": [
+        " acaricia con sumo cuidado a ",
+        " le hace cariñitos a ",
+        " acaricia con ternura a ",
+        " acaricia tiernamente a ",
+        " acaricia suavemente a ",
+        " transmite su cariño a ",
+        " le hace cálidos cariños a ",
+        " le regala suaves cariños a ",
+        " le da tiernas caricias a ",
+        " acaricia con mucho amor a "
     ],
 
-    "header_punch": [
-        {"header":"¡Lo hizo m$#&!a!"},
-        {"header":"¡Basta de violencia!"},
-        {"header":"¡Dejen de golpearse!"},
-        {"header":"Yo no voy a ver como se matan"},
-        {"header":"Eso va a requerir un doctor"},
-        {"header":"La violencia atrae más violencia"},
-        {"header":"¿Estamos en una pelea de boxeo?"},
-        {"header":"Hasta a mi me dolió eso"},
-        {"header":"Yo me metería, pero prefiero seguir viviendo"},
-        {"header":"No entiendo que ganan con todo esto"}
+    "h_punch": [
+        "¡Lo hizo m$#&!a!",
+        "¡Basta de violencia!",
+        "¡Dejen de golpearse!",
+        "Yo no voy a ver como se matan",
+        "Eso va a requerir un doctor",
+        "La violencia atrae más violencia",
+        "¿Estamos en una pelea de boxeo?",
+        "Hasta a mi me dolió eso",
+        "Yo me metería, pero prefiero seguir viviendo",
+        "No entiendo que ganan con todo esto"
     ],
 
-    "message_punch": [
-        {"message":" golpeó a "},
-        {"message":" destrozó de un golpe a "},
-        {"message":" le voló la cara a "},
-        {"message":" cacheteó a "},
-        {"message":" golpeó fuertemente a "},
-        {"message":" le dio un tremendo golpe a "},
-        {"message":" golpeó salvajemente a "},
-        {"message":" destrozó brutalmente a "},
-        {"message":" le giró la cabeza a "},
-        {"message":" le dio un golpe rotundo a"}
+    "m_punch": [
+        " golpeó a ",
+        " destrozó de un golpe a ",
+        " le voló la cara a ",
+        " cacheteó a ",
+        " golpeó fuertemente a ",
+        " le dio un tremendo golpe a ",
+        " golpeó salvajemente a ",
+        " destrozó brutalmente a ",
+        " le giró la cabeza a ",
+        " le dio un golpe rotundo a"
     ],
 
-    "header_sleep": [
-        {"header":"Alguien tiene sueño..."},
-        {"header":"Hasta a mi me da sueño"},
-        {"header":"Alguien debería dormirse más temprano"},
-        {"header":"No puedo verte con esa cara, ve a dormir"},
-        {"header":"¿Se te apaga el tele?"},
-        {"header":"¿Te estás durmiendo o solo te aburro?"},
-        {"header":"Al menos, si vas a poner esa cara, ve a dormir"},
-        {"header":"Esos bostezos si se pueden ver"},
-        {"header":"No entiendo como puedes tener tanto sueño"},
-        {"header":"La verdad, esa no es tu mejor cara"}
+    "h_sleep": [
+        "Alguien tiene sueño...",
+        "Hasta a mi me da sueño",
+        "Alguien debería dormirse más temprano",
+        "No puedo verte con esa cara, ve a dormir",
+        "¿Se te apaga el tele?",
+        "¿Te estás durmiendo o solo te aburro?",
+        "Al menos, si vas a poner esa cara, ve a dormir",
+        "Esos bostezos si se pueden ver",
+        "No entiendo como puedes tener tanto sueño",
+        "La verdad, esa no es tu mejor cara"
     ],
 
-    "header_sleepw": [
-        {"header":"Ay, estos jóvenes de hoy tan cariñosos..."},
-        {"header":"Pueden, al menos, ¿no hacerlo frente a nosotros?"},
-        {"header":"Los tórtolos se acurrucan..."},
-        {"header":"¿La parejita ya se va a dormir?"},
-        {"header":"¿Se contagian el sueño ustedes?"},
-        {"header":"Los tontitos se acuestan juntos..."},
-        {"header":"Los enamorados se van a acostar parece ser"},
-        {"header":"No traigan más vidas al mundo, ¿sí"},
-        {"header":"La cama es un lugar para dormir, ¿entendieron?"},
-        {"header":"Espero que solo duerman"}
+    "h_sleepw": [
+        "Ay, estos jóvenes de hoy tan cariñosos...",
+        "Pueden, al menos, ¿no hacerlo frente a nosotros?",
+        "Los tórtolos se acurrucan...",
+        "¿La parejita ya se va a dormir?",
+        "¿Se contagian el sueño ustedes?",
+        "Los tontitos se acuestan juntos...",
+        "Los enamorados se van a acostar parece ser",
+        "No traigan más vidas al mundo, ¿sí",
+        "La cama es un lugar para dormir, ¿entendieron?",
+        "Espero que solo duerman"
     ],
 
-    "message_sleep": [
-        {"message":" se va a dormir."},
-        {"message":" tiene tanto sueño que se retira."},
-        {"message":" no logra despertarse y se duerme."},
-        {"message":" pierde contra el sueño y se duerme."},
-        {"message":" tiene mucho sueño."},
-        {"message":" necesita una buena siesta."},
-        {"message":" debería irse a dormir."},
-        {"message":" va a tener una gran cita... con la cama."},
-        {"message":" procede a dormir por un largo rato."},
-        {"message":" no puede seguir en pié y se acuesta a dormir."}
+    "m_sleep": [
+        " se va a dormir.",
+        " tiene tanto sueño que se retira.",
+        " no logra despertarse y se duerme.",
+        " pierde contra el sueño y se duerme.",
+        " tiene mucho sueño.",
+        " necesita una buena siesta.",
+        " debería irse a dormir.",
+        " va a tener una gran cita... con la cama.",
+        " procede a dormir por un largo rato.",
+        " no puede seguir en pié y se acuesta a dormir."
     ],
 
-    "message_sleepw": [
-        {"message":" se acuesta a dormir con "},
-        {"message":" se recuesta con "},
-        {"message":" se acurruca con "},
-        {"message":" va a la cama con "},
-        {"message":" se recuesta junto a "},
-        {"message":" se duerme con "},
-        {"message":" se acuesta junto a "},
-        {"message":" duerme junto a "},
-        {"message":" duerme plácidamente con "},
-        {"message":" logra dormirse con "}
+    "m_sleepw": [
+        " se acuesta a dormir con ",
+        " se recuesta con ",
+        " se acurruca con ",
+        " va a la cama con ",
+        " se recuesta junto a ",
+        " se duerme con ",
+        " se acuesta junto a ",
+        " duerme junto a ",
+        " duerme plácidamente con ",
+        " logra dormirse con "
+    ],
+
+    "h_kill": [
+         "¡Asesinato en el servidor!",
+         "¡Asesino suelto!",
+         "No tendrás perdón de nadie, asesino",
+         "La justicia te encontrará, algún día",
+         "Eso fue, grotesco",
+         "No pensaba que fueras así",
+         "La crueldad que veo en tus ojos es incomprendible",
+         "No entiendo porqué lo hiciste",
+         "Te llevaste una vida, una inocente",
+         "No esperaba nada de ti, ¿pero esto?, eres repugnante"
+    ],
+
+    "m_kill": [
+         " asesinó a ",
+         " mató a ",
+         " sorprendió a todos asesinando a ",
+         " no tuvo piedad y mató a ",
+         " convirtió en víctima a ",
+         " cometió un delito gravísimo al matar a ",
+         " cometió asesinato contra ",
+         " desató su furia asesinando a ",
+         " logró terminar con la vida de ",
+         " terminó con la vida de "
+    ],
+
+    "h_greet": [
+        "¡Saludos, saludos!",
+        "Alguien quiere llamar la atención...",
+        "¡Saludos para todos!",
+        "Saludos, saluditos, saludines",
+        "¡Hola a todos!",
+        "¡Sean todos saludados!",
+        "Todos recibirán su saludo",
+        "Reciban cariñosamente un cariñoso saludo",
+        "Alguien los está saludando...",
+        "¡Una persona muy especial del servidor los saluda!"
+    ],
+
+    "h_greets": [
+        "Alguien te saluda...",
+        "Creo que alguien quiere llamar tu atención",
+        "Que agradable saludo, ojalá a mi me saludaran",
+        "Un cálido saludo de un cálido espíritu",
+        "¿Sabían que saludar es una forma básica de comunicación?",
+        "La suerte que tienes... alguien te está saludando",
+        "¿Te gustan los saludos? a mi me gustarían, si tan solo alguien me diera uno",
+        "Oye, *pss pss* te están saludando",
+        "Creo que ese saludo es para ti",
+        "Oye, esa persona te está saludando"
+    ],
+
+    "m_greet": [
+        " saluda a todos.",
+        " quiere darles un saludo a todos.",
+        " no puede esperar para saludarlos a todos.",
+        " quiere saludarlos a todos.",
+        " está saludándolos a todos.",
+        " quiere darle un saludo a cada uno de los miembros del servidor.",
+        " quiere saludar a cada uno de ustedes.",
+        " saluda cariñosamente a todos.",
+        " saluda energéticamente a todo mundo.",
+        " les da a todos un gran saludo."
+    ],
+
+    "m_greets": [
+        " saluda a ",
+        " le manda un saludo a ",
+        " quiere darle un saludo a ",
+        " manda un saludo para ",
+        " busca saludar a ",
+        " quiere saludar a ",
+        " le da un cálido saludo a ",
+        " saluda cariñosamente a ",
+        " saluda cálidamente a ",
+        " le manda un tierno saludo a "
     ]
 }

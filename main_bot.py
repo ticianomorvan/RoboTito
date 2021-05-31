@@ -19,7 +19,7 @@ handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:'
                                        '%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-# Inicio
+# Start
 intents = discord.Intents.all()
 
 intents.members = True
@@ -44,14 +44,15 @@ bot.help_command = PrettyHelp(color=discord.Color.blue(), menu=menu,
 @bot.event
 async def on_ready():
     print('Conectado como {0.user}'.format(bot))
-    await bot.change_presence(status=discord.Status.dnd,
+    await bot.change_presence(status=discord.Status.idle,
                               activity=discord.Activity(
                                 type=discord.ActivityType.watching,
                                 name='r.help | r.docs | r.info'))
 
+# Run
 
 with open('databases/db_bot.json') as f:
-    token_data = f.read()
-    token = json.loads(token_data)
+    data = f.read()
+    botData = json.loads(data)
 
-bot.run(token['token'])
+bot.run(botData['token'])

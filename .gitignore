@@ -1,9 +1,8 @@
 # Folders
 photos
 .vscode
-cog/__pycache__/
+**/__pycache__/
 images
-docs/raw_files
 
 # Databases
 databases/db_bot.json
@@ -13,6 +12,3 @@ databases/iso639-1/db_iso639-1.json
 
 # Files
 robotito.log
-cog/welcome.py
-docs/_config.yml
-docs/index.md
