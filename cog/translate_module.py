@@ -37,10 +37,16 @@ class Translate(commands.Cog,
         if fromlang is not None:
             flstr = str.lower(fromlang)
             fl = languageTranslate(flstr)
-            if tolang is not None:
+            if fl is None:
+                await ctx.send(f'"{flstr}" no es un idioma o'
+                               ' no puedo reconocerlo.')
+            elif tolang is not None:
                 tlstr = str.lower(tolang)
                 tl = languageTranslate(tlstr)
-                if args is not None:
+                if tl is None:
+                    await ctx.send(f'"{tlstr}" no es un idioma'
+                                   ' o no puedo reconocerlo.')
+                elif args is not None:
                     translator = Translator(
                         from_lang=fl, to_lang=tl
                     )

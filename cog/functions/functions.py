@@ -22,7 +22,7 @@ class Functions(commands.Cog):
     # Functions used in cog/anime.py
 
     def gif(string):
-        with open('strings/db_gifs.json') as f:
+        with open('databases/db_gifs.json') as f:
             data = f.read()
             gif = json.loads(data)
             return random.choice(gif[string])
@@ -59,15 +59,15 @@ class Functions(commands.Cog):
             pass
 
     def getLove(number: int):
-        if number <= 45:
-            return random.choice(string['love_low'])
-        elif number >= 46 and number <= 75:
+        if number >= 75:
+            return random.choice(string['love_high'])
+        elif number >= 45:
             return random.choice(string['love_medium'])
         else:
-            return random.choice(string['love_high'])
+            return random.choice(string['love_low'])
 
     def getLoveGif(number: int):
-        with open('strings/db_gifs.json', encoding='utf-8') as f:
+        with open('databases/db_gifs.json', encoding='utf-8') as f:
             gifData = f.read()
             gifstring = json.loads(gifData)
             if number >= 65:
