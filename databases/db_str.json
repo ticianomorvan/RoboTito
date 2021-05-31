@@ -330,25 +330,5 @@
         " saluda cariñosamente a ",
         " saluda cálidamente a ",
         " le manda un tierno saludo a "
-    ],
-
-    "h_goodbye": [
-        "¡Adiós!",
-        "¡Nos vemos!",
-        "¡Nos vemos luego!",
-        "¡Despídanse!",
-        "¡Nos veremos más tarde!",
-        "Ojalá verte pronto otra vez",
-        "Alguien no quería irse...",
-        "¡Nos veremos después!",
-        "Esperamos verte pronto por aquí...",
-        "Espero que nos reencontremos pronto"
-    ],
-
-    "m_goodbye": [
-        " se despide",
-        " se va y se despide de todos",
-        " se retira y saluda a todos",
-        " está por irse, pero quiere saludar a todos"
     ]
 }

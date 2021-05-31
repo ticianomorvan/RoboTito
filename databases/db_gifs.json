@@ -113,77 +113,30 @@
     ],
 
      "kill": [ 
-        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif",
-        "https://media1.tenor.com/images/a80b2bf31635899ac0900ea6281a41f6/tenor.gif",
-        "https://media1.tenor.com/images/9df97f1c83c532cc29ab8d9ec099acf5/tenor.gif",
-        "https://media1.tenor.com/images/d87333803d4dd839ac4fd4237e401551/tenor.gif",
-        "https://media.tenor.com/images/bbe419e89683598d4c8ac436cd51f323/tenor.gif",
-        "https://media1.tenor.com/images/405efa8099e014cfeb8178c5b3801322/tenor.gif",
-        "https://media1.tenor.com/images/7e310937d073dc3e03d9744328702a2c/tenor.gif",
-        "https://media1.tenor.com/images/11bb5e84bcc76e190c23ead6db8ec2d8/tenor.gif",
-        "https://media1.tenor.com/images/29cf289e13e42a3e7f4e11e9acb019f3/tenor.gif",
-        "https://media1.tenor.com/images/8c7862b6d8da7c1f1505163a4f46fb02/tenor.gif",
-        "https://media.tenor.com/images/f8a0b0df6657ee1cf5d0315268f24f6a/tenor.gif"
+        "https://imgur.com/x2tiXHH.gif",
+        "https://imgur.com/rnjOjFK.gif",
+        "https://imgur.com/dAHqjcJ.gif",
+        "https://imgur.com/rIMpRjl.gif",
+        "https://imgur.com/H7XkOdB.gif",
+        "https://imgur.com/Trg8Gqy.gif",
+        "https://imgur.com/oBpzGeQ.gif",
+        "https://imgur.com/DlT2wcU.gif",
+        "https://imgur.com/Os46sYQ.gif",
+        "https://imgur.com/5sPb7uk.gif",
+        "https://imgur.com/EDseX6f.gif"
      ],
      
      "hi": [
-        "https://media1.tenor.com/images/056c584d9335fcabf080ca43e583e3c4/tenor.gif",
-        "https://media1.tenor.com/images/79f33c2f524cbfed4ef6896b39e67663/tenor.gif",
-        "https://media1.tenor.com/images/2b121b915c9f3411eeba5092cd3c80bb/tenor.gif",
-        "https://media1.tenor.com/images/d10c3d213be6893235d97ae768db8c07/tenor.gif",
-        "https://media1.tenor.com/images/1bc74d686385dabe1e2076d5ace587fd/tenor.gif",
-        "https://media1.tenor.com/images/a251caa1a2f4ca8db9da1ec9dfd95c2b/tenor.gif",
-        "https://media1.tenor.com/images/5d3cdb79cecb701cf5b54a34dc47d63a/tenor.gif",
-        "https://media1.tenor.com/images/2549d838de88367016e25a6280bd0b04/tenor.gif",
-        "https://media1.tenor.com/images/43b26f57280c43f77e87a546bf6c6011/tenor.gif",
-        "https://media1.tenor.com/images/c6037313e588e2366aa4a3523b77c695/tenor.gif",
-        "https://media1.tenor.com/images/bd0220fc03b4ef9d88cb3843b0ab653d/tenor.gif"
-     ],
-
-     "bye": [
-         "https://media1.tenor.com/images/0f6922ce0e6bee7ddf0ecbab7cb4a053/tenor.gif",
-         "https://media1.tenor.com/images/0f0abf75029a2db62b80ae0c3505004c/tenor.gif",
-         "https://media1.tenor.com/images/8076cb1014859132f8792d0b4c241e16/tenor.gif",
-         "https://media1.tenor.com/images/6c8a17b6f1754975f6e1bff224bfcb58/tenor.gif",
-         "https://media1.tenor.com/images/49b1aa90b1a0b63ee3a89a651efdcd01/tenor.gif",
-         "https://media1.tenor.com/images/16d583a3fd6d356e5a1d5e57b318474c/tenor.gif",
-         "https://media1.tenor.com/images/a5644e4f73314edf63146f3b0771fe01/tenor.gif",
-         "https://media1.tenor.com/images/faa2d896ba5df52aa54a5cc6a5c4bdcf/tenor.gif",
-         "https://media1.tenor.com/images/ee4ee0ea277d21680162883d1f7ac4f5/tenor.gif"
-     ],
-
-     "cry": [
-         "https://media1.tenor.com/images/4f22255d60f3f19edf9296992b4e3483/tenor.gif",
-         "https://media1.tenor.com/images/ce52606293142a2bd11cda1d3f0dc12c/tenor.gif",
-         "https://media1.tenor.com/images/8f6da405119d24f7f86ff036d02c2fd4/tenor.gif",
-         "https://media1.tenor.com/images/031c7c348d3b86296976e2407723d4a8/tenor.gif",
-         "https://media1.tenor.com/images/2fb2965acbf3ed573e8b63080b947fe5/tenor.gif",
-         "https://media1.tenor.com/images/7443eb36be27659fc4d3effbaa766db5/tenor.gif",
-         "https://media1.tenor.com/images/26e7564bfb4408f9f7ff9518d4f87308/tenor.gif",
-         "https://media1.tenor.com/images/ae4138661bc1930d32c0435ef788c456/tenor.gif",
-         "https://media1.tenor.com/images/d1529619add194c4275053d852a0bb79/tenor.gif",
-         "https://media1.tenor.com/images/81d53b1482f85320524c29ca0f7e9259/tenor.gif",
-         "https://media1.tenor.com/images/8f614fa76bf503260497bcdc0ad6931d/tenor.gif"
-     ],
-
-     "pingpong": [
-         "https://media1.tenor.com/images/ef028f8456de48e479738b92a5336f87/tenor.gif",
-         "https://media1.tenor.com/images/82a2d494bead831b81c37180079665c1/tenor.gif",
-         "https://media1.tenor.com/images/241fb6a7e2d42890dbe4f86dd8f7ed98/tenor.gif",
-         "https://media1.tenor.com/images/2b27c6e7747d319f76fd98d2a226ab33/tenor.gif",
-         "https://media1.tenor.com/images/677746ccaf32fcdb6e062ef751d4b6f0/tenor.gif",
-         "https://media1.tenor.com/images/284ab183be73d9eb49cb56bb60a0bc26/tenor.gif",
-         "https://media1.tenor.com/images/5ed009f22ae0ea4090586adb91462a47/tenor.gif",
-         "https://media1.tenor.com/images/46990c160b05ff0404b0d71f817d56e2/tenor.gif",
-         "https://media1.tenor.com/images/04876d03a764924079669a2f329f3512/tenor.gif",
-         "https://media1.tenor.com/images/349733ac24bc8c6a5b972891b981ce41/tenor.gif",
-         "https://media1.tenor.com/images/da54c4c283793406b120e8158fc2c0f6/tenor.gif",
-         "https://media.giphy.com/media/7rzsqd4paHIUo/source.gif",
-         "https://media.giphy.com/media/A1XMOdvYVwslG/source.gif",
-         "https://media.giphy.com/media/2uRPyRi4BgQg0/source.gif",
-         "https://media.giphy.com/media/hgtqiuhS5UA1y/source.gif",
-         "https://media.giphy.com/media/8np2uvuL2Guzu/source.gif",
-         "https://media.giphy.com/media/AZh7oOlUaXGGA/source.gif"
+        "https://imgur.com/5Zqz6bh.gif",
+        "https://imgur.com/n6i0MED.gif",
+        "https://imgur.com/zEnKgq4.gif",
+        "https://imgur.com/dwnku4N.gif",
+        "https://imgur.com/uAxvlsp.gif",
+        "https://imgur.com/xK3MeC7.gif",
+        "https://imgur.com/dVeWz7Y.gif",
+        "https://imgur.com/h6rBfny.gif",
+        "https://imgur.com/gG1L97a.gif",
+        "https://imgur.com/JahaW3E.gif"
      ],
 
      "russianroulette": [
