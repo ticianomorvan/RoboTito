@@ -22,8 +22,8 @@ We speak spanish, so we made the website based on that.
 - **Gifs** commands (hug, pat, kiss, etc.) with *+150 gifs for interacting*.
 - **Fun** commands (probability, 8ball, etc.)
 - **Translations** (with a *100% support of ISO 639-1*)
-- **Wikipedia** articles
-- A **complete database for the champions of League of Legends**, including all they relevant stuff like their U.GG page.
+- **Wikipedia** articles.
+- A **complete database for the champions of League of Legends**, including all their relevant stuff like their U.GG page.
 - **Moderation** like banning, kicking, unbanning, cleaning messages, etc.
 - **Functional russian roulette minigame** for playing with the bot or with another user.
 - **Information** about the server, user, etc.
