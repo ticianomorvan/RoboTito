@@ -15,7 +15,7 @@ class Anime(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['abrazo'])
+    @commands.command(aliases=['abrazo'], help='Dale un abrazo a alguien.')
     async def hug(self, ctx, member: Member = None):
         if member is None or member == ctx.author:
             await ctx.send(function.sameUser('abrazar a'))
@@ -31,7 +31,7 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['beso'])
+    @commands.command(aliases=['beso'], help='Besa a alguien.')
     async def kiss(self, ctx, member: Member = None):
         if member is None or member == ctx.author:
             await ctx.send(function.sameUser('besar a'))
@@ -46,7 +46,7 @@ class Anime(commands.Cog,
             )
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['acariciar'])
+    @commands.command(aliases=['acariciar'], help='Acaricia a alguien.')
     async def pat(self, ctx, member: Member = None):
         if member is None or member == ctx.author:
             await ctx.send(function.sameUser('acariciar a'))
@@ -62,7 +62,7 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['golpear'])
+    @commands.command(aliases=['golpear'], help='Golpea a alguien.')
     async def punch(self, ctx, member: Member = None):
         if member is None or member == ctx.author:
             await ctx.send(function.sameUser('golpear a'))
@@ -78,7 +78,7 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['dormir'])
+    @commands.command(aliases=['dormir'], help='Duerme con o sin alguien más.')
     async def sleep(self, ctx, member: Member = None):
         if member is None:
             e = function.getEmbed(
@@ -104,7 +104,7 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['matar'])
+    @commands.command(aliases=['matar'], help='Mata a alguien.')
     async def kill(self, ctx, member: Member = None):
         if member is None or member == ctx.author:
             await ctx.send(function.sameUser('matar a'))
@@ -120,7 +120,10 @@ class Anime(commands.Cog,
 
             await ctx.send(embed=e)
 
-    @commands.command(aliases=['saludar', 'hi'])
+    @commands.command(
+        aliases=['saludar', 'hi'],
+        help='Saluda a todo el mundo o a alguien especial.'
+    )
     async def greet(self, ctx, member: Member = None):
         if member is None:
             e = function.getEmbed(

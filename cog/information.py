@@ -16,7 +16,7 @@ class Information(commands.Cog,
 
     @commands.command(name='information',
                       aliases=['info', 'información', 'botinfo'],
-                      description='Obtén información del bot.')
+                      help='Obtén información del bot.')
     async def botinformation(self, ctx):
         g = ctx.guild
         gs = self.bot.guilds
@@ -50,7 +50,7 @@ class Information(commands.Cog,
 
     @commands.command(name='documentation',
                       aliases=['docs', 'documentación'],
-                      description='Accede a la documentación de RoboTito')
+                      help='Accede a la documentación de RoboTito')
     async def botdocumentation(self, ctx):
         g = ctx.guild
 
@@ -66,7 +66,7 @@ class Information(commands.Cog,
 
     @commands.command(name='serverinfo',
                       aliases=['svinfo', 'infosv', 'infodelserver'],
-                      description='Obtén información del servidor.')
+                      help='Obtén información del servidor.')
     async def serverinformation(self, ctx):
         g = ctx.guild
         members = g.member_count
@@ -236,7 +236,7 @@ class Information(commands.Cog,
 
     @commands.command(name='avatar',
                       aliases=['av', 'useravatar', 'usericon'],
-                      description='Recupera la foto de perfil de un usuario.')
+                      help='Recupera la foto de perfil de un usuario.')
     async def useravatar(self, ctx, member: discord.Member = None):
         g = ctx.guild
 

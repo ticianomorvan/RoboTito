@@ -14,7 +14,7 @@ class Translate(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='traducir')
+    @commands.command(aliases=['traducir'], help='¡Traduce oraciones!')
     async def translate(self, ctx, fromlang, tolang, *, args: str):
         fl = function.languageTranslate(str.lower(fromlang))
         if fl is None:
