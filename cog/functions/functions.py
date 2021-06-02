@@ -2,6 +2,9 @@ import random
 
 import json
 
+import datetime
+
+import discord
 from discord.ext import commands
 
 
@@ -44,6 +47,42 @@ class Functions(commands.Cog):
     def sameUser(activity):
         message = 'Trata de ' + activity + ' alguien más.'
         return message
+
+    def getEmbed(type: str, author, guild, guildIcon, member=None):
+        if member is not None:
+            e = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            e.add_field(
+                name=Functions.header(f'h_{type}'),
+                value=Functions.sentence(author, f'm_{type}', member)
+            )
+            e.set_image(
+                url=Functions.gif(type)
+            )
+            e.set_footer(
+                text=guild,
+                icon_url=guildIcon
+            )
+            return e
+        else:
+            e = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            e.add_field(
+                name=Functions.header(f'h_{type}'),
+                value=Functions.sentence(author, f'm_{type}')
+            )
+            e.set_image(
+                url=Functions.gif(type)
+            )
+            e.set_footer(
+                text=guild,
+                icon_url=guildIcon
+            )
+            return e
 
     # Functions used in cog/commands.py
 
