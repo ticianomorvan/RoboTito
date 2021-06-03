@@ -98,6 +98,22 @@
         "Me pone muy feliz su pareja, son el uno para el otro."
     ],
 
+    "months": [
+        "months",
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+    ],
+
     "h_hug": [
         "¡Abrazo!",
         "¡Abrázale!",
