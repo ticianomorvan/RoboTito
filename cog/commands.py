@@ -20,6 +20,21 @@ class Commands(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.command(aliases=['latency', 'latencia'],
+                      help='Obtén el tiempo de respuesta del bot.')
+    async def ping(self, ctx):
+        latency = round(self.bot.latency)
+        ms = latency / 100
+
+        e = discord.Embed(
+            color=color
+        )
+        e.add_field(
+            name='La latencia es de:',
+            value=f'{ms} ms.'
+        )
+        await ctx.send(embed=e)
+
     @commands.command(name='8ball', help='Pregúntale algo a la bola ocho.')
     async def eightball(self, ctx, *, args):
         if args is not None:

@@ -1,0 +1,225 @@
+{
+    "1": {
+        "name":"Aatrox",
+        "header":"la espada Darkin",
+        "description":"Aatrox y sus hermanos, que alguna vez fueron respetados defensores de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor para Runaterra y los derrotaron con hechicería mortal usada con astucia. Pero, después de siglos de encarcelamiento, Aatrox fue el primero en encontrar la libertad una vez más; corrompió y transformó a los bastante tontos como para intentar blandir el arma mágica que contenía su esencia. Ahora, con cuerpos robados, camina por Runaterra con una apariencia retorcida de su forma original y busca la venganza apocalíptica que tanto desea.",
+        "icon":"https://cdn.vox-cdn.com/thumbor/TAeesOxuy9QxgFUXYRC0jN2GetI=/0x0:1440x851/1200x0/filters:focal(0x0:1440x851)/cdn.vox-cdn.com/uploads/chorus_asset/file/11523947/Aatrox_splash.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/aatrox/",
+        "op.gg":"https://las.op.gg/champion/aatrox/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "2": {
+        "name":"Ahri",
+        "header":"la vastaya de nueve colas",
+        "description":"Ahri, conectada de forma innata con el poder latente de Runaterra, es una vastaya que puede moldear la magia en orbes de energía pura. Se divierte jugueteando con su presa y manipulando sus emociones, antes de devorar su esencia vital. A pesar de su naturaleza predadora, Ahri conserva cierta empatía porque recibe destellos de los recuerdos de cada alma que consume.",
+        "icon":"https://wallup.net/wp-content/uploads/2017/03/27/367424-Ahri-League_of_Legends.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/ahri/",
+        "op.gg":"https://las.op.gg/champion/ahri/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "3": {
+        "name":"Akali",
+        "header":"la asesina furtiva",
+        "description":"Tras renunciar a la Orden Kinkou y a su título como el Puño de la Sombra, Akali pelea a solas, lista para ser el arma letal que su pueblo necesita. Aunque conserva todo lo que aprendió de su maestro Shen, juró defender a Jonia de sus enemigos... una víctima a la vez. Puede que Akali ataque en silencio, pero su mensaje resonará con fuerza y claridad: témanle a la asesina sin maestro.",
+        "icon":"https://static.wikia.nocookie.net/lolesports_gamepedia_en/images/7/78/Skin_Splash_Classic_Akali.jpg/revision/latest/scale-to-width-down/350?cb=20180719233809",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/akali/",
+        "op.gg":"https://las.op.gg/champion/akali/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "4": {
+        "name":"Alistar",
+        "header":"el minotauro",
+        "description":"Alistar, que desde siempre fue un gran guerrero con una temible reputación, busca venganza por la muerte de su clan a manos del imperio noxiano. Aunque haya sido esclavizado y forzado a tener una vida de gladiador, su voluntad inquebrantable fue lo que impidió que se convirtiera en una bestia completamente. Ahora, libre de las cadenas de sus anteriores amos, pelea en nombre de los desamparados y desprotegidos usando tanto su furia como sus cuernos, pezuñas y puños como armas.",
+        "icon":"https://4.bp.blogspot.com/-E70xphoIdJc/VK9Eb-HZVsI/AAAAAAAAg4U/lV5yItowDHM/s1600/Alistar_Splash_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/alistar/",
+        "op.gg":"https://las.op.gg/champion/alistar/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "5": {
+        "name":"Amumu",
+        "header":"la momia triste",
+        "description":"Cuenta la leyenda que Amumu es un alma solitaria y melancólica de la antigua Shurima que vaga por el mundo en busca de un amigo. Una antigua maldición lo condenó a permanecer solo por toda la eternidad. Sus caricias son la muerte, su afecto es la ruina. Quienes afirman haberlo visto lo describen como un cadáver viviente de corta estatura envuelto en vendajes. Amumu ha sido la inspiración de mitos, canciones y folclore que se han contado una y otra vez a lo largo de generaciones, tanto que es imposible separar la verdad de la ficción.",
+        "icon":"https://i.imgur.com/9Se4k7u.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/amumu/",
+        "op.gg":"https://las.op.gg/champion/amumu/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "6": {
+        "name":"Anivia",
+        "header":"la criofénix",
+        "description":"Anivia es un espíritu benevolente alado que soporta interminables ciclos de vida, muerte y resurrección para proteger Fréljord. Nació de la unión del hielo cruel y del viento penetrante, por lo que es una semidiosa que utiliza esos poderes elementales para frustrar a quien se atreva a perturbar su tierra natal. Anivia guía y protege a las tribus del norte hostil, quienes la veneran como símbolo de esperanza y como presagio de un gran cambio. Pelea con cada fibra de su ser sabiendo que su recuerdo perdurará a través de su sacrificio y que renacerá en un nuevo mañana.",
+        "icon":"https://1.bp.blogspot.com/-fqEirc041oE/VXdrEVvRgXI/AAAAAAAArGY/jcI-_GkuOTM/s1600/Anivia_Splash_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/anivia/",
+        "op.gg":"https://las.op.gg/champion/anivia/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "7": {
+        "name":"Annie",
+        "header":"la hija de la oscuridad",
+        "description":"Annie es una peligrosa, talentosa y encantadora niña maga que posee un inmenso poder piroquinético. Incluso bajo las sombras de las montañas al norte de Noxus, es una maga excepcional. Su afinidad innata con el fuego se manifestó pronto en su vida a través de explosiones emocionales impredecibles, aunque con el tiempo aprendió a controlar esos ''trucos''. Uno de sus favoritos es invocar a Tibbers, su amado osito de peluche, como una feroz bestia de fuego. Perdida en la perpetua inocencia de la niñez, Annie vaga por los bosques oscuros siempre en busca de alguien con quien jugar.",
+        "icon":"https://1.bp.blogspot.com/-CNtwKE4JCic/UQboua9yOXI/AAAAAAAABMU/FDFX-MRTTHQ/s1600/Annie_Splash_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/annie/",
+        "op.gg":"https://las.op.gg/champion/annie/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "8": {
+        "name":"Aphelios",
+        "header":"el arma de los adeptos",
+        "description":"Aphelios emerge de la sombra de la luz de la luna con sus armas listas y mata a los enemigos de su fe en un silencio melancólico. Habla únicamente a través de la certeza de su puntería y del disparo de cada arma. Si bien su impulso proviene de un veneno que lo enmudece, es guiado por su hermana Alune. Desde un santuario lejano, le envía un arsenal de armas de piedra lunar a sus manos. Mientras la luna resplandezca en lo alto, Aphelios nunca estará solo.",
+        "icon":"https://universe-meeps.leagueoflegends.com/v1/assets/images/aphelios-splash.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/aphelios/",
+        "op.gg":"https://las.op.gg/champion/aphelios/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "9": {
+        "name":"Ashe",
+        "header":"la arquera de hielo",
+        "description":"Como Hija del Hielo y madre de guerra de la tribu Avarosa, Ashe comanda la más grande horda en el norte. Estoica, inteligente e idealista, pero incómoda con su rol de líder, ella aprovecha las magias ancestrales de su linaje para portar un arco de Hielo Puro. Apoyada por la creencia de su gente que ella es el héroe mitológico reencarnado de Avarosa, Ashe espera unificar el Fréljord una vez más al retomar sus tierras antiguas y tribales.",
+        "icon":"https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b8/Ashe_OriginalCentered.jpg/revision/latest?cb=20180414201913",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/ashe/",
+        "op.gg":"https://las.op.gg/champion/ashe/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "10": {
+        "name":"Aurelion Sol",
+        "header":"el forjador de estrellas",
+        "description":"Aurelion Sol alguna vez adornó el gran vacío del cosmos con maravillas celestiales de su propia creación. Ahora, se ve obligado a usar su increíble poder para el beneficio de un imperio espacial que, tras engañarlo, lo mantiene bajo su servicio. Deseoso de volver a sus días de gloria, Aurelion Sol bajaría cada estrella del cielo, si tuviera que hacerlo, con tal de recuperar su libertad.",
+        "icon":"https://mmohuts.com/wp-content/uploads/2016/03/LeagueOfLegends-AurelionSolReview.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/aurelion-sol/",
+        "op.gg":"https://las.op.gg/champion/aurelionsol/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "11": {
+        "name":"Azir",
+        "header":"el emperador de las arenas",
+        "description":"Azir, emperador de Shurima en un pasado remoto, fue un hombre orgulloso que estuvo a punto de alcanzar la inmortalidad. Dominado por la arrogancia, fue traicionado y asesinado en la hora de su mayor triunfo. Pero ahora, milenios después, renació como un ser Ascendido de inmenso poder. Su enterrada ciudad resurgió de las arenas y Azir está decidido a restaurar la antigua gloria de Shurima.",
+        "icon":"https://1.bp.blogspot.com/-r44s74yXeWw/VAe3tDHguHI/AAAAAAAAXck/BRzaBaYlnpo/s1600/cs_bg_champions.png",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/azir/",
+        "op.gg":"https://las.op.gg/champion/azir/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "12": {
+        "name":"Bardo",
+        "header":"el guardián trotamundos",
+        "description":"El Bardo es un viajero de un reino más allá de las estrellas y un agente de la serendipia quien lucha por conservar el balance donde sea que la vida resista la indiferencia del caos. Muchas canciones de Runaterra hablan sobre su extraordinaria naturaleza y todas ellas dicen que los artefactos de un inmenso poder mágico atraen al vagabundo cósmico. Rodeado por un alegre coro de espíritus de meeps, es imposible pensar que sus acciones son malévolas, ya que el Bardo siempre busca servir al bien de todos... a su extraña manera.",
+        "icon":"https://3.bp.blogspot.com/-0vVljz_qO8M/VPou7Rrb0sI/AAAAAAAAlSA/UVT0aORZJfc/s1600/cs_bg_champions.png",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/bard/",
+        "op.gg":"https://las.op.gg/champion/bard/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "13": {
+        "name":"Blitzcrank",
+        "header":"el gran gólem de vapor",
+        "description":"Blitzcrank es un autómata gigantesco y casi indestructible de Zaun, que originalmente fue creado para deshacerse de los desechos tóxicos. Sin embargo, él cree que su propósito principal era demasiado limitado, así que modificó su propia forma para poder servir mejor a la frágil gente del Sumidero. Blitzcrank utiliza su fuerza y durabilidad desinteresadamente para proteger a los demás, extendiendo su puño de metal o lanzando una ráfaga de energía para someter a quienes busquen causar problemas.",
+        "icon":"https://vignette.wikia.nocookie.net/leagueoflegends/images/6/65/Blitzcrank_OriginalCentered.jpg/revision/latest/scale-to-width-down/1215?cb=20180414201951",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/blitzcrank/",
+        "op.gg":"https://las.op.gg/champion/blitzcrank/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "14": {
+        "name":"Brand",
+        "header":"la venganza ardiente",
+        "description":"La criatura conocida como Brand es una lección de la tentación del poder. Alguna vez fue un simple hombre de la tribu de Fréljord y su nombre era Kegan Rodhe, pero al estar buscando una de las Runas del Mundo, Kegan traicionó a sus compañeros y se la quedó para él mismo. Y en un instante, el hombre se había esfumado. Su alma se quemó y se desvaneció, y su cuerpo ahora es el recipiente de una flama viva. Brand ahora vaga en Valoran en busca de otras Runas, jurando venganza por los males que no pudo haber sufrido ni en una docena de vidas mortales.",
+        "icon":"https://4.bp.blogspot.com/-9zCzuPceP5o/ULQtxcYpBXI/AAAAAAAAKec/Hm2VsK3vSXs/s1600/Brand_Splash_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/brand/",
+        "op.gg":"https://las.op.gg/champion/brand/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    }
+}
