@@ -1,8 +1,7 @@
+import cog.functions.functions as functions
 from discord.ext import commands
-
 from translate import Translator
 
-import cog.functions.functions as functions
 
 function = functions.Functions
 

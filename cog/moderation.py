@@ -1,7 +1,5 @@
 import asyncio
-
 from discord.member import Member
-
 from discord.ext import commands
 
 

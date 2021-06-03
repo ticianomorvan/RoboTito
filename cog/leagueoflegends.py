@@ -1,11 +1,9 @@
 import discord
+import datetime
+import random
+import json
 from discord.ext import commands
 
-import datetime
-
-import random
-
-import json
 
 with open('databases/leagueoflegends/db_champs.json') as f:
     data = f.read()

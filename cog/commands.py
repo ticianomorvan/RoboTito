@@ -1,13 +1,9 @@
 import discord
-from discord.ext import commands
-
-from discord.member import Member
-
 import random
-
 import datetime
-
 import cog.functions.functions as functions
+from discord.ext import commands
+from discord.member import Member
 
 
 function = functions.Functions

@@ -1,11 +1,8 @@
 import discord
-from discord.ext import commands
-
 import wikipedia
-
 import wikipediaapi
-
 import datetime
+from discord.ext import commands
 
 # Wikipedia language and some useful variables.
 
