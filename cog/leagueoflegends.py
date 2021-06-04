@@ -9,95 +9,56 @@ with open('databases/db_lolchamps.json', encoding='utf-8') as f:
     champs = json.loads(data)
 
 
-def champRole(role):
+def Role(role):
     while True:
-        index = random.randint(1, 14)
-        champ = str(index)
-        if champs[champ]['roles'][role] is True:
-            e = discord.Embed(
-                color=discord.Color.blue(),
-            )
-            e.add_field(
-                name=f"{champs[champ]['name']}, {champs[champ]['header']}.",
-                value=champs[champ]['description'],
-                inline=False
-            )
-            e.add_field(
-                name='Runas, objetos y builds:',
-                value=f"[OP.GG]({champs[champ]['op.gg']})",
-                inline=False
-            )
-            e.add_field(
-                name='Lore e información sobre el campeón.',
-                value=f"[League of Legends]({champs[champ]['lolpage']})",
-                inline=False
-            )
-            e.set_image(
-                url=champs[champ]['icon']
-            )
-            return e
+        roleIndex = random.randint(1, 14)
+        roleChamp = str(roleIndex)
+        if champs[roleChamp]['roles'][role] is True:
+            return roleChamp
         else:
             continue
 
 
-def champRandom():
-    index = random.randint(1, 14)
-    champ = str(index)
+def Name(name):
+    while True:
+        nameIndex = random.randint(1, 14)
+        nameChamp = str(nameIndex)
+        if name == champs[nameChamp]['name']:
+            return nameChamp
+        else:
+            continue
+
+
+def Random():
+    randomIndex = random.randint(1, 14)
+    randomChamp = str(randomIndex)
+    return randomChamp
+
+
+def Embed(index: str):
     e = discord.Embed(
-        color=discord.Color.blue(),
+        color=discord.Color.blue()
+    )
+    e.set_author(
+        name='Campeón de League of Legends',
+        url=champs[index]['lolpage'],
+        icon_url='https://img1.wikia.nocookie.net/__cb20150402234343/'
+                 'leagueoflegends/images/1/12/League_of_Legends_Icon.png'
     )
     e.add_field(
-        name=f"{champs[champ]['name']}, {champs[champ]['header']}.",
-        value=champs[champ]['description'],
+        name=f"{champs[index]['name']}, {champs[index]['header']}",
+        value=champs[index]['description'],
         inline=False
     )
     e.add_field(
-        name='Runas, objetos y builds:',
-        value=f"[OP.GG]({champs[champ]['op.gg']})",
-        inline=False
-    )
-    e.add_field(
-        name='Lore e información sobre el campeón.',
-        value=f"[League of Legends]({champs[champ]['lolpage']})",
+        name='Objetos, runas y builds:',
+        value=f"[OP.GG]({champs[index]['op.gg']})",
         inline=False
     )
     e.set_image(
-        url=champs[champ]['icon']
+        url=champs[index]['icon']
     )
     return e
-
-
-def champName(name: str):
-    while True:
-        champIndex = random.randint(1, 14)
-        champ = str(champIndex)
-        if name == champs[champ]['name']:
-            e = discord.Embed(
-                color=discord.Color.blue(),
-            )
-            e.add_field(
-                name=f"{champs[champ]['name']},"
-                     f" {champs[champ]['header']}.",
-                value=champs[champ]['description'],
-                inline=False
-            )
-            e.add_field(
-                name='Runas, objetos y builds:',
-                value=f"[OP.GG]({champs[champ]['op.gg']})",
-                inline=False
-            )
-            e.add_field(
-                name='Lore e información sobre el campeón.',
-                value=f"[League of Legends]({champs[champ]['lolpage']})",
-                inline=False
-            )
-            e.set_image(
-                url=champs[champ]['icon']
-            )
-            return e
-            break
-        else:
-            continue
 
 
 class LeagueOfLegends(commands.Cog,
@@ -107,22 +68,26 @@ class LeagueOfLegends(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['rol', 'posición', 'carril', 'position'],
-                      help='Elige un campeón aleatorio según su rol.')
-    async def roleChamp(self, ctx, role: str):
-        e = champRole(role)
+    @commands.command(aliases=['chname', 'championname',
+                               'champion', 'campeón'],
+                      help='Encuentra un campeón por su nombre.')
+    async def championName(self, ctx, name: str):
+        champ = Name(name)
+        e = Embed(champ)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['randomchamp', 'champrandom', 'randchamp'],
+    @commands.command(aliases=['rol', 'role', 'chrole', 'championrole'],
+                      help='Encuentra un campeón por su rol.')
+    async def championRole(self, ctx, role: str):
+        champ = Role(role)
+        e = Embed(champ)
+        await ctx.send(embed=e)
+
+    @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
                       help='Obtén un campeón aleatorio.')
-    async def randomChamp(self, ctx):
-        e = champRandom()
-        await ctx.send(embed=e)
-
-    @commands.command(aliases=['champname', 'champ', 'champion', 'campeón'],
-                      help='Elige un campeón por su nombre.')
-    async def nameChamp(self, ctx, name: str):
-        e = champName(name)
+    async def championRandom(self, ctx):
+        champ = Random()
+        e = Embed(champ)
         await ctx.send(embed=e)
 
 
