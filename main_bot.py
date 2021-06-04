@@ -42,7 +42,7 @@ async def on_ready():
     print('Conectado como {0.user}'.format(bot))
     await bot.change_presence(activity=discord.Activity(
                                 type=discord.ActivityType.watching,
-                                name='r.help | RoboTito! | r.botinfo'))
+                                name='RoboTito! | r.help'))
 
 # Run
 
