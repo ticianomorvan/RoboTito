@@ -18,8 +18,8 @@ class Error(commands.Cog):
 
         elif isinstance(error, commands.MissingRequiredArgument):
             await ctx.send('Necesito más argumentos para ejecutar ese'
-                           ' comando, escribe "r.help <comando> para'
-                           ' más información."')
+                           ' comando, escribe `r.help <comando>` para'
+                           ' más información.')
 
         elif isinstance(error, commands.MissingRole):
             await ctx.send('No tienes el o los permisos necesarios para'

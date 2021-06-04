@@ -1,13 +1,9 @@
 import discord
-from discord.ext import commands
-
-from pretty_help import DefaultMenu, PrettyHelp
-
 import logging
-
 import os
-
 import json
+from discord.ext import commands
+from pretty_help import DefaultMenu, PrettyHelp
 
 # Logging
 logger = logging.getLogger('discord')
@@ -24,7 +20,7 @@ intents = discord.Intents.all()
 
 intents.members = True
 
-bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'],
+bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.', '.'],
                    intents=intents,
                    help_command=None)
 
@@ -35,19 +31,18 @@ for filename in os.listdir('./cog'):
 menu = DefaultMenu(page_left='⬅', page_right='➡', remove='🚫')
 bot.help_command = PrettyHelp(color=discord.Color.blue(), menu=menu,
                               index_title='Comandos de RoboTito',
-                              ending_note='Escribe r.help <comando> para más '
-                              'info. sobre algún comando.\nTambién puedes '
-                              'escribir r.help <categoría> para más info. de '
-                              'esa categoría.')
+                              ending_note='Escribe r.help <comando>'
+                              ' para más info. sobre algún comando.\nTambién'
+                              ' puedes escribir r.help <categoría> para más'
+                              ' info. de esa categoría.')
 
 
 @bot.event
 async def on_ready():
     print('Conectado como {0.user}'.format(bot))
-    await bot.change_presence(status=discord.Status.idle,
-                              activity=discord.Activity(
+    await bot.change_presence(activity=discord.Activity(
                                 type=discord.ActivityType.watching,
-                                name='r.help | r.docs | r.info'))
+                                name='r.help | RoboTito! | r.botinfo'))
 
 # Run
 
