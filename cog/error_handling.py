@@ -28,8 +28,9 @@ class Error(commands.Cog):
         elif isinstance(error, commands.MemberNotFound):
             await ctx.send('No pude encontrar a ese usuario.')
 
-        elif isinstance(error, commands.TooManyArguments):
-            await ctx.send('Escribiste demasiados argumentos.')
+        else:
+            await ctx.send('Surgió un error inesperado, por favor,'
+                           ' inténtalo de nuevo.')
 
 
 def setup(bot):
