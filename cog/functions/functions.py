@@ -22,11 +22,8 @@ class Functions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def randomColor():
-        r = random.randint(0, 255)
-        g = random.randint(0, 255)
-        b = random.randint(0, 255)
-        return r, g, b
+    def rColor():
+        return random.randint(0, 255)
 
     # Functions used in cog/anime.py
 
@@ -121,37 +118,6 @@ class Functions(commands.Cog):
             else:
                 gif = random.choice(gifstring['love_low'])
                 return gif
-
-    # Functions used in cog/translate_module.py
-
-    def languageTranslate(language):
-        with open('databases/db_languages.json', encoding='utf-8') as f:
-            data = f.read()
-            lang = json.loads(data)
-            if language in lang:
-                codename = lang[language]['codename']
-                return codename
-            else:
-                pass
-
-    def languageEmbed(translation, fromlang, tolang, author, guildIcon):
-        e = discord.Embed(
-            title=translation,
-            color=discord.Color.blue(),
-            timestamp=datetime.datetime.utcnow()
-        )
-        e.add_field(
-            name='Traducido:',
-            value=f'**{fromlang}** >> **{tolang}**'
-        )
-        e.set_thumbnail(
-            url='https://i.imgur.com/0o5ZKBl.png'
-        )
-        e.set_footer(
-            text=author,
-            icon_url=guildIcon
-        )
-        return e
 
 
 def setup(bot):

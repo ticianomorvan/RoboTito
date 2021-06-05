@@ -14,7 +14,8 @@ with open('databases/db_russianroulette.json', encoding='utf-8') as f:
 
 def rrDeath(winner, loser):
     e = discord.Embed(
-        color=discord.Color.from_rgb(function.randomColor())
+        color=discord.Color.from_rgb(
+            function.rColor(), function.rColor(), function.rColor())
     )
     e.add_field(
         name=random.choice(rr['death']),
@@ -57,8 +58,6 @@ class RussianRoulette(commands.Cog,
 
             while True:
                 try:
-                    await ctx.send('Siguiente turno.')
-                    minusBullet -= 1
                     bullet = random.randint(0, minusBullet)
 
                     m1msg = await self.bot.wait_for(
@@ -75,9 +74,14 @@ class RussianRoulette(commands.Cog,
                         await ctx.send(embed=e)
                         break
                     else:
+                        minusBullet -= 1
                         await ctx.send(rrSafe())
+                        await asyncio.sleep(1)
+                        await ctx.send(f'Te toca, {member.name}.')
 
                         try:
+                            bullet = random.randint(0, minusBullet)
+
                             m2msg = await self.bot.wait_for(
                                 'message', check=member2, timeout=60.0
                             )
@@ -93,8 +97,15 @@ class RussianRoulette(commands.Cog,
                                 await ctx.send(embed=e)
                                 break
                             else:
+                                minusBullet -= 1
                                 await ctx.send(rrSafe())
+                                await asyncio.sleep(1)
+                                await ctx.send(f'Te toca, {ctx.author.name}.')
                                 continue
+
+        else:
+            await ctx.send('Jugaría contigo, pero si perdiera,'
+                           ' ¿quién haría mi trabajo?')
 
 
 def setup(bot):

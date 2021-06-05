@@ -1,9 +1,6 @@
-import cog.functions.functions as functions
+from cog.functions.functions import Functions as function
 from discord.ext import commands
 from discord.member import Member
-
-
-function = functions.Functions
 
 
 class Anime(commands.Cog,
@@ -89,7 +86,7 @@ class Anime(commands.Cog,
             await ctx.send(embed=e)
 
         elif member == ctx.author:
-            await ctx.send(function.function.sameUser('acostarte con'))
+            await ctx.send(function.sameUser('acostarte con'))
 
         else:
             e = function.getEmbed(

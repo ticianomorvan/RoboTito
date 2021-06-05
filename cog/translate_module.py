@@ -1,9 +1,39 @@
-import cog.functions.functions as functions
+import discord
+import datetime
+import json
 from discord.ext import commands
 from translate import Translator
 
 
-function = functions.Functions
+def languageTranslate(language):
+    with open('databases/db_languages.json', encoding='utf-8') as f:
+        data = f.read()
+        lang = json.loads(data)
+        if language in lang:
+            codename = lang[language]['codename']
+            return codename
+        else:
+            pass
+
+
+def languageEmbed(translation, fromlang, tolang, author, guildIcon):
+    e = discord.Embed(
+        title=translation,
+        color=discord.Color.blue(),
+        timestamp=datetime.datetime.utcnow()
+    )
+    e.add_field(
+        name='Traducido:',
+        value=f'**{fromlang}** >> **{tolang}**'
+    )
+    e.set_thumbnail(
+        url='https://i.imgur.com/0o5ZKBl.png'
+    )
+    e.set_footer(
+        text=author,
+        icon_url=guildIcon
+    )
+    return e
 
 
 class Translate(commands.Cog,
@@ -15,12 +45,12 @@ class Translate(commands.Cog,
 
     @commands.command(aliases=['traducir'], help='¡Traduce oraciones!')
     async def translate(self, ctx, fromlang, tolang, *, args: str):
-        fl = function.languageTranslate(str.lower(fromlang))
+        fl = languageTranslate(str.lower(fromlang))
         if fl is None:
             await ctx.send(f'"{fromlang}" no es un idioma o'
                            ' no puedo reconocerlo.')
         else:
-            tl = function.languageTranslate(str.lower(tolang))
+            tl = languageTranslate(str.lower(tolang))
             if tl is None:
                 await ctx.send(f'"{tolang}" no es un idioma'
                                ' o no puedo reconocerlo.')
@@ -31,7 +61,7 @@ class Translate(commands.Cog,
 
                 translation = translator.translate(args)
 
-                e = function.languageEmbed(
+                e = languageEmbed(
                     translation,
                     fromlang,
                     tolang,

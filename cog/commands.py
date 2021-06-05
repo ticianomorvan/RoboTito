@@ -1,12 +1,10 @@
 import discord
 import random
 import datetime
-import cog.functions.functions as functions
+from cog.functions.functions import Functions as function
 from discord.ext import commands
 from discord.member import Member
 
-
-function = functions.Functions
 
 color = discord.Color.blue()
 
