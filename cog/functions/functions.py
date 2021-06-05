@@ -2,6 +2,9 @@ import random
 
 import json
 
+import datetime
+
+import discord
 from discord.ext import commands
 
 
@@ -19,10 +22,13 @@ class Functions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    def rColor():
+        return random.randint(0, 255)
+
     # Functions used in cog/anime.py
 
     def gif(string):
-        with open('strings/db_gifs.json') as f:
+        with open('databases/db_gifs.json') as f:
             data = f.read()
             gif = json.loads(data)
             return random.choice(gif[string])
@@ -45,6 +51,42 @@ class Functions(commands.Cog):
         message = 'Trata de ' + activity + ' alguien más.'
         return message
 
+    def getEmbed(type: str, author, guild, guildIcon, member=None):
+        if member is not None:
+            e = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            e.add_field(
+                name=Functions.header(f'h_{type}'),
+                value=Functions.sentence(author, f'm_{type}', member)
+            )
+            e.set_image(
+                url=Functions.gif(type)
+            )
+            e.set_footer(
+                text=guild,
+                icon_url=guildIcon
+            )
+            return e
+        else:
+            e = discord.Embed(
+                color=discord.Color.blue(),
+                timestamp=datetime.datetime.utcnow(),
+            )
+            e.add_field(
+                name=Functions.header(f'h_{type}'),
+                value=Functions.sentence(author, f'm_{type}')
+            )
+            e.set_image(
+                url=Functions.gif(type)
+            )
+            e.set_footer(
+                text=guild,
+                icon_url=guildIcon
+            )
+            return e
+
     # Functions used in cog/commands.py
 
     def get8Ball():
@@ -59,15 +101,15 @@ class Functions(commands.Cog):
             pass
 
     def getLove(number: int):
-        if number <= 45:
-            return random.choice(string['love_low'])
-        elif number >= 46 and number <= 75:
+        if number >= 75:
+            return random.choice(string['love_high'])
+        elif number >= 45:
             return random.choice(string['love_medium'])
         else:
-            return random.choice(string['love_high'])
+            return random.choice(string['love_low'])
 
     def getLoveGif(number: int):
-        with open('strings/db_gifs.json', encoding='utf-8') as f:
+        with open('databases/db_gifs.json', encoding='utf-8') as f:
             gifData = f.read()
             gifstring = json.loads(gifData)
             if number >= 65:

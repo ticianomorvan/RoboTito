@@ -1,15 +1,64 @@
 import discord
+import random
+import json
 from discord.ext import commands
 
-import datetime
 
-import random
-
-import json
-
-with open('databases/leagueoflegends/db_champs.json') as f:
+with open('databases/db_lolchamps.json', encoding='utf-8') as f:
     data = f.read()
-    lol_ch = json.loads(data)
+    champs = json.loads(data)
+
+
+def Role(role):
+    while True:
+        roleIndex = random.randint(1, 14)
+        roleChamp = str(roleIndex)
+        if champs[roleChamp]['roles'][role] is True:
+            return roleChamp
+        else:
+            continue
+
+
+def Name(name):
+    while True:
+        nameIndex = random.randint(1, 14)
+        nameChamp = str(nameIndex)
+        if name == champs[nameChamp]['name']:
+            return nameChamp
+        else:
+            continue
+
+
+def Random():
+    randomIndex = random.randint(1, 14)
+    randomChamp = str(randomIndex)
+    return randomChamp
+
+
+def Embed(index: str):
+    e = discord.Embed(
+        color=discord.Color.blue()
+    )
+    e.set_author(
+        name='Campeón de League of Legends',
+        url=champs[index]['lolpage'],
+        icon_url='https://img1.wikia.nocookie.net/__cb20150402234343/'
+                 'leagueoflegends/images/1/12/League_of_Legends_Icon.png'
+    )
+    e.add_field(
+        name=f"{champs[index]['name']}, {champs[index]['header']}",
+        value=champs[index]['description'],
+        inline=False
+    )
+    e.add_field(
+        name='Objetos, runas y builds:',
+        value=f"[OP.GG]({champs[index]['op.gg']})",
+        inline=False
+    )
+    e.set_image(
+        url=champs[index]['icon']
+    )
+    return e
 
 
 class LeagueOfLegends(commands.Cog,
@@ -19,209 +68,27 @@ class LeagueOfLegends(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='champpick', aliases=['chpick', 'champick'])
-    async def championpick(self, ctx, args):
-        guild = ctx.guild
+    @commands.command(aliases=['chname', 'championname',
+                               'champion', 'campeón'],
+                      help='Encuentra un campeón por su nombre.')
+    async def championName(self, ctx, name: str):
+        champ = Name(name)
+        e = Embed(champ)
+        await ctx.send(embed=e)
 
-        if args in lol_ch['toplaner_input']:
-            top_pick = random.randint(0, 49)
-            top_name = lol_ch['toplaner'][top_pick]['name']
-            top_header = lol_ch['toplaner'][top_pick]['header']
-            top_icon = lol_ch['toplaner'][top_pick]['icon']
-            top_ugg = lol_ch['toplaner'][top_pick]['u.gg']
-            top_page = lol_ch['toplaner'][top_pick]['lol']
+    @commands.command(aliases=['rol', 'role', 'chrole', 'championrole'],
+                      help='Encuentra un campeón por su rol.')
+    async def championRole(self, ctx, role: str):
+        champ = Role(role)
+        e = Embed(champ)
+        await ctx.send(embed=e)
 
-            embed = discord.Embed(
-                title=top_name,
-                description=top_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({top_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({top_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=top_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-
-        elif args in lol_ch['jungler_input']:
-            jg_pick = random.randint(0, 38)
-            jg_name = lol_ch['jungler'][jg_pick]['name']
-            jg_header = lol_ch['jungler'][jg_pick]['header']
-            jg_icon = lol_ch['jungler'][jg_pick]['icon']
-            jg_ugg = lol_ch['jungler'][jg_pick]['u.gg']
-            jg_page = lol_ch['jungler'][jg_pick]['lol']
-
-            embed = discord.Embed(
-                title=jg_name,
-                description=jg_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({jg_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({jg_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=jg_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-
-        elif args in lol_ch['midlaner_input']:
-            mid_pick = random.randint(0, 45)
-            mid_name = lol_ch['midlaner'][mid_pick]['name']
-            mid_header = lol_ch['midlaner'][mid_pick]['header']
-            mid_icon = lol_ch['midlaner'][mid_pick]['icon']
-            mid_ugg = lol_ch['midlaner'][mid_pick]['u.gg']
-            mid_page = lol_ch['midlaner'][mid_pick]['lol']
-
-            embed = discord.Embed(
-                title=mid_name,
-                description=mid_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({mid_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({mid_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=mid_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-
-        elif args in lol_ch['adc_input']:
-            adc_pick = random.randint(0, 21)
-            adc_name = lol_ch['adc'][adc_pick]['name']
-            adc_header = lol_ch['adc'][adc_pick]['header']
-            adc_icon = lol_ch['adc'][adc_pick]['icon']
-            adc_ugg = lol_ch['adc'][adc_pick]['u.gg']
-            adc_page = lol_ch['adc'][adc_pick]['lol']
-
-            embed = discord.Embed(
-                title=adc_name,
-                description=adc_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({adc_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({adc_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=adc_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-
-        elif args in lol_ch['support_input']:
-            supp_pick = random.randint(0, 32)
-            supp_name = lol_ch['support'][supp_pick]['name']
-            supp_header = lol_ch['support'][supp_pick]['header']
-            supp_icon = lol_ch['support'][supp_pick]['icon']
-            supp_ugg = lol_ch['support'][supp_pick]['u.gg']
-            supp_page = lol_ch['support'][supp_pick]['lol']
-
-            embed = discord.Embed(
-                title=supp_name,
-                description=supp_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({supp_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({supp_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=supp_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-
-        elif args == 'random':
-            random_pick = random.randint(0, 155)
-            random_name = lol_ch['champions'][random_pick]['name']
-            random_header = lol_ch['champions'][random_pick]['header']
-            random_icon = lol_ch['champions'][random_pick]['icon']
-            random_ugg = lol_ch['champions'][random_pick]['u.gg']
-            random_page = lol_ch['champions'][random_pick]['lol']
-
-            embed = discord.Embed(
-                title=random_name,
-                description=random_header,
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
-            )
-            embed.add_field(
-                name='Builds, items, hechizos y más:',
-                value=f'[U.GG]({random_ugg})',
-                inline=False
-            )
-            embed.add_field(
-                name='Información adicional del campeón:',
-                value=f'[League of Legends]({random_page})',
-                inline=False
-            )
-            embed.set_thumbnail(
-                url=random_icon
-            )
-            embed.set_footer(
-                text=guild,
-                icon_url=guild.icon_url,
-            )
-            await ctx.send(embed=embed)
-        else:
-            pass
+    @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
+                      help='Obtén un campeón aleatorio.')
+    async def championRandom(self, ctx):
+        champ = Random()
+        e = Embed(champ)
+        await ctx.send(embed=e)
 
 
 def setup(bot):

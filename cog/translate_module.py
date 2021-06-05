@@ -1,15 +1,12 @@
 import discord
-from discord.ext import commands
-
-from translate import Translator
-
 import datetime
-
 import json
+from discord.ext import commands
+from translate import Translator
 
 
 def languageTranslate(language):
-    with open('databases/iso639-1/db_languages.json', encoding='utf-8') as f:
+    with open('databases/db_languages.json', encoding='utf-8') as f:
         data = f.read()
         lang = json.loads(data)
         if language in lang:
@@ -19,7 +16,24 @@ def languageTranslate(language):
             pass
 
 
-file = discord.File('images/Translate.png', filename='image.png')
+def languageEmbed(translation, fromlang, tolang, author, guildIcon):
+    e = discord.Embed(
+        title=translation,
+        color=discord.Color.blue(),
+        timestamp=datetime.datetime.utcnow()
+    )
+    e.add_field(
+        name='Traducido:',
+        value=f'**{fromlang}** >> **{tolang}**'
+    )
+    e.set_thumbnail(
+        url='https://i.imgur.com/0o5ZKBl.png'
+    )
+    e.set_footer(
+        text=author,
+        icon_url=guildIcon
+    )
+    return e
 
 
 class Translate(commands.Cog,
@@ -29,43 +43,33 @@ class Translate(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='traducir')
+    @commands.command(aliases=['traducir'], help='¡Traduce oraciones!')
     async def translate(self, ctx, fromlang, tolang, *, args: str):
-        a = ctx.author
-        g = ctx.guild
+        fl = languageTranslate(str.lower(fromlang))
+        if fl is None:
+            await ctx.send(f'"{fromlang}" no es un idioma o'
+                           ' no puedo reconocerlo.')
+        else:
+            tl = languageTranslate(str.lower(tolang))
+            if tl is None:
+                await ctx.send(f'"{tolang}" no es un idioma'
+                               ' o no puedo reconocerlo.')
+            else:
+                translator = Translator(
+                    from_lang=fl, to_lang=tl
+                )
 
-        if fromlang is not None:
-            flstr = str.lower(fromlang)
-            fl = languageTranslate(flstr)
-            if tolang is not None:
-                tlstr = str.lower(tolang)
-                tl = languageTranslate(tlstr)
-                if args is not None:
-                    translator = Translator(
-                        from_lang=fl, to_lang=tl
-                    )
+                translation = translator.translate(args)
 
-                    translation = translator.translate(args)
+                e = languageEmbed(
+                    translation,
+                    fromlang,
+                    tolang,
+                    ctx.author.name,
+                    ctx.guild.icon_url
+                )
 
-                    embed = discord.Embed(
-                        title=translation,
-                        color=discord.Color.blue(),
-                        timestamp=datetime.datetime.utcnow()
-                    )
-                    embed.add_field(
-                        name='Traducido:',
-                        value=f'{flstr} :arrow_right: {tlstr}',
-                        inline=False
-                    ),
-                    embed.set_thumbnail(
-                        url='attachment://image.png'
-                    )
-                    embed.set_footer(
-                        text=a.name,
-                        icon_url=g.icon_url
-                    )
-
-                    await ctx.send(embed=embed, file=file)
+                await ctx.send(embed=e)
 
 
 def setup(bot):

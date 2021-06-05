@@ -1,13 +1,38 @@
+import asyncio
 import discord
-from discord.ext import commands
-
 import random
-
-import time
-
 import json
+from discord.member import Member
+from discord.ext import commands
+from cog.functions.functions import Functions as function
 
-import datetime
+
+with open('databases/db_russianroulette.json', encoding='utf-8') as f:
+    data = f.read()
+    rr = json.loads(data)
+
+
+def rrDeath(winner, loser):
+    e = discord.Embed(
+        color=discord.Color.from_rgb(
+            function.rColor(), function.rColor(), function.rColor())
+    )
+    e.add_field(
+        name=random.choice(rr['death']),
+        value=f'{loser} murió, es una pena. {winner} ganó esta ronda.',
+        inline=False
+    )
+    e.set_image(
+        url=function.gif('russianroulette')
+    )
+    return e
+
+
+def rrSafe():
+    return random.choice(rr['safe'])
+
+
+rrAnswers = ['Si', 'probar', 'Probar', 'intentar', 'Intentar']
 
 
 class RussianRoulette(commands.Cog,
@@ -17,264 +42,70 @@ class RussianRoulette(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='ruletarusa',
-                      aliases=['rr'],
-                      description='Juega a la ruleta rusa solo o '
-                                  'con alguien más.')
-    async def ruletarusa(self, ctx, member: discord.Member = None):
-        guild = ctx.guild
-        author = ctx.author.name
-
-        with open('databases/db_russianroulette.json', encoding='utf8') as d:
-            rrd = d.read()
-            rrdata = json.loads(rrd)
-            rrdeath = random.choice(rrdata['rr_death'])
-            rrsafe = random.choice(rrdata['rr_safe'])
-            rrbdeath = random.choice(rrdata['rr.bot_death'])
-            rrbsafe = random.choice(rrdata['rr.bot_safe'])
-
-        with open('databases/db_gifs.json') as f:
-            rrg = f.read()
-            rrgifs = json.loads(rrg)
-            random_gif = random.choice(rrgifs['russianroulette'])
-
+    @commands.command(aliases=['rr', 'ruletarusa'],
+                      help='Juega a la ruleta rusa.')
+    async def russianRoulette(self, ctx, member: Member = None):
         if member is not None:
-            await ctx.send(f'Desafiaste a {member.name} a jugar a la '
-                           'Ruleta Rusa, ¿aceptará?')
+            await ctx.send('¡Qué empiece el juego!, tu empiezas.')
 
-            def msg_member(m):
+            def member1(m):
+                return m.author == ctx.author
+
+            def member2(m):
                 return m.author == member
 
-            def msg_author(m):
-                return m.author == ctx.author
+            minusBullet = 6
 
-            confirm = await self.bot.wait_for(
-                'message', check=msg_member, timeout=60.0
-            )
-            if confirm.content == 'si':
-                await ctx.send('¡Duelo iniciado!, '
-                               f'{author} tu comienzas.')
-                s = await self.bot.wait_for(
-                    'message', check=msg_author, timeout=60.0
-                )
-                if s.content == 'probar':
-                    death = random.randint(0, 3)
-                    if death <= 2:
-                        await ctx.send(rrsafe)
-                        time.sleep(1)
-                        await ctx.send(f'Tu sigues, {member.name}')
-                        s1 = await self.bot.wait_for(
-                            'message', check=msg_member, timeout=60.0
-                        )
-                        if s1.content == 'probar':
-                            death1 = random.randint(0, 2)
-                            if death1 <= 1:
-                                await ctx.send(rrsafe)
-                                time.sleep(1)
-                                await ctx.send(f'Tu sigues, {author}')
-                                s2 = await self.bot.wait_for(
-                                    'message', check=msg_author, timeout=60.0
-                                )
-                                if s2.content == 'probar':
-                                    death2 = random.randint(0, 1)
-                                    if death2 == 0:
-                                        await ctx.send(rrsafe)
-                                        time.sleep(1)
-                                        await ctx.send('Te toca, '
-                                                       f'{member.name}')
-                                        s3 = await self.bot.wait_for(
-                                            'message', check=msg_member,
-                                            timeout=60.0
-                                        )
-                                        if s3.content == 'probar':
-                                            embed = discord.Embed(
-                                                color=discord.Color.blue(),
-                                                timestamp=datetime.datetime.
-                                                utcnow(),
-                                            )
-                                            embed.add_field(
-                                                name=f'Moriste, {member.name}',
-                                                value=rrdeath
-                                            )
-                                            embed.set_image(
-                                                url=random_gif
-                                            )
-                                            embed.set_footer(
-                                                text=guild,
-                                                icon_url=guild.icon_url,
-                                            )
-                                            await ctx.send(embed=embed)
+            while True:
+                try:
+                    bullet = random.randint(0, minusBullet)
 
-                                    else:
-                                        embed = discord.Embed(
-                                            color=discord.Color.blue(),
-                                            timestamp=datetime.datetime.
-                                            utcnow(),
-                                        )
-                                        embed.add_field(
-                                            name=f'Moriste, {author}',
-                                            value=rrdeath
-                                        )
-                                        embed.set_image(
-                                            url=random_gif
-                                        )
-                                        embed.set_footer(
-                                            text=guild,
-                                            icon_url=guild.icon_url,
-                                        )
-                                        await ctx.send(embed=embed)
+                    m1msg = await self.bot.wait_for(
+                        'message', check=member1, timeout=60.0
+                    )
 
-                                else:
-                                    await ctx.send('Utiliza la palabra '
-                                                   'correcta la próxima vez.')
+                except asyncio.TimeoutError:
+                    await ctx.send('Se acabó el tiempo, no respondiste.')
+                    break
 
-                            else:
-                                embed = discord.Embed(
-                                    color=discord.Color.blue(),
-                                    timestamp=datetime.datetime.utcnow(),
-                                )
-                                embed.add_field(
-                                    name=f'Moriste, {member.name}',
-                                    value=rrdeath
-                                )
-                                embed.set_image(
-                                    url=random_gif
-                                )
-                                embed.set_footer(
-                                    text=guild,
-                                    icon_url=guild.icon_url,
-                                )
-                                await ctx.send(embed=embed)
-                        else:
-                            await ctx.send('No, no creo que esa sea '
-                                           'la palabra que buscas.')
-                    else:
-                        embed = discord.Embed(
-                            color=discord.Color.blue(),
-                            timestamp=datetime.datetime.utcnow(),
-                        )
-                        embed.add_field(
-                            name=f'Moriste, {ctx.author.name}',
-                            value=rrdeath
-                        )
-                        embed.set_image(
-                            url=random_gif
-                        )
-                        embed.set_footer(
-                            text=guild,
-                            icon_url=guild.icon_url,
-                        )
-                        await ctx.send(embed=embed)
                 else:
-                    await ctx.send('Esa no es la palabra clave.')
-            else:
-                await ctx.send('¿No juegas?, que decepción.')
+                    if m1msg.content in rrAnswers and bullet == 0:
+                        e = rrDeath(member.name, ctx.author.name)
+                        await ctx.send(embed=e)
+                        break
+                    else:
+                        minusBullet -= 1
+                        await ctx.send(rrSafe())
+                        await asyncio.sleep(1)
+                        await ctx.send(f'Te toca, {member.name}.')
+
+                        try:
+                            bullet = random.randint(0, minusBullet)
+
+                            m2msg = await self.bot.wait_for(
+                                'message', check=member2, timeout=60.0
+                            )
+
+                        except asyncio.TimeoutError:
+                            await ctx.send('Se acabó el tiempo,'
+                                           f' {member.name} no respondió.')
+                            break
+
+                        else:
+                            if m2msg.content in rrAnswers and bullet == 0:
+                                e = rrDeath(ctx.author.name, member.name)
+                                await ctx.send(embed=e)
+                                break
+                            else:
+                                minusBullet -= 1
+                                await ctx.send(rrSafe())
+                                await asyncio.sleep(1)
+                                await ctx.send(f'Te toca, {ctx.author.name}.')
+                                continue
+
         else:
-            await ctx.send('¡Jugaré contigo!, tienes el primer turno.')
-
-            def check(m):
-                return m.author == ctx.author
-
-            sb = await self.bot.wait_for(
-                'message', check=check, timeout=60.0
-            )
-            if sb.content == 'probar':
-                deathb = random.randint(0, 3)
-                if deathb <= 2:
-                    await ctx.send(rrsafe)
-                    time.sleep(0.5)
-                    await ctx.send('Está bien, me toca.')
-                    deathb2 = random.randint(0, 2)
-                    if deathb2 <= 1:
-                        time.sleep(1)
-                        await ctx.send(rrbsafe)
-                        sb2 = await self.bot.wait_for(
-                            'message', check=check, timeout=60.0
-                        )
-                        if sb2.content == 'probar':
-                            deathb3 = random.randint(0, 1)
-                            if deathb3 == 1:
-                                await ctx.send(rrsafe)
-                                time.sleep(1.5)
-                                await ctx.send('Está bien, me toca.')
-                                time.sleep(1.5)
-                                embed = discord.Embed(
-                                    color=discord.Color.blue(),
-                                    timestamp=datetime.datetime.utcnow(),
-                                )
-                                embed.add_field(
-                                    name='Morí.',
-                                    value=rrbdeath,
-                                    inline=False,
-                                )
-                                embed.set_image(
-                                    url=random_gif
-                                )
-                                embed.set_footer(
-                                    text=guild,
-                                    icon_url=guild.icon_url,
-                                )
-                                await ctx.send(embed=embed)
-                            else:
-                                time.sleep(1.5)
-                                embed = discord.Embed(
-                                    color=discord.Color.blue(),
-                                    timestamp=datetime.datetime.utcnow(),
-                                )
-                                embed.add_field(
-                                    name=f'Moriste, {author}',
-                                    value=rrdeath,
-                                    inline=False,
-                                )
-                                embed.set_image(
-                                    url=random_gif
-                                )
-                                embed.set_footer(
-                                    text=guild,
-                                    icon_url=guild.icon_url,
-                                )
-                                await ctx.send(embed=embed)
-                        else:
-                            await ctx.send('Deberías "probar" para jugar.')
-                    else:
-                        time.sleep(1.5)
-                        embed = discord.Embed(
-                            color=discord.Color.blue(),
-                            timestamp=datetime.datetime.utcnow(),
-                        )
-                        embed.add_field(
-                            name='Morí',
-                            value=str(rrbdeath),
-                            inline=False,
-                        )
-                        embed.set_image(
-                            url=random_gif
-                        )
-                        embed.set_footer(
-                            text=guild,
-                            icon_url=guild.icon_url,
-                        )
-                        await ctx.send(embed=embed)
-                else:
-                    embed = discord.Embed(
-                        color=discord.Color.blue(),
-                        timestamp=datetime.datetime.utcnow(),
-                    )
-                    embed.add_field(
-                        name=f'Moriste, {author}',
-                        value=str(rrdeath),
-                        inline=False
-                    )
-                    embed.set_image(
-                        url=random_gif
-                    )
-                    embed.set_footer(
-                        text=guild,
-                        icon_url=guild.icon_url,
-                    )
-                    await ctx.send(embed=embed)
-            else:
-                await ctx.send('Si quieres jugar, escribe "probar".')
+            await ctx.send('Jugaría contigo, pero si perdiera,'
+                           ' ¿quién haría mi trabajo?')
 
 
 def setup(bot):

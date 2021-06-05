@@ -1,11 +1,8 @@
 import discord
-from discord.ext import commands
-
 import wikipedia
-
 import wikipediaapi
-
 import datetime
+from discord.ext import commands
 
 # Wikipedia language and some useful variables.
 
@@ -30,7 +27,7 @@ class WikipediaBot(commands.Cog,
 
     @commands.command(name='search',
                       aliases=['buscar', 'query'],
-                      description='Realiza una búsqueda en Wikipedia.')
+                      help='Realiza una búsqueda en Wikipedia.')
     async def wiki_query(self, ctx, *, args):
         g = ctx.guild
         wiki_result = wikipedia.search(args, results=5)
@@ -47,7 +44,7 @@ class WikipediaBot(commands.Cog,
 
     @commands.command(name='summary',
                       aliases=['resumen', 'summ'],
-                      description='Obtén el resumen de algún artículo.')
+                      help='Obtén el resumen de algún artículo.')
     async def wiki_summary(self, ctx, *, args):
         g = ctx.guild
         wiki_page = wiki.page(args)

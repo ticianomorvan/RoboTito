@@ -1,5 +1,5 @@
 {
-    "rr_death": [
+    "death": [
         "Has muerto, podía verse a la distancia.",
         "Tu muerte será recordada... o tal vez no.",
         "Un juego sobre muerte acabando en muerte, quien lo hubiese dicho.",
@@ -16,7 +16,7 @@
         "El tiempo pasa, aunque ya más no para ti."
     ],
 
-    "rr_safe": [
+    "safe": [
         "Quizás hoy no es tu final, pasa el arma.",
         "Seas creyente o no, eso fue un milagro, pasa el arma.",
         "Algo en el aire susurra deberías que dejar el juego, pero por ahora, sigue.",
@@ -31,7 +31,7 @@
         "¡Abraza tu juventud!, no va a durar para siempre..."
     ],
 
-    "rr.bot_safe": [
+    "bot_safe": [
         "Mis circuitos están intactos, tu turno.",
         "Voy a seguir viviendo, aunque no estaría seguro de ti.",
         "Mis sistemas funcionan correctamente, te toca.",
@@ -45,7 +45,7 @@
         "No quiero desilusionarte, pero sigo vivo."
     ],
 
-    "rr.bot_death": [
+    "bot_death": [
         "No... puedo... seguir...",
         "Esto fue... un error.. ahg...",
         "Los sistemas se apagan en 3... 2... 1...",

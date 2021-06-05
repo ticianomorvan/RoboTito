@@ -1,16 +1,10 @@
 import discord
+import random
+import datetime
+from cog.functions.functions import Functions as function
 from discord.ext import commands
-
 from discord.member import Member
 
-import random
-
-import datetime
-
-import cog.functions.functions as functions
-
-
-function = functions.Functions
 
 color = discord.Color.blue()
 
@@ -24,7 +18,22 @@ class Commands(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='8ball')
+    @commands.command(aliases=['latency', 'latencia'],
+                      help='Obtén el tiempo de respuesta del bot.')
+    async def ping(self, ctx):
+        latency = round(self.bot.latency)
+        ms = latency / 100
+
+        e = discord.Embed(
+            color=color
+        )
+        e.add_field(
+            name='La latencia es de:',
+            value=f'{ms} ms.'
+        )
+        await ctx.send(embed=e)
+
+    @commands.command(name='8ball', help='Pregúntale algo a la bola ocho.')
     async def eightball(self, ctx, *, args):
         if args is not None:
             embed = discord.Embed(
@@ -45,7 +54,10 @@ class Commands(commands.Cog,
         else:
             await ctx.send('Deberías preguntar algo.')
 
-    @commands.command(aliases=['probabilidad', 'prob'])
+    @commands.command(
+        aliases=['probabilidad', 'prob'],
+        help='¿Cuál es la probabilidad de...?'
+    )
     async def probability(self, ctx, *, args):
         if args is not None:
             probabilidad = random.randint(0, 100)
@@ -73,7 +85,10 @@ class Commands(commands.Cog,
         else:
             await ctx.send('Deberías preguntar algo.')
 
-    @commands.command(name='penis', aliases=['pene', 'penisize', 'tula'])
+    @commands.command(
+        name='penis', aliases=['pene', 'penisize', 'tula'],
+        help='¿Cuánto mide tu aparato?'
+    )
     async def penis(self, ctx, member: Member = None):
         penisSize = random.randint(0, 10000)
 
@@ -111,7 +126,10 @@ class Commands(commands.Cog,
 
             await ctx.send(embed=embed)
 
-    @commands.command(aliases=['amor', 'loving'])
+    @commands.command(
+        aliases=['amor', 'loving'],
+        help='¿Qué tan fuerte es el amor entre tu y esa persona?'
+    )
     async def love(self, ctx, member: Member = None):
         loveProbability = random.randint(0, 100)
 
