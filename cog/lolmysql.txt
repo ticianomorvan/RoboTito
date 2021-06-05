@@ -1,0 +1,45 @@
+# import discord
+import random
+import sqlite3
+from discord.ext import commands
+
+con = sqlite3.connect('databases/leagueoflegends.db')
+
+cur = con.cursor()
+
+query = 'INSERT INTO champions(name, header, description, icon, lolpage, opgg, roles) VALUES (%s, %s, %s, %s, %s, %s, %s)'
+# query2 = 'SHOW TABLES'
+
+values = (
+    'Aatrox',
+    'la espada Darkin',
+    'Aatrox y sus hermanos, que alguna vez fueron respetados defensores de Shurima contra el Vacío, se convirtieron en una amenaza aún mayor para Runaterra y los derrotaron con hechicería mortal usada con astucia. Pero, después de siglos de encarcelamiento, Aatrox fue el primero en encontrar la libertad una vez más; corrompió y transformó a los bastante tontos como para intentar blandir el arma mágica que contenía su esencia. Ahora, con cuerpos robados, camina por Runaterra con una apariencia retorcida de su forma original y busca la venganza apocalíptica que tanto desea.',
+    'https://cdn.vox-cdn.com/thumbor/TAeesOxuy9QxgFUXYRC0jN2GetI=/0x0:1440x851/1200x0/filters:focal(0x0:1440x851)/cdn.vox-cdn.com/uploads/chorus_asset/file/11523947/Aatrox_splash.jpg',
+    'https://las.leagueoflegends.com/es-ar/champions/aatrox/',
+    'https://las.op.gg/champion/aatrox/statistics/',
+    'top'
+)
+
+# cur.execute(query2)
+
+# con.commit()
+
+# def getChamp()
+
+
+class LolMySql(commands.Cog):
+
+    def __init__(self, bot) -> None:
+        super().__init__()
+        self.bot = bot
+
+    @commands.command()
+    async def mysql(self, ctx, role: str):
+        await ctx.send(getChamp(role))
+
+
+con.close()
+
+
+def setup(bot):
+    bot.add_cog(LolMySql(bot))
