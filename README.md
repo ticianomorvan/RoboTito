@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/maintenance/yes/2021?color=blue">
   <img src="https://img.shields.io/github/checks-status/ATT-Inc/RoboTito/development">
   <img src="https://scrutinizer-ci.com/g/ATT-Inc/RoboTito/badges/build.png?b=development">
-  <img src="https://scrutinizer-ci.com/g/ATT-Inc/RoboTito/badges/quality-score.png?b=development">
+  <img src="https://scrutinizer-ci.com/g/ATT-Inc/RoboTito/badges/quality-score.png">
 </p>
 
 ## 🌎 Visit our website!
