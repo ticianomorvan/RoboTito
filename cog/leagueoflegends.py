@@ -11,7 +11,7 @@ with open('databases/db_lolchamps.json', encoding='utf-8') as f:
 
 def Role(role):
     while True:
-        roleIndex = random.randint(1, 14)
+        roleIndex = random.randint(1, 50)
         roleChamp = str(roleIndex)
         if champs[roleChamp]['roles'][role] is True:
             return roleChamp
@@ -21,7 +21,7 @@ def Role(role):
 
 def Name(name):
     while True:
-        nameIndex = random.randint(1, 14)
+        nameIndex = random.randint(1, 50)
         nameChamp = str(nameIndex)
         if name == champs[nameChamp]['name']:
             return nameChamp
@@ -30,7 +30,7 @@ def Name(name):
 
 
 def Random():
-    randomIndex = random.randint(1, 14)
+    randomIndex = random.randint(1, 50)
     randomChamp = str(randomIndex)
     return randomChamp
 
@@ -78,10 +78,15 @@ class LeagueOfLegends(commands.Cog,
 
     @commands.command(aliases=['rol', 'role', 'chrole', 'championrole'],
                       help='Encuentra un campeón por su rol.')
-    async def championRole(self, ctx, role: str):
-        champ = Role(role)
-        e = Embed(champ)
-        await ctx.send(embed=e)
+    async def championRole(self, ctx, role: str = None):
+        if role is not None:
+            champ = Role(role)
+            e = Embed(champ)
+            await ctx.send(embed=e)
+
+        else:
+            await ctx.send('Debes introducir un rol, con las siguientes'
+                           ' posibilidades: `top, jg, mid, adc, support`')
 
     @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
                       help='Obtén un campeón aleatorio.')
