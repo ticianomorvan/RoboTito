@@ -13,7 +13,7 @@
 </p>
 
 ## 🌎 Visit our website!
-[RoboTito's Website](https://att-inc.github.io/RoboTito)
+[RoboTito's Website](https://ti7oyan.github.io/RoboTito/)
 
 ### 📃 NOTE: 
 We speak spanish, so we made the website based on that.
@@ -81,6 +81,6 @@ git push origin
 You can talk to us in our [Discord server](https://discord.gg/W2ReeE6kV5)
 
 ## Contributors
-![RoboTito](https://contrib.rocks/image?repo=ATT-Inc/RoboTito)
+![RoboTito](https://contrib.rocks/image?repo=Ti7oyan/RoboTito)
 
 ## 😄 And that's it! we hope you like RoboTito as much as we do :)
