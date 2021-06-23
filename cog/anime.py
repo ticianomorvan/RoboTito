@@ -76,12 +76,8 @@ class Anime(commands.Cog,
     @commands.command(aliases=['dormir'], help='Duerme con o sin alguien más.')
     async def sleep(self, ctx, member: Member = None):
         if member is None:
-            e = function.getEmbed(
-                'sleep',
-                ctx.author.name,
-                ctx.guild.name,
-                ctx.guild.icon_url,
-            )
+            e = function.getEmbed('sleep', ctx.author.name,
+                                  ctx.guild.name, ctx.guild.icon_url)
 
             await ctx.send(embed=e)
 
