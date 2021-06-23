@@ -55,7 +55,22 @@ class ExchangeRate(commands.Cog, name='Conversión',
             await ctx.send(embed=e)
 
         else:
-            pass
+            e = discord.Embed(
+                color=discord.Color.from_rgb(
+                    f.rColor(), f.rColor(), f.rColor()),
+                )
+            e.set_author(
+                name='Tasa de cambio',
+                icon_url='https://cdn0.iconfinder.com/data/icons/'
+                         'business-cool-vector-3/128/120-512.png',
+                url='https://rapidapi.com/exchangerateapi/api/'
+                    'exchangerate-api/'
+            )
+            e.add_field(
+                name=f'Por cada $1 {fromCurrency}, deberás pagar:',
+                value=f'${exchange} {toCurrency}, a fecha de hoy.'
+            )
+            await ctx.send(embed=e)
 
 
 def setup(bot):
