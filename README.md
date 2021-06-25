@@ -13,7 +13,10 @@
 </p>
 
 ## 🌎 Visit our website!
-[RoboTito's Website](https://ti7oyan.github.io/RoboTito/)
+[RoboTito's Website](https://ti7oyan.github.io/robotito/)
+
+## 📚 Documentation!
+[RoboTito's Documentation](https://ticiano-morvan.gitbook.io)
 
 ### 📃 NOTE: 
 We speak spanish, so we made the website based on that.
