@@ -30,6 +30,8 @@ You can contact the main developer through Discord, adding **\#Titoyan7**
 
 ### More information and facts about RoboTito 📖 
 
+{% page-ref page="commands.md" %}
+
 ### Invitation 🤖
 
 It was interesting to go over who RoboTito is! But now, let's get down to the important stuff. If you want to invite RoboTito to your server to try it out, you can do so via this [link](https://discord.com/api/oauth2/authorize?client_id=820819824669491210&permissions=8&scope=bot). If you made it this far, thank you very much! Maybe this is not the bot you think of when you create a server, but your help would make us all very happy and motivates us to keep improving RoboTito.
