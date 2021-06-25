@@ -30,6 +30,10 @@ Puedes contactarte con el desarrollador principal a través de Discord, añadien
 
 ### Más información y datos sobre RoboTito 📖 
 
+{% page-ref page="comandos.md" %}
+
+
+
 ### Invitación 🤖 
 
 ¡Si que fue interesante repasar por quien es RoboTito! Pero ahora, vamos a lo importante. Si quieres invitar a RoboTito a tu servidor para probarlo, puedes hacerlo mediante este [enlace](https://discord.com/api/oauth2/authorize?client_id=820819824669491210&permissions=8&scope=bot). Si llegaste hasta esta parte, ¡Muchas gracias! Quizá este no sea el bot en el que piensas al crear un servidor, pero tu ayuda nos haría muy felices a todos y nos motiva a seguir mejorando a RoboTito.
