@@ -1,8 +1,8 @@
 # These are the obligatory packages
-discord.py
-translate
-wikipedia
-wikipedia-api
-discord-pretty-help
+discord.py>=1.7.2
+translate>=3.5.0
+wikipedia>=1.4.0
+wikipedia-api>=0.5.4
+discord-pretty-help>=1.3.0
 
 # ATT-Inc 2021
