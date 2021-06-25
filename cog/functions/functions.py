@@ -1,9 +1,6 @@
 import random
-
 import json
-
 import datetime
-
 import discord
 from discord.ext import commands
 
@@ -118,6 +115,15 @@ class Functions(commands.Cog):
             else:
                 gif = random.choice(gifstring['love_low'])
                 return gif
+
+    # REST API's Token
+
+    def getToken():
+        with open('databases/db_bot.json', encoding='utf-8') as f:
+            data = f.read()
+            token_value = json.loads(data)
+            token = token_value['apitoken']
+            return token
 
 
 def setup(bot):

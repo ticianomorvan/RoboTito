@@ -97,7 +97,7 @@ class Information(commands.Cog,
         embed.add_field(
             name='Mi código fuente está en:',
             value='[RoboTito, por ATT-Inc]'
-                  '(https://github.com/ATT-Inc/RoboTito)',
+                  '(https://github.com/Ti7oyan/RoboTito)',
             inline=False
         )
         embed.set_footer(text=ctx.guild.name, icon_url=ctx.guild.icon_url)
