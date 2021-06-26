@@ -4,27 +4,20 @@ import random
 import json
 from discord.member import Member
 from discord.ext import commands
-from cog.functions.functions import Functions as function
+from cog.functions.functions import Functions as f
 
 
-with open('databases/db_russianroulette.json', encoding='utf-8') as f:
-    data = f.read()
+with open('databases/db_russianroulette.json', encoding='utf-8') as fi:
+    data = fi.read()
     rr = json.loads(data)
 
 
 def rrDeath(winner, loser):
-    e = discord.Embed(
-        color=discord.Color.from_rgb(
-            function.rColor(), function.rColor(), function.rColor())
-    )
-    e.add_field(
-        name=random.choice(rr['death']),
-        value=f'{loser} murió, es una pena. {winner} ganó esta ronda.',
-        inline=False
-    )
-    e.set_image(
-        url=function.gif('russianroulette')
-    )
+    e = discord.Embed(color=f.rbColor())
+    e.add_field(name=random.choice(rr['death']),
+                value=f'{loser} murió, es una pena. {winner} ganó esta ronda.',
+                inline=False)
+    e.set_image(url=f.gif('russianroulette'))
     return e
 
 
@@ -32,7 +25,7 @@ def rrSafe():
     return random.choice(rr['safe'])
 
 
-rrAnswers = ['Si', 'probar', 'Probar', 'intentar', 'Intentar']
+rrAnswers = ['si', 'probar', 'intentar', 'try']
 
 
 class RussianRoulette(commands.Cog,
@@ -63,13 +56,14 @@ class RussianRoulette(commands.Cog,
                     m1msg = await self.bot.wait_for(
                         'message', check=member1, timeout=60.0
                     )
+                    m1msgStr = str.lower(m1msg.content)
 
                 except asyncio.TimeoutError:
                     await ctx.send('Se acabó el tiempo, no respondiste.')
                     break
 
                 else:
-                    if m1msg.content in rrAnswers and bullet == 0:
+                    if m1msgStr in rrAnswers and bullet == 0:
                         e = rrDeath(member.name, ctx.author.name)
                         await ctx.send(embed=e)
                         break
@@ -85,6 +79,7 @@ class RussianRoulette(commands.Cog,
                             m2msg = await self.bot.wait_for(
                                 'message', check=member2, timeout=60.0
                             )
+                            m2msgStr = str.lower(m2msg.content)
 
                         except asyncio.TimeoutError:
                             await ctx.send('Se acabó el tiempo,'
@@ -92,7 +87,7 @@ class RussianRoulette(commands.Cog,
                             break
 
                         else:
-                            if m2msg.content in rrAnswers and bullet == 0:
+                            if m2msgStr in rrAnswers and bullet == 0:
                                 e = rrDeath(ctx.author.name, member.name)
                                 await ctx.send(embed=e)
                                 break

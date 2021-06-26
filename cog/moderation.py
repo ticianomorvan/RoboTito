@@ -225,7 +225,7 @@ class Moderation(commands.Cog,
         name='nick', aliases=['apodo'],
         help='Cambia tu apodo o el de otro usuario.'
     )
-    async def nick(self, ctx, nick: str, member: Member = None):
+    async def nick(self, ctx, *, nick: str, member: Member = None):
         if ctx.author.guild_permissions.manage_nicknames is True:
             if member is not None:
                 await member.edit(nick=nick)

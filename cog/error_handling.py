@@ -42,7 +42,7 @@ class Error(commands.Cog):
                               ' información en internet) es probable que haya'
                               ' habido un error en la comunicación con dicha'
                               ' API y/o se haya llegado al límite'
-                              ' de peticiones',
+                              ' de peticiones.',
                         inline=False)
             e.add_field(name='2. Errores del código inesperados',
                         value='Si bien hacemos numerosas pruebas antes de'
@@ -52,7 +52,7 @@ class Error(commands.Cog):
                               ' hemos descubierto. De ser así, por favor,'
                               ' háznoslo saber a través de la creación'
                               ' de un *issue* en [Github](https://github.'
-                              'com/Ti7oyan/RoboTito/issues)',
+                              'com/Ti7oyan/RoboTito/issues).',
                         inline=False)
             e.add_field(name='3. Falta de ciertos permisos / configuraciones',
                         value='Ciertos comandos necesitan de permisos'
@@ -70,7 +70,7 @@ class Error(commands.Cog):
                               ' funcionamiento, por lo que sugerimos revisar'
                               ' la documentación oficial de RoboTito a través'
                               ' de este [enlace](https://ticiano-morvan.'
-                              ' gitbook.io/robotito/)',
+                              'gitbook.io/robotito/).',
                         inline=False)
             await ctx.send(embed=e)
 
