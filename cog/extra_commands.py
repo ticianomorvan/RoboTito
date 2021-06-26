@@ -1,6 +1,6 @@
 import discord
 import random
-from datetime import datetime
+from cog.functions.functions import Functions as f
 from discord.member import Member
 from discord.ext import commands
 
@@ -54,34 +54,20 @@ def polentaLevels(percentage: int):
                ESTÓMAGO ARGENTINO**"""
 
 
-def polentaEmbed(percentage, phrase, guildIcon, guildName, user=None):
+def polentaEmbed(percentage, phrase, user=None):
     if user is not None:
-        e = discord.Embed(
-            title='Polentómetro',
-            color=discord.Color.blue(),
-            timestamp=datetime.utcnow()
-        )
-        e.add_field(
-            name=f'El nivel de polenta en sangre de {user} es de:',
-            value=f'**{percentage}%**, {phrase}'
-        )
+        e = discord.Embed(title='Polentómetro', color=f.rbColor())
+        e.add_field(name=f'El nivel de polenta en sangre de {user} es de:',
+                    value=f'**{percentage}%**, {phrase}')
         e.set_image(url='https://img.itdg.com.br/tdg/images/blog/uploads/'
                         '2017/12/polenta.jpg')
-        e.set_footer(text=guildName, icon_url=guildIcon)
         return e
     else:
-        e = discord.Embed(
-            title='Polentómetro',
-            color=discord.Color.blue(),
-            timestamp=datetime.utcnow()
-        )
-        e.add_field(
-            name='Tu nivel de polenta en sangre es de:',
-            value=f'**{percentage}%**, {phrase}'
-        )
+        e = discord.Embed(title='Polentómetro', color=f.rbColor())
+        e.add_field(name='Tu nivel de polenta en sangre es de:',
+                    value=f'**{percentage}%**, {phrase}')
         e.set_image(url='https://img.itdg.com.br/tdg/images/blog/uploads/'
                         '2017/12/polenta.jpg')
-        e.set_footer(text=guildName, icon_url=guildIcon)
         return e
 
 
@@ -97,14 +83,12 @@ class ExtraCommands(commands.Cog, name='Extra', description='Comandos extra.'):
         if member is not None:
             polLevel = random.randint(0, 100)
             polPhrase = polentaLevels(polLevel)
-            polEmbed = polentaEmbed(polLevel, polPhrase, ctx.guild.icon_url,
-                                    ctx.guild.name, member.name)
+            polEmbed = polentaEmbed(polLevel, polPhrase, member.name)
             await ctx.send(embed=polEmbed)
         else:
             polLevel = random.randint(0, 100)
             polPhrase = polentaLevels(polLevel)
-            polEmbed = polentaEmbed(polLevel, polPhrase, ctx.guild.icon_url,
-                                    ctx.guild.name)
+            polEmbed = polentaEmbed(polLevel, polPhrase)
             await ctx.send(embed=polEmbed)
 
 

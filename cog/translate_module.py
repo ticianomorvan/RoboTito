@@ -1,8 +1,9 @@
 import discord
-import datetime
 import json
+from datetime import datetime
 from discord.ext import commands
 from translate import Translator
+from cog.functions.functions import Functions as f
 
 
 def languageTranslate(language):
@@ -19,8 +20,8 @@ def languageTranslate(language):
 def languageEmbed(translation, fromlang, tolang, author, guildIcon):
     e = discord.Embed(
         title=translation,
-        color=discord.Color.blue(),
-        timestamp=datetime.datetime.utcnow()
+        color=f.rbColor(),
+        timestamp=datetime.utcnow()
     )
     e.add_field(
         name='Traducido:',

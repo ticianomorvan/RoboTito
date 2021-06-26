@@ -32,11 +32,8 @@ class Covid19(commands.Cog):
                     criticalCases = jsonResponse[0]['critical']
                     deaths = jsonResponse[0]['deaths']
 
-                    e = discord.Embed(
-                        color=discord.Color.from_rgb(
-                            f.rColor(), f.rColor(), f.rColor()),
-                        title=f'COVID-19 >> {countryName}'
-                    )
+                    e = discord.Embed(color=f.rbColor(),
+                                      title=f'COVID-19 >> {countryName}')
                     e.add_field(name='Confirmados ⚠️',
                                 value=format(confirmedCases, ','),
                                 inline=False)

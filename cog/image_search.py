@@ -1,7 +1,6 @@
 import requests
 import discord
 from cog.functions.functions import Functions as f
-from datetime import datetime
 from discord.ext import commands
 
 
@@ -31,20 +30,19 @@ class ImageSearch(commands.Cog, name='Imágenes',
     @commands.command(name='searchimg', aliases=['img', 'bing', 'imagen'],
                       help='Obtén una imagen desde el motor de búsqueda Bing.')
     async def searchImage(self, ctx, *, query: str):
-        e = discord.Embed(
-            color=discord.Color.from_rgb(f.rColor(), f.rColor(), f.rColor()),
-            timestamp=datetime.utcnow(),
-            description=f'**{query}**, enlace original:'
-                        f' [aquí]({searchImage(query)})'
-        )
-        e.set_author(name='Imágenes de Bing',
-                     icon_url='https://pluspng.com/img-png/'
-                              'bing-logo-png-png-ico-512.png')
-        e.set_image(url=searchImage(query))
-        e.set_footer(text=f'Imagen pedida por {ctx.author.name}',
-                     icon_url=ctx.guild.icon_url)
-
-        await ctx.send(embed=e)
+        if not query:
+            await ctx.send('Tienes que buscar algo.')
+        else:
+            e = discord.Embed(
+                color=f.rbColor(),
+                description=f'**{query}**, enlace original:'
+                            f' [aquí]({searchImage(query)})'
+            )
+            e.set_author(name='Imágenes de Bing',
+                         icon_url='https://pluspng.com/img-png/'
+                                  'bing-logo-png-png-ico-512.png')
+            e.set_image(url=searchImage(query))
+            await ctx.send(embed=e)
 
 
 def setup(bot):
