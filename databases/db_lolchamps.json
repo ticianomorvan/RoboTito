@@ -797,5 +797,86 @@
             "adc":true,
             "support":false
         }
+    },
+
+    "51": {
+        "name":"Kalista",
+        "header":"El espíritu de la venganza",
+        "description":"Kalista, espectro de ira y retribución, es el espíritu eterno de la venganza, una pesadilla armada invocada de las Islas de la Sombra para cazar impostores y traidores. Los traicionados pueden llorar ensangrentados clamando venganza, pero Kalista solo escucha a los que están dispuestos a pagar con sus propias almas. Aquellos que se convierten en presa de la ira de Kalista, deben estar en paz, pues cada pacto sellado con esta cazadora terminará con el frío y penetrante fuego de sus lanzas de alma.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kalista/",
+        "op.gg":"https://las.op.gg/champion/kalista/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "52": {
+        "name":"Karma",
+        "header":"La iluminada",
+        "description":"Ningún mortal es capaz de ilustrar mejor las tradiciones espirituales de Jonia que Karma. Ella es la personificación de un alma antigua que ha reencarnado innumerables veces, transmitiendo sus recuerdos acumulados en cada una de las vidas nuevas, bendecida con un poder que muy pocos pueden comprender. Ha dado lo mejor de sí para guiar a su gente en los tiempos de crisis recientes, aunque sabe bien que la paz y la armonía tienen un costo considerable, tanto para ella como para la tierra que atesora como lo más preciado.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/karma/",
+        "op.gg":"https://las.op.gg/champion/karma/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "53": {
+        "name":"Karthus",
+        "header":"El canto de la muerte",
+        "description":"Karthus, heraldo del olvido, es un espíritu inmortal cuyas canciones pavorosas preceden el horror de su dantesca aparición. Los vivos temen la eternidad de la no-muerte, pero Karthus solo ve hermosura y pureza en su abrazo, una comunión perfecta entre la vida y la muerte. Cuando emerge de las Islas de la Sombra es para llevar la dicha de la muerte a los mortales como apóstol de la no-vida.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/karthus/",
+        "op.gg":"https://las.op.gg/champion/karthus/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "54": {
+        "name":"Kassadin",
+        "header":"El caminante del vacío",
+        "description":"Al abrirse paso a través de los lugares más oscuros del mundo, Kassadin sabe que sus días están contados. Aunque alguna vez fue un experimentado guía y aventurero de Shurima, eligió vivir en el anonimato y tener una familia en las pacíficas tribus del sur... hasta el día que el Vacío consumió su aldea. Kassadin juró venganza, y combinó numerosos artefactos arcanos y tecnologías prohibidas para el peligro que se avecinaba. Así, Kassadin se dirigió por fin a las tierras olvidadas de Icathia, listo para enfrentar a cualquier monstruoso ser del Vacío en su búsqueda del autoproclamado profeta, Malzahar.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kassadin/",
+        "op.gg":"https://las.op.gg/champion/kassadin/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "55": {
+        "name":"Katarina",
+        "header":"La daga Siniestra",
+        "description":"Decisiva en su juicio y letal en combate, Katarina es una asesina noxiana del más alto calibre. Como la hija mayor del legendario General Du Couteau, ella hizo que reconocieran sus talentos con agiles muertes a sus enemigos desprevenidos. Su feroz ambición la ha llevado a buscar blancos fuertemente protegidos aunque tenga que poner en riesgo a sus aliados; sin embargo, sin importar la misión, Katarina no dudará al ejecutar su deber en medio de un torbellino de dagas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/katarina/",
+        "op.gg":"https://las.op.gg/champion/katarina/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
     }
+
 }
