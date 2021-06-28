@@ -145,7 +145,7 @@ class Information(commands.Cog,
         e = guildEmbed(ctx.guild)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['usinfo', 'uinfo'],
+    @commands.command(aliases=['usinfo', 'uinfo', 'userinfo'],
                       help='Obtén información acerca de ti o alguien más.')
     async def userInfo(self, ctx, member: Member = None):
         if member is not None:

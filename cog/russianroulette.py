@@ -12,7 +12,7 @@ with open('databases/db_russianroulette.json', encoding='utf-8') as fi:
     rr = json.loads(data)
 
 
-def rrDeath(winner, loser):
+def rr_death(winner, loser):
     e = discord.Embed(color=f.rbColor())
     e.add_field(name=random.choice(rr['death']),
                 value=f'{loser} murió, es una pena. {winner} ganó esta ronda.',
@@ -21,7 +21,7 @@ def rrDeath(winner, loser):
     return e
 
 
-def rrSafe():
+def rr_safe():
     return random.choice(rr['safe'])
 
 
@@ -64,12 +64,12 @@ class RussianRoulette(commands.Cog,
 
                 else:
                     if m1msgStr in rrAnswers and bullet == 0:
-                        e = rrDeath(member.name, ctx.author.name)
+                        e = rr_death(member.name, ctx.author.name)
                         await ctx.send(embed=e)
                         break
                     else:
                         minusBullet -= 1
-                        await ctx.send(rrSafe())
+                        await ctx.send(rr_safe())
                         await asyncio.sleep(1)
                         await ctx.send(f'Te toca, {member.name}.')
 
@@ -88,12 +88,12 @@ class RussianRoulette(commands.Cog,
 
                         else:
                             if m2msgStr in rrAnswers and bullet == 0:
-                                e = rrDeath(ctx.author.name, member.name)
+                                e = rr_death(ctx.author.name, member.name)
                                 await ctx.send(embed=e)
                                 break
                             else:
                                 minusBullet -= 1
-                                await ctx.send(rrSafe())
+                                await ctx.send(rr_safe())
                                 await asyncio.sleep(1)
                                 await ctx.send(f'Te toca, {ctx.author.name}.')
                                 continue

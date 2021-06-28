@@ -7,7 +7,7 @@ from discord.ext import commands
 TOKEN = f.getToken()
 
 
-def searchImage(query: str):
+def search_image(query: str):
     url = "https://bing-image-search1.p.rapidapi.com/images/search"
     querystring = {"q": query, "mkt": "es-AR", "count": "1"}
     headers = {
@@ -29,19 +29,19 @@ class ImageSearch(commands.Cog, name='Imágenes',
 
     @commands.command(name='searchimg', aliases=['img', 'bing', 'imagen'],
                       help='Obtén una imagen desde el motor de búsqueda Bing.')
-    async def searchImage(self, ctx, *, query: str):
+    async def search_image_command(self, ctx, *, query: str):
         if not query:
             await ctx.send('Tienes que buscar algo.')
         else:
             e = discord.Embed(
                 color=f.rbColor(),
                 description=f'**{query}**, enlace original:'
-                            f' [aquí]({searchImage(query)})'
+                            f' [aquí]({search_image(query)})'
             )
             e.set_author(name='Imágenes de Bing',
                          icon_url='https://pluspng.com/img-png/'
                                   'bing-logo-png-png-ico-512.png')
-            e.set_image(url=searchImage(query))
+            e.set_image(url=search_image(query))
             await ctx.send(embed=e)
 
 

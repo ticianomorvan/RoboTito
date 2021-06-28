@@ -9,12 +9,12 @@ wikipedia.set_lang('es')
 
 wiki = wikipediaapi.Wikipedia('es')
 
-wikiLogo = """
+wiki_logo = """
 https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Wikipedia_svg_logo.svg/1200px-Wikipedia_svg_logo.svg.png
 """
 
 
-def getSummary(page):
+def get_summary(page):
     split = page.summary.split('.')
     sentences = f'{split[0]}. {split[1]}. {split[2]}. {split[3]}. {split[4]}.'
     return sentences
@@ -34,7 +34,7 @@ class WikipediaBot(commands.Cog,
     async def wiki_query(self, ctx, *, args):
         result = wikipedia.search(args, results=10)
         embed = discord.Embed(color=f.rbColor())
-        embed.set_thumbnail(url=wikiLogo)
+        embed.set_thumbnail(url=wiki_logo)
         embed.add_field(name='Estos fueron los resultados de tu búsqueda:',
                         value=f'1. **{result[0]}**\n2. **{result[1]}**\n'
                               f'3. **{result[2]}**\n4. **{result[3]}**\n'
@@ -52,10 +52,10 @@ class WikipediaBot(commands.Cog,
 
         if wiki_page.exists() is True:
             embed = discord.Embed(color=f.rbColor(), title=wiki_page.title,
-                                  description=getSummary(wiki_page))
+                                  description=get_summary(wiki_page))
             embed.set_author(name=f'{wiki_page.title} en Wikipedia',
                              url=wiki_page.canonicalurl)
-            embed.set_thumbnail(url=wikiLogo)
+            embed.set_thumbnail(url=wiki_logo)
             await ctx.send(embed=embed)
 
         else:

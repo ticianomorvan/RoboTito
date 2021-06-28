@@ -1,12 +1,11 @@
 import discord
 import json
-from datetime import datetime
 from discord.ext import commands
 from translate import Translator
 from cog.functions.functions import Functions as f
 
 
-def languageTranslate(language):
+def language_translate(language):
     with open('databases/db_languages.json', encoding='utf-8') as f:
         data = f.read()
         lang = json.loads(data)
@@ -17,23 +16,10 @@ def languageTranslate(language):
             pass
 
 
-def languageEmbed(translation, fromlang, tolang, author, guildIcon):
-    e = discord.Embed(
-        title=translation,
-        color=f.rbColor(),
-        timestamp=datetime.utcnow()
-    )
-    e.add_field(
-        name='Traducido:',
-        value=f'**{fromlang}** >> **{tolang}**'
-    )
-    e.set_thumbnail(
-        url='https://i.imgur.com/0o5ZKBl.png'
-    )
-    e.set_footer(
-        text=author,
-        icon_url=guildIcon
-    )
+def language_embed(translation, fromlang, tolang):
+    e = discord.Embed(title=translation, color=f.rbColor())
+    e.add_field(name='Traducido:', value=f'**{fromlang}** >> **{tolang}**')
+    e.set_thumbnail(url='https://i.imgur.com/0o5ZKBl.png')
     return e
 
 
@@ -46,30 +32,19 @@ class Translate(commands.Cog,
 
     @commands.command(aliases=['traducir'], help='¡Traduce oraciones!')
     async def translate(self, ctx, fromlang, tolang, *, args: str):
-        fl = languageTranslate(str.lower(fromlang))
+        fl = language_translate(str.lower(fromlang))
         if fl is None:
             await ctx.send(f'"{fromlang}" no es un idioma o'
                            ' no puedo reconocerlo.')
         else:
-            tl = languageTranslate(str.lower(tolang))
+            tl = language_translate(str.lower(tolang))
             if tl is None:
                 await ctx.send(f'"{tolang}" no es un idioma'
                                ' o no puedo reconocerlo.')
             else:
-                translator = Translator(
-                    from_lang=fl, to_lang=tl
-                )
-
+                translator = Translator(from_lang=fl, to_lang=tl)
                 translation = translator.translate(args)
-
-                e = languageEmbed(
-                    translation,
-                    fromlang,
-                    tolang,
-                    ctx.author.name,
-                    ctx.guild.icon_url
-                )
-
+                e = language_embed(translation, fromlang, tolang)
                 await ctx.send(embed=e)
 
 
