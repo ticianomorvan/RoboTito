@@ -55,7 +55,7 @@ We are not watching for direct contributors, but, if you want to do it, you can.
 
 ### Clone the repo
 ~~~
-git clone --branch development --depth 1 https://github.com/ATT-Inc/RoboTito
+git clone --branch development --depth 1 https://github.com/Ti7oyan/RoboTito
 ~~~
 
 ### Create your own branch
