@@ -969,7 +969,7 @@
         "roles": {
             "top":true,
             "jg":false,
-            "mid":false,
+            "mid":true,
             "adc":false,
             "support":false
         }
@@ -992,7 +992,7 @@
     },
 
     "63": {
-        "name":"LeBlanc",
+        "name":"Leblanc",
         "header":"La maquiavélica",
         "description":"Misteriosa hasta para los otros miembros de Rosa Negra, LeBlanc es uno de los tantos nombres de una mujer pálida que ha manipulado personas y eventos desde los primeros días de Noxus. Usando su magia para reflejarse a sí misma, esta hechicera puede aparecérsele a cualquiera, en cualquier sitio y estar en muchos lugares al mismo tiempo. Al siempre estar conspirando en las sombras, los verdaderos objetivos de LeBlanc son tan herméticos como su identidad cambiante.",
         "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
@@ -1004,6 +1004,278 @@
             "mid":true,
             "adc":false,
             "support":false
+        }
+    },
+
+    "64": {
+        "name":"Lee sin",
+        "header":"El monje ciego",
+        "description":"Lee Sin, maestro de las antiguas artes marciales jonianas, es un peleador ejemplar que canaliza la esencia del espíritu del dragón para enfrentar cualquier desafío que se le presente. A pesar de que perdió la vista hace muchos años, el monje guerrero ha dedicado su vida a proteger su ciudad natal contra cualquiera que se atreva a perturbar su sagrado equilibrio. Los enemigos que subestiman su apariencia meditativa deberán soportar sus legendarios puños de fuego y sus patadas circulares abrasadoras.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lee-sin/",
+        "op.gg":"https://las.op.gg/champion/leesin/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "65": {
+        "name":"Leona",
+        "header":"El radiante amanecer",
+        "description":"Leona es una guerrera imbuida con fuego solar y templaria de los Solari que defiende el Monte Targón con la Espada del Cénit y el Escudo del Amanecer. Su piel resplandece con el brillo de una estrella y sus ojos arden con el poder del aspecto celestial que lleva dentro. Leona, que viste una armadura de oro y soporta una terrible carga de conocimiento ancestral, lleva iluminación a algunos y muerte a otros.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/leona/",
+        "op.gg":"https://las.op.gg/champion/leona/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "66": {
+        "name":"Lillia",
+        "header":"La flor tímida",
+        "description":"Lillia, la extremadamente tímida cervatilla, deambula nerviosa por los bosques de Jonia. Escondida fuera de la vista de los mortales, cuya misteriosa naturaleza la ha cautivado e intimidado por mucho tiempo, Lillia espera descubrir por qué sus sueños ya no llegan al ancestral Árbol de los Sueños. Ahora viaja por Jonia con una rama mágica en la mano para encontrar los sueños no realizados de las personas. Solo así, Lillia podrá florecer y ayudar a otros a desenredar sus miedos y a que encuentren su brillo interior. ¡Hip!",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lillia/",
+        "op.gg":"https://las.op.gg/champion/Lillia/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "67": {
+        "name":"Lissandra",
+        "header":"La bruja de hielo",
+        "description":"La magia de Lissandra transforma el poder del hielo en algo oscuro y terrible. Con la fuerza de su hielo negro, además de congelar a aquellos que la enfrentan, los empala y los destruye sin mostrar piedad. Se le conoce como ''la Bruja de Hielo'' entre los aterrados habitantes del norte. Pero la verdad es mucho más siniestra: Lissandra es una corruptora de la naturaleza que pretende desencadenar una era glacial en el mundo.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lissandra/",
+        "op.gg":"https://las.op.gg/champion/lissandra/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "68": {
+        "name":"Lucian",
+        "header":"El purificador",
+        "description":"Lucian es un Centinela de la Luz y un sombrío cazador de espíritus inmortales, a los que persigue incansablemente y aniquila con sus dos pistolas reliquia. Después de que el espectro Thresh matara a su esposa, Lucian se embarcó en el camino de la venganza. A pesar del retorno a la vida de Senna, su rabia permanece indemne. Despiadado y firme, nada detendrá a Lucian en su misión por proteger a los vivos de los horrores ancestrales de la Niebla Negra.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lucian/",
+        "op.gg":"https://las.op.gg/champion/lucian/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "69": {
+        "name":"Lulu",
+        "header":"La hechicera hadística",
+        "description":"La maga yordle, Lulu, es conocida por conjurar ilusiones oníricas y extravagantes criaturas mientras vaga por Runaterra con su hada compañera, Pix. Lulu puede darle forma a la realidad a su antojo, deformando el tejido del mundo, y lo que ve como los límites del ámbito físico y mundano. Aunque otros podrían considerar su magia antinatural y peligrosa, ella cree que cualquiera necesita un toque de encantamiento.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lulu/",
+        "op.gg":"https://las.op.gg/champion/lulu/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "70": {
+        "name":"Lux",
+        "header":"La dama luminosa",
+        "description":"Luxanna Guardia de la Corona proviene de Demacia, un reino aislado en el que la gente observa con terror y sospecha a las habilidades mágicas. Con el talento de manipular la luz a su voluntad, Lux creció temiendo que la descubrieran y exiliaran, lo que la obligó a mantener su poder en secreto para conservar el estado de nobleza de su familia. Sin embargo, su optimismo y resistencia la llevaron a aceptar sus talentos únicos y ahora los utiliza en secreto para servir a su tierra.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/lux/",
+        "op.gg":"https://las.op.gg/champion/lux/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "71": {
+        "name":"Maestro Yi",
+        "header":"La espada wuju",
+        "description":"El Maestro Yi templó su cuerpo y afinó su mente para que su forma de pensar y actuar se convirtieran casi en uno. A pesar de que solo elige actuar con violencia como último recurso, la gracia y la velocidad de su espada garantizan que la resolución siempre sea ágil. Como uno de los últimos practicantes del arte jonio de Wuju, Yi ha dedicado su vida a continuar el legado de su gente y a buscar posibles nuevos discípulos con las Siete Gafas del Saber para identificar a los más dignos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/master-yi/",
+        "op.gg":"https://las.op.gg/champion/masteryi/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "72": {
+        "name":"malphite",
+        "header":"El fragmento del monolito",
+        "description":"Como una criatura masiva de piedra viviente, Malphite lucha para imponer orden bendito en un mundo caótico. Nacido como un fragmento originario de un obelisco sobrenatural llamado Monolito, usó su tremendo poderío elemental para mantener y proteger a su progenitor, pero falló. Como el único sobreviviente de la destrucción que le siguió, Malphite ahora debe soportar a los hombres de piel suave de Runaterra y sus temperamentos cambiantes, mientras se esfuerza por buscar un rol digno para el último de su especie.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/malphite/",
+        "op.gg":"https://las.op.gg/champion/malphite/statistics//",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "73": {
+        "name":"Malzahar",
+        "header":"El profeta del vacío",
+        "description":"Como vidente fanático dedicado a la unificación de toda la vida, Malzahar realmente cree que el recién emergido Vacío es el camino a la salvación de Runaterra. En los páramos desérticos de Shurima, siguió los susurros en su mente que lo llevaron a la antigua Icathia. En las ruinas de aquella tierra, miró hacia el oscuro corazón del mismísimo Vacío, lo que le otorgó nuevos poderes y un propósito. Ahora, Malzahar cree que es un pastor con el poder de llevar a otros al rebaño... o de desatar las criaturas del Vacío que moran debajo.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/malzahar/",
+        "op.gg":"https://las.op.gg/champion/malzahar/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "74": {
+        "name":"Maokai",
+        "header":"El treant retorcido",
+        "description":"Maokai es un imponente y feroz treant que lucha contra los horrores antinaturales de las Islas de la Sombra. Las ansias de venganza lo inundaron después de que un cataclismo mágico destruyera su hogar y sobrevive a la podredumbre únicamente gracias las aguas de vida imbuidas en su duramen. Maokai, antaño un pacífico espíritu de la naturaleza, lucha ahora con fiereza para desterrar la plaga de no-vida de las Islas de la Sombra y restituir la anterior belleza de su hogarmaokai",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/maokai/",
+        "op.gg":"https://las.op.gg/champion/maokai/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "75": {
+        "name":"Miss Fortune",
+        "header":"La cazarrecompensas",
+        "description":"Sarah Fortune, capitana de Aguasturbias famosa por su apariencia, pero temida por su brutalidad, es una figura severa entre los criminales más duros de la ciudad portuaria. Cuando era niña fue testigo de cómo el rey Gangplank asesinó a su familia, un acto que vengó brutalmente años después, explotando su barco mientras él estaba a bordo. Aquellos que la subestiman tendrán que enfrentar a un oponente seductor e impredecible... y probablemente una bala o dos en sus entrañas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/miss-fortune/",
+        "op.gg":"https://las.op.gg/champion/missfortune/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "76": {
+        "name":"Mordekaiser",
+        "header":"El renacido de hierro",
+        "description":"Asesinado dos veces y renacido tres, Mordekaiser es un señor de la guerra brutal de una época olvidada, quien usa su brujería nigromántica para atar almas a una esclavitud eterna. Quedan muy pocos que recuerden sus conquistas precedentes o que conozcan el verdadero alcance de sus poderes, pero las antiguas almas que lo hacen, temen que llegue el día que regrese para reclamar el dominio sobre vivos y muertos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/mordekaiser/",
+        "op.gg":"https://las.op.gg/champion/mordekaiser/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "77": {
+        "name":"Morgana",
+        "header":"La desolada",
+        "description":"Atribulada entre su naturaleza celestial y mortal, Morgana ató sus alas para aceptar su humanidad e inflige su dolor y amargura en los deshonestos y los corruptos. Rechaza las leyes y tradiciones que considera injustas y pelea por la verdad desde las sombras de Demacia con escudos y cadenas de fuego oscuro, aun cuando otros tratan de reprimirla. Pero, ante todo, Morgana cree que incluso los parias y los desterrados serán capaces de elevarse de nuevo un día.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/morgana/",
+        "op.gg":"https://las.op.gg/champion/morgana/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "78": {
+        "name":"Nami",
+        "header":"La invocadora de mareas",
+        "description":"Como una joven y obstinada vastaya de los mares, Nami fue la primera de la tribu Marai en dejar las olas y aventurarse a tierra firme cuando se quebrantó el ancestral acuerdo con los targonianos. Sin ninguna otra opción, se dedicó a la tarea de completar el sagrado ritual que garantizaría la seguridad de su gente. En medio del caos de esta nueva era, Nami se enfrenta a un futuro incierto con valor y determinación junto a su báculo invocador de mareas para blandir la fuerza de los mismos océanos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nami/",
+        "op.gg":"https://las.op.gg/champion/nami/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "79": {
+        "name":"Nasus",
+        "header":"El curador de las arenas",
+        "description":"Nasus es una imponente criatura Ascendida con cabeza de chacal procedente de la antigua Shurima; una figura heroica a la que la gente del desierto encumbró al nivel de semidiós. Poseedor de una increíble inteligencia, fue un guardián del saber y estratega sin igual cuya sabiduría guio durante siglos al antiguo imperio de Shurima hasta alcanzar la cumbre de su grandeza. Tras la caída del imperio, se sometió a un exilio autoimpuesto, lo que terminó por convertirlo en leyenda. Ahora que la antigua ciudad de Shurima resurgió de sus cenizas, su héroe ha regresado para asegurarse de que nunca vuelva a caer.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nasus/",
+        "op.gg":"https://las.op.gg/champion/nasus/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "80": {
+        "name":"Nautilus",
+        "header":"El titan de las profundidades",
+        "description":"Una solitaria leyenda tan antigua como los primeros muelles hundidos de Aguasturbias, el gigante en armadura conocido como Nautilus deambula las oscuras aguas de la costa de las Islas de la Llama Azul. Motivado por una traición ya olvidada, ataca sin advertencia y barre su enorme ancla de un lado a otro para salvar a los desafortunados y llevar a los codiciosos a su perdición. Dicen que viene por los que olvidan pagar el ''tributo de Aguasturbias'', para llevarlos debajo de las olas con él. Se ha vuelto un recordatorio de hierro de que nadie puede escapar de las profundidades.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nautilus/",
+        "op.gg":"https://las.op.gg/champion/nautilus/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
         }
     }
 
