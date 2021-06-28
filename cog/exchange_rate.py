@@ -25,11 +25,11 @@ class ExchangeRate(commands.Cog, name='Conversión',
         super().__init__()
         self.bot = bot
 
-    @commands.command(name='exchange', aliases=['exch', 'convertir', 'conv'],
+    @commands.command(aliases=['exch', 'convertir', 'conv'],
                       help='Convierte una cantidad de dinero'
                            ' entre dos monedas.')
-    async def exchangeCommand(self, ctx, cFrom: str,
-                              cTo: str, amount: int = None):
+    async def exchange(self, ctx, cFrom: str,
+                       cTo: str, amount: int = None):
         fromCurrency = str.upper(cFrom)
         toCurrency = str.upper(cTo)
         exchange = float(exchangeRate(fromCurrency, toCurrency))

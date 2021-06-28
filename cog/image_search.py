@@ -27,9 +27,9 @@ class ImageSearch(commands.Cog, name='Imágenes',
         super().__init__()
         self.bot = bot
 
-    @commands.command(name='searchimg', aliases=['img', 'bing', 'imagen'],
+    @commands.command(aliases=['img', 'bing', 'imagen'],
                       help='Obtén una imagen desde el motor de búsqueda Bing.')
-    async def search_image_command(self, ctx, *, query: str):
+    async def searchimage(self, ctx, *, query: str):
         if not query:
             await ctx.send('Tienes que buscar algo.')
         else:

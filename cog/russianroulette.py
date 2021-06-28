@@ -37,7 +37,7 @@ class RussianRoulette(commands.Cog,
 
     @commands.command(aliases=['rr', 'ruletarusa'],
                       help='Juega a la ruleta rusa.')
-    async def russianRoulette(self, ctx, member: Member = None):
+    async def russianroulette(self, ctx, member: Member = None):
         if member is not None:
             await ctx.send('¡Qué empiece el juego!, tu empiezas.')
 

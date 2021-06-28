@@ -1,13 +1,14 @@
 import discord
 import random
 from cog.functions.functions import Functions as f
+from cog.information import memberEmbed
 from discord.ext import commands
 from discord.member import Member
 
 
-class Commands(commands.Cog,
-               name='Variedad',
-               description='Comandos que no entran en otra categoría.'):
+class Variety(commands.Cog,
+              name='Variedad',
+              description='Comandos que no entran en otra categoría.'):
 
     def __init__(self, bot):
         self.bot = bot
@@ -64,6 +65,23 @@ class Commands(commands.Cog,
                 inline=False)
             await ctx.send(embed=e)
 
+    @commands.command(aliases=['gaymeter', 'gayperc', 'gaylevel'],
+                      help='Conoce tu porcentaje de homosexualidad.')
+    async def gay(self, ctx, member: Member = None):
+        gay_percentage = random.randint(0, 100)
+        if member is not None:
+            e = discord.Embed(color=f.rbColor())
+            e.add_field(name='Según mis cálculos...',
+                        value=f'{member.name} es un **{gay_percentage}%**'
+                              ' homosexual :rainbow_flag:')
+            await ctx.send(embed=e)
+        else:
+            e = discord.Embed(color=f.rbColor())
+            e.add_field(name='Según mis cálculos...',
+                        value=f'Sos un **{gay_percentage}%**'
+                              ' homosexual :rainbow_flag:')
+            await ctx.send(embed=e)
+
     @commands.command(aliases=['amor', 'loving'],
                       help='¿Qué tan fuerte es el amor '
                            'entre tu y esa persona?')
@@ -80,6 +98,12 @@ class Commands(commands.Cog,
         else:
             await ctx.send('Deberías mencionar a alguien.')
 
+    @commands.command(name='ruser')
+    async def randomuser(self, ctx):
+        member = random.choice(ctx.guild.members)
+        e = memberEmbed(member)
+        await ctx.send(embed=e)
+
 
 def setup(bot):
-    bot.add_cog(Commands(bot))
+    bot.add_cog(Variety(bot))

@@ -60,17 +60,16 @@ class LeagueOfLegends(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['chname', 'championname',
-                               'champion', 'campeón'],
+    @commands.command(aliases=['chname', 'champion', 'campeón'],
                       help='Encuentra un campeón por su nombre.')
-    async def championName(self, ctx, name: str):
+    async def championname(self, ctx, *, name: str):
         champ = Name(name)
         e = Embed(champ)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['rol', 'role', 'chrole', 'championrole'],
+    @commands.command(aliases=['rol', 'role', 'chrole'],
                       help='Encuentra un campeón por su rol.')
-    async def championRole(self, ctx, role: str = None):
+    async def championrole(self, ctx, role: str = None):
         if role is not None:
             champ = Role(role)
             e = Embed(champ)
@@ -82,7 +81,7 @@ class LeagueOfLegends(commands.Cog,
 
     @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
                       help='Obtén un campeón aleatorio.')
-    async def championRandom(self, ctx):
+    async def championrandom(self, ctx):
         champ = Random()
         e = Embed(champ)
         await ctx.send(embed=e)

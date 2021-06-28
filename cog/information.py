@@ -100,9 +100,9 @@ class Information(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['botinfo', 'binfo'],
+    @commands.command(aliases=['binfo'],
                       help='Obtén información sobre el bot.')
-    async def botInfo(self, ctx):
+    async def botinfo(self, ctx):
         app = await self.bot.application_info()
         prefix = self.bot.command_prefix
         users = len(self.bot.users)
@@ -139,15 +139,15 @@ class Information(commands.Cog,
                     inline=False)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['serverinfo', 'svinfo'],
+    @commands.command(aliases=['svinfo'],
                       help='Obtén información sobre este servidor.')
-    async def serverInfo(self, ctx):
+    async def serverinfo(self, ctx):
         e = guildEmbed(ctx.guild)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['usinfo', 'uinfo', 'userinfo'],
+    @commands.command(aliases=['usinfo', 'uinfo'],
                       help='Obtén información acerca de ti o alguien más.')
-    async def userInfo(self, ctx, member: Member = None):
+    async def userinfo(self, ctx, member: Member = None):
         if member is not None:
             e = memberEmbed(member)
             await ctx.send(embed=e)
@@ -157,7 +157,7 @@ class Information(commands.Cog,
 
     @commands.command(aliases=['avatar', 'av'],
                       help='Obtén tu avatar o de alguien más.')
-    async def userAvatar(self, ctx, member: Member = None):
+    async def useravatar(self, ctx, member: Member = None):
         if member is not None:
             e = discord.Embed(color=f.rbColor())
             e.set_author(name=member.name, icon_url=member.avatar_url)
