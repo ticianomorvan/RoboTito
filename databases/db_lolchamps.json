@@ -877,6 +877,134 @@
             "adc":false,
             "support":false
         }
+    },
+
+    "56": {
+        "name":"Kayle",
+        "header":"La justiciera",
+        "description":"Nacida de un Aspecto targoniano durante el punto culminante de las Guerras Rúnicas, Kayle honra el legado de su madre al pelear por la justicia con sus alas de fuego divino. Ella y su hermana gemela, Morgana, fueron las protectoras de Demacia durante años... hasta que las constantes fallas de los mortales decepcionaron a Kayle, y decidió abandonar este reino para siempre. Hasta el día de hoy se cuentan leyendas sobre cómo castigó a los injustos con sus espadas ardientes, y muchos esperan que algún día regrese.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kayle/",
+        "op.gg":"https://las.op.gg/champion/kayle/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "57": {
+        "name":"Kayn",
+        "header":"El segador sombrio",
+        "description":"Shieda Kayn, un practicante sin igual de la letal magia sombría, lucha para alcanzar su verdadero destino: conducir la Orden de la Sombra hacia una nueva era de supremacía joniana. Esgrime la oscura arma viviente Rhaast, inmutable ante la progresiva corrupción de su cuerpo y mente. Solo hay dos resultados posibles: o Kayn somete el arma a su voluntad... o la cuchilla malévola lo consume por completo, para dar lugar a la destrucción de Runaterra.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kayn/",
+        "op.gg":"https://las.op.gg/champion/kayn/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "58": {
+        "name":"Kennen",
+        "header":"El corazón de la tempestad",
+        "description":"Además de ser un rápido ejecutor del balance Jonio, Kennen es el único miembro yordle del Kinkou. A pesar de su pequeña y peluda estatura, está ansioso por enfrentarse a cualquier amenaza con una tormenta de shuriken y desbordante entusiasmo. A lado de su maestro, Shen, Kennen patrulla el reino espiritual, utilizando devastadora energía eléctrica para eliminar a sus enemigos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kennen/",
+        "op.gg":"https://las.op.gg/champion/kennen/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "59": {
+        "name":"Kha'Zix",
+        "header":"El saqueador del vacío",
+        "description":"El Vacío crece y el Vacío se adapta. En ninguna de sus múltiples manifestaciones estas verdades son más evidentes que en Kha'Zix. La evolución es la esencia de este mutante horror que nació para sobrevivir y acabar con los más fuertes. Cuando se le dificulta esa tarea, desarrolla nuevas y más efectivas maneras para contrarrestar y asesinar a su presa. Aunque inicialmente era una bestia sin mente, la inteligencia de Kha'Zix se desarrolló tanto como su cuerpo. Ahora, la criatura planea sus cacerías e incluso aprovecha el terror visceral que genera en sus víctimas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kha-zix/",
+        "op.gg":"https://las.op.gg/champion/khazix/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "60": {
+        "name":"Kindred",
+        "header":"Los cazadores eternos",
+        "description":"Separados, pero nunca divididos, los Kindred representan las esencias hermanas de la muerte. La flecha de la Oveja ofrece una vía de escape rápida para los mortales que acepten su destino. El Lobo sale a la caza de los que huyen de su final y les proporciona un fin violento con sus fauces implacables. Aunque las interpretaciones de la naturaleza de los Kindred difieren a lo largo y ancho de Runaterra, todos los mortales deben elegir el verdadero rostro de su muerte.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kindred/",
+        "op.gg":"https://las.op.gg/champion/kindred/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "61": {
+        "name":"Kled",
+        "header":"El jinete cascarrabias",
+        "description":"El yordle Kled, guerrero tan temerario como insoportable, es la encarnación de la bravuconería de Noxus. Es un ícono amado por los soldados del imperio, que se ha ganado la desconfianza de sus oficiales y el desprecio de la nobleza. Muchos aseguran que Kled ha peleado en cada campaña que ha librado la legión, que ha 'adquirido' todo título militar y que nunca ha escapado de una batalla. Aunque la verdad de eso último es cuestionable, algo es innegable: cargando hacia la batalla sobe su desconfiable corcel, Skaarl, Kled pelea para proteger lo que es suyo... y tomar lo que pueda.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kled/",
+        "op.gg":"https://las.op.gg/champion/kled/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "62": {
+        "name":"Kog'Maw",
+        "header":"La boca del abismo",
+        "description":"Arrojada desde una incursión de un Vacío putrefacto en las profundidades de los deshechos de Icathia, Kog'Maw es una criatura inquisitiva pero pútrida, con una boca ácida y enorme. Este particular engendro del Vacío necesita roer y babear todo para entenderlo de verdad. Aunque no es inherentemente malvada, la ingenuidad seductora de Kog'Maw es peligrosa, ya que posteriormente viene un frenesí de alimentación; no para su sustento, sino para satisfacer su curiosidad sin límites.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/kog-maw/",
+        "op.gg":"https://las.op.gg/champion/kogmaw/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "63": {
+        "name":"Leblanc",
+        "header":"La maquiavélica",
+        "description":"Misteriosa hasta para los otros miembros de Rosa Negra, LeBlanc es uno de los tantos nombres de una mujer pálida que ha manipulado personas y eventos desde los primeros días de Noxus. Usando su magia para reflejarse a sí misma, esta hechicera puede aparecérsele a cualquiera, en cualquier sitio y estar en muchos lugares al mismo tiempo. Al siempre estar conspirando en las sombras, los verdaderos objetivos de LeBlanc son tan herméticos como su identidad cambiante.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/leblanc/",
+        "op.gg":"https://las.op.gg/champion/leblanc/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
     }
 
 }
