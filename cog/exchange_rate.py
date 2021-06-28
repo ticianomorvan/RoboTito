@@ -25,51 +25,36 @@ class ExchangeRate(commands.Cog, name='Conversión',
         super().__init__()
         self.bot = bot
 
-    @commands.command(name='exchange', aliases=['exch', 'convertir', 'conv'],
+    @commands.command(aliases=['exch', 'convertir', 'conv'],
                       help='Convierte una cantidad de dinero'
                            ' entre dos monedas.')
-    async def exchangeCommand(self, ctx, cFrom: str,
-                              cTo: str, amount: int = None):
+    async def exchange(self, ctx, cFrom: str,
+                       cTo: str, amount: int = None):
         fromCurrency = str.upper(cFrom)
         toCurrency = str.upper(cTo)
         exchange = float(exchangeRate(fromCurrency, toCurrency))
 
         if amount is not None:
             result = round(exchange * amount)
-            e = discord.Embed(
-                color=discord.Color.from_rgb(
-                    f.rColor(), f.rColor(), f.rColor()),
-                )
-            e.set_author(
-                name='Conversión de monedas',
-                icon_url='https://cdn0.iconfinder.com/data/icons/'
-                         'business-cool-vector-3/128/120-512.png',
-                url='https://rapidapi.com/exchangerateapi/api/'
-                    'exchangerate-api/'
-            )
-            e.add_field(
-                name=f'La conversión de ${amount} {fromCurrency}'
-                     f' a {toCurrency} es:',
-                value=f'${result} {toCurrency}, a fecha de hoy.'
-            )
+            e = discord.Embed(color=f.rbColor())
+            e.set_author(name='Conversión de monedas',
+                         icon_url='https://cdn0.iconfinder.com/data/icons/'
+                                  'business-cool-vector-3/128/120-512.png',
+                         url='https://rapidapi.com/exchangerateapi/api/'
+                             'exchangerate-api/')
+            e.add_field(name=f'La conversión de ${amount} {fromCurrency}'
+                             f' a {toCurrency} es:',
+                        value=f'${result} {toCurrency}, a fecha de hoy.')
             await ctx.send(embed=e)
-
         else:
-            e = discord.Embed(
-                color=discord.Color.from_rgb(
-                    f.rColor(), f.rColor(), f.rColor()),
-                )
-            e.set_author(
-                name='Tasa de cambio',
-                icon_url='https://cdn0.iconfinder.com/data/icons/'
-                         'business-cool-vector-3/128/120-512.png',
-                url='https://rapidapi.com/exchangerateapi/api/'
-                    'exchangerate-api/'
-            )
-            e.add_field(
-                name=f'Por cada $1 {fromCurrency}, deberás pagar:',
-                value=f'${exchange} {toCurrency}, a fecha de hoy.'
-            )
+            e = discord.Embed(color=f.rbColor())
+            e.set_author(name='Tasa de cambio',
+                         icon_url='https://cdn0.iconfinder.com/data/icons/'
+                                  'business-cool-vector-3/128/120-512.png',
+                         url='https://rapidapi.com/exchangerateapi/api/'
+                             'exchangerate-api/')
+            e.add_field(name=f'Por cada $1 {fromCurrency}, deberás pagar:',
+                        value=f'${exchange} {toCurrency}, a fecha de hoy.')
             await ctx.send(embed=e)
 
 

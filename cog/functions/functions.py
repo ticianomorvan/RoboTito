@@ -1,6 +1,5 @@
 import random
 import json
-import datetime
 import discord
 from discord.ext import commands
 
@@ -19,8 +18,13 @@ class Functions(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def rColor():
-        return random.randint(0, 255)
+    def rbColor():
+        colors = [discord.Color.from_rgb(255, 94, 43),
+                  discord.Color.from_rgb(82, 92, 253),
+                  discord.Color.from_rgb(72, 159, 181),
+                  discord.Color.from_rgb(255, 134, 0)
+                  ]
+        return random.choice(colors)
 
     # Functions used in cog/anime.py
 
@@ -48,11 +52,10 @@ class Functions(commands.Cog):
         message = 'Trata de ' + activity + ' alguien más.'
         return message
 
-    def getEmbed(type: str, author, guild, guildIcon, member=None):
+    def getEmbed(type: str, author, member=None):
         if member is not None:
             e = discord.Embed(
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
+                color=Functions.rbColor()
             )
             e.add_field(
                 name=Functions.header(f'h_{type}'),
@@ -61,15 +64,10 @@ class Functions(commands.Cog):
             e.set_image(
                 url=Functions.gif(type)
             )
-            e.set_footer(
-                text=guild,
-                icon_url=guildIcon
-            )
             return e
         else:
             e = discord.Embed(
-                color=discord.Color.blue(),
-                timestamp=datetime.datetime.utcnow(),
+                color=Functions.rbColor(),
             )
             e.add_field(
                 name=Functions.header(f'h_{type}'),
@@ -77,10 +75,6 @@ class Functions(commands.Cog):
             )
             e.set_image(
                 url=Functions.gif(type)
-            )
-            e.set_footer(
-                text=guild,
-                icon_url=guildIcon
             )
             return e
 

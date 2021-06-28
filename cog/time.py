@@ -1,14 +1,15 @@
 import discord
 from datetime import datetime, timedelta, timezone
 from discord.ext import commands
+from cog.functions.functions import Functions as f
 
 
-timezoneIcon = '''
+timezone_icon = '''
 https://cdn.discordapp.com/avatars/447266583459528715/bc6d8794326ef2fd57690a852eefde1b.png?size=512
 '''
 
 
-def getLocalTime(hours):
+def get_local_time(hours):
     time = str(datetime.now(timezone(timedelta(hours=hours))))[10:][:6]
     return time
 
@@ -21,55 +22,40 @@ class Time(commands.Cog,
         super().__init__()
         self.bot = bot
 
-    @commands.command(aliases=['utc', 'greenwich', 'utctime'],
+    @commands.command(aliases=['utc', 'greenwich'],
                       help='Conoce la hora (del meridiano de Greenwich)')
-    async def utcTime(self, ctx):
-        e = discord.Embed(
-            title=f'Son las{str(datetime.utcnow())[10:][:6]} (UTC)',
-            color=discord.Color.blue()
-        )
-        e.set_author(
-            name='Tiempo del meridiano de Greenwich',
-            url='https://time.is/es/UTC',
-            icon_url=timezoneIcon
-        )
-
+    async def utctime(self, ctx):
+        e = discord.Embed(title=f'Son las{str(datetime.utcnow())[10:][:6]}'
+                                ' (UTC)',
+                          color=f.rbColor())
+        e.set_author(name='Tiempo del meridiano de Greenwich',
+                     url='https://time.is/es/UTC',
+                     icon_url=timezone_icon)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['bottime', 'tiempodelbot', 'bothour'],
+    @commands.command(aliases=['tiempodelbot', 'bothour'],
                       help='Conoce la hora de la región del bot.')
-    async def botTime(self, ctx):
-        e = discord.Embed(
-            title=f'Son las{str(datetime.now())[10:][:6]}',
-            color=discord.Color.blue()
-        )
-        e.set_author(
-            name='Tiempo de la zona horaria del bot',
-            icon_url=timezoneIcon
-        )
-
+    async def bottime(self, ctx):
+        e = discord.Embed(title=f'Son las{str(datetime.now())[10:][:6]}',
+                          color=f.rbColor())
+        e.set_author(name='Tiempo de la zona horaria del bot',
+                     icon_url=timezone_icon)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['localtime', 'tiempolocal', 'local'],
+    @commands.command(aliases=['tiempolocal', 'local'],
                       help='Conoce la hora de tu zona horaria.')
-    async def localTime(self, ctx, hours: int = None):
+    async def localtime(self, ctx, hours: int = None):
         if not hours:
             await ctx.send('Para averiguar la hora de tu zona horaria,'
                            ' ingresá la cantidad de horas de diferencia'
                            ' con el tiempo del meridiano de Greenwich.'
                            ' Por ejemplo, para Argentina (UTC -3)'
                            ' ingresá `-3` después del comando.')
-
         else:
-            e = discord.Embed(
-                title=f'Son las{getLocalTime(hours)}',
-                color=discord.Color.blue()
-            )
-            e.set_author(
-                name='Tiempo de tu zona horaria',
-                icon_url=timezoneIcon
-            )
-
+            e = discord.Embed(title=f'Son las{get_local_time(hours)}',
+                              color=f.rbColor())
+            e.set_author(name='Tiempo de tu zona horaria',
+                         icon_url=timezone_icon)
             await ctx.send(embed=e)
 
 
