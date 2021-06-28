@@ -2,16 +2,17 @@ import discord
 import random
 import json
 from discord.ext import commands
+from cog.functions.functions import Functions as f
 
 
-with open('databases/db_lolchamps.json', encoding='utf-8') as f:
-    data = f.read()
+with open('databases/db_lolchamps.json', encoding='utf-8') as db:
+    data = db.read()
     champs = json.loads(data)
 
 
 def Role(role):
     while True:
-        roleIndex = random.randint(1, 50)
+        roleIndex = random.randint(1, 55)
         roleChamp = str(roleIndex)
         if champs[roleChamp]['roles'][role] is True:
             return roleChamp
@@ -21,7 +22,7 @@ def Role(role):
 
 def Name(name):
     while True:
-        nameIndex = random.randint(1, 50)
+        nameIndex = random.randint(1, 55)
         nameChamp = str(nameIndex)
         if name == champs[nameChamp]['name']:
             return nameChamp
@@ -30,34 +31,25 @@ def Name(name):
 
 
 def Random():
-    randomIndex = random.randint(1, 50)
+    randomIndex = random.randint(1, 55)
     randomChamp = str(randomIndex)
     return randomChamp
 
 
 def Embed(index: str):
-    e = discord.Embed(
-        color=discord.Color.blue()
-    )
-    e.set_author(
-        name='Campeón de League of Legends',
-        url=champs[index]['lolpage'],
-        icon_url='https://img1.wikia.nocookie.net/__cb20150402234343/'
-                 'leagueoflegends/images/1/12/League_of_Legends_Icon.png'
-    )
-    e.add_field(
-        name=f"{champs[index]['name']}, {champs[index]['header']}",
-        value=champs[index]['description'],
-        inline=False
-    )
-    e.add_field(
-        name='Objetos, runas y builds:',
-        value=f"[OP.GG]({champs[index]['op.gg']})",
-        inline=False
-    )
-    e.set_image(
-        url=champs[index]['icon']
-    )
+    e = discord.Embed(color=f.rbColor())
+    e.set_author(name='Campeón de League of Legends',
+                 url=champs[index]['lolpage'],
+                 icon_url='https://img1.wikia.nocookie.net/'
+                          '__cb20150402234343/leagueoflegends/images/1/12/'
+                          'League_of_Legends_Icon.png')
+    e.add_field(name=f"{champs[index]['name']}, {champs[index]['header']}",
+                value=champs[index]['description'],
+                inline=False)
+    e.add_field(name='Objetos, runas y builds:',
+                value=f"[OP.GG]({champs[index]['op.gg']})",
+                inline=False)
+    e.set_image(url=champs[index]['icon'])
     return e
 
 

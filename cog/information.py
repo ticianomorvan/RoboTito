@@ -7,8 +7,8 @@ from discord.ext import commands
 
 
 def monthName(month: int):
-    with open('databases/db_str.json') as f:
-        data = f.read()
+    with open('databases/db_str.json') as db:
+        data = db.read()
         months = json.loads(data)
         selectMonth = months['months'][month]
         return selectMonth
