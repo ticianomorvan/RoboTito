@@ -1,5 +1,5 @@
 import discord
-from cog.functions import Functions as f
+import cog.functions as f
 from discord.ext import commands
 
 

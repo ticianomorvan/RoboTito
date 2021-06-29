@@ -1,8 +1,8 @@
 import discord
 import random
 import json
+import cog.functions as f
 from discord.ext import commands
-from cog.functions.functions import Functions as f
 
 
 with open('databases/db_lolchamps.json', encoding='utf-8') as db:

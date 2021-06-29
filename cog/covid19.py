@@ -1,10 +1,10 @@
 import aiohttp
 import discord
+import cog.functions as f
 from discord.ext import commands
-from cog.functions import Functions as f
 
 
-TOKEN = f.getToken()
+TOKEN = f.get_api()
 
 
 async def covid19_request(country: str):

@@ -1,6 +1,6 @@
 import discord
 import random
-from cog.functions.functions import Functions as f
+import cog.functions as f
 from cog.information import memberEmbed
 from discord.ext import commands
 from discord.member import Member
@@ -26,7 +26,7 @@ class Variety(commands.Cog,
     async def eightball(self, ctx, *, args):
         if args is not None:
             e = discord.Embed(color=f.rbColor())
-            e.add_field(name=f'**{f.get8Ball()}**', value=f'*"{args}"*')
+            e.add_field(name=f'**{f.get_8ball()}**', value=f'*"{args}"*')
             await ctx.send(embed=e)
         else:
             await ctx.send('Deberías preguntar algo.')
@@ -48,20 +48,20 @@ class Variety(commands.Cog,
     @commands.command(name='penis', aliases=['pene', 'penisize', 'tula'],
                       help='¿Cuánto mide tu aparato?')
     async def penis(self, ctx, member: Member = None):
-        penisSize = random.randint(0, 10000)
+        penisSize = random.randint(0, 100)
 
         if member is not None:
             e = discord.Embed(color=f.rbColor())
             e.add_field(
                 name=f'El miembro reproductor de {member.name} mide:',
-                value=f'**{penisSize}** {f.getPenis(penisSize)}.',
+                value=f'**{penisSize}** {f.get_penis(penisSize)}.',
                 inline=False)
             await ctx.send(embed=e)
         else:
             e = discord.Embed(color=f.rbColor())
             e.add_field(
                 name='Tu miembro reproductor mide:',
-                value=f'**{penisSize}** {f.getPenis(penisSize)}.',
+                value=f'**{penisSize}** {f.get_penis(penisSize)}.',
                 inline=False)
             await ctx.send(embed=e)
 
@@ -92,8 +92,8 @@ class Variety(commands.Cog,
             e = discord.Embed(color=f.rbColor())
             e.add_field(name=f'El amor entre {member.name} y tu es del...',
                         value=f'**{loveProbability}%**,'
-                              f' {f.getLove(loveProbability)}')
-            e.set_image(url=f.getLoveGif(loveProbability))
+                              f' {f.get_love(loveProbability)}')
+            e.set_image(url=f.get_love_gif(loveProbability))
             await ctx.send(embed=e)
         else:
             await ctx.send('Deberías mencionar a alguien.')

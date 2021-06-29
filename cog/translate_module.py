@@ -1,8 +1,8 @@
 import discord
 import json
+import cog.functions as f
 from discord.ext import commands
 from translate import Translator
-from cog.functions.functions import Functions as f
 
 
 def language_translate(language):

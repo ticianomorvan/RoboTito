@@ -1,10 +1,10 @@
 import discord
 import aiohttp
+import cog.functions as f
 from discord.ext import commands
-from cog.functions import Functions as f
 
 
-TOKEN = f.getToken()
+TOKEN = f.get_api()
 
 
 async def exchangeRate(cFrom: str, cTo: str):

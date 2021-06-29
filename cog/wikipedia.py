@@ -1,7 +1,7 @@
 import discord
 import wikipedia
 import wikipediaapi
-from cog.functions.functions import Functions as f
+import cog.functions as f
 from discord.ext import commands
 
 

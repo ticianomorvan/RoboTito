@@ -1,9 +1,9 @@
 import asyncio
 import discord
+import cog.functions as f
 from discord.member import Member
 from discord.ext import commands
 from discord.guild import Guild
-from cog.functions.functions import Functions as f
 
 
 async def sleep(seconds):

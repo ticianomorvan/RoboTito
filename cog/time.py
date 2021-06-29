@@ -1,7 +1,7 @@
 import discord
+import cog.functions as f
 from datetime import datetime, timedelta, timezone
 from discord.ext import commands
-from cog.functions.functions import Functions as f
 
 
 timezone_icon = '''
