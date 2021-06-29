@@ -1,20 +1,25 @@
 import discord
-import requests
+import aiohttp
 from discord.ext import commands
-from cog.functions.functions import Functions as f
+from cog.functions import Functions as f
+
 
 TOKEN = f.getToken()
 
 
-def exchangeRate(cFrom: str, cTo: str):
+async def exchangeRate(cFrom: str, cTo: str):
     url = f"https://exchangerate-api.p.rapidapi.com/rapid/latest/{cFrom}"
     headers = {
         'x-rapidapi-key': TOKEN,
         'x-rapidapi-host': "exchangerate-api.p.rapidapi.com"
         }
-    response = requests.request("GET", url, headers=headers)
-    jsonResponse = response.json()
-    return jsonResponse['rates'][cTo]
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url=url, headers=headers) as r:
+            if r.status == 200:
+                json_response = await r.json()
+                return json_response['rates'][cTo]
+            else:
+                return
 
 
 class ExchangeRate(commands.Cog, name='Conversión',
@@ -32,7 +37,7 @@ class ExchangeRate(commands.Cog, name='Conversión',
                        cTo: str, amount: int = None):
         fromCurrency = str.upper(cFrom)
         toCurrency = str.upper(cTo)
-        exchange = float(exchangeRate(fromCurrency, toCurrency))
+        exchange = float(await exchangeRate(fromCurrency, toCurrency))
 
         if amount is not None:
             result = round(exchange * amount)

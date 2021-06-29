@@ -1,4 +1,4 @@
-from cog.functions.functions import Functions as f
+from cog.functions import Functions as f
 from discord.ext import commands
 from discord.member import Member
 

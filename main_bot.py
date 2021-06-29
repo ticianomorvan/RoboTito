@@ -1,7 +1,7 @@
 import discord
 import logging
 import os
-import json
+import tomli
 from discord.ext import commands
 from cog.functions.functions import Functions as f
 from pretty_help import DefaultMenu, PrettyHelp
@@ -19,9 +19,8 @@ logger.addHandler(handler)
 # Start
 intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'],
-                   intents=intents,
-                   help_command=None)
+bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'], case_insensitive=True,
+                   intents=intents, help_command=None)
 
 for filename in os.listdir('./cog'):
     if filename.endswith('.py'):
@@ -45,8 +44,12 @@ async def on_ready():
 
 # Run
 
-with open('databases/db_bot.json') as f:
-    data = f.read()
-    botData = json.loads(data)
+# You have to create an "config.toml" file at databases folder, with:
+# "token": "your_bot_token"
+# "api": "your_rapidapi_token"
 
-bot.run(botData['token'])
+with open('databases/config.toml', encoding='utf-8') as f:
+    config_data = tomli.load(f)
+    token = config_data['token']
+
+bot.run(token)

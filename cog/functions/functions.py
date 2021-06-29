@@ -1,7 +1,7 @@
 import random
 import json
+import tomli
 import discord
-from discord.ext import commands
 
 
 def open_str():
@@ -14,9 +14,7 @@ def open_str():
 string = open_str()
 
 
-class Functions(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
+class Functions:
 
     def rbColor():
         colors = [discord.Color.from_rgb(255, 94, 43),
@@ -54,28 +52,16 @@ class Functions(commands.Cog):
 
     def getEmbed(type: str, author, member=None):
         if member is not None:
-            e = discord.Embed(
-                color=Functions.rbColor()
-            )
-            e.add_field(
-                name=Functions.header(f'h_{type}'),
-                value=Functions.sentence(author, f'm_{type}', member)
-            )
-            e.set_image(
-                url=Functions.gif(type)
-            )
+            e = discord.Embed(color=Functions.rbColor())
+            e.add_field(name=Functions.header(f'h_{type}'),
+                        value=Functions.sentence(author, f'm_{type}', member))
+            e.set_image(url=Functions.gif(type))
             return e
         else:
-            e = discord.Embed(
-                color=Functions.rbColor(),
-            )
-            e.add_field(
-                name=Functions.header(f'h_{type}'),
-                value=Functions.sentence(author, f'm_{type}')
-            )
-            e.set_image(
-                url=Functions.gif(type)
-            )
+            e = discord.Embed(color=Functions.rbColor(),)
+            e.add_field(name=Functions.header(f'h_{type}'),
+                        value=Functions.sentence(author, f'm_{type}'))
+            e.set_image(url=Functions.gif(type))
             return e
 
     # Functions used in cog/commands.py
@@ -113,12 +99,7 @@ class Functions(commands.Cog):
     # REST API's Token
 
     def getToken():
-        with open('databases/db_bot.json', encoding='utf-8') as f:
-            data = f.read()
-            token_value = json.loads(data)
-            token = token_value['apitoken']
+        with open('databases/config.toml', encoding='utf-8') as f:
+            token_data = tomli.load(f)
+            token = token_data['api']
             return token
-
-
-def setup(bot):
-    bot.add_cog(Functions(bot))
