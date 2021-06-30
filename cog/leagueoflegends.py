@@ -12,7 +12,7 @@ with open('databases/db_lolchamps.json', encoding='utf-8') as db:
 
 def Role(role):
     while True:
-        roleIndex = random.randint(1, 80)
+        roleIndex = random.randint(1, 85)
         roleChamp = str(roleIndex)
         if champs[roleChamp]['roles'][role] is True:
             return roleChamp
@@ -22,7 +22,7 @@ def Role(role):
 
 def Name(name):
     while True:
-        nameIndex = random.randint(1, 80)
+        nameIndex = random.randint(1, 85)
         nameChamp = str(nameIndex)
         if name == champs[nameChamp]['name']:
             return nameChamp
@@ -31,7 +31,7 @@ def Name(name):
 
 
 def Random():
-    randomIndex = random.randint(1, 80)
+    randomIndex = random.randint(1, 85)
     randomChamp = str(randomIndex)
     return randomChamp
 
