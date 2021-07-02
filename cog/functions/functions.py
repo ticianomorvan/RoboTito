@@ -48,26 +48,6 @@ def sentence(author, msg, member=None):
         return result
 
 
-def same_user(activity):
-    message = 'Trata de ' + activity + ' alguien más.'
-    return message
-
-
-def get_embed(type: str, author, member=None):
-    if member is not None:
-        e = discord.Embed(color=rbColor())
-        e.add_field(name=header(f'h_{type}'),
-                    value=sentence(author, f'm_{type}', member))
-        e.set_image(url=gif(type))
-        return e
-    else:
-        e = discord.Embed(color=rbColor(),)
-        e.add_field(name=header(f'h_{type}'),
-                    value=sentence(author, f'm_{type}'))
-        e.set_image(url=gif(type))
-        return e
-
-
 # Functions used in cog/commands.py
 
 
