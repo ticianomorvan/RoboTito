@@ -2,11 +2,11 @@ import discord
 import logging
 import os
 import tomli
+from cog.functions import rbColor
 from discord.ext import commands
-from cog.functions.functions import Functions as f
-from pretty_help import DefaultMenu, PrettyHelp
 
 # Logging
+
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='robotito.log',
@@ -19,20 +19,76 @@ logger.addHandler(handler)
 # Start
 intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix=['rb!', 'rt!', 'r.'], case_insensitive=True,
+bot = commands.Bot(command_prefix=['r.', 'r!', 'rt.'],
                    intents=intents, help_command=None)
+
 
 for filename in os.listdir('./cog'):
     if filename.endswith('.py'):
         bot.load_extension(f'cog.{filename[:-3]}')
 
-menu = DefaultMenu(page_left='⬅', page_right='➡', remove='🚫')
-bot.help_command = PrettyHelp(color=f.rbColor(), menu=menu,
-                              index_title='Comandos de RoboTito',
-                              ending_note='Escribe r.help <comando>'
-                              ' para más info. sobre algún comando.\nTambién'
-                              ' puedes escribir r.help <categoría> para más'
-                              ' info. de esa categoría.')
+
+class MyHelp(commands.MinimalHelpCommand):
+    async def send_bot_help(self, mapping):
+        ctx = self.context
+        embed = discord.Embed(title='Ayuda de RoboTito')
+        embed.set_thumbnail(url=ctx.me.avatar_url)
+        usable = 0
+
+        for cog, bot_commands in mapping.items():
+            if filtered_commands := await self.filter_commands(bot_commands):
+                amount_commands = len(filtered_commands)
+                usable += amount_commands
+                if cog:
+                    name = cog.qualified_name
+                else:
+                    name = "Varios"
+
+                embed.add_field(name=f'{name}', value=f'**{amount_commands}** '
+                                                      'comandos disponibles.')
+
+        embed.description = f'**{len(bot.commands)}** comandos en total.'
+        embed.color = rbColor()
+        await ctx.send(embed=embed)
+
+    async def send_command_help(self, command):
+        e = discord.Embed(color=rbColor(), description=command.help)
+        e.set_author(name=f'Comandos - {command.name}',
+                     url='https://ticiano-morvan.gitbook.io/spanish/comandos')
+        aliases = command.aliases
+        if aliases is not None:
+            e.add_field(name="Aliases", value=", ".join(aliases),
+                        inline=False)
+        e.add_field(name='Uso',
+                    value=f'`{self.get_command_signature(command)}`',
+                    inline=False)
+        e.set_footer(text='Argumentos: <requerido> [opcional]')
+        channel = self.get_destination()
+        await channel.send(embed=e)
+
+    async def get_all_commands(self, commands):
+        string = '```'
+        if filtered_commands := await self.filter_commands(commands):
+            for command in filtered_commands:
+                string += f'{self.get_command_signature(command)}\n'
+
+            return f'{string}```'
+
+    async def send_cog_help(self, cog):
+        e = discord.Embed(color=rbColor(), title=cog.qualified_name,
+                          description=cog.description)
+        e.add_field(name='Comandos',
+                    value=await MyHelp.get_all_commands(
+                        self, cog.get_commands()),
+                    inline=False)
+
+        e.set_footer(text='r.help <comando> para más información. '
+                          '- <requerido> [opcional]')
+        channel = self.get_destination()
+        await channel.send(embed=e)
+
+
+bot.help_command = MyHelp()
 
 
 @bot.event
@@ -42,14 +98,15 @@ async def on_ready():
                                 type=discord.ActivityType.watching,
                                 name='RoboTito! | r.help'))
 
+
 # Run
 
 # You have to create an "config.toml" file at databases folder, with:
 # "token": "your_bot_token"
 # "api": "your_rapidapi_token"
 
-with open('databases/config.toml', encoding='utf-8') as f:
-    config_data = tomli.load(f)
+with open('databases/config.toml', encoding='utf-8') as config:
+    config_data = tomli.load(config)
     token = config_data['token']
 
 bot.run(token)
