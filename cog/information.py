@@ -139,7 +139,7 @@ class Information(commands.Cog,
                     inline=False)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['svinfo'],
+    @commands.command(aliases=['svinfo', 'guildinfo'],
                       help='Obtén información sobre este servidor.')
     async def serverinfo(self, ctx):
         e = Server.guild_embed(ctx.guild)

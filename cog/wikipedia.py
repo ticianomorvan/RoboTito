@@ -1,6 +1,7 @@
 import discord
 import wikipedia
 import wikipediaapi
+import asyncio
 from cog.functions import rbColor
 from discord.ext import commands
 
@@ -28,10 +29,10 @@ class WikipediaBot(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='search',
-                      aliases=['buscar', 'query'],
+    @commands.command(name='wikipedia',
+                      aliases=['wiki', 'buscar', 'search'],
                       help='Realiza una búsqueda en Wikipedia.')
-    async def wiki_query(self, ctx, *, args):
+    async def wikipedia_search(self, ctx, *, args):
         result = wikipedia.search(args, results=10)
         embed = discord.Embed(color=rbColor())
         embed.set_thumbnail(url=wiki_logo)
@@ -42,25 +43,28 @@ class WikipediaBot(commands.Cog,
                               f'7. **{result[6]}**\n8. **{result[7]}**\n'
                               f'9. **{result[8]}**\n10. **{result[9]}**',
                         inline=False)
+        embed.set_footer(text='Escribe el número correspondiente'
+                              'al artículo que deseas obtener.')
         await ctx.send(embed=embed)
 
-    @commands.command(name='summary',
-                      aliases=['resumen', 'summ'],
-                      help='Obtén el resumen de algún artículo.')
-    async def wiki_summary(self, ctx, *, args):
-        wiki_page = wiki.page(args)
+        def is_author(m):
+            return m.author == ctx.author
 
-        if wiki_page.exists() is True:
-            embed = discord.Embed(color=rbColor(), title=wiki_page.title,
-                                  description=get_summary(wiki_page))
-            embed.set_author(name=f'{wiki_page.title} en Wikipedia',
-                             url=wiki_page.canonicalurl)
-            embed.set_thumbnail(url=wiki_logo)
-            await ctx.send(embed=embed)
+        try:
+            selected_page = await self.bot.wait_for('message', check=is_author,
+                                                    timeout=45.0)
+        except asyncio.TimeoutError:
+            await ctx.send('Tu petición expiró.')
 
         else:
-            await ctx.send('Esa página no existe, por favor, '
-                           'inténtalo de nuevo.')
+            index = int(selected_page.content) - 1
+            page = wiki.page(result[index])
+            e = discord.Embed(color=rbColor(), title=page.title,
+                              description=get_summary(page))
+            e.set_author(name=f'{page.title} en Wikipedia',
+                         url=page.canonicalurl)
+            e.set_thumbnail(url=wiki_logo)
+            await ctx.send(embed=e)
 
 
 def setup(bot):
