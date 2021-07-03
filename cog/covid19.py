@@ -1,13 +1,30 @@
 import aiohttp
 import discord
+from cog.functions import get_api, rbColor
 from discord.ext import commands
-from cog.functions.functions import Functions as f
+
+TOKEN = get_api()
 
 
-TOKEN = f.getToken()
+async def covid19_request(country: str):
+    url = "https://covid-19-data.p.rapidapi.com/country"
+    query = {"name": country}
+    headers = {
+        'x-rapidapi-key': TOKEN,
+        'x-rapidapi-host': "covid-19-data.p.rapidapi.com"
+        }
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url=url, headers=headers, params=query) as r:
+            if r.status == 200:
+                json_response = await r.json()
+                return json_response
+            else:
+                return
 
 
-class Covid19(commands.Cog, description='Información sobre el COVID-19'):
+class Covid19(commands.Cog, name='COVID-19',
+              description='Información sobre el COVID-19'):
 
     def __init__(self, bot) -> None:
         super().__init__()
@@ -17,41 +34,26 @@ class Covid19(commands.Cog, description='Información sobre el COVID-19'):
                       description='Obtén información sobre el estado de un'
                                   ' país frente al COVID-19')
     async def covid19(self, ctx, *, country: str):
-        url = "https://covid-19-data.p.rapidapi.com/country"
-        query = {"name": country}
-        headers = {
-            'x-rapidapi-key': TOKEN,
-            'x-rapidapi-host': "covid-19-data.p.rapidapi.com"
-            }
-
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url=url,
-                                   headers=headers, params=query) as response:
-                if response.status == 200:
-                    jsonResponse = await response.json()
-                    countryName = jsonResponse[0]['country']
-                    confirmedCases = jsonResponse[0]['confirmed']
-                    recoveredCases = jsonResponse[0]['recovered']
-                    criticalCases = jsonResponse[0]['critical']
-                    deaths = jsonResponse[0]['deaths']
-
-                    e = discord.Embed(color=f.rbColor(),
-                                      title=f'COVID-19 >> {countryName}')
-                    e.add_field(name='Confirmados ⚠️',
-                                value=format(confirmedCases, ','),
-                                inline=False)
-                    e.add_field(name='Recuperados ☑️',
-                                value=format(recoveredCases, ','),
-                                inline=False)
-                    e.add_field(name='Críticos ❗️',
-                                value=format(criticalCases, ','), inline=False)
-                    e.add_field(name='Muertes ❌',
-                                value=format(deaths, ','), inline=False)
-                    await ctx.send(embed=e)
-
-                else:
-                    await ctx.send('Hubo un problema en la comunicación'
-                                   ' con la API.')
+        if not country:
+            await ctx.send('Necesito que me digas el país del cual quieres'
+                           ' conocer su información. **ATENCIÓN**: por'
+                           ' motivos externos a RoboTito, necesito que'
+                           ' escribas el nombre del país en inglés.')
+        else:
+            c19 = await covid19_request(country)
+            e = discord.Embed(color=rbColor(),
+                              title=f'COVID-19: {c19[0]["country"]}')
+            e.add_field(name='Confirmados ⚠️',
+                        value=format(c19[0]["confirmed"], ','),
+                        inline=False)
+            e.add_field(name='Recuperados ☑️',
+                        value=format(c19[0]["recovered"], ','),
+                        inline=False)
+            e.add_field(name='Críticos ❗️',
+                        value=format(c19[0]["critical"], ','), inline=False)
+            e.add_field(name='Muertes ❌',
+                        value=format(c19[0]["deaths"], ','), inline=False)
+            await ctx.send(embed=e)
 
 
 def setup(bot):

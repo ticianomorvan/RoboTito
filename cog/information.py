@@ -1,95 +1,95 @@
 import discord
 import json
-from cog.functions.functions import Functions as f
-from discord.member import Member
+from cog.functions import rbColor
 from discord.guild import Guild
 from discord.ext import commands
 
 
-def monthName(month: int):
+def month_name(month: int):
+    """Returns the month name based in its order number."""
     with open('databases/db_str.json') as db:
         data = db.read()
         months = json.loads(data)
-        selectMonth = months['months'][month]
-        return selectMonth
+        selected_month = months['months'][month]
+        return selected_month
 
 
-def memberCreation(member: Member):
-    mCreationFull = str(member.created_at)[:10]
-    year, month, day = mCreationFull.split('-')
-    cMonth = monthName(int(month))
-    mCreation = f'Su cuenta se creó el día {day} de {cMonth} del año {year}.'
-    return mCreation
+class Member():
+    """Member related information."""
+    def creation(member: discord.Member):
+        """Returns a sentence with the creation date of the user's account."""
+        creation_date = str(member.created_at)[:10]
+        year, month, day = creation_date.split('-')
+        created_month = month_name(int(month))
+        creation_sentence = 'Su cuenta se creó el día {} de {} del año {}.'
+        member_created_at = creation_sentence.format(day, created_month, year)
+        return member_created_at
+
+    def joined(member: discord.Member):
+        """Returns a sentence with the join date of the user to the server."""
+        joined_date = str(member.joined_at)[:10]
+        year, month, day = joined_date.split('-')
+        joined_month = month_name(int(month))
+        joined_sentence = 'Se unió el día {} de {} del año {}.'
+        member_joined_at = joined_sentence.format(day, joined_month, year)
+        return member_joined_at
+
+    def roles(member: discord.Member):
+        """Returns a string with all of the user's roles"""
+        string = ' '
+        roles = member.roles
+        for role in roles:
+            if role.name == '@everyone':
+                string += ''
+            else:
+                string += f'<@&{role.id}> '
+
+        return string
+
+    def embed(member: discord.Member):
+        """Returns an embed with information of the member."""
+        e = discord.Embed(title=member.name, color=member.color)
+        e.set_thumbnail(url=member.avatar_url)
+        e.add_field(name='Color', value=member.color, inline=False)
+        e.add_field(name='Rol más alto', value=member.top_role, inline=False)
+        e.add_field(name='Creación', value=Member.creation(member),
+                    inline=False)
+        e.add_field(name='Llegada al servidor', value=Member.joined(member),
+                    inline=False)
+        e.add_field(name='Roles', value=Member.roles(member))
+        return e
 
 
-def memberJoined(member: Member):
-    mJoinFull = str(member.joined_at)[:10]
-    year, month, day = mJoinFull.split('-')
-    jMonth = monthName(int(month))
-    mJoin = f'Se unió el día {day} de {jMonth} del año {year}.'
-    return mJoin
+class Server():
+    """Guild related information."""
+    def guild_creation(guild: Guild):
+        """Returns a sentence with the creation date of the guild."""
+        creation_date = str(guild.created_at)[:10]
+        year, month, day = creation_date.split('-')
+        creation_month = month_name(int(month))
+        creation_sentence = '{} de {} del año {}.'
+        guild_created_at = creation_sentence.format(day, creation_month, year)
+        return guild_created_at
 
-
-def memberRoles(member: Member):
-    string = ' '
-    for role in member.roles:
-        string += f'{role} - '
-
-    return string
-
-
-def memberEmbed(member: Member):
-    e = discord.Embed(title=member.name, color=member.color)
-    e.set_thumbnail(url=member.avatar_url)
-    e.add_field(name='Color', value=member.color, inline=False)
-    e.add_field(name='Rol más alto', value=member.top_role, inline=False)
-    e.add_field(name='Creación', value=memberCreation(member), inline=False)
-    e.add_field(name='Llegada al servidor', value=memberJoined(member),
-                inline=False)
-    e.add_field(name='Roles', value=memberRoles(member))
-    return e
-
-
-def guildCreation(guild: Guild):
-    gCreationFull = str(guild.created_at)[:10]
-    year, month, day = gCreationFull.split('-')
-    cMonth = monthName(int(month))
-    gCreation = f'El servidor se creó el día {day} de {cMonth} del año {year}.'
-    return gCreation
-
-
-def guildEmbed(guild: Guild):
-    e = discord.Embed(title=guild.name, color=f.rbColor())
-    e.set_thumbnail(url=guild.icon_url)
-    e.add_field(name='Miembros',
-                value='El servidor cuenta con '
-                      f'**{len(guild.members)}** miembros.',
-                inline=False)
-    e.add_field(name='Categorías',
-                value='El servidor cuenta con'
-                      f' **{len(guild.categories)}** categorías.',
-                inline=False)
-    e.add_field(name='Canales',
-                value=f'Existen **{len(guild.channels)}** canales en total,'
-                      f' **{len(guild.text_channels)}** canales de texto y'
-                      f' **{len(guild.voice_channels)}** canales de voz.',
-                inline=False)
-    e.add_field(name='Emojis',
-                value='El servidor cuenta con '
-                      f'**{len(guild.emojis)}** emojis.',
-                inline=False)
-    e.add_field(name='Roles',
-                value='Este servidor cuenta con'
-                      f' **{len(guild.roles)}** roles.',
-                inline=False)
-    e.add_field(name='Creación',
-                value=guildCreation(guild),
-                inline=False)
-    e.add_field(name='Identificador', value=guild.id, inline=False)
-    e.add_field(name='Dueño/a del servidor',
-                value=f'**{guild.owner}**, ID: {guild.owner_id}',
-                inline=False)
-    return e
+    def guild_embed(guild: Guild):
+        """Returns an embed with information about the guild."""
+        e = discord.Embed(title=guild.name, color=rbColor())
+        e.set_thumbnail(url=guild.icon_url)
+        e.add_field(name='🚻 Miembros',
+                    value=f'**{len(guild.members)}** miembros.')
+        e.add_field(name='⚙ Categorías',
+                    value=f'**{len(guild.categories)}** categorías.')
+        e.add_field(name='📢 Canales',
+                    value=f'**{len(guild.channels)}** canales en total.\n '
+                          f'**{len(guild.text_channels)}** canales de texto.\n'
+                          f' **{len(guild.voice_channels)}** canales de voz.')
+        e.add_field(name='🤡 Emojis', value=f'**{len(guild.emojis)}** emojis.')
+        e.add_field(name='🛡 Roles', value=f' **{len(guild.roles)}** roles.')
+        e.add_field(name='🔧 Creación', value=Server.guild_creation(guild))
+        e.add_field(name='🔗 Identificador', value=guild.id)
+        e.add_field(name='🤴 Dueño/a del servidor',
+                    value=f'**{guild.owner.mention}**')
+        return e
 
 
 class Information(commands.Cog,
@@ -112,7 +112,7 @@ class Information(commands.Cog,
                                       ' mismo por sobre otros utilizando'
                                       ' funcionalidades innovadoras o pocas'
                                       ' veces vistas.',
-                          color=f.rbColor())
+                          color=rbColor())
         e.set_author(name='RoboTito - Documentación',
                      url='https://ticiano-morvan.gitbook.io/robotito/')
         e.set_thumbnail(url=app.icon_url)
@@ -142,29 +142,29 @@ class Information(commands.Cog,
     @commands.command(aliases=['svinfo'],
                       help='Obtén información sobre este servidor.')
     async def serverinfo(self, ctx):
-        e = guildEmbed(ctx.guild)
+        e = Server.guild_embed(ctx.guild)
         await ctx.send(embed=e)
 
     @commands.command(aliases=['usinfo', 'uinfo'],
                       help='Obtén información acerca de ti o alguien más.')
     async def userinfo(self, ctx, member: Member = None):
         if member is not None:
-            e = memberEmbed(member)
+            e = Member.embed(member)
             await ctx.send(embed=e)
         else:
-            e = memberEmbed(ctx.author)
+            e = Member.embed(ctx.author)
             await ctx.send(embed=e)
 
     @commands.command(aliases=['avatar', 'av'],
                       help='Obtén tu avatar o de alguien más.')
     async def useravatar(self, ctx, member: Member = None):
         if member is not None:
-            e = discord.Embed(color=f.rbColor())
+            e = discord.Embed(color=rbColor())
             e.set_author(name=member.name, icon_url=member.avatar_url)
             e.set_image(url=member.avatar_url)
             await ctx.send(embed=e)
         else:
-            e = discord.Embed(color=f.rbColor())
+            e = discord.Embed(color=rbColor())
             e.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
             e.set_image(url=ctx.author.avatar_url)
             await ctx.send(embed=e)

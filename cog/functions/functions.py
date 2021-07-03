@@ -1,7 +1,7 @@
 import random
 import json
+import tomli
 import discord
-from discord.ext import commands
 
 
 def open_str():
@@ -14,111 +14,80 @@ def open_str():
 string = open_str()
 
 
-class Functions(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
+def rbColor():
+    colors = [discord.Color.from_rgb(255, 94, 43),
+              discord.Color.from_rgb(82, 92, 253),
+              discord.Color.from_rgb(72, 159, 181),
+              discord.Color.from_rgb(255, 134, 0)
+              ]
+    return random.choice(colors)
 
-    def rbColor():
-        colors = [discord.Color.from_rgb(255, 94, 43),
-                  discord.Color.from_rgb(82, 92, 253),
-                  discord.Color.from_rgb(72, 159, 181),
-                  discord.Color.from_rgb(255, 134, 0)
-                  ]
-        return random.choice(colors)
+# Functions used in cog/anime.py
 
-    # Functions used in cog/anime.py
 
-    def gif(string):
-        with open('databases/db_gifs.json') as f:
-            data = f.read()
-            gif = json.loads(data)
-            return random.choice(gif[string])
+def gif(string):
+    with open('databases/db_gifs.json') as f:
+        data = f.read()
+        gif = json.loads(data)
+        return random.choice(gif[string])
 
-    def header(table):
-        header = string[table]
-        return random.choice(header)
 
-    def sentence(author, msg, member=None):
-        if member is None:
-            message = random.choice(string[msg])
-            result = author + message
-            return result
+def header(table):
+    header = open_str()[table]
+    return random.choice(header)
+
+
+def sentence(author, msg, member=None):
+    if member is None:
+        message = random.choice(string[msg])
+        result = author + message
+        return result
+    else:
+        message = random.choice(string[msg])
+        result = author + message + member
+        return result
+
+
+# Functions used in cog/commands.py
+
+
+def get_8ball():
+    return random.choice(string['ball8'])
+
+
+def get_penis(number: int):
+    if number >= 1:
+        return random.choice(string['penis'])
+    else:
+        pass
+
+
+def get_love(number: int):
+    if number >= 75:
+        return random.choice(string['love_high'])
+    elif number >= 45:
+        return random.choice(string['love_medium'])
+    else:
+        return random.choice(string['love_low'])
+
+
+def get_love_gif(number: int):
+    with open('databases/db_gifs.json', encoding='utf-8') as f:
+        gifData = f.read()
+        gifstring = json.loads(gifData)
+        if number >= 65:
+            gif = random.choice(gifstring['love_high'])
+            return gif
         else:
-            message = random.choice(string[msg])
-            result = author + message + member
-            return result
-
-    def sameUser(activity):
-        message = 'Trata de ' + activity + ' alguien más.'
-        return message
-
-    def getEmbed(type: str, author, member=None):
-        if member is not None:
-            e = discord.Embed(
-                color=Functions.rbColor()
-            )
-            e.add_field(
-                name=Functions.header(f'h_{type}'),
-                value=Functions.sentence(author, f'm_{type}', member)
-            )
-            e.set_image(
-                url=Functions.gif(type)
-            )
-            return e
-        else:
-            e = discord.Embed(
-                color=Functions.rbColor(),
-            )
-            e.add_field(
-                name=Functions.header(f'h_{type}'),
-                value=Functions.sentence(author, f'm_{type}')
-            )
-            e.set_image(
-                url=Functions.gif(type)
-            )
-            return e
-
-    # Functions used in cog/commands.py
-
-    def get8Ball():
-        return random.choice(string['ball8'])
-
-    def getPenis(number: int):
-        if number > 1:
-            return random.choice(string['penis'])
-        elif number == 1:
-            return random.choice(string['penis'])
-        else:
-            pass
-
-    def getLove(number: int):
-        if number >= 75:
-            return random.choice(string['love_high'])
-        elif number >= 45:
-            return random.choice(string['love_medium'])
-        else:
-            return random.choice(string['love_low'])
-
-    def getLoveGif(number: int):
-        with open('databases/db_gifs.json', encoding='utf-8') as f:
-            gifData = f.read()
-            gifstring = json.loads(gifData)
-            if number >= 65:
-                gif = random.choice(gifstring['love_high'])
-                return gif
-            else:
-                gif = random.choice(gifstring['love_low'])
-                return gif
-
-    # REST API's Token
-
-    def getToken():
-        with open('databases/db_bot.json', encoding='utf-8') as f:
-            data = f.read()
-            token_value = json.loads(data)
-            token = token_value['apitoken']
-            return token
+            gif = random.choice(gifstring['love_low'])
+            return gif
 
 
-def setup(bot):
-    bot.add_cog(Functions(bot))
+# REST API's Token
+
+
+def get_api():
+    with open('databases/config.toml', encoding='utf-8') as f:
+        token_data = tomli.load(f)
+        token = token_data['api']
+        return token

@@ -1,8 +1,8 @@
 import discord
 import json
+from cog.functions import rbColor
 from discord.ext import commands
 from translate import Translator
-from cog.functions.functions import Functions as f
 
 
 def language_translate(language):
@@ -17,7 +17,7 @@ def language_translate(language):
 
 
 def language_embed(translation, fromlang, tolang):
-    e = discord.Embed(title=translation, color=f.rbColor())
+    e = discord.Embed(title=translation, color=rbColor())
     e.add_field(name='Traducido:', value=f'**{fromlang}** >> **{tolang}**')
     e.set_thumbnail(url='https://i.imgur.com/0o5ZKBl.png')
     return e

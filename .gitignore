@@ -5,6 +5,9 @@ images
 
 # Databases
 databases/db_bot.json
+databases/config.toml
 
 # Files
 robotito.log
+runtime.txt
+Procfile

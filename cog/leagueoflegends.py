@@ -1,8 +1,8 @@
 import discord
 import random
 import json
+from cog.functions import rbColor
 from discord.ext import commands
-from cog.functions.functions import Functions as f
 
 
 with open('databases/db_lolchamps.json', encoding='utf-8') as db:
@@ -10,34 +10,36 @@ with open('databases/db_lolchamps.json', encoding='utf-8') as db:
     champs = json.loads(data)
 
 
-def Role(role):
-    while True:
-        roleIndex = random.randint(1, 80)
-        roleChamp = str(roleIndex)
-        if champs[roleChamp]['roles'][role] is True:
-            return roleChamp
+def get_role(role: str):
+    final_role = str.lower(role)
+    list = []
+    for champ in champs:
+        if champs[champ]['roles'][final_role] is True:
+            list.append(champ)
         else:
-            continue
+            pass
+
+    choice = random.choice(list)
+    return choice
 
 
-def Name(name):
-    while True:
-        nameIndex = random.randint(1, 80)
-        nameChamp = str(nameIndex)
-        if name == champs[nameChamp]['name']:
-            return nameChamp
+def get_name(name: str):
+    for champ in champs:
+        if name == champs[champ]['name']:
+            return champ
         else:
-            continue
+            pass
 
 
-def Random():
-    randomIndex = random.randint(1, 80)
-    randomChamp = str(randomIndex)
-    return randomChamp
+def get_random():
+    index = len(champs)
+    choice = random.randint(1, index)
+    return choice
 
 
-def Embed(index: str):
-    e = discord.Embed(color=f.rbColor())
+def create_embed(champ):
+    index = str(champ)
+    e = discord.Embed(color=rbColor())
     e.set_author(name='Campeón de League of Legends',
                  url=champs[index]['lolpage'],
                  icon_url='https://img1.wikia.nocookie.net/'
@@ -63,27 +65,22 @@ class LeagueOfLegends(commands.Cog,
     @commands.command(aliases=['chname', 'champion', 'campeón'],
                       help='Encuentra un campeón por su nombre.')
     async def championname(self, ctx, *, name: str):
-        champ = Name(name)
-        e = Embed(champ)
+        champ = get_name(name)
+        e = create_embed(champ)
         await ctx.send(embed=e)
 
     @commands.command(aliases=['rol', 'role', 'chrole'],
                       help='Encuentra un campeón por su rol.')
-    async def championrole(self, ctx, role: str = None):
-        if role is not None:
-            champ = Role(role)
-            e = Embed(champ)
-            await ctx.send(embed=e)
-
-        else:
-            await ctx.send('Debes introducir un rol, con las siguientes'
-                           ' posibilidades: `top, jg, mid, adc, support`')
+    async def championrole(self, ctx, role: str):
+        champ = get_role(role)
+        e = create_embed(champ)
+        await ctx.send(embed=e)
 
     @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
                       help='Obtén un campeón aleatorio.')
     async def championrandom(self, ctx):
-        champ = Random()
-        e = Embed(champ)
+        champ = get_random()
+        e = create_embed(champ)
         await ctx.send(embed=e)
 
 

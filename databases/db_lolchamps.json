@@ -1277,5 +1277,85 @@
             "adc":false,
             "support":true
         }
+    },
+
+    "81": {
+        "name":"Neeko",
+        "header":"la camaleón curiosa",
+        "description":"Proveniente de una tribu vastaya perdida desde hace mucho tiempo, Neeko puede mezclarse en cualquier multitud adoptando la apariencia de los demás e incluso absorber un poco de su estado emocional para distinguir a un amigo de un enemigo en tan solo un instante. Nadie nunca tiene la certeza de dónde o en quién podría estar Neeko, pero quienes intenten hacerle daño pronto verán su verdadera personalidad y sentirán el poder de su magia espiritual primordial desatado sobre ellos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/neeko/",
+        "op.gg":"https://las.op.gg/champion/neeko/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+    
+    "82": {
+        "name":"Nidalee",
+        "header":"la cazadora salvaje",
+        "description":"Criada en las profundidades de la jungla, Nidalee es una rastreadora maestra que puede transformarse en puma a su voluntad. Ni mujer, ni bestia, ella defiende salvajemente su territorio de todos y cada uno de los intrusos, con trampas cuidadosamente colocadas y lanzas a distancia. Ella paraliza a su presa antes de atacarla en su forma felina; los pocos que sobreviven cuentan sobre una salvaje mujer con instintos agudos y garras muy filosas...",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nidalee/",
+        "op.gg":"https://las.op.gg/champion/nidalee/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "83": {
+        "name":"Nocturne",
+        "header":"la pesadilla eterna",
+        "description":"Nocturne, una fusión demoniaca traída de las pesadillas que aterran a todas las mentes conscientes, se convirtió en una fuerza primigenia de maldad pura. Su aspecto de caos líquido es el de una sombra sin rostro con ojos crueles y armado con unas cuchillas diabólicas. Después de liberarse a sí mismo del reino espiritual, Nocturne descendió al mundo de los despiertos para alimentarse del terror que prospera en la auténtica oscuridad.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nocturne/",
+        "op.gg":"https://las.op.gg/champion/nocturne/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "84": {
+        "name":"Nunu y Willump",
+        "header":"el niño y su yeti",
+        "description":"Había una vez un niño que quería demostrar que era un héroe al matar a un temible monstruo... solo para descubrir que la bestia, un yeti solitario y mágico, simplemente necesitaba un amigo. Unidos por un poder ancestral y el amor compartido por las bolas de nieve, Nunu y Willump ahora pasean salvajes por todo el Fréljord y les dan vida a aventuras imaginarias. Tienen la esperanza que en algún sitio allá afuera, puedan encontrar a la madre de Nunu. Después de todo, si logran salvarla, tal vez se vuelvan héroes...",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nunu/",
+        "op.gg":"https://las.op.gg/champion/nunu/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "85": {
+        "name":"Olaf",
+        "header":"el berserker",
+        "description":"Como una fuerza imparable de destrucción, el portador de hachas Olaf no quiere nada más que morir en glorioso combate. Proveniente de la brutal península freljordiana de Lokfar, alguna vez recibió una profecía que predecía su muerte pacífica, que es el destino del cobarde y un gran insulto entre su gente. Buscando la muerte e impulsado por la ira, Olaf masacró todo cuanto encontró en la tierra, eliminando un gran número de guerreros y bestias legendarias en busca de un oponente que lo detuviera. Ahora, como elemento brutal de la Garra Invernal, busca su fin en las grandes guerras que se acercan.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/olaf/",
+        "op.gg":"https://las.op.gg/champion/olaf/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
     }
 }

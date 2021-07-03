@@ -1,23 +1,29 @@
-import requests
+import aiohttp
 import discord
-from cog.functions.functions import Functions as f
+import random
+from cog.functions import rbColor, get_api
 from discord.ext import commands
 
 
-TOKEN = f.getToken()
+TOKEN = get_api()
 
 
-def search_image(query: str):
+async def search_image(query: str):
     url = "https://bing-image-search1.p.rapidapi.com/images/search"
-    querystring = {"q": query, "mkt": "es-AR", "count": "1"}
+    querystring = {"q": query, "mkt": "es-AR", "count": "30"}
     headers = {
         'x-rapidapi-key': TOKEN,
         'x-rapidapi-host': "bing-image-search1.p.rapidapi.com"
         }
-    response = requests.request("GET", url, headers=headers,
-                                params=querystring)
-    jsonResponse = response.json()
-    return jsonResponse['value'][0]['contentUrl']
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url=url, headers=headers,
+                               params=querystring) as r:
+            if r.status == 200:
+                json_response = await r.json()
+                index = random.randint(0, 30)
+                return json_response['value'][index]['contentUrl']
+            else:
+                return
 
 
 class ImageSearch(commands.Cog, name='Imágenes',
@@ -34,14 +40,14 @@ class ImageSearch(commands.Cog, name='Imágenes',
             await ctx.send('Tienes que buscar algo.')
         else:
             e = discord.Embed(
-                color=f.rbColor(),
+                color=rbColor(),
                 description=f'**{query}**, enlace original:'
-                            f' [aquí]({search_image(query)})'
+                            f' [aquí]({await search_image(query)})'
             )
             e.set_author(name='Imágenes de Bing',
                          icon_url='https://pluspng.com/img-png/'
                                   'bing-logo-png-png-ico-512.png')
-            e.set_image(url=search_image(query))
+            e.set_image(url=await search_image(query))
             await ctx.send(embed=e)
 
 
