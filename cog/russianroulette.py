@@ -2,7 +2,7 @@ import asyncio
 import discord
 import random
 import json
-import cog.functions as f
+from cog.functions import rbColor, gif
 from discord.member import Member
 from discord.ext import commands
 
@@ -13,11 +13,11 @@ with open('databases/db_russianroulette.json', encoding='utf-8') as fi:
 
 
 def rr_death(winner, loser):
-    e = discord.Embed(color=f.rbColor())
+    e = discord.Embed(color=rbColor())
     e.add_field(name=random.choice(rr['death']),
                 value=f'{loser} murió, es una pena. {winner} ganó esta ronda.',
                 inline=False)
-    e.set_image(url=f.gif('russianroulette'))
+    e.set_image(url=gif('russianroulette'))
     return e
 
 

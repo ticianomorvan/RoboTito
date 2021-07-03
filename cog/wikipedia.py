@@ -1,7 +1,7 @@
 import discord
 import wikipedia
 import wikipediaapi
-import cog.functions as f
+from cog.functions import rbColor
 from discord.ext import commands
 
 
@@ -33,7 +33,7 @@ class WikipediaBot(commands.Cog,
                       help='Realiza una búsqueda en Wikipedia.')
     async def wiki_query(self, ctx, *, args):
         result = wikipedia.search(args, results=10)
-        embed = discord.Embed(color=f.rbColor())
+        embed = discord.Embed(color=rbColor())
         embed.set_thumbnail(url=wiki_logo)
         embed.add_field(name='Estos fueron los resultados de tu búsqueda:',
                         value=f'1. **{result[0]}**\n2. **{result[1]}**\n'
@@ -51,7 +51,7 @@ class WikipediaBot(commands.Cog,
         wiki_page = wiki.page(args)
 
         if wiki_page.exists() is True:
-            embed = discord.Embed(color=f.rbColor(), title=wiki_page.title,
+            embed = discord.Embed(color=rbColor(), title=wiki_page.title,
                                   description=get_summary(wiki_page))
             embed.set_author(name=f'{wiki_page.title} en Wikipedia',
                              url=wiki_page.canonicalurl)

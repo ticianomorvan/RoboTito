@@ -1,7 +1,7 @@
 import discord
 import random
 import cog.functions as f
-from cog.information import memberEmbed
+from cog.information import Member as m
 from discord.ext import commands
 from discord.member import Member
 
@@ -101,7 +101,7 @@ class Variety(commands.Cog,
     @commands.command(name='ruser')
     async def randomuser(self, ctx):
         member = random.choice(ctx.guild.members)
-        e = memberEmbed(member)
+        e = m.embed(member)
         await ctx.send(embed=e)
 
 

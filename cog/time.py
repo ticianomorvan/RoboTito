@@ -1,5 +1,5 @@
 import discord
-import cog.functions as f
+from cog.functions import rbColor
 from datetime import datetime, timedelta, timezone
 from discord.ext import commands
 
@@ -27,7 +27,7 @@ class Time(commands.Cog,
     async def utctime(self, ctx):
         e = discord.Embed(title=f'Son las{str(datetime.utcnow())[10:][:6]}'
                                 ' (UTC)',
-                          color=f.rbColor())
+                          color=rbColor())
         e.set_author(name='Tiempo del meridiano de Greenwich',
                      url='https://time.is/es/UTC',
                      icon_url=timezone_icon)
@@ -37,7 +37,7 @@ class Time(commands.Cog,
                       help='Conoce la hora de la región del bot.')
     async def bottime(self, ctx):
         e = discord.Embed(title=f'Son las{str(datetime.now())[10:][:6]}',
-                          color=f.rbColor())
+                          color=rbColor())
         e.set_author(name='Tiempo de la zona horaria del bot',
                      icon_url=timezone_icon)
         await ctx.send(embed=e)
@@ -53,7 +53,7 @@ class Time(commands.Cog,
                            ' ingresá `-3` después del comando.')
         else:
             e = discord.Embed(title=f'Son las{get_local_time(hours)}',
-                              color=f.rbColor())
+                              color=rbColor())
             e.set_author(name='Tiempo de tu zona horaria',
                          icon_url=timezone_icon)
             await ctx.send(embed=e)

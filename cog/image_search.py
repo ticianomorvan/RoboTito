@@ -1,11 +1,11 @@
 import aiohttp
 import discord
 import random
-import cog.functions as f
+from cog.functions import rbColor, get_api
 from discord.ext import commands
 
 
-TOKEN = f.get_api()
+TOKEN = get_api()
 
 
 async def search_image(query: str):
@@ -40,7 +40,7 @@ class ImageSearch(commands.Cog, name='Imágenes',
             await ctx.send('Tienes que buscar algo.')
         else:
             e = discord.Embed(
-                color=f.rbColor(),
+                color=rbColor(),
                 description=f'**{query}**, enlace original:'
                             f' [aquí]({await search_image(query)})'
             )

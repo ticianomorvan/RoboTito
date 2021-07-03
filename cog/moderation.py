@@ -1,9 +1,7 @@
 import asyncio
 import discord
-import cog.functions as f
-from discord.member import Member
+from cog.functions import rbColor
 from discord.ext import commands
-from discord.guild import Guild
 
 
 async def sleep(seconds):
@@ -11,37 +9,39 @@ async def sleep(seconds):
     await asyncio.sleep(time)
 
 
-def guild_embed(guild: Guild, action, member: Member, aReason=None):
-    if aReason is not None:
-        e = discord.Embed(color=f.rbColor())
-        e.set_author(name=guild.name, icon_url=guild.name)
+class Messages():
+    def guild(guild: discord.Guild, member: discord.Member,
+              action, moderator: discord.Member, reason=None):
+        e = discord.Embed(color=rbColor())
+        e.set_author(name=guild.name, icon_url=guild.icon_url)
         e.set_thumbnail(url=member.avatar_url)
-        e.add_field(name=f'**{member.name}** fue {action}',
-                    value=f'Con el motivo de "{aReason}".')
-        return e
-    else:
-        e = discord.Embed(color=f.rbColor())
-        e.set_author(name=guild.name, icon_url=guild.name)
-        e.set_thumbnail(url=member.avatar_url)
-        e.add_field(name=f'**{member.name}** fue {action}',
-                    value='Sin motivos especificados.')
+        if reason is not None:
+            e.add_field(name=f'{member.name} fue {action}.',
+                        value=f'Por "{reason}".')
+        else:
+            e.add_field(name=f'{member.name} fue {action}.',
+                        value='Sin motivos especificados.')
+
+        e.add_field(name='Moderador a cargo:',
+                    value=moderator.name,
+                    inline=False)
         return e
 
+    def user(guild: discord.Guild, action, moderator: discord.Member,
+             reason=None):
+        e = discord.Embed(color=rbColor())
+        e.set_author(name=guild.name, icon_url=guild.icon_url)
+        e.set_thumbnail(url=guild.icon_url)
+        if reason is not None:
+            e.add_field(name=f'Fuiste {action} de {guild.name}.',
+                        value=f'Debido a "{reason}".')
+        else:
+            e.add_field(name=f'Fuiste {action} de {guild.name}.',
+                        value='Sin motivos especificados.')
 
-def user_embed(guild: Guild, action, aReason=None):
-    if aReason is not None:
-        e = discord.Embed(color=f.rbColor())
-        e.set_author(name=guild.name, icon_url=guild.icon_url)
-        e.set_thumbnail(url=guild.icon_url)
-        e.add_field(name=f'Fuiste {action} de **{guild.name}**',
-                    value=f'Con el motivo de "{aReason}".')
-        return e
-    else:
-        e = discord.Embed(color=f.rbColor())
-        e.set_author(name=guild.name, icon_url=guild.icon_url)
-        e.set_thumbnail(url=guild.icon_url)
-        e.add_field(name=f'Fuiste {action} de **{guild.name}**',
-                    value='Sin motivos especificados.')
+        e.add_field(name='Moderador a cargo',
+                    value=moderator.name,
+                    inline=False)
         return e
 
 
@@ -55,41 +55,49 @@ class Moderation(commands.Cog,
     @commands.command(aliases=['b'],
                       help='Prohibe el reingreso al servidor a un usuario.')
     @commands.has_guild_permissions(ban_members=True)
-    async def ban(self, ctx, member: Member, reason=None):
+    async def ban(self, ctx, member: discord.Embed, *, reason=None):
         if reason is not None:
             await member.ban(reason=reason)
-            gE = guild_embed(ctx.guild, 'vetado', member, reason)
-            await ctx.send(embed=gE)
+            guild_embed = Messages.guild(ctx.guild, member, 'vetado',
+                                         ctx.author, reason)
+            await ctx.send(embed=guild_embed)
 
-            uE = user_embed(ctx.guild, 'vetado', reason)
-            await member.send(embed=uE)
+            user_embed = Messages.user(ctx.guild, 'vetado',
+                                       ctx.author, reason)
+            await member.send(embed=user_embed)
 
         else:
             await member.ban()
-            gE = guild_embed(ctx.guild, 'vetado', member)
-            await ctx.send(embed=gE)
+            guild_embed = Messages.guild(ctx.guild, member, 'vetado',
+                                         ctx.author)
+            await ctx.send(embed=guild_embed)
 
-            uE = user_embed(ctx.guild, 'vetado')
-            await member.send(embed=uE)
+            user_embed = Messages.user(ctx.guild, 'vetado',
+                                       ctx.author)
+            await member.send(embed=user_embed)
 
     @commands.command(aliases=['k'], help='Expulsa a un usuario.')
     @commands.has_guild_permissions(kick_members=True)
-    async def kick(self, ctx, member: Member, reason=None):
+    async def kick(self, ctx, member: discord.Member, *, reason=None):
         if reason is not None:
             await member.kick(reason=reason)
-            gE = guild_embed(ctx.guild, 'expulsado', member, reason)
-            await ctx.send(embed=gE)
+            guild_embed = Messages.guild(ctx.guild, member, 'expulsado',
+                                         ctx.author, reason)
+            await ctx.send(embed=guild_embed)
 
-            uE = user_embed(ctx.guild, 'expulsado', reason)
-            await member.send(embed=uE)
+            user_embed = Messages.user(ctx.guild, 'expulsado',
+                                       ctx.author, reason)
+            await member.send(embed=user_embed)
 
         else:
-            await member.kick(reason=reason)
-            gE = guild_embed(ctx.guild, 'expulsado', member)
-            await ctx.send(embed=gE)
+            await member.kick()
+            guild_embed = Messages.guild(ctx.guild, member, 'expulsado',
+                                         ctx.author)
+            await ctx.send(embed=guild_embed)
 
-            uE = user_embed(ctx.guild, 'expulsado',)
-            await member.send(embed=uE)
+            user_embed = Messages.user(ctx.guild, 'expulsado',
+                                       ctx.author)
+            await member.send(embed=user_embed)
 
     @commands.command(aliases=['ub'],
                       help='Permite el regreso de un usuario vetado.')
@@ -127,7 +135,7 @@ class Moderation(commands.Cog,
 
     @commands.command(name='nick', aliases=['apodo'],
                       help='Cambia tu apodo o el de otro usuario.')
-    async def nick(self, ctx, *, nick: str, member: Member = None):
+    async def nick(self, ctx, *, nick: str, member: discord.Member = None):
         if member is not None:
             if ctx.author.guild_permissions.manage_nicknames is True:
                 await member.edit(nick=nick)

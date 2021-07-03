@@ -1,5 +1,5 @@
 import discord
-import cog.functions as f
+from cog.functions import rbColor
 from discord.ext import commands
 
 
@@ -31,7 +31,7 @@ class Error(commands.Cog):
             await ctx.send('No pude encontrar a ese usuario.')
 
         else:
-            e = discord.Embed(color=f.rbColor())
+            e = discord.Embed(color=rbColor())
             e.add_field(name='Desgraciadamente, ha ocurrido un error.',
                         value='Las causas podrían ser algunas '
                               'de las siguientes:',

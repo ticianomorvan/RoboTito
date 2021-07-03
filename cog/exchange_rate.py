@@ -3,7 +3,6 @@ import aiohttp
 import cog.functions as f
 from discord.ext import commands
 
-
 TOKEN = f.get_api()
 
 
@@ -33,10 +32,10 @@ class ExchangeRate(commands.Cog, name='Conversión',
     @commands.command(aliases=['exch', 'convertir', 'conv'],
                       help='Convierte una cantidad de dinero'
                            ' entre dos monedas.')
-    async def exchange(self, ctx, cFrom: str,
-                       cTo: str, amount: int = None):
-        fromCurrency = str.upper(cFrom)
-        toCurrency = str.upper(cTo)
+    async def exchange(self, ctx, currency_from: str,
+                       currency_to: str, amount: int = None):
+        fromCurrency = str.upper(currency_from)
+        toCurrency = str.upper(currency_to)
         exchange = float(await exchangeRate(fromCurrency, toCurrency))
 
         if amount is not None:

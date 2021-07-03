@@ -1,10 +1,9 @@
 import aiohttp
 import discord
-import cog.functions as f
+from cog.functions import get_api, rbColor
 from discord.ext import commands
 
-
-TOKEN = f.get_api()
+TOKEN = get_api()
 
 
 async def covid19_request(country: str):
@@ -42,8 +41,8 @@ class Covid19(commands.Cog, name='COVID-19',
                            ' escribas el nombre del país en inglés.')
         else:
             c19 = await covid19_request(country)
-            e = discord.Embed(color=f.rbColor(),
-                              title=f'COVID-19 >> {c19[0]["country"]}')
+            e = discord.Embed(color=rbColor(),
+                              title=f'COVID-19: {c19[0]["country"]}')
             e.add_field(name='Confirmados ⚠️',
                         value=format(c19[0]["confirmed"], ','),
                         inline=False)
