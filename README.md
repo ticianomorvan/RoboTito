@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/6ocVOuW.jpg" width="200px" height="200px"></p>
+<p align="center"><img src="https://i.imgur.com/MyVYFzt.png" width="200px" height="200px"></p>
 
 <h1 align="center">RoboTito</h1>
 <p align="center">
@@ -22,7 +22,7 @@
 We speak spanish, so we made the website based on that.
 
 ## ⚡️ Some features you would love!
-- **Gifs** commands (hug, pat, kiss, etc.) with *+150 gifs for interacting*.
+- **Gifs** commands (hug, pat, kiss, etc.) with *+100 gifs for interacting*.
 - **Fun** commands (probability, 8ball, etc.)
 - **Translations** (with a *100% support of ISO 639-1*)
 - **Wikipedia** articles.
@@ -44,41 +44,7 @@ We managed to write RoboTito in a way that you can take the code and change the 
 **For example**: if you want to change the sentences that appears in the gifs commands, you have to change the sentences that are saved on "databases/db_str.json" with the ones that you like.
 
 ## 👨‍💻 Contributing or using RoboTito's code
-We are not watching for direct contributors, but, if you want to do it, you can.
-
-### 🔰 GUIDELINES:
-- Don't make changes to destroy the bot, is not funny :S
-- Don't mind for working with your own language, we prefer spanish, but if you write in english it's not a problem.
-- Don't use the **original RoboTito's assets or identity** if you use the code for another project.
-- Comment your code! we are different people with different interpretations.
-- Have fun! we are working together on this.
-
-### Clone the repo
-~~~
-git clone --branch development --depth 1 https://github.com/Ti7oyan/RoboTito
-~~~
-
-### Create your own branch
-~~~
-git branch "your_user_name"
-git checkout "your_branch-name"
-~~~
-
-### Coding...
-Before you start coding, you have to install the dependencies.  
-Just open a terminal in RoboTito's folder and type:
-~~~
-pip install -r requirements.txt
-~~~
-And that's it.
-
-### Push your changes
-~~~
-git commit -m "the_things_you_do"
-git push origin
-~~~
-
-### Great! now is our time to review your changes, thanks for contributing!
+If you want to contribute, great!. Fork the repository, make your changes (following the guidelines) and we will check.
 
 ### Other ways to contribute
 You can talk to us in our [Discord server](https://discord.gg/W2ReeE6kV5)
