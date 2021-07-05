@@ -1357,5 +1357,342 @@
             "adc":false,
             "support":false
         }
+    },
+
+    
+    "86": {
+        "name":"Oriana",
+        "header":"la doncella mecánica",
+        "description":"Aunque una vez una curiosa chica de carne y hueso, Orianna es ahora una maravilla tecnológica hecha completamente de relojería. Sufrió una terrible enfermedad después de un accidente en los bajos distritos de Zaun y su deteriorado cuerpo tuvo que ser reemplazado con refinados artilugios, parte por parte. Acompañada de una extraordinaria esfera de latón que construyó para su compañía y protección, Orianna ahora es libre de explorar las maravillas de Piltóver y más allá.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Oriana_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/oriana/",
+        "op.gg":"https://las.op.gg/champion/oriana/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "87": {
+        "name":"Ornn",
+        "header":"el fuego debajo de la montaña",
+        "description":"Ornn es el espíritu Fréljordiano de las forjas y artesanías. Trabaja en solitario en una gigantesca forja hecha en las cavernas de lava bajo el volcán conocido como Hogar. Allí, aviva las calderas burbujeantes de piedra fundida para purificar los minerales y crear objetos de calidad inigualable. Mientras que otras deidades, especialmente Volibear, recorren la tierra y se entrometen en asuntos de los mortales, Ornn se encarga de poner en su lugar a estos impetuosos seres, ya sea con su martillo confiable o con el desmedido poder de las propias montañas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/ornn/",
+        "op.gg":"https://las.op.gg/champion/ornn/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+    
+    "88": {
+        "name":"Pantheon",
+        "header":"la lanza inquebrantable",
+        "description":"Antaño un reticente huésped del Aspecto de la guerra, Atreus sobrevivió cuando el poder celestial en su interior fue asesinado, negándose a sucumbir ante un golpe que, de un desgarro, borró estrellas de los cielos. Con el tiempo, aprendió a aceptar el poder de su propia mortalidad, así como la terca resiliencia implícita en ella. Ahora, Atreus combate lo divino como el renacido Pantheon, con una voluntad implacable que alimenta las armas del aspecto caído en el campo de batalla.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/pantheon/",
+        "op.gg":"https://las.op.gg/champion/pantheon/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "89": {
+        "name":"Poppy",
+        "header":"la guardiana del martillo",
+        "description":"A Runaterra no le hacen falta campeones valientes, pero pocos son tan tenaces como Poppy. Como portadora del legendario martillo de Orlon, un arma que la supera al doble de tamaño, esta determinada yordle ha pasado años en búsqueda del aclamado ''Héroe de Demacia'', quien se dice es su legítimo dueño. Hasta entonces, ella se dirige con diligencia hacia la batalla y repele a los enemigos del reino con cada impacto giratorio.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/poppy/",
+        "op.gg":"https://las.op.gg/champion/poppy/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "90": {
+        "name":"Pyke",
+        "header":"el destripador del muelle rojo",
+        "description":"Un reconocido arponero de los Muelles del Matadero de Aguasturbias, Pyke debió encontrarse con su fin en el estómago de un enorme leviatán... pero logró regresar. Ahora acecha los húmedos callejones y rincones de su anterior ciudad y usa sus nuevos dones sobrenaturales para dar fin a las vidas de quienes explotan a otros por dinero de manera rápida y violenta. Y así, una ciudad que era reconocida por cazar monstruos ahora está al acecho de uno.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/pyke/",
+        "op.gg":"https://las.op.gg/champion/pyke/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "91": {
+        "name":"Qiyana",
+        "header":"la emperatriz de los elementosz",
+        "description":"En la ciudad selvática de Ixaocan, Qiyana trama su despiadado camino hacia el trono de Yun Tal. Última en la línea de sucesión familiar, se enfrenta a quienes se interpongan en su camino con descarada confianza y un dominio nunca antes visto de la magia elemental. Mientras la propia tierra obedece cada orden suya, Qiyana se ve a sí misma como la mejor elementalista de la historia de Ixaocan y, adjudicándose ese derecho, cree no solo merecer una ciudad, sino todo un imperio.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/qiyana/",
+        "op.gg":"https://las.op.gg/champion/qiyana/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "92": {
+        "name":"Quinn",
+        "header":"las alas de demacia",
+        "description":"Quinn es una caballero y exploradora de Demacia que se embarca en misiones que la llevan al mismo núcleo del territorio enemigo. Comparte un vínculo inquebrantable con su legendaria águila, Valor, y sus enemigos a menudo quedan derrotados antes de darse cuenta de que peleaban contra no uno, sino dos de los más grandes héroes del reino. Con agilidad y acrobacias cuando la situación lo amerita, Quinn empuña su ballesta mientras que Valor marca a sus escurridizos objetivos desde los cielos, lo que los vuelve un dúo letal en el campo de batalla.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/quinn/",
+        "op.gg":"https://las.op.gg/champion/quinn/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "93": {
+        "name":"Rakan",
+        "header":"el encantador",
+        "description":"Tan impredecible como encantador, Rakan es un vastaya infame que siempre se mete en problemas, además de ser el mejor guerrero bailarín en la historia tribal de Lhotlan. Para los humanos de las tierras altas de Jonia, su nombre ha sido por mucho tiempo sinónimo de festivales salvajes, fiestas incontrolables y música anárquica. Pocos se imaginarían que este artista energético y viajero también es pareja de la rebelde Xayah, dedicado a su causa.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rakan/",
+        "op.gg":"https://las.op.gg/champion/rakan/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "94": {
+        "name":"Rammus",
+        "header":"el armadurillo",
+        "description":"Idolatrado por muchos, desdeñado por algunos, mistificado por todos, el curioso ser Rammus, es un enigma. Protegido por un caparazón con púas, Rammus inspira teorías cada vez más disparatadas sobre su origen a dondequiera que vaya: desde semidiós hasta oráculo sagrado y hasta una mera bestia transformada por la magia. No importa cuál sea la verdad, Rammus es reservado y no se detiene ante nadie mientras cruza el desierto de Shurima.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rammus/",
+        "op.gg":"https://las.op.gg/champion/rammus/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "95": {
+        "name":"Rek'sai",
+        "header":"la excavadora del vacío",
+        "description":"Rek'Sai es una depredadora sin piedad y un engendro del Vacío que se mueve debajo de la tierra para emboscar y devorar a las presas desprevenidas. Su hambre insaciable ha dejado en calidad de desecho a regiones enteras del antes gran imperio de Shurima. Comerciantes, mercaderes y hasta caravanas armadas viajan se desvían cientos de kilómetros de su camino para evitar sus tierras de caza y las de sus descendientes. Todos saben que cuando Rek'Sai aparece en el horizonte, es una garantía que la muerte vendrá desde abajo.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rek-sai/",
+        "op.gg":"https://las.op.gg/champion/reksai/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "96": {
+        "name":"Rell",
+        "header":"la doncella de hierro",
+        "description":"Producto de brutales experimentos realizados por la Rosa Negra, Rell es un arma viviente rebelde con la firme determinación de acabar con Noxus. Su infancia estuvo llena de miseria y horror. Tuvo que soportar procedimientos atroces para perfeccionar y convertir en un arma mortal su control mágico del metal… hasta que huyó de forma súbita y mató a muchos de sus captores en el proceso. Rell, considerada ahora una criminal, ataca a cualquier soldado noxiano que se cruce en su camino mientras busca sobrevivientes de su antigua ''academia'', defiende a los débiles y da una muerte violenta a sus antiguos supervisores.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rell/",
+        "op.gg":"https://las.op.gg/champion/rell/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "97": {
+        "name":"Renekton",
+        "header":"el carnicero de las arenas",
+        "description":"Renekton es una terrorífica criatura Ascendida movida por la ira y procedente de los desiertos abrasadores de Shurima. Antaño fue el guerrero más admirado del imperio, un líder que condujo a los ejércitos shurimanos a incontables victorias. Sin embargo, tras la caída del imperio, Renekton quedó sepultado bajo las arenas, donde lentamente sucumbió a la locura mientras el mundo seguía girando y cambiando. Ahora, libre de nuevo, le carcome el ansia de hallar a su hermano Nasus y acabar con él, pues lo culpa en su locura de los siglos pasados entre las tinieblas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/renekton/",
+        "op.gg":"https://las.op.gg/champion/renekton/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "98": {
+        "name":"Rengar",
+        "header":"el orgullo acechante",
+        "description":"Rengar es un feroz vastaya cazador de trofeos que vive para sentir la emoción de rastrear y asesinar a criaturas peligrosas. Recorre el mundo en búsqueda de las bestias más salvajes que puede encontrar y en particular persigue cualquier rastro de Kha'Zix, la criatura del vacío que le arrancó el ojo. Rengar caza a sus presas no para alimentarse ni por la gloria, sino simplemente por la belleza de la persecución.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rengar/",
+        "op.gg":"https://las.op.gg/champion/rengar/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "99": {
+        "name":"Riven",
+        "header":"la desterrada",
+        "description":"Riven, que anteriormente era una líder de los guerreros de Noxus, está exiliada en una tierra que alguna vez intentó conquistar. Ascendió por los rangos con la fuerza de su convicción y brutal eficiencia, lo cual la recompensó con su legendaria espada rúnica y una tropa propia. Sin embargo, en el frente jonio, la fe de Riven en su tierra fue puesta a prueba y finalmente se quebró. Cortó todos sus lazos con el imperio y ahora busca encontrar su lugar en un mundo en pedazos, incluso con rumores que mencionan que Noxus ha sido reforjado...",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/riven/",
+        "op.gg":"https://las.op.gg/champion/riven/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "100": {
+        "name":"Rumble",
+        "header":"la amenaza mecánica",
+        "description":"Rumble es un joven inventor con un peculiar temperamento. Con nada más que sus dos manos y un montón de chatarra, el yordle construyó un colosal traje mecánico equipado con un arsenal de arpones electrificados y cohetes incendiarios. Aunque otros se burlan de sus creaciones hechas de chatarra, a Rumble no le importa porque, al final, él es quien tiene el escupellamas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/rumble/",
+        "op.gg":"https://las.op.gg/champion/rumble/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "101": {
+        "name":"Ryze",
+        "header":"el mago rúnico",
+        "description":"Ryze, considerado por muchos como uno de los hechiceros más expertos en Runaterra, es un antiguo y endurecido archimago con una responsabilidad casi imposible de llevar. Armado con una constitución sin igual y una gran gama de conocimiento místico, se pasa la vida buscando Runas del Mundo, fragmentos de magia pura que alguna vez moldearon el mundo a partir de la nada. Debe recuperar esos glifos antes de que caigan en las manos equivocadas porque, aunque alguna vez se usaron para construir a Runaterra, también se pueden utilizar para destruirla.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/ryze/",
+        "op.gg":"https://las.op.gg/champion/ryze/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "102": {
+        "name":"Samira",
+        "header":"la rosa del desierto",
+        "description":"Samira ve a la muerte a los ojos con una confianza obstinada, en busca de la emoción, adonde sea que vaya. Después de que su hogar shurimano fuera destruido cuando era niña, Samira encontró su verdadero llamado en Noxus, donde construyó su reputación de temeraria con estilo, asumiendo misiones peligrosas de alto riesgo. Con pistolas de pólvora negra y una espada de diseño personalizado, Samira triunfa bajo circunstancias de vida o muerte, eliminando con destreza y estilo a cualquiera que se interponga en su camino.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/samira/",
+        "op.gg":"https://las.op.gg/champion/samira/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "103": {
+        "name":"Sejuani",
+        "header":"la furia del norte",
+        "description":"Sejuani es la brutal e implacable Hija del Hielo y líder de la Garra Invernal, una de las tribus más temidas del Fréljord. La supervivencia de su gente es una constante y desesperada batalla contra los elementos, lo que los obliga a invadir a noxianos, demacianos y avarosanos por igual para sobrevivir a los duros inviernos. Sejuani encabeza los más peligrosos de esos ataques montada en su jabalí, Bristle, mientras blande su mangual de Hielo Puro para congelar y quebrar a sus enemigos.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/sejuani/",
+        "op.gg":"https://las.op.gg/champion/sejuani/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "104": {
+        "name":"Senna",
+        "header":"la redentora",
+        "description":"Condenada desde la infancia a ser acechada por la sobrenatural Niebla Negra, Senna se unió a una orden sagrada conocida como los Centinelas de la Luz y luchó salvajemente contra ella. No obstante, el cruel espectro Thresh la asesinó y encerró su alma en una linterna. Senna se rehusó a perder la esperanza y, dentro de la linterna, aprendió a usar la Niebla; tras ello, reemergió en una nueva vida, cambiada para siempre. Ahora, cada disparo de su arma reliquia combina la oscuridad y la luz. Con ella, Senna busca acabar con Niebla Negra al ponerla en su propia contra y así redimir a las almas perdidas que lleva dentro.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/senna/",
+        "op.gg":"https://las.op.gg/champion/senna/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "105": {
+        "name":"Seraphine",
+        "header":"la cantante soñadora",
+        "description":"Nacida en Piltóver de padres zaunitas, Seraphine es capaz de escuchar las almas de otros; el mundo canta para ella, y ella canta para él. Aunque estos sonidos la abrumaban en su juventud, ahora acude a ellos para inspirarse y convertir el caos en una sinfonía. Se presenta en las ciudades hermanas para recordarles a sus ciudadanos que no están solos, que son más fuertes juntos y que, ante sus ojos, su potencial es ilimitado.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/seraphine/",
+        "op.gg":"https://las.op.gg/champion/seraphine/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "106": {
+        "name":"Sett",
+        "header":"el jefe",
+        "description":"Sett, uno de los líderes del creciente inframundo criminal de Jonia, ascendió a la fama tras la guerra con Noxus. Se inició como un humilde púgil en las arenas de pelea de Navori, pero pronto ganó notoriedad por su fuerza salvaje y su habilidad para soportar castigos aparentemente interminables. Tras ascender en las clasificaciones de los combatientes locales, Sett se abrió camino a golpes hasta la cima y ahora es quien dirige las arenas en las que alguna vez peleó.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/sett/",
+        "op.gg":"https://las.op.gg/champion/sett/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
     }
 }
