@@ -45,6 +45,7 @@ We managed to write RoboTito in a way that you can take the code and change the 
 
 ## 👨‍💻 Contributing or using RoboTito's code
 If you want to contribute, great!. Fork the repository, make your changes (following the guidelines) and we will check.
+- More information here: [CONTRIBUTING.md](https://github.com/Ti7oyan/RoboTito/blob/master/CONTRIBUTING.md)
 
 ### Other ways to contribute
 You can talk to us in our [Discord server](https://discord.gg/W2ReeE6kV5)
