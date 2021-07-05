@@ -4,22 +4,29 @@ from cog.functions import rbColor
 from discord.ext import commands
 from translate import Translator
 
+file = discord.File('assets/github_512x512.png', 'image.png')
+
+with open('databases/db_languages.json', encoding='utf-8') as f:
+    data = f.read()
+    lang = json.loads(data)
+
 
 def language_translate(language):
-    with open('databases/db_languages.json', encoding='utf-8') as f:
-        data = f.read()
-        lang = json.loads(data)
-        if language in lang:
-            codename = lang[language]['codename']
-            return codename
-        else:
-            pass
+    if language in lang:
+        codename = lang[language]['codename']
+        return codename
+    else:
+        pass
 
 
-def language_embed(translation, fromlang, tolang):
-    e = discord.Embed(title=translation, color=rbColor())
-    e.add_field(name='Traducido:', value=f'**{fromlang}** >> **{tolang}**')
-    e.set_thumbnail(url='https://i.imgur.com/0o5ZKBl.png')
+def language_embed(word, translation, fromlang, tolang):
+    e = discord.Embed(title=translation,
+                      description=f'La traducción de "{word}" del '
+                                  f'**{fromlang}** al **{tolang}**'
+                                  f' es {translation}.',
+                      color=rbColor())
+    e.set_footer(text='translate-python, por Terry Yin',
+                 icon_url='attachment://image.png')
     return e
 
 
@@ -30,7 +37,8 @@ class Translate(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['traducir'], help='¡Traduce oraciones!')
+    @commands.command(aliases=['traducir', 'tte'],
+                      help='¡Traduce oraciones!')
     async def translate(self, ctx, fromlang, tolang, *, args: str):
         fl = language_translate(str.lower(fromlang))
         if fl is None:
@@ -44,8 +52,8 @@ class Translate(commands.Cog,
             else:
                 translator = Translator(from_lang=fl, to_lang=tl)
                 translation = translator.translate(args)
-                e = language_embed(translation, fromlang, tolang)
-                await ctx.send(embed=e)
+                e = language_embed(args, translation, fromlang, tolang)
+                await ctx.send(embed=e, file=file)
 
 
 def setup(bot):

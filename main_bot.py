@@ -19,8 +19,7 @@ logger.addHandler(handler)
 # Start
 intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix=['r.', 'r!', 'rt.'],
-                   intents=intents, help_command=None)
+bot = commands.Bot(command_prefix=['t.'], intents=intents, help_command=None)
 
 
 for filename in os.listdir('./cog'):
@@ -49,6 +48,7 @@ class MyHelp(commands.MinimalHelpCommand):
 
         embed.description = f'**{len(bot.commands)}** comandos en total.'
         embed.color = rbColor()
+        embed.set_footer(text='r.help <categoría> para más información.')
         await ctx.send(embed=embed)
 
     async def send_command_help(self, command):
@@ -107,6 +107,6 @@ async def on_ready():
 
 with open('databases/config.toml', encoding='utf-8') as config:
     config_data = tomli.load(config)
-    token = config_data['token']
+    token = config_data['test']
 
 bot.run(token)

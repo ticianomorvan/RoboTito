@@ -1358,7 +1358,6 @@
             "support":false
         }
     },
-
     
     "86": {
         "name":"Oriana",
@@ -1505,7 +1504,7 @@
     },
 
     "95": {
-        "name":"Rek'sai",
+        "name":"Rek'Sai",
         "header":"la excavadora del vacío",
         "description":"Rek'Sai es una depredadora sin piedad y un engendro del Vacío que se mueve debajo de la tierra para emboscar y devorar a las presas desprevenidas. Su hambre insaciable ha dejado en calidad de desecho a regiones enteras del antes gran imperio de Shurima. Comerciantes, mercaderes y hasta caravanas armadas viajan se desvían cientos de kilómetros de su camino para evitar sus tierras de caza y las de sus descendientes. Todos saben que cuando Rek'Sai aparece en el horizonte, es una garantía que la muerte vendrá desde abajo.",
         "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg",
