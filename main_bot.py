@@ -19,7 +19,7 @@ logger.addHandler(handler)
 # Start
 intents = discord.Intents.all()
 
-bot = commands.Bot(command_prefix=['t.'], intents=intents, help_command=None)
+bot = commands.Bot(command_prefix=['r.'], intents=intents, help_command=None)
 
 
 for filename in os.listdir('./cog'):
@@ -107,6 +107,6 @@ async def on_ready():
 
 with open('databases/config.toml', encoding='utf-8') as config:
     config_data = tomli.load(config)
-    token = config_data['test']
+    token = config_data['token']
 
 bot.run(token)
