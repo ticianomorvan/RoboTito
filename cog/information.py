@@ -100,9 +100,9 @@ class Information(commands.Cog,
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['binfo'],
-                      help='Obtén información sobre el bot.')
-    async def botinfo(self, ctx):
+    @commands.command(help='Obtén información sobre el bot.')
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    async def info(self, ctx):
         app = await self.bot.application_info()
         prefix = self.bot.command_prefix
         users = len(self.bot.users)
@@ -113,8 +113,6 @@ class Information(commands.Cog,
                                       ' funcionalidades innovadoras o pocas'
                                       ' veces vistas.',
                           color=rbColor())
-        e.set_author(name='RoboTito - Documentación',
-                     url='https://ticiano-morvan.gitbook.io/robotito/')
         e.set_thumbnail(url=app.icon_url)
         e.add_field(name='Servidores',
                     value='Participo en un total de:'
@@ -123,9 +121,8 @@ class Information(commands.Cog,
         e.add_field(name='Creador',
                     value=f'Fui creado por: **{app.owner}**',
                     inline=False)
-        e.add_field(name='Prefijos',
-                    value=f'Mis prefijos son: **{prefix[0]}**, **{prefix[1]}**'
-                          f' y **{prefix[2]}**',
+        e.add_field(name='Prefijo',
+                    value=f'Mis prefijo es: {prefix[0]}',
                     inline=False)
         e.add_field(name='Usuarios',
                     value=f'Puedo ver a un total de **{users}** usuarios entre'
@@ -135,19 +132,80 @@ class Information(commands.Cog,
                     value='Puedes invitarme a tu servidor a través de este'
                           ' [link](https://discord.com/api/oauth2/authorize?'
                           'client_id=820819824669491210&permissions=8'
-                          '&scope=bot)',
+                          '&scope=bot).',
                     inline=False)
         await ctx.send(embed=e)
 
-    @commands.command(aliases=['svinfo'],
+    @commands.command(aliases=['docs', 'documentacion'],
+                      help='Obtén la documentación de RoboTito.')
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    async def documentation(self, ctx):
+        e = discord.Embed(color=rbColor(),
+                          description='[RoboTito en **GitBook**]'
+                                      '(https://ticiano-morvan.gitbook.io)')
+        e.set_author(name='Documentación',
+                     icon_url='https://create.twu.ca/wp-content/uploads/'
+                              '2017/08/gitbook-logo-small.png')
+        await ctx.send(embed=e)
+
+    @commands.command(help='Formas de contribuir a RoboTito a'
+                           ' través de GitHub.')
+    @commands.cooldown(1, 5, commands.BucketType.guild)
+    async def github(self, ctx):
+        e = discord.Embed(color=rbColor(), title='GitHub',
+                          description='[Repositorio](https://github.com/'
+                                      'Ti7oyan/RoboTito)')
+        e.set_thumbnail(url='https://www.shareicon.net/data/2016/06/20/'
+                            '606964_github_4096x4096.png')
+        e.add_field(name='Formas de contribuir:',
+                    value='1. Avisándonos de errores: [**Issues**]'
+                          '(https://github.com/Ti7oyan/RoboTito/issues)\n'
+                          '2. Proponiendo cambios: [**PRs**]'
+                          '(https://github.com/Ti7oyan/RoboTito/pulls)\n'
+                          '3. Programando: [**Contributing**]'
+                          '(https://github.com/Ti7oyan/RoboTito/blob/master/'
+                          'CONTRIBUTING.md)\n')
+        await ctx.send(embed=e)
+
+    @commands.command(aliases=['svinfo', 'guildinfo'],
                       help='Obtén información sobre este servidor.')
+    @commands.cooldown(1, 7.5, commands.BucketType.guild)
     async def serverinfo(self, ctx):
         e = Server.guild_embed(ctx.guild)
         await ctx.send(embed=e)
 
+    @commands.command(aliases=['svicon'],
+                      help='Obtén el ícono del servidor.')
+    @commands.cooldown(1, 7.5, commands.BucketType.guild)
+    async def servericon(self, ctx):
+        e = discord.Embed(color=rbColor())
+        e.set_author(name=ctx.guild.name)
+        e.set_image(url=ctx.guild.icon_url)
+        await ctx.send(embed=e)
+
+    @commands.command(aliases=['roles'],
+                      help='Obtén todos los roles del servidor.')
+    @commands.cooldown(1, 7.5, commands.BucketType.guild)
+    async def serverroles(self, ctx):
+        e = discord.Embed(color=rbColor())
+
+        def roles(guild: Guild):
+            all_roles = ' '
+            for role in reversed(guild.roles):
+                if role.name == '@everyone':
+                    pass
+                else:
+                    all_roles += f'<@&{role.id}> ({len(role.members)})\n'
+            return all_roles
+
+        e.add_field(name='Todos los roles de este servidor:',
+                    value=roles(ctx.guild))
+        await ctx.send(embed=e)
+
     @commands.command(aliases=['usinfo', 'uinfo'],
                       help='Obtén información acerca de ti o alguien más.')
-    async def userinfo(self, ctx, member: Member = None):
+    @commands.cooldown(1, 10, commands.BucketType.user)
+    async def userinfo(self, ctx, member: discord.Member = None):
         if member is not None:
             e = Member.embed(member)
             await ctx.send(embed=e)
@@ -157,7 +215,8 @@ class Information(commands.Cog,
 
     @commands.command(aliases=['avatar', 'av'],
                       help='Obtén tu avatar o de alguien más.')
-    async def useravatar(self, ctx, member: Member = None):
+    @commands.cooldown(1, 12.5, commands.BucketType.user)
+    async def useravatar(self, ctx, member: discord.Member = None):
         if member is not None:
             e = discord.Embed(color=rbColor())
             e.set_author(name=member.name, icon_url=member.avatar_url)

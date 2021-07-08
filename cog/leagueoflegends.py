@@ -66,15 +66,33 @@ class LeagueOfLegends(commands.Cog,
                       help='Encuentra un campeón por su nombre.')
     async def championname(self, ctx, *, name: str):
         champ = get_name(name)
-        e = create_embed(champ)
-        await ctx.send(embed=e)
+        if champ is not None:
+            e = create_embed(champ)
+            await ctx.send(embed=e)
+        else:
+            e = discord.Embed(color=rbColor())
+            e.add_field(name='Hubo un error',
+                        value='No pude reconocer a ese campeón, por'
+                              ' favor, vuelve a intentarlo respetando'
+                              ' mayúsculas y símbolos. Los nombres exactos'
+                              ' que utlizo se encuentran en https://las.op.gg/'
+                              'champion/statistics')
+            await ctx.send(embed=e)
 
     @commands.command(aliases=['rol', 'role', 'chrole'],
                       help='Encuentra un campeón por su rol.')
     async def championrole(self, ctx, role: str):
-        champ = get_role(role)
-        e = create_embed(champ)
-        await ctx.send(embed=e)
+        if role in ['top', 'jg', 'mid', 'adc', 'support']:
+            champ = get_role(role)
+            e = create_embed(champ)
+            await ctx.send(embed=e)
+        else:
+            e = discord.Embed(color=rbColor())
+            e.add_field(name='No reconocí ese rol.',
+                        value=f'{role} no es un rol válido. Vuelve a'
+                              ' intentarlo usando: **top**, **jg**,'
+                              ' **mid**, **adc** o **support**.')
+            await ctx.send(embed=e)
 
     @commands.command(aliases=['chrandom', 'caleatorio', 'chrand'],
                       help='Obtén un campeón aleatorio.')
