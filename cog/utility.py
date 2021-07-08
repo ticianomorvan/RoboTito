@@ -92,12 +92,11 @@ class Utility(commands.Cog, name='Utilidad',
                        currency_to: str, amount: int = None):
 
         async def exchangeRate(cFrom: str, cTo: str):
-            url = f"""https://exchangerate-api.p.rapidapi.com/
-                  rapid/latest/{cFrom}"""
+            u = f'https://exchangerate-api.p.rapidapi.com/rapid/latest/{cFrom}'
             headers = {'x-rapidapi-key': Utility.get_rapidapi(),
                        'x-rapidapi-host': "exchangerate-api.p.rapidapi.com"}
             async with ClientSession() as session:
-                async with session.get(url=url, headers=headers) as r:
+                async with session.get(url=u, headers=headers) as r:
                     if r.status == 200:
                         json_response = await r.json()
                         return json_response['rates'][cTo]

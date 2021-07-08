@@ -205,7 +205,7 @@ class Information(commands.Cog,
     @commands.command(aliases=['usinfo', 'uinfo'],
                       help='Obtén información acerca de ti o alguien más.')
     @commands.cooldown(1, 10, commands.BucketType.user)
-    async def userinfo(self, ctx, member: Member = None):
+    async def userinfo(self, ctx, member: discord.Member = None):
         if member is not None:
             e = Member.embed(member)
             await ctx.send(embed=e)
@@ -216,7 +216,7 @@ class Information(commands.Cog,
     @commands.command(aliases=['avatar', 'av'],
                       help='Obtén tu avatar o de alguien más.')
     @commands.cooldown(1, 12.5, commands.BucketType.user)
-    async def useravatar(self, ctx, member: Member = None):
+    async def useravatar(self, ctx, member: discord.Member = None):
         if member is not None:
             e = discord.Embed(color=rbColor())
             e.set_author(name=member.name, icon_url=member.avatar_url)

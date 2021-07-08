@@ -93,7 +93,7 @@ class Variety(commands.Cog,
 
         if member is not None:
             e = discord.Embed(color=rbColor())
-            e.add_field(name=f'El amor entre {member.name} y tu es del...',
+            e.add_field(name=f'El amor entre {member.name} y tú es del...',
                         value=f'**{loveProbability}%**,'
                               f' {get_love(loveProbability)}')
             e.set_image(url=get_love_gif(loveProbability))
@@ -101,7 +101,8 @@ class Variety(commands.Cog,
         else:
             await ctx.send('Deberías mencionar a alguien.')
 
-    @commands.command(name='ruser')
+    @commands.command(aliases=['ruser', 'ualeatorio'],
+                      help='Obtén información de un usuario aleatorio.')
     async def randomuser(self, ctx):
         member = random.choice(ctx.guild.members)
         e = m.embed(member)

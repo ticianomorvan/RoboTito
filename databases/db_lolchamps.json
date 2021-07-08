@@ -1360,12 +1360,12 @@
     },
     
     "86": {
-        "name":"Oriana",
+        "name":"Orianna",
         "header":"la doncella mecánica",
         "description":"Aunque una vez una curiosa chica de carne y hueso, Orianna es ahora una maravilla tecnológica hecha completamente de relojería. Sufrió una terrible enfermedad después de un accidente en los bajos distritos de Zaun y su deteriorado cuerpo tuvo que ser reemplazado con refinados artilugios, parte por parte. Acompañada de una extraordinaria esfera de latón que construyó para su compañía y protección, Orianna ahora es libre de explorar las maravillas de Piltóver y más allá.",
-        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Oriana_0.jpg",
-        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/oriana/",
-        "op.gg":"https://las.op.gg/champion/oriana/statistics/",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/orianna/",
+        "op.gg":"https://las.op.gg/champion/orianna/statistics/",
         "roles": {
             "top":false,
             "jg":false,
@@ -2128,22 +2128,6 @@
     },
 
     "134": {
-        "name":"nombre",
-        "header":"frase",
-        "description":"descripción",
-        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nombre_0.jpg",
-        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/nombre/",
-        "op.gg":"https://las.op.gg/champion/nombre/statistics/",
-        "roles": {
-            "top":true,
-            "jg":false,
-            "mid":false,
-            "adc":false,
-            "support":false
-        }
-    },
-
-    "135": {
         "name":"Veigar",
         "header":"el pequeño maestro del mal",
         "description":"Veigar, entusiasta maestro de la magia oscura, se adaptó a poderes que pocos mortales se atreven a explorar. Como un habitante de espíritu libre de Ciudad de Bandle, deseaba rebasar las limitaciones de la magia yordle. Así fue como llegó a unos textos arcanos que habían permanecido ocultos por miles de años. Ahora Veigar es una criatura necia con una interminable fascinación por los misterios del universo y a menudo es subestimado por otros. Aunque él cree que verdaderamente es malvado, posee una moralidad interna que hace dudar a los demás sobre sus motivaciones reales.",
@@ -2159,7 +2143,7 @@
         }
     },
 
-    "136": {
+    "135": {
         "name":"Vel'Koz",
         "header":"el ojo del vacío",
         "description":"No está claro si Vel'Koz fue la primera manifestación del Vacío que emergió en Runaterra, pero ciertamente no ha habido ninguna que llegue a su nivel de cruel y calculadora conciencia. Mientras que los suyos devoran o corrompen todo a su alrededor, él busca indagar y estudiar el mundo físico y a los extraños seres guerreros que habitan allí para encontrar cualquier debilidad que los seres del Vacío puedan aprovechar. Pero Vel'Koz no es un observador pasivo, pues ataca a sus enemigos con un mortífero plasma y altera las leyes del mismo mundo.",
@@ -2175,7 +2159,7 @@
         }
     },
 
-    "137": {
+    "136": {
         "name":"Vi",
         "header":"la vigilante de piltóver",
         "description":"Vi es una antigua criminal de las calles de Zaun impulsiva e imponente con un respeto hacia las autoridades casi nulo. Vi creció sola y desarrolló un instinto de supervivencia muy fino, así como un sentido del humor retorcido. Ahora trabaja con los Protectores de Piltóver para mantener la paz y utiliza unos poderosos guanteletes hextech que pueden atravesar muros y golpear a los sospechosos con la misma facilidad.",
@@ -2191,7 +2175,7 @@
         }
     },
 
-    "138": {
+    "137": {
         "name":"Viego",
         "header":"el rey arruinado",
         "description":"Otrora gobernante de un reino perdido en el tiempo, Viego falleció hace mas de mil años cuando su intento de regresar a su esposa de la muerte desencadenó la catástrofe mágica conocida como la Ruina. Transformado en un espectro poderoso y desprovisto de vida, y torturado por el anhelo obsesivo de su reina muerta hace siglos, Viego ahora es el Rey Arruinado. Controla a los letales Harrowings a la vez que explora Runaterra en búsqueda de cualquier cosa que pueda, algún día, traer de regreso a su esposa. Además, destruye todo a su paso mientras la Niebla Negra brota sin cesar de su cruel y roto corazón.",
@@ -2207,7 +2191,7 @@
         }
     },
 
-    "139": {
+    "138": {
         "name":"Viktor",
         "header":"el heraldo mecánico",
         "description":"Como heraldo de una nueva era tecnológica, Viktor ha dedicado su vida al progreso de la humanidad. Es un idealista que busca elevar a la gente de Zaun a un nuevo nivel de comprensión y cree que la humanidad solo podrá alcanzar todo su potencial una vez que haya aceptado la gloriosa evolución de la tecnología. Con un cuerpo amplificado con acero y ciencia, Viktor encabeza una cruzada para un futuro más brillante.",
@@ -2223,7 +2207,7 @@
         }
     },
 
-    "140": {
+    "139": {
         "name":"Vladimir",
         "header":"el segador carmesí",
         "description":"Vladimir, un demonio con sed de sangre mortal, ha influenciado la política de Noxus desde los primeros días del imperio. Además de extender su vida de manera sobrenatural, su maestría de la hemomancia le permite controlar las mentes y cuerpos de otros tan fácil como los suyos. En las extravagantes salas de la aristocracia de Noxus, esto le ha permitido hacerse de una fama y personalidad a su alrededor mientras que en los callejones más bajos le permite desangrar a sus enemigos hasta secarlos.",
@@ -2236,6 +2220,262 @@
             "mid":true,
             "adc":false,
             "support":false
+        }
+    },
+
+    "140": {
+        "name":"Volibear",
+        "header":"la tormenta implacable",
+        "description":"Para quienes aún lo veneran, Volibear es la encarnación de la tormenta. Destructivo, salvaje y con una determinación obstinada, existió antes de que los mortales caminaran sobre la tundra del Fréljord. Protege salvajemente las tierras que él y los demás semidioses de su familia crearon. Tras cultivar un odio profundo hacia la civilización y sus debilidades, ahora pelea para restaurar las viejas costumbres, aquellos tiempos cuando la tierra era indómita y la sangre se derramaba libremente. Combate con avidez a todos aquellos que se le oponen, con garras, dientes y un estruendoso poderío.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/volibear/",
+        "op.gg":"https://las.op.gg/champion/volibear/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "141": {
+        "name":"Warwick",
+        "header":"la furia desatada de Zaun",
+        "description":"Warwick es un monstruo que ronda por los callejones grises de Zaun. Víctima de agonizantes experimentos, su cuerpo está fusionado con un sistema complejo de cámaras y bombas, una maquinaria que llena sus venas con furia alquímica. Warwick emerge de las sombras y ataca a los criminales que aterrorizan las profundidades de la ciudad. Lo atrae la sangre y su aroma lo vuelve loco. Nadie que la derrame puede escapar de él.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/warwick/",
+        "op.gg":"https://las.op.gg/champion/warwick/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "142": {
+        "name":"Wukong",
+        "header":"el rey de los monos",
+        "description":"Wukong es un vastaya embaucador que usa su fuerza, agilidad e inteligencia para confundir a sus oponentes y obtener la ventaja. Tras encontrar un amigo de por vida en el guerrero conocido como Maestro Yi, Wukong se convirtió en el último aprendiz de la antigua arte marcial conocida como Wuju. Armado con un bastón encantado, Wukong busca impedir que Jonia caiga en la ruina.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/wukong/",
+        "op.gg":"https://las.op.gg/champion/wukong/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "143": {
+        "name":"Xayah",
+        "header":"la rebelde",
+        "description":"Letal y precisa, Xayah es una vastaya revolucionaria que lleva a cabo una guerra personal para salvar a su gente. Utiliza su velocidad, astucia y plumas afiladas para abatir a cualquiera que se interponga en su camino. Xayah pelea junto a su compañero y amante Rakan para proteger a su decreciente tribu y devolver la gloria a su raza.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/xayah/",
+        "op.gg":"https://las.op.gg/champion/xayah/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "144": {
+        "name":"Xerath",
+        "header":"el mago ascendente",
+        "description":"Xerath es un mago Ascendido de la antigua Shurima, un ser con energía arcana retorciéndose en los quebrados fragmentos de un sarcófago mágico. Estuvo atrapado durante milenios bajo las arenas del desierto, pero el ascenso de Shurima lo liberó de su prisión ancestral. Arrastrado a la locura por el poder, ahora busca recuperar lo que cree que le pertenece y reemplazar las civilizaciones soberbias del mundo con una diseñada a su imagen y semejanza.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/xerath/",
+        "op.gg":"https://las.op.gg/champion/xerath/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "145": {
+        "name":"Xin Zhao",
+        "header":"el senescal de Demacia",
+        "description":"Xin Zhao es un determinado guerrero y leal a la dinastía regente de los Escudo de Luz. Alguna vez condenado al coliseo de combate de Noxus, sobrevivió a un sin fin de batallas de gladiadores, pero después de ser liberado por fuerzas demacianas, juró su vida y lealtad a sus valientes liberadores. Armado con su lanza favorita de tres filos, Xin Zhao ahora combate por su reino adoptado y reta con audacia a cualquier enemigo sin importar la situación.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/xin-zhao/",
+        "op.gg":"https://las.op.gg/champion/xinzhao/statistics/",
+        "roles": {
+            "top":false,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "146": {
+        "name":"Yasuo",
+        "header":"el imperdonable",
+        "description":"Yasuo, un jonio de gran determinación, es un ágil espadachín entrenado para empuñar al mismo viento contra sus enemigos. Cuando era joven y orgulloso, lo acusaron de asesinar a su maestro, algo que no era verdad. Al no poder demostrar su inocencia, se vio obligado a tomar la vida de su hermano en defensa propia. Incluso después de que el verdadero asesino de su maestro quedara revelado, Yasuo sigue sin poder perdonarse a sí mismo por todo lo que ha hecho. Ahora, deambula en su tierra natal y solo cuenta con el viento para guiar su espada.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/yasuo/",
+        "op.gg":"https://las.op.gg/champion/yasuo/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "147": {
+        "name":"Yone",
+        "header":"el imborrable",
+        "description":"En vida era Yone, medio hermano de Yasuo y estudiante destacado de la escuela de espadachines de su aldea. Tras morir a manos de su hermano, fue acechado por una entidad malévola del reino espiritual y forzado a asesinarla con su propia espada. Ahora, condenado a portar una máscara demoníaca sobre el rostro, Yone caza sin descanso a todas esas criaturas para comprender en qué se ha convertido.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/yone/",
+        "op.gg":"https://las.op.gg/champion/yone/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "148": {
+        "name":"Yorick",
+        "header":"pastor de almas",
+        "description":"Yorick, el último superviviente de una orden religiosa olvidada hace tiempo, carga con la bendición y la maldición del poder sobre los muertos. Atrapado en las Islas de la Sombra, sus únicos compañeros son cadáveres en descomposición y los espíritus aullantes que atrae. Sus monstruosos actos ocultan un objetivo noble: liberar a su hogar de la maldición de la Ruina.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/yorick/",
+        "op.gg":"https://las.op.gg/champion/yorick/statistics/",
+        "roles": {
+            "top":true,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "149": {
+        "name":"Yuumi",
+        "header":"la gatita mágica",
+        "description":"Yuumi, una gatita mágica proveniente de la Ciudad de Bandle, alguna vez fue la compañera de una hechicera yordle, Norra. Cuando su dueña desapareció misteriosamente, Yuumi se convirtió en la Guardiana del Libro de los Umbrales, perteneciente a Norra, cuyas páginas contienen portales que usan para viajar y buscarla. En su deseo de cariño, Yuumi busca compañeros amigables con quienes formar un equipo a lo largo de su travesía, protegiéndolos con escudos luminosos y su feroz determinación. Libro se esfuerza por mantener a Yuumi enfocada en su misión, pero las comodidades terrenales, como las siestas y el pescado, a menudo capturan su atención. Sin embargo, al final, ella siempre vuelve a su misión de encontrar a su amiga.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/yuumi/",
+        "op.gg":"https://las.op.gg/champion/yuumi/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "150": {
+        "name":"Zac",
+        "header":"el arma secreta",
+        "description":"Zac es el producto de un derrame tóxico que pasó por una soldadura quimtech y que cayó en una caverna aislada en lo profundo del Sumidero de Zaun. A pesar de su humilde origen, Zac pasó de ser un fluido primigenio a un ser pensante que vive en las tuberías de la ciudad y que emerge de vez en cuando para ayudar a quienes lo necesitan o para reconstruir la infraestructura rota de Zaun.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/zac/",
+        "op.gg":"https://las.op.gg/champion/zac/statistics/",
+        "roles": {
+            "top":true,
+            "jg":true,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "151": {
+        "name":"Zed",
+        "header":"el maestro de las sombras",
+        "description":"Implacable y despiadado, Zed es el líder de la Orden de la Sombra, una organización que él creó con la intención de militarizar las tradiciones de artes marciales y mágicas de Jonia para repeler a los invasores noxianos. Durante la guerra, la desesperación lo llevó a revelar la forma secreta de las sombras, una malévola magia espiritual tan poderosa como corrupta y peligrosa. Zed dominó todas esas técnicas prohibidas para destruir cualquier amenaza para su nación o su nueva orden.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/zed/",
+        "op.gg":"https://las.op.gg/champion/zed/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "152": {
+        "name":"Ziggs",
+        "header":"el experto en hexplosivos",
+        "description":"Con un amor por las grandes bombas y los fusibles cortos, el yordle Ziggs es una explosiva fuerza de la naturaleza. Como asistente de un inventor en Piltóver, estaba aburrido de su predecible vida y se hizo amigo de una loca bombardera de cabello azul llamada Jinx. Después de una loca noche en la ciudad, Ziggs tomó su consejo y se mudó a Zaun, donde ahora explora sus fascinaciones con más libertad, aterrorizando tanto a los químicos como a ciudadanos comunes en su misión incansable de hacer estallar las cosas.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/ziggs/",
+        "op.gg":"https://las.op.gg/champion/ziggs/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":true,
+            "support":false
+        }
+    },
+
+    "153": {
+        "name":"Zilean",
+        "header":"el guardián del tiempo",
+        "description":"Anteriormente un poderoso mago de Icathia, Zilean se obsesionó con el paso del tiempo después de presenciar la destrucción de su tierra por el Vacío. No dando ni un minuto para lamentar la catastrófica pérdida, invocó a ancestrales magias del tiempo para revelar todos los posibles resultados. Habiéndose convertido en un inmortal funcionalmente, Zilean ahora se mueve entre pasado, presente y futuro, manipulando y distorsionando el flujo del tiempo a su alrededor, siempre en búsqueda de ese escurridizo momento que regresará el reloj y revertirá la destrucción de Icathia.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/zilean/",
+        "op.gg":"https://las.op.gg/champion/zilean/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
+        }
+    },
+
+    "154": {
+        "name":"Zoe",
+        "header":"el aspecto del crepúsculo",
+        "description":"Como la personificación de las travesuras, la imaginación y el cambio, Zoe actúa como la mensajera cósmica de Targón y anuncia grandes acontecimientos que pueden alterar mundos. Su mera presencia distorsiona las matemáticas arcanas que rigen las realidades; en ocasiones, sin ser consciente de su poder, provoca todo tipo de cataclismos.Tal vez eso explique la actitud indiferente con la cual Zoe \"cumple\" con su deber. Tomándose todo el tiempo de los mundos para jugar, engañar a los mortales o simplemente entretenerse a sí misma. Un encuentro con Zoe puede ser alegre y alentador, pero siempre hay algo más detrás de las apariencias y a menudo es muy peligroso.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/zoe/",
+        "op.gg":"https://las.op.gg/champion/zoe/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":true,
+            "adc":false,
+            "support":false
+        }
+    },
+
+    "155": {
+        "name":"Zyra",
+        "header":"el despertar de las espinas",
+        "description":"Nacida en una antigua y mágica catástrofe, Zyra es la manifestación de la ira de la naturaleza: una seductora mezcla entre planta y humana que crea vida nueva a cada paso. Ve a los mortales de Valoran como poco más que presa para su progenie de semillas y no le molesta acabarlos con lluvias de mortales espinas. Aunque su verdadero propósito no se ha revelado, Zyra recorre el mundo satisfaciendo sus más básicas necesidades de colonizarlo y despojarlo de cualquier otra forma de vida.",
+        "icon":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg",
+        "lolpage":"https://las.leagueoflegends.com/es-ar/champions/zyra/",
+        "op.gg":"https://las.op.gg/champion/zyra/statistics/",
+        "roles": {
+            "top":false,
+            "jg":false,
+            "mid":false,
+            "adc":false,
+            "support":true
         }
     }
 }
