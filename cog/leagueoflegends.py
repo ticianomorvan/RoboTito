@@ -1,13 +1,13 @@
-import discord
-import random
-import json
-from cog.functions import rbColor
+from discord import Embed
+from random import choice, randint
+from json import loads
+from cog.helpers import rbColor
 from discord.ext import commands
 
 
 with open('databases/db_lolchamps.json', encoding='utf-8') as db:
     data = db.read()
-    champs = json.loads(data)
+    champs = loads(data)
 
 
 def get_role(role: str):
@@ -19,8 +19,7 @@ def get_role(role: str):
         else:
             pass
 
-    choice = random.choice(list)
-    return choice
+    return choice(list)
 
 
 def get_name(name: str):
@@ -33,13 +32,13 @@ def get_name(name: str):
 
 def get_random():
     index = len(champs)
-    choice = random.randint(1, index)
+    choice = randint(1, index)
     return choice
 
 
 def create_embed(champ):
     index = str(champ)
-    e = discord.Embed(color=rbColor())
+    e = Embed(color=rbColor())
     e.set_author(name='Campeón de League of Legends',
                  url=champs[index]['lolpage'],
                  icon_url='https://img1.wikia.nocookie.net/'
@@ -70,7 +69,7 @@ class LeagueOfLegends(commands.Cog,
             e = create_embed(champ)
             await ctx.send(embed=e)
         else:
-            e = discord.Embed(color=rbColor())
+            e = Embed(color=rbColor())
             e.add_field(name='Hubo un error',
                         value='No pude reconocer a ese campeón, por'
                               ' favor, vuelve a intentarlo respetando'
@@ -87,7 +86,7 @@ class LeagueOfLegends(commands.Cog,
             e = create_embed(champ)
             await ctx.send(embed=e)
         else:
-            e = discord.Embed(color=rbColor())
+            e = Embed(color=rbColor())
             e.add_field(name='No reconocí ese rol.',
                         value=f'{role} no es un rol válido. Vuelve a'
                               ' intentarlo usando: **top**, **jg**,'

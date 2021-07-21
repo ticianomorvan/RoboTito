@@ -1,6 +1,6 @@
-import discord
-from cog.functions import rbColor
+from discord import Embed
 from discord.ext import commands
+from cog.helpers import rbColor
 
 
 class Error(commands.Cog):
@@ -9,7 +9,7 @@ class Error(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        e = discord.Embed(color=rbColor())
+        e = Embed(color=rbColor())
 
         if isinstance(error, commands.CommandNotFound):
             e.add_field(name='Comando erróneo',

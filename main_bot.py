@@ -1,8 +1,7 @@
 import discord
 import logging
-import os
 import tomli
-from cog.functions import rbColor
+from cog.helpers import rbColor
 from discord.ext import commands
 
 # Logging
@@ -21,10 +20,16 @@ intents = discord.Intents.all()
 
 bot = commands.Bot(command_prefix=['r.'], intents=intents, help_command=None)
 
+initial_extensions = ['cog.error_handling',
+                      'cog.information',
+                      'cog.interaction',
+                      'cog.leagueoflegends',
+                      'cog.moderation',
+                      'cog.utility',
+                      'cog.variety']
 
-for filename in os.listdir('./cog'):
-    if filename.endswith('.py'):
-        bot.load_extension(f'cog.{filename[:-3]}')
+for extension in initial_extensions:
+    bot.load_extension(extension)
 
 
 class MyHelp(commands.MinimalHelpCommand):
@@ -102,8 +107,9 @@ async def on_ready():
 # Run
 
 # You have to create an "config.toml" file at databases folder, with:
-# "token": "your_bot_token"
-# "api": "your_rapidapi_token"
+# token = "your_bot_token"
+# rapidapi = "your_rapidapi_token"
+# cuttly = "your_cuttly_token"
 
 with open('databases/config.toml', encoding='utf-8') as config:
     config_data = tomli.load(config)

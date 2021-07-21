@@ -7,7 +7,7 @@ import asyncio
 from aiohttp import ClientSession
 from random import randint
 from discord.ext import commands
-from cog.functions import rbColor
+from cog.helpers import rbColor
 from translate import Translator
 from datetime import datetime, timedelta, timezone
 
