@@ -1,10 +1,8 @@
 # Folders
 .vscode
 **/__pycache__/
-images
 
 # Databases
-databases/db_bot.json
 databases/config.toml
 
 # Files

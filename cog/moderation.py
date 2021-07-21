@@ -1,6 +1,6 @@
 import asyncio
 import discord
-from cog.functions import rbColor
+from cog.helpers import rbColor
 from discord.ext import commands
 
 
@@ -125,22 +125,10 @@ class Moderation(commands.Cog,
         if amount > 100:
             await ctx.send('No puedo borrar más de 100 mensajes.')
         else:
-            await ctx.channel.purge(limit=int(amount), bulk=False)
+            await ctx.channel.purge(limit=int(amount), bulk=True)
             await asyncio.sleep(1)
             await ctx.send(f'Borrados **{amount}** mensajes en'
                            f' {ctx.channel.mention} por {ctx.author.name}.')
-
-    @commands.command(name='nick', aliases=['apodo'],
-                      help='Cambia tu apodo o el de otro usuario.')
-    @commands.cooldown(1, 10, commands.BucketType.user)
-    async def nick(self, ctx, *, nick: str, member: discord.Member = None):
-        if member is not None:
-            if ctx.author.guild_permissions.manage_nicknames is True:
-                await member.edit(nick=nick)
-            else:
-                await ctx.send('No tienes los permisos necesarios.')
-        else:
-            await ctx.author.edit(nick=nick)
 
 
 def setup(bot):
