@@ -18,11 +18,14 @@
 ## 📚 Documentation!
 [RoboTito's Documentation](https://ticiano-morvan.gitbook.io)
 
-### 📃 NOTE: 
+## 🤖 Vote for RoboTito in top.gg!
+[RoboTito's top.gg page](https://top.gg/bot/820819824669491210)
+
+### 📃 NOTE:
 We speak spanish, so we made the website based on that.
 
 ## ⚡️ Some features you would love!
-- **Gifs** commands (hug, pat, kiss, etc.) with *+100 gifs for interacting*.
+- **Interaction** commands (hug, pat, kiss, etc.) with *+115* gifs for interacting.
 - **Fun** commands (probability, 8ball, etc.)
 - **Translations** (with a *100% support of ISO 639-1*)
 - **Wikipedia** articles.
