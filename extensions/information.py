@@ -1,5 +1,7 @@
 import nextcord
 from nextcord.ext import commands
+from helpers.user import get_roles
+from helpers.client import github
 
 
 class Information(commands.Cog):
@@ -8,72 +10,85 @@ class Information(commands.Cog):
 
     @commands.command()
     async def profile(self, ctx: commands.Context,
-                      user: nextcord.Member = None):
+                      member: nextcord.Member = None):
         """Retrieves user information"""
-        if user is not None:
-            profile_image = user.avatar.url
-            profile_name = user.name
-            profile_created_at = user.created_at
-            profile_joined_at = user.joined_at
-            profile_color = user.colour
-            profile_id = user.id
-            profile_roles = user.roles
-            if user.nick is not None:
-                profile_nick = user.nick
-            else:
-                profile_nick = 'Este usuario no tiene apodo.'
+        if member is not None:
+            user = member
         else:
-            profile_image = ctx.author.avatar.url
-            profile_name = ctx.author.name
-            profile_created_at = ctx.author.created_at
-            profile_joined_at = ctx.author.joined_at
-            profile_color = ctx.author.colour
-            profile_id = ctx.author.id
-            profile_roles = ctx.author.roles
-            if ctx.author.nick is not None:
-                profile_nick = ctx.author.nick
-            else:
-                profile_nick = 'No tienes apodo.'
+            user = ctx.author
 
-        profile_embed = nextcord.Embed(title=profile_name, color=profile_color)
+        profile_embed = nextcord.Embed(title=user.name, color=user.color)
         profile_embed.set_author(
             name=self.bot.user.name,
-            icon_url=self.bot.user.default_avatar.url
+            icon_url=self.bot.user.default_avatar.url,
+            url=github
         )
-        profile_embed.set_thumbnail(url=profile_image)
+        if user.avatar.url is not None:
+            profile_embed.set_thumbnail(url=user.avatar.url)
+        else:
+            profile_embed.set_thumbnail(url=user.default_avatar.url)
+
         profile_embed.add_field(
-            name='Nombre:',
-            value=profile_name,
+            name='😎 Name:',
+            value=user.name,
             inline=False
         )
         profile_embed.add_field(
-            name='Nick:',
-            value=profile_nick,
+            name='🤔 Nick:',
+            value=user.nick,
             inline=False
         )
         profile_embed.add_field(
-            name='Cuenta creada:',
-            value=f'{profile_created_at.day}/{profile_created_at.month}'
-                  f'/{profile_created_at.year}',
+            name='📅 Account created:',
+            value=f'{user.created_at.day}/{user.created_at.month}'
+                  f'/{user.created_at.year}',
             inline=False
         )
         profile_embed.add_field(
-            name='Se unió:',
-            value=f'{profile_joined_at.day}/{profile_joined_at.month}'
-                  f'/{profile_joined_at.year}',
+            name='📅 Join date:',
+            value=f'{user.joined_at.day}/{user.joined_at.month}'
+                  f'/{user.joined_at.year}',
             inline=False
         )
         profile_embed.add_field(
-            name='ID:',
-            value=f'{profile_id}',
+            name='🪪 ID:',
+            value=f'{user.id}',
             inline=False
         )
         profile_embed.add_field(
-            name='Roles:',
-            value=f'{profile_roles}',
+            name='🔨 Roles:',
+            value=f'{get_roles(user)}',
             inline=False
         )
         await ctx.send(embed=profile_embed)
+
+    @commands.command()
+    async def avatar(self, ctx: commands.Context,
+                     member: nextcord.Member = None):
+        """Returns an user avatar."""
+        if member is not None:
+            user = member
+        else:
+            user = ctx.author
+
+        avatar_embed = nextcord.Embed(
+            title=user.name,
+            color=user.color
+        )
+        avatar_embed.set_author(
+            name=self.bot.user.name,
+            icon_url=self.bot.user.default_avatar.url,
+            url=github
+        )
+        if user.avatar.url is not None:
+            avatar_embed.set_image(
+                url=user.avatar.url
+            )
+        else:
+            avatar_embed.set_image(
+                url=user.default_avatar.url
+            )
+        await ctx.send(embed=avatar_embed)
 
 
 def setup(bot: commands.Bot):
