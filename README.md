@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/Ti7oyan/RoboTito/tree/v2.0.0/assets/robotito.png" width="200" height="200">
+    <img src="https://github.com/Ti7oyan/RoboTito/blob/v2.0.0/assets/robotito.png?raw=true" width="200" height="200">
     <h1>robotito</h1>
     <p>robotito is a feature-rich, multi-purpose Discord bot that focuses in stability, fiability and usability.</p>
 </p>
