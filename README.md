@@ -12,6 +12,9 @@
   <img src="https://scrutinizer-ci.com/g/Ti7oyan/RoboTito/badges/quality-score.png">
 </p>
 
+## NEW VERSION
+Actually, we're working in robotito v2.0.0, you can keep updated in [this branch](https://github.com/Ti7oyan/RoboTito/tree/v2.0.0)
+
 ## 🌎 Visit our website!
 [RoboTito's Website](https://ti7oyan.github.io/robotito/)
 
