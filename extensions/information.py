@@ -3,13 +3,12 @@ import nextcord
 from nextcord.ext import commands
 
 # Helpers
-from helpers.client import Client
+# from helpers.client import Client
 from helpers.user import get_roles
+from helpers.group import get_group_commands
 
 # Libraries
 from random import choice
-
-client = Client('https://github.com/Ti7oyan/RoboTito')
 
 
 class Information(commands.Cog):
@@ -18,7 +17,17 @@ class Information(commands.Cog):
 
     # User related commands.
 
-    @commands.command()
+    @commands.group()
+    async def user(self, ctx: commands.Context):
+        """Commands related to user's information."""
+        if not ctx.invoked_subcommand:
+            commands_embed = get_group_commands(self.bot, 'user')
+            await ctx.send(embed=commands_embed)
+
+    @user.command(
+        name='profile',
+        description='Retrieves user\'s information card.'
+    )
     async def profile(self, ctx: commands.Context,
                       member: nextcord.Member = None):
         """Retrieves user information"""
@@ -68,7 +77,10 @@ class Information(commands.Cog):
         )
         await ctx.send(embed=profile_embed)
 
-    @commands.command()
+    @user.command(
+        name='avatar',
+        description='Returns your avatar or the given user\'s avatar.'
+    )
     async def avatar(self, ctx: commands.Context,
                      member: nextcord.Member = None):
         """Returns an user avatar."""
@@ -95,7 +107,17 @@ class Information(commands.Cog):
 
     # Guild / Server related commands.
 
-    @commands.command()
+    @commands.group()
+    async def server(self, ctx: commands.Context):
+        """Commands related to server's information."""
+        if not ctx.invoked_subcommand:
+            commands_embed = get_group_commands(self.bot, 'server')
+            await ctx.send(embed=commands_embed)
+
+    @server.command(
+        name='bots',
+        description='Returns all the bots that belongs to the server.'
+    )
     async def bots(self, ctx: commands.Context):
         """Returns an embed with all bots in the server."""
         bots_embed = nextcord.Embed(
@@ -119,7 +141,10 @@ class Information(commands.Cog):
 
         await ctx.send(embed=bots_embed)
 
-    @commands.command()
+    @server.command(
+        name='users',
+        description='Returns some users that belongs to the server.'
+    )
     async def users(self, ctx: commands.Context):
         """Returns an embed with some users that belongs to the server."""
         users_embed = nextcord.Embed(
