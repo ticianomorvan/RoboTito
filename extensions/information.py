@@ -122,6 +122,136 @@ class Information(commands.Cog):
             await ctx.send(embed=commands_embed)
 
     @server.command(
+        name='information',
+        description='Returns server information.',
+        aliases=['info']
+    )
+    async def information(self, ctx: commands.Context):
+        """Returns an embed with server information."""
+        server = ctx.guild
+        server_embed = nextcord.Embed(
+            title=server.name,
+            color=ctx.author.color
+        )
+
+        server_embed.set_thumbnail(
+            url=server.icon.url
+        )
+
+        if server.description:
+            server_embed.add_field(
+                name='📔 Description:',
+                value=server.description,
+                inline=False
+            )
+
+        server_embed.add_field(
+            name='🧑‍🤝‍🧑 Members:',
+            value=f'There are {server.member_count} members in the server!',
+            inline=False
+        )
+
+        server_embed.add_field(
+            name='👑 Owner:',
+            value=f'This server is property of {server.owner.mention}!',
+            inline=False
+        )
+
+        server_embed.add_field(
+            name='📣 Channels:',
+            value=f'There are {len(server.text_channels)} text channels'
+                  f' and {len(server.voice_channels)} voice channels!',
+            inline=False
+        )
+
+        server_embed.add_field(
+            name='🔨 Roles:',
+            value=f'There are {len(server.roles)}'
+                  ' different roles in the server!',
+            inline=False
+        )
+
+        if server.emojis:
+            server_embed.add_field(
+                name='😃 Emojis:',
+                value='The server has a total of'
+                      f' {len(server.emojis)} emojis!',
+                inline=False
+            )
+
+        if server.stickers:
+            server_embed.add_field(
+                name='🖼️ Stickers:',
+                value=f'There are {len(server.emojis)}'
+                      ' stickers in the server!',
+                inline=False
+            )
+
+        server_embed.set_footer(
+            text=f'Requested by {ctx.author.name}',
+            icon_url=self.bot.user.avatar.url
+        )
+
+        await ctx.send(embed=server_embed)
+
+    @server.command(
+        name='icon',
+        description='Retrieves the server\'s icon.'
+    )
+    async def icon(self, ctx: commands.Context):
+        """Returns the server icon."""
+        server = ctx.guild
+        server_embed = nextcord.Embed(
+            title=f'{server.name}\'s icon',
+            color=ctx.author.color
+        )
+
+        server_embed.set_image(
+            url=server.icon.url
+        )
+
+        server_embed.set_footer(
+            text=f'Requested by {ctx.author.name}',
+            icon_url=self.bot.user.avatar.url
+        )
+
+        await ctx.send(embed=server_embed)
+
+    @server.command(
+        name='roles',
+        description='Retrieves the server\'s roles.'
+    )
+    async def roles(self, ctx: commands.Context):
+        server = ctx.guild
+        if not ctx.author.guild_permissions.manage_roles:
+            await ctx.send('You don\'t have the permissions to do that!')
+        else:
+            server_embed = nextcord.Embed(
+                title=f'🔨 {server.name}\'s roles',
+                color=ctx.author.color
+            )
+
+            all_server_roles = ''
+
+            for role in reversed(server.roles):
+                if role.name != '@everyone':
+                    all_server_roles += f'<@&{role.id}> — '
+                    all_server_roles += f'{len(role.members)} members.\n'
+
+            server_embed.add_field(
+                name='All roles:',
+                value=all_server_roles,
+                inline=False
+            )
+
+            server_embed.set_footer(
+                text=f'Requested by {ctx.author.name}',
+                icon_url=self.bot.user.avatar.url
+            )
+
+            await ctx.send(embed=server_embed)
+
+    @server.command(
         name='bots',
         description='Returns all the bots that belongs to the server.'
     )
@@ -184,78 +314,6 @@ class Information(commands.Cog):
         )
 
         await ctx.send(embed=users_embed)
-
-    @server.command(
-        name='information',
-        description='Returns server information.',
-        aliases=['info']
-    )
-    async def information(self, ctx: commands.Context):
-        server = ctx.guild
-        server_embed = nextcord.Embed(
-            title=server.name,
-            color=ctx.author.color
-        )
-
-        server_embed.set_thumbnail(
-            url=server.icon.url
-        )
-
-        if server.description:
-            server_embed.add_field(
-                name='📔 Description:',
-                value=server.description,
-                inline=False
-            )
-
-        server_embed.add_field(
-            name='🧑‍🤝‍🧑 Members:',
-            value=f'There are {server.member_count} members in the server!',
-            inline=False
-        )
-
-        server_embed.add_field(
-            name='👑 Owner:',
-            value=f'This server is property of {server.owner.mention}!',
-            inline=False
-        )
-
-        server_embed.add_field(
-            name='📣 Channels:',
-            value=f'There are {len(server.text_channels)} text channels'
-                  f' and {len(server.voice_channels)} voice channels!',
-            inline=False
-        )
-
-        server_embed.add_field(
-            name='🔨 Roles:',
-            value=f'There are {len(server.roles)}'
-                  ' different roles in the server!',
-            inline=False
-        )
-
-        if server.emojis:
-            server_embed.add_field(
-                name='😃 Emojis:',
-                value='The server has a total of'
-                      f' {len(server.emojis)} emojis!',
-                inline=False
-            )
-
-        if server.stickers:
-            server_embed.add_field(
-                name='🖼️ Stickers:',
-                value=f'There are {len(server.emojis)}'
-                      ' stickers in the server!',
-                inline=False
-            )
-
-        server_embed.set_footer(
-            text=f'Information of {server.name}',
-            icon_url=self.bot.user.avatar.url
-        )
-
-        await ctx.send(embed=server_embed)
 
 
 def setup(bot: commands.Bot):
