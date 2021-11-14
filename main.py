@@ -8,14 +8,15 @@ intents = Intents.all()
 
 # Client declaration
 client = commands.Bot(
-    command_prefix='r!',
+    command_prefix='p!',
     description='Re-version of RoboTito.',
     intents=intents
 )
 
 client_extensions = [
     'extensions.information',
-    'extensions.moderation'
+    'extensions.moderation',
+    'extensions.leagueoflegends'
 ]
 
 for extension in client_extensions:
