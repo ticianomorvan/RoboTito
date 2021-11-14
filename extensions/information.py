@@ -5,6 +5,7 @@ from nextcord.ext import commands
 # Helpers
 from helpers.user import get_roles
 from helpers.group import get_group_commands
+from helpers.utility import datetime_parser, invite_expire, invite_uses
 
 # Libraries
 from random import choice
@@ -16,7 +17,10 @@ class Information(commands.Cog):
 
     # User related commands.
 
-    @commands.group()
+    @commands.group(
+        name='user',
+        aliases=['us']
+    )
     async def user(self, ctx: commands.Context):
         """Commands related to user's information."""
         if not ctx.invoked_subcommand:
@@ -66,7 +70,7 @@ class Information(commands.Cog):
             inline=False
         )
         profile_embed.add_field(
-            name='🪪 ID:',
+            name='🆔 ID:',
             value=f'{user.id}',
             inline=False
         )
@@ -114,7 +118,10 @@ class Information(commands.Cog):
 
     # Guild / Server related commands.
 
-    @commands.group()
+    @commands.group(
+        name='server',
+        aliases=['sv']
+    )
     async def server(self, ctx: commands.Context):
         """Commands related to server's information."""
         if not ctx.invoked_subcommand:
@@ -259,7 +266,7 @@ class Information(commands.Cog):
         """Returns an embed with all bots in the server."""
         bots_embed = nextcord.Embed(
             title='🤖 Server\'s bots',
-            color=self.bot.user.color
+            color=ctx.author.color
         )
 
         bots_in_server = ''
@@ -288,7 +295,7 @@ class Information(commands.Cog):
         """Returns an embed with some users that belongs to the server."""
         users_embed = nextcord.Embed(
             title='💁 People in this server',
-            color=self.bot.user.color
+            color=ctx.author
         )
 
         users_in_server = ctx.guild.humans
@@ -314,6 +321,83 @@ class Information(commands.Cog):
         )
 
         await ctx.send(embed=users_embed)
+
+    @server.command(
+        name='bans',
+        description='Retrieves a list of the server\'s banned users.'
+    )
+    async def bans(self, ctx: commands.Context):
+        """Returns an embed with the banned users from the server."""
+        if not ctx.author.guild_permissions.ban_members:
+            await ctx.send('You don\'t have permission to do this!')
+        else:
+            server = ctx.guild
+            server_embed = nextcord.Embed(
+                title=f'{server.name}\'s bans',
+                color=ctx.author.color
+            )
+
+            server_embed.set_thumbnail(
+                url=server.icon.url
+            )
+
+            all_server_bans = ''
+
+            for ban in await server.bans():
+                all_server_bans += f'{ban.user.name} — {ban.reason}\n'
+
+            if not all_server_bans:
+                server_embed.add_field(
+                    name='There aren\'t any bans in the server.',
+                    value='Maybe that\'s a good thing...'
+                )
+            else:
+                server_embed.add_field(
+                    name='All bans:',
+                    value=all_server_bans
+                )
+
+            server_embed.set_footer(
+                text=f'Requested by {ctx.author.name}',
+                icon_url=self.bot.user.avatar.url
+            )
+
+            await ctx.send(embed=server_embed)
+
+    @server.command(
+        name='invitations',
+        description='Retrieves all active invites.',
+        aliases=['invites']
+    )
+    async def invitations(self, ctx: commands.Context):
+        if not ctx.author.guild_permissions.create_instant_invite:
+            await ctx.send('You don\'t have permission to do this!')
+        else:
+            server = ctx.guild
+            server_embed = nextcord.Embed(
+                title=f'{server.name}\'s invites',
+                color=ctx.author.color
+            )
+
+            for invite in await server.invites():
+                server_embed.add_field(
+                    name=invite.code,
+                    value=f'Created at: {datetime_parser(invite.created_at)}\n'
+                          'Uses: '
+                          f'{invite_uses(invite.uses, invite.max_uses)}\n'
+                          f'Inviter: {invite.inviter.mention}\n'
+                          f'Expires at: {invite_expire(invite.expires_at)}\n'
+                          f'Channel: {invite.channel.mention}\n'
+                          f'URL: {invite.url}',
+                    inline=False
+                )
+
+            server_embed.set_footer(
+                text=f'Requested by {ctx.author.name}',
+                icon_url=self.bot.user.avatar.url
+            )
+
+            await ctx.send(embed=server_embed)
 
 
 def setup(bot: commands.Bot):
