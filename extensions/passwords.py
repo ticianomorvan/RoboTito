@@ -8,7 +8,7 @@ import random
 
 from nextcord.ext.commands.core import command
 
-# Variables
+# Variabless
 Slower = 'abcdefghijklmnñopqrstuvwxyz'
 Supper = 'ABCDEFGHIJKLMN;OPQRSTUVWXYZ'
 lower = 'abcdefghijklmnopqrstuvwxyz'
