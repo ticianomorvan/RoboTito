@@ -19,19 +19,19 @@ class Passwords(commands.Cog):
     @commands.command(
         aliases=['pass', 'word']
     )
-    async def password(self, ctx: commands.Context):
-        all = lower + upper + numbers + symbols
-        length = 9
-        password = "".join(random.sample(all, length))
-        await ctx.send(
-            f'This is your password: `{password}`,'
-            " if you don't like it,"
-            ' or if you want to make changes,'
-            ' you can visit:'
-            ' https://react-password-generator-'
-            'seven.vercel.app/'
-            '. This page was made by: Titoyan, who is my creator'
-        )
+    async def password(self, ctx: commands.Context, length = 12):
+        if not length in range(8, 16):
+            all = lower + upper + numbers + symbols
+            password = "".join(random.sample(all, length))
+            await ctx.send(
+                f'This is your password: `{password}`.'
+            )
+        else:
+            all = lower + upper + numbers + symbols
+            password = "".join(random.sample(all, length))
+            await ctx.send(
+                f'This is your password: `{password}`.'
+            )
 
 
 def setup(bot: commands.Bot):
