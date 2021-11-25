@@ -295,7 +295,7 @@ class Information(commands.Cog):
         """Returns an embed with some users that belongs to the server."""
         users_embed = nextcord.Embed(
             title='💁 People in this server',
-            color=ctx.author
+            color=ctx.author.color
         )
 
         users_in_server = ctx.guild.humans

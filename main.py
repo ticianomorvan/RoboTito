@@ -16,7 +16,7 @@ client = commands.Bot(
 client_extensions = [
     'extensions.information',
     'extensions.moderation',
-    'extensions.passwords',
+    'extensions.utility',
 ]
 
 for extension in client_extensions:
