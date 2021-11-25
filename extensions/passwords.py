@@ -19,7 +19,7 @@ class Passwords(commands.Cog):
     @commands.command(
         aliases=['pass', 'word']
     )
-    async def password(self, ctx: commands.Context, length = 12):
+    async def password(self, ctx: commands.Context, length=12):
         if not length in range(8, 16):
             all = lower + upper + numbers + symbols
             password = "".join(random.sample(all, length))
@@ -30,7 +30,7 @@ class Passwords(commands.Cog):
             all = lower + upper + numbers + symbols
             password = "".join(random.sample(all, length))
             await ctx.send(
-                f'This is your password: `{password}`.'
+                f'This is your password: `{password}`....'
             )
 
 
